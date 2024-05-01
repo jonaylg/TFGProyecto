@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TFGProyecto;
 
 namespace ProyectoTFG
 {
@@ -26,11 +27,38 @@ namespace ProyectoTFG
         private void buttonEntrar_Click(object sender, EventArgs e)
         {
 
+        }       
+        private void FrmInicioSesion_Load(object sender, EventArgs e)
+        {
+            ControladorUsuario.CargarDatosEnListaUsuario();
         }
 
-        private void buttonRegistro_Click(object sender, EventArgs e)
+        private void buttonEntrar_Click_1(object sender, EventArgs e)
         {
-            FrmRegistroUsuario formu=new FrmRegistroUsuario();
+            Boolean encontrado = false;
+            if (textBoxClave.Text!=""&&textBoxUsuario.Text!="")
+            {
+                foreach (Usuario u in ControladorUsuario.listaUsuarios)
+                {
+                    if (u.Clave==textBoxClave.Text&&u.Nick==textBoxUsuario.Text)
+                    {
+                        MessageBox.Show("bienvenido "+u.Nick);
+                        encontrado = true;
+                    }
+                }
+                if (!encontrado) {
+                    MessageBox.Show("no existe");
+                }
+            }
+            else
+            {
+                MessageBox.Show("campos vacios");
+            }
+        }
+
+        private void buttonRegistro_Click_1(object sender, EventArgs e)
+        {
+            FrmRegistroUsuario formu = new FrmRegistroUsuario();
             formu.ShowDialog();
         }
     }

@@ -158,6 +158,7 @@ namespace ProyectoTFG
             this.buttonCrear.TabIndex = 12;
             this.buttonCrear.Text = "Crear";
             this.buttonCrear.UseVisualStyleBackColor = true;
+            this.buttonCrear.Click += new System.EventHandler(this.buttonCrear_Click_1);
             // 
             // buttonAyuda
             // 
