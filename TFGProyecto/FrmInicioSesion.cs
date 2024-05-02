@@ -16,14 +16,7 @@ namespace ProyectoTFG
         public FrmInicioSesion()
         {
             InitializeComponent();
-        }
-
-        private void buttonOlvClave_Click(object sender, EventArgs e)
-        {
-            FrmNuevaClave formu = new FrmNuevaClave();
-            formu.ShowDialog();
-        }
-
+        }       
         private void buttonEntrar_Click(object sender, EventArgs e)
         {
 
@@ -60,6 +53,42 @@ namespace ProyectoTFG
         {
             FrmRegistroUsuario formu = new FrmRegistroUsuario();
             formu.ShowDialog();
+        }
+
+        private Boolean existe()
+        {
+            Boolean encontrado=false;
+
+            foreach (Usuario u in ControladorUsuario.listaUsuarios)
+            {
+                if (u.Nick==textBoxUsuario.Text)
+                {
+                    encontrado = true;
+                }
+            }
+
+            return encontrado;
+        }
+
+        private void buttonOlvClave_Click_1(object sender, EventArgs e)
+        {
+            if (textBoxUsuario.Text!="")
+            {
+                if (existe())
+                {
+                    ControladorUsuario.usuarioActivo.Nick=textBoxUsuario.Text;
+                    FrmNuevaClave formu = new FrmNuevaClave();
+                    formu.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("el usuario no aparece en la bbdd pruebe con otro nombre o registrese");
+                }
+            }
+            else
+            {
+                MessageBox.Show("rellene el campo usuario o sino registrese");
+            }
         }
     }
 }

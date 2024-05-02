@@ -96,6 +96,7 @@ namespace ProyectoTFG
             this.buttonOlvClave.TabIndex = 5;
             this.buttonOlvClave.Text = "¿Has olvidado la clave?";
             this.buttonOlvClave.UseVisualStyleBackColor = false;
+            this.buttonOlvClave.Click += new System.EventHandler(this.buttonOlvClave_Click_1);
             // 
             // buttonRegistro
             // 

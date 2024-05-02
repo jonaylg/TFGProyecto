@@ -35,7 +35,7 @@ namespace ProyectoTFG
             {//comprueba que los campos no esten vacios
                 if (textBoxClave.Text==textBoxClave2.Text && textBoxRespuesta.Text==textBoxRespuesta2.Text)
                 {
-                    Usuario u = new Usuario(textBoxUsuario.Text, textBoxClave.Text, textBoxRespuesta.Text);
+                    Usuario u = new Usuario(textBoxUsuario.Text, textBoxClave.Text, textBoxPregPers.Text, textBoxRespuesta.Text);
                     ControladorUsuario.insertarUsuario(u);
                     ControladorUsuario.listaUsuarios.Add(u);
                     FrmInicioSesion formu = new FrmInicioSesion();
