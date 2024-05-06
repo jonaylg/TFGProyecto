@@ -36,7 +36,7 @@ namespace ProyectoTFG
                     if (u.Clave==textBoxClave.Text&&u.Nick==textBoxUsuario.Text)
                     {
                         MessageBox.Show("bienvenido "+u.Nick);
-                        encontrado = true;
+                        encontrado = true;//prueba
                     }
                 }
                 if (!encontrado) {
