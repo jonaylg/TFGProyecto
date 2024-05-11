@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TFGProyecto;
+using TFGProyecto.Modelo;
 
 namespace ProyectoTFG
 {
@@ -33,9 +34,10 @@ namespace ProyectoTFG
         {
             if (textBoxClave.Text!="" && textBoxClave2.Text!="" && textBoxPregPers.Text != "" && textBoxRespuesta.Text != "" && textBoxRespuesta2.Text != "" && textBoxUsuario.Text != "")
             {//comprueba que los campos no esten vacios
+                Rol r=new Rol();
                 if (textBoxClave.Text==textBoxClave2.Text && textBoxRespuesta.Text==textBoxRespuesta2.Text)
                 {
-                    Usuario u = new Usuario(textBoxUsuario.Text, textBoxClave.Text, textBoxPregPers.Text, textBoxRespuesta.Text);
+                    Usuario u = new Usuario(textBoxUsuario.Text, textBoxClave.Text, textBoxPregPers.Text, textBoxRespuesta.Text, r);
                     ControladorUsuario.insertarUsuario(u);
                     ControladorUsuario.listaUsuarios.Add(u);
                     FrmInicioSesion formu = new FrmInicioSesion();

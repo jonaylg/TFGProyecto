@@ -18,6 +18,10 @@ namespace TFGProyecto.Modelo
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public List<Privilegio> Privilegios { get => privilegios; set => privilegios = value; }
 
+        public Rol()
+        {
+        }
+
         public Rol(int id, string nombre, string descripcion, List<Privilegio> privilegios)
         {
             this.Id = id;
