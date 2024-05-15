@@ -1,0 +1,5 @@
+﻿CREATE TABLE Trabajo (
+    ID INT PRIMARY KEY IDENTITY,
+    Nombre NVARCHAR(100),
+    Descripcion NVARCHAR(250)
+);
