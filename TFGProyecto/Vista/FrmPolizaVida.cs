@@ -16,15 +16,5 @@ namespace TFGProyecto.Vista
         {
             InitializeComponent();
         }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox6_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
