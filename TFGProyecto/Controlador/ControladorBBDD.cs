@@ -12,9 +12,30 @@ namespace TFGProyecto.Controlador
 {
     public class ControladorBBDD
     {
+        public static string leerArchivoBinarioCadenadeConexion()
+        {
+            string ruta = "../../BBDD/conexion/cadenaConexion.dat";
+            string cadena = "";
+            try
+            {
+                using (FileStream fs = new FileStream(ruta, FileMode.Open))
+                {
+                    using (BinaryReader br = new BinaryReader(fs))
+                    {
+                        cadena = br.ReadString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al leer el archivo: {ex.Message}");
+            }
+            return cadena;
+        }
         public static string getCadenaConexión()
         {
-            string connectionString = "Data Source=serverdatabasetfg.database.windows.net;Initial Catalog=DatabaseTFG;Persist Security Info=True;User ID=adminTFG;Password=TFGadmin1";
+
+            string connectionString = leerArchivoBinarioCadenadeConexion();
             return connectionString;
         }
         public static SqlDataReader getRegistros(string query)
