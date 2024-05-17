@@ -32,7 +32,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.textBoxContenido = new System.Windows.Forms.TextBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownHab = new System.Windows.Forms.NumericUpDown();
             this.textBoxValor = new System.Windows.Forms.TextBox();
             this.numericUpDownTot = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownCons = new System.Windows.Forms.NumericUpDown();
@@ -54,32 +54,34 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxTipMat = new System.Windows.Forms.ComboBox();
             this.comboBoxUsoVivi = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBoxCob = new System.Windows.Forms.GroupBox();
-            this.checkBoxRobEnCas = new System.Windows.Forms.CheckBox();
-            this.checkBoxFuego = new System.Windows.Forms.CheckBox();
-            this.checkBoxFenAtm = new System.Windows.Forms.CheckBox();
-            this.checkBoxRotoCris = new System.Windows.Forms.CheckBox();
-            this.checkBoxAguaYElec = new System.Windows.Forms.CheckBox();
-            this.checkBox11ReposDDEE = new System.Windows.Forms.CheckBox();
-            this.checkBoxInhDelInm = new System.Windows.Forms.CheckBox();
-            this.checkBoxRotTub = new System.Windows.Forms.CheckBox();
             this.checkBoxDerrAcc = new System.Windows.Forms.CheckBox();
-            this.tabPageCA = new System.Windows.Forms.TabPage();
-            this.checkBoxAsisInf = new System.Windows.Forms.CheckBox();
             this.checkBoxDefJur = new System.Windows.Forms.CheckBox();
-            this.checkBoxVandalicos = new System.Windows.Forms.CheckBox();
-            this.checkBoxAsisEnViaj = new System.Windows.Forms.CheckBox();
-            this.checkBoxVehEnGar = new System.Windows.Forms.CheckBox();
-            this.checkBoxRep24h = new System.Windows.Forms.CheckBox();
+            this.checkBoxRotTub = new System.Windows.Forms.CheckBox();
+            this.checkBoxInhDelInm = new System.Windows.Forms.CheckBox();
+            this.checkBox11ReposDDEE = new System.Windows.Forms.CheckBox();
+            this.checkBoxAguaYElec = new System.Windows.Forms.CheckBox();
+            this.checkBoxRotoCris = new System.Windows.Forms.CheckBox();
+            this.checkBoxFenAtm = new System.Windows.Forms.CheckBox();
+            this.checkBoxFuego = new System.Windows.Forms.CheckBox();
+            this.checkBoxRobEnCas = new System.Windows.Forms.CheckBox();
+            this.tabPageCA = new System.Windows.Forms.TabPage();
             this.checkBoxJuriAmp = new System.Windows.Forms.CheckBox();
+            this.checkBoxRep24h = new System.Windows.Forms.CheckBox();
+            this.checkBoxVehEnGar = new System.Windows.Forms.CheckBox();
+            this.checkBoxAsisEnViaj = new System.Windows.Forms.CheckBox();
+            this.checkBoxVandalicos = new System.Windows.Forms.CheckBox();
+            this.checkBoxAsisInf = new System.Windows.Forms.CheckBox();
+            this.buttonPrecio = new System.Windows.Forms.Button();
+            this.checkBoxProm = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHab)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAnho)).BeginInit();
@@ -106,7 +108,7 @@
             // 
             this.tabPage1.Controls.Add(this.textBoxContenido);
             this.tabPage1.Controls.Add(this.checkedListBox1);
-            this.tabPage1.Controls.Add(this.numericUpDown1);
+            this.tabPage1.Controls.Add(this.numericUpDownHab);
             this.tabPage1.Controls.Add(this.textBoxValor);
             this.tabPage1.Controls.Add(this.numericUpDownTot);
             this.tabPage1.Controls.Add(this.numericUpDownCons);
@@ -148,18 +150,18 @@
             this.checkedListBox1.Size = new System.Drawing.Size(122, 55);
             this.checkedListBox1.TabIndex = 18;
             // 
-            // numericUpDown1
+            // numericUpDownHab
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(485, 88);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.numericUpDownHab.Location = new System.Drawing.Point(485, 88);
+            this.numericUpDownHab.Maximum = new decimal(new int[] {
             50000,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown1.TabIndex = 17;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.numericUpDownHab.Name = "numericUpDownHab";
+            this.numericUpDownHab.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownHab.TabIndex = 17;
+            this.numericUpDownHab.Value = new decimal(new int[] {
             2,
             0,
             0,
@@ -319,7 +321,7 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.groupBoxSS);
-            this.tabPage2.Controls.Add(this.comboBox2);
+            this.tabPage2.Controls.Add(this.comboBoxTipMat);
             this.tabPage2.Controls.Add(this.comboBoxUsoVivi);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.label12);
@@ -396,17 +398,17 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // comboBox2
+            // comboBoxTipMat
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboBoxTipMat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTipMat.FormattingEnabled = true;
+            this.comboBoxTipMat.Items.AddRange(new object[] {
             "Solidos e Incombustibles",
             "Otros"});
-            this.comboBox2.Location = new System.Drawing.Point(512, 69);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 14;
+            this.comboBoxTipMat.Location = new System.Drawing.Point(512, 69);
+            this.comboBoxTipMat.Name = "comboBoxTipMat";
+            this.comboBoxTipMat.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxTipMat.TabIndex = 14;
             // 
             // comboBoxUsoVivi
             // 
@@ -470,76 +472,25 @@
             this.groupBoxCob.TabStop = false;
             this.groupBoxCob.Text = "Coberturas";
             // 
-            // checkBoxRobEnCas
+            // checkBoxDerrAcc
             // 
-            this.checkBoxRobEnCas.AutoSize = true;
-            this.checkBoxRobEnCas.Location = new System.Drawing.Point(62, 31);
-            this.checkBoxRobEnCas.Name = "checkBoxRobEnCas";
-            this.checkBoxRobEnCas.Size = new System.Drawing.Size(156, 20);
-            this.checkBoxRobEnCas.TabIndex = 0;
-            this.checkBoxRobEnCas.Text = "Robo dentro de casa";
-            this.checkBoxRobEnCas.UseVisualStyleBackColor = true;
-            this.checkBoxRobEnCas.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
+            this.checkBoxDerrAcc.AutoSize = true;
+            this.checkBoxDerrAcc.Location = new System.Drawing.Point(307, 190);
+            this.checkBoxDerrAcc.Name = "checkBoxDerrAcc";
+            this.checkBoxDerrAcc.Size = new System.Drawing.Size(154, 20);
+            this.checkBoxDerrAcc.TabIndex = 10;
+            this.checkBoxDerrAcc.Text = "Derrumbe accidental";
+            this.checkBoxDerrAcc.UseVisualStyleBackColor = true;
             // 
-            // checkBoxFuego
+            // checkBoxDefJur
             // 
-            this.checkBoxFuego.AutoSize = true;
-            this.checkBoxFuego.Location = new System.Drawing.Point(62, 70);
-            this.checkBoxFuego.Name = "checkBoxFuego";
-            this.checkBoxFuego.Size = new System.Drawing.Size(80, 20);
-            this.checkBoxFuego.TabIndex = 1;
-            this.checkBoxFuego.Text = "Incendio";
-            this.checkBoxFuego.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxFenAtm
-            // 
-            this.checkBoxFenAtm.AutoSize = true;
-            this.checkBoxFenAtm.Location = new System.Drawing.Point(62, 108);
-            this.checkBoxFenAtm.Name = "checkBoxFenAtm";
-            this.checkBoxFenAtm.Size = new System.Drawing.Size(181, 20);
-            this.checkBoxFenAtm.TabIndex = 2;
-            this.checkBoxFenAtm.Text = "Fenómenos atmosféricos";
-            this.checkBoxFenAtm.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxRotoCris
-            // 
-            this.checkBoxRotoCris.AutoSize = true;
-            this.checkBoxRotoCris.Location = new System.Drawing.Point(62, 190);
-            this.checkBoxRotoCris.Name = "checkBoxRotoCris";
-            this.checkBoxRotoCris.Size = new System.Drawing.Size(141, 20);
-            this.checkBoxRotoCris.TabIndex = 3;
-            this.checkBoxRotoCris.Text = "Rotura de cristales";
-            this.checkBoxRotoCris.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxAguaYElec
-            // 
-            this.checkBoxAguaYElec.AutoSize = true;
-            this.checkBoxAguaYElec.Location = new System.Drawing.Point(307, 31);
-            this.checkBoxAguaYElec.Name = "checkBoxAguaYElec";
-            this.checkBoxAguaYElec.Size = new System.Drawing.Size(197, 20);
-            this.checkBoxAguaYElec.TabIndex = 4;
-            this.checkBoxAguaYElec.Text = "Daños por agua y eléctricos";
-            this.checkBoxAguaYElec.UseVisualStyleBackColor = true;
-            // 
-            // checkBox11ReposDDEE
-            // 
-            this.checkBox11ReposDDEE.AutoSize = true;
-            this.checkBox11ReposDDEE.Location = new System.Drawing.Point(62, 149);
-            this.checkBox11ReposDDEE.Name = "checkBox11ReposDDEE";
-            this.checkBox11ReposDDEE.Size = new System.Drawing.Size(215, 20);
-            this.checkBox11ReposDDEE.TabIndex = 5;
-            this.checkBox11ReposDDEE.Text = "Reposición de daños estéticos";
-            this.checkBox11ReposDDEE.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxInhDelInm
-            // 
-            this.checkBoxInhDelInm.AutoSize = true;
-            this.checkBoxInhDelInm.Location = new System.Drawing.Point(307, 70);
-            this.checkBoxInhDelInm.Name = "checkBoxInhDelInm";
-            this.checkBoxInhDelInm.Size = new System.Drawing.Size(253, 20);
-            this.checkBoxInhDelInm.TabIndex = 7;
-            this.checkBoxInhDelInm.Text = "Inhabitabilidad temporal del inmueble";
-            this.checkBoxInhDelInm.UseVisualStyleBackColor = true;
+            this.checkBoxDefJur.AutoSize = true;
+            this.checkBoxDefJur.Location = new System.Drawing.Point(307, 108);
+            this.checkBoxDefJur.Name = "checkBoxDefJur";
+            this.checkBoxDefJur.Size = new System.Drawing.Size(126, 20);
+            this.checkBoxDefJur.TabIndex = 1;
+            this.checkBoxDefJur.Text = "Defensa jurídica";
+            this.checkBoxDefJur.UseVisualStyleBackColor = true;
             // 
             // checkBoxRotTub
             // 
@@ -551,18 +502,80 @@
             this.checkBoxRotTub.Text = "Rotura de tubería";
             this.checkBoxRotTub.UseVisualStyleBackColor = true;
             // 
-            // checkBoxDerrAcc
+            // checkBoxInhDelInm
             // 
-            this.checkBoxDerrAcc.AutoSize = true;
-            this.checkBoxDerrAcc.Location = new System.Drawing.Point(307, 190);
-            this.checkBoxDerrAcc.Name = "checkBoxDerrAcc";
-            this.checkBoxDerrAcc.Size = new System.Drawing.Size(154, 20);
-            this.checkBoxDerrAcc.TabIndex = 10;
-            this.checkBoxDerrAcc.Text = "Derrumbe accidental";
-            this.checkBoxDerrAcc.UseVisualStyleBackColor = true;
+            this.checkBoxInhDelInm.AutoSize = true;
+            this.checkBoxInhDelInm.Location = new System.Drawing.Point(307, 70);
+            this.checkBoxInhDelInm.Name = "checkBoxInhDelInm";
+            this.checkBoxInhDelInm.Size = new System.Drawing.Size(253, 20);
+            this.checkBoxInhDelInm.TabIndex = 7;
+            this.checkBoxInhDelInm.Text = "Inhabitabilidad temporal del inmueble";
+            this.checkBoxInhDelInm.UseVisualStyleBackColor = true;
+            // 
+            // checkBox11ReposDDEE
+            // 
+            this.checkBox11ReposDDEE.AutoSize = true;
+            this.checkBox11ReposDDEE.Location = new System.Drawing.Point(62, 149);
+            this.checkBox11ReposDDEE.Name = "checkBox11ReposDDEE";
+            this.checkBox11ReposDDEE.Size = new System.Drawing.Size(215, 20);
+            this.checkBox11ReposDDEE.TabIndex = 5;
+            this.checkBox11ReposDDEE.Text = "Reposición de daños estéticos";
+            this.checkBox11ReposDDEE.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAguaYElec
+            // 
+            this.checkBoxAguaYElec.AutoSize = true;
+            this.checkBoxAguaYElec.Location = new System.Drawing.Point(307, 31);
+            this.checkBoxAguaYElec.Name = "checkBoxAguaYElec";
+            this.checkBoxAguaYElec.Size = new System.Drawing.Size(197, 20);
+            this.checkBoxAguaYElec.TabIndex = 4;
+            this.checkBoxAguaYElec.Text = "Daños por agua y eléctricos";
+            this.checkBoxAguaYElec.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxRotoCris
+            // 
+            this.checkBoxRotoCris.AutoSize = true;
+            this.checkBoxRotoCris.Location = new System.Drawing.Point(62, 190);
+            this.checkBoxRotoCris.Name = "checkBoxRotoCris";
+            this.checkBoxRotoCris.Size = new System.Drawing.Size(141, 20);
+            this.checkBoxRotoCris.TabIndex = 3;
+            this.checkBoxRotoCris.Text = "Rotura de cristales";
+            this.checkBoxRotoCris.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxFenAtm
+            // 
+            this.checkBoxFenAtm.AutoSize = true;
+            this.checkBoxFenAtm.Location = new System.Drawing.Point(62, 108);
+            this.checkBoxFenAtm.Name = "checkBoxFenAtm";
+            this.checkBoxFenAtm.Size = new System.Drawing.Size(181, 20);
+            this.checkBoxFenAtm.TabIndex = 2;
+            this.checkBoxFenAtm.Text = "Fenómenos atmosféricos";
+            this.checkBoxFenAtm.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxFuego
+            // 
+            this.checkBoxFuego.AutoSize = true;
+            this.checkBoxFuego.Location = new System.Drawing.Point(62, 70);
+            this.checkBoxFuego.Name = "checkBoxFuego";
+            this.checkBoxFuego.Size = new System.Drawing.Size(80, 20);
+            this.checkBoxFuego.TabIndex = 1;
+            this.checkBoxFuego.Text = "Incendio";
+            this.checkBoxFuego.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxRobEnCas
+            // 
+            this.checkBoxRobEnCas.AutoSize = true;
+            this.checkBoxRobEnCas.Location = new System.Drawing.Point(62, 31);
+            this.checkBoxRobEnCas.Name = "checkBoxRobEnCas";
+            this.checkBoxRobEnCas.Size = new System.Drawing.Size(156, 20);
+            this.checkBoxRobEnCas.TabIndex = 0;
+            this.checkBoxRobEnCas.Text = "Robo dentro de casa";
+            this.checkBoxRobEnCas.UseVisualStyleBackColor = true;
+            this.checkBoxRobEnCas.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
             // 
             // tabPageCA
             // 
+            this.tabPageCA.Controls.Add(this.checkBoxProm);
             this.tabPageCA.Controls.Add(this.checkBoxJuriAmp);
             this.tabPageCA.Controls.Add(this.checkBoxRep24h);
             this.tabPageCA.Controls.Add(this.checkBoxVehEnGar);
@@ -577,55 +590,15 @@
             this.tabPageCA.Text = "Coberturas Avanzadas";
             this.tabPageCA.UseVisualStyleBackColor = true;
             // 
-            // checkBoxAsisInf
+            // checkBoxJuriAmp
             // 
-            this.checkBoxAsisInf.AutoSize = true;
-            this.checkBoxAsisInf.Location = new System.Drawing.Point(70, 61);
-            this.checkBoxAsisInf.Name = "checkBoxAsisInf";
-            this.checkBoxAsisInf.Size = new System.Drawing.Size(239, 20);
-            this.checkBoxAsisInf.TabIndex = 0;
-            this.checkBoxAsisInf.Text = "Asistencia informática y en el hogar";
-            this.checkBoxAsisInf.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxDefJur
-            // 
-            this.checkBoxDefJur.AutoSize = true;
-            this.checkBoxDefJur.Location = new System.Drawing.Point(307, 108);
-            this.checkBoxDefJur.Name = "checkBoxDefJur";
-            this.checkBoxDefJur.Size = new System.Drawing.Size(126, 20);
-            this.checkBoxDefJur.TabIndex = 1;
-            this.checkBoxDefJur.Text = "Defensa jurídica";
-            this.checkBoxDefJur.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxVandalicos
-            // 
-            this.checkBoxVandalicos.AutoSize = true;
-            this.checkBoxVandalicos.Location = new System.Drawing.Point(70, 180);
-            this.checkBoxVandalicos.Name = "checkBoxVandalicos";
-            this.checkBoxVandalicos.Size = new System.Drawing.Size(270, 20);
-            this.checkBoxVandalicos.TabIndex = 2;
-            this.checkBoxVandalicos.Text = "Actos vandálicos causados por terceros";
-            this.checkBoxVandalicos.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxAsisEnViaj
-            // 
-            this.checkBoxAsisEnViaj.AutoSize = true;
-            this.checkBoxAsisEnViaj.Location = new System.Drawing.Point(70, 122);
-            this.checkBoxAsisEnViaj.Name = "checkBoxAsisEnViaj";
-            this.checkBoxAsisEnViaj.Size = new System.Drawing.Size(141, 20);
-            this.checkBoxAsisEnViaj.TabIndex = 3;
-            this.checkBoxAsisEnViaj.Text = "Asistencia en viaje";
-            this.checkBoxAsisEnViaj.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxVehEnGar
-            // 
-            this.checkBoxVehEnGar.AutoSize = true;
-            this.checkBoxVehEnGar.Location = new System.Drawing.Point(382, 122);
-            this.checkBoxVehEnGar.Name = "checkBoxVehEnGar";
-            this.checkBoxVehEnGar.Size = new System.Drawing.Size(148, 20);
-            this.checkBoxVehEnGar.TabIndex = 4;
-            this.checkBoxVehEnGar.Text = "Vehículos en garaje";
-            this.checkBoxVehEnGar.UseVisualStyleBackColor = true;
+            this.checkBoxJuriAmp.AutoSize = true;
+            this.checkBoxJuriAmp.Location = new System.Drawing.Point(382, 180);
+            this.checkBoxJuriAmp.Name = "checkBoxJuriAmp";
+            this.checkBoxJuriAmp.Size = new System.Drawing.Size(199, 20);
+            this.checkBoxJuriAmp.TabIndex = 6;
+            this.checkBoxJuriAmp.Text = "Protección jurídica ampliada";
+            this.checkBoxJuriAmp.UseVisualStyleBackColor = true;
             // 
             // checkBoxRep24h
             // 
@@ -637,21 +610,72 @@
             this.checkBoxRep24h.Text = "Reparaciones 24 horas";
             this.checkBoxRep24h.UseVisualStyleBackColor = true;
             // 
-            // checkBoxJuriAmp
+            // checkBoxVehEnGar
             // 
-            this.checkBoxJuriAmp.AutoSize = true;
-            this.checkBoxJuriAmp.Location = new System.Drawing.Point(382, 180);
-            this.checkBoxJuriAmp.Name = "checkBoxJuriAmp";
-            this.checkBoxJuriAmp.Size = new System.Drawing.Size(199, 20);
-            this.checkBoxJuriAmp.TabIndex = 6;
-            this.checkBoxJuriAmp.Text = "Protección jurídica ampliada";
-            this.checkBoxJuriAmp.UseVisualStyleBackColor = true;
+            this.checkBoxVehEnGar.AutoSize = true;
+            this.checkBoxVehEnGar.Location = new System.Drawing.Point(382, 122);
+            this.checkBoxVehEnGar.Name = "checkBoxVehEnGar";
+            this.checkBoxVehEnGar.Size = new System.Drawing.Size(148, 20);
+            this.checkBoxVehEnGar.TabIndex = 4;
+            this.checkBoxVehEnGar.Text = "Vehículos en garaje";
+            this.checkBoxVehEnGar.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAsisEnViaj
+            // 
+            this.checkBoxAsisEnViaj.AutoSize = true;
+            this.checkBoxAsisEnViaj.Location = new System.Drawing.Point(70, 122);
+            this.checkBoxAsisEnViaj.Name = "checkBoxAsisEnViaj";
+            this.checkBoxAsisEnViaj.Size = new System.Drawing.Size(141, 20);
+            this.checkBoxAsisEnViaj.TabIndex = 3;
+            this.checkBoxAsisEnViaj.Text = "Asistencia en viaje";
+            this.checkBoxAsisEnViaj.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxVandalicos
+            // 
+            this.checkBoxVandalicos.AutoSize = true;
+            this.checkBoxVandalicos.Location = new System.Drawing.Point(70, 180);
+            this.checkBoxVandalicos.Name = "checkBoxVandalicos";
+            this.checkBoxVandalicos.Size = new System.Drawing.Size(270, 20);
+            this.checkBoxVandalicos.TabIndex = 2;
+            this.checkBoxVandalicos.Text = "Actos vandálicos causados por terceros";
+            this.checkBoxVandalicos.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAsisInf
+            // 
+            this.checkBoxAsisInf.AutoSize = true;
+            this.checkBoxAsisInf.Location = new System.Drawing.Point(70, 61);
+            this.checkBoxAsisInf.Name = "checkBoxAsisInf";
+            this.checkBoxAsisInf.Size = new System.Drawing.Size(239, 20);
+            this.checkBoxAsisInf.TabIndex = 0;
+            this.checkBoxAsisInf.Text = "Asistencia informática y en el hogar";
+            this.checkBoxAsisInf.UseVisualStyleBackColor = true;
+            // 
+            // buttonPrecio
+            // 
+            this.buttonPrecio.Location = new System.Drawing.Point(332, 398);
+            this.buttonPrecio.Name = "buttonPrecio";
+            this.buttonPrecio.Size = new System.Drawing.Size(139, 23);
+            this.buttonPrecio.TabIndex = 1;
+            this.buttonPrecio.Text = "Calcular Precio";
+            this.buttonPrecio.UseVisualStyleBackColor = true;
+            this.buttonPrecio.Click += new System.EventHandler(this.buttonPrecio_Click);
+            // 
+            // checkBoxProm
+            // 
+            this.checkBoxProm.AutoSize = true;
+            this.checkBoxProm.Location = new System.Drawing.Point(70, 231);
+            this.checkBoxProm.Name = "checkBoxProm";
+            this.checkBoxProm.Size = new System.Drawing.Size(109, 20);
+            this.checkBoxProm.TabIndex = 7;
+            this.checkBoxProm.Text = "Promociones";
+            this.checkBoxProm.UseVisualStyleBackColor = true;
             // 
             // FrmPolizaHogar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonPrecio);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmPolizaHogar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -659,7 +683,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHab)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCons)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAnho)).EndInit();
@@ -693,14 +717,14 @@
         private System.Windows.Forms.ComboBox comboBoxTipo;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBoxZona;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxTipMat;
         private System.Windows.Forms.ComboBox comboBoxUsoVivi;
         private System.Windows.Forms.NumericUpDown numericUpDownTot;
         private System.Windows.Forms.NumericUpDown numericUpDownCons;
         private System.Windows.Forms.NumericUpDown numericUpDownAnho;
         private System.Windows.Forms.TextBox textBoxValor;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDownHab;
         private System.Windows.Forms.TextBox textBoxContenido;
         private System.Windows.Forms.GroupBox groupBoxSS;
         private System.Windows.Forms.CheckBox checkBox1;
@@ -727,5 +751,7 @@
         private System.Windows.Forms.CheckBox checkBoxVandalicos;
         private System.Windows.Forms.CheckBox checkBoxDefJur;
         private System.Windows.Forms.CheckBox checkBoxAsisInf;
+        private System.Windows.Forms.Button buttonPrecio;
+        private System.Windows.Forms.CheckBox checkBoxProm;
     }
 }
