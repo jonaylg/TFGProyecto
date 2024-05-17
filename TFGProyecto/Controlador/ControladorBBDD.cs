@@ -14,7 +14,7 @@ namespace TFGProyecto.Controlador
     {
         public static string getCadenaConexión()
         {
-            string connectionString = "Data Source=serverdatabasetfg.database.windows.net;Initial Catalog=DatabaseTFG;Persist Security Info=True;User ID=adminTFG;Password=***********;Trust Server Certificate=True";
+            string connectionString = "Data Source=serverdatabasetfg.database.windows.net;Initial Catalog=DatabaseTFG;Persist Security Info=True;User ID=adminTFG;Password=TFGadmin1";
             return connectionString;
         }
         public static SqlDataReader getRegistros(string query)
