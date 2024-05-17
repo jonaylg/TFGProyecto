@@ -22,7 +22,7 @@ namespace TFGProyecto
         public string Respuesta { get => respuesta; set => respuesta = value; }
         public Rol Rol { get => rol; set => rol = value; }
 
-        public Usuario(string nick, string clave, string pregPers, String respuesta, Rol rol)
+        public Usuario(string nick, string clave, string pregPers, string respuesta, Rol rol)
         {
             this.Nick = nick;
             this.Clave = clave;

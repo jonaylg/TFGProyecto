@@ -19,8 +19,6 @@ namespace TFGProyecto.Controlador
             string databaseFileName = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\BBDD\DatabaseTFG.mdf"));
             // Cadena de conexión
             string connectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB; AttachDbFilename ={databaseFileName}; Integrated Security = True";
-            // Usar la cadena de conexión
-            MessageBox.Show("Cadena de conexión: " + connectionString);
             return connectionString;
         }
         public static SqlDataReader getRegistros(string query)

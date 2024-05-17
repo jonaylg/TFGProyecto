@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TFGProyecto;
+using TFGProyecto.Controlador;
 
 namespace ProyectoTFG
 {
@@ -23,6 +24,9 @@ namespace ProyectoTFG
         }       
         private void FrmInicioSesion_Load(object sender, EventArgs e)
         {
+            ControladorRol.CargarListaRoles();
+            ControladorEmpleado.CargarListaEmpleados();
+            ControladorPrivilegios.CargarListaPrivilegios();
             ControladorUsuario.CargarDatosEnListaUsuario();
         }
 

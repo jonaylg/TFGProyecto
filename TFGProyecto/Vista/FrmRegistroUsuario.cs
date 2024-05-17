@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TFGProyecto;
+using TFGProyecto.Controlador;
 using TFGProyecto.Modelo;
 
 namespace ProyectoTFG
@@ -27,17 +28,17 @@ namespace ProyectoTFG
         }
         private void FrmRegistroUsuario_Load(object sender, EventArgs e)
         {
-
+            cmbxRol.DataSource = ControladorRol.listaRoles;
+            cmbxRol.DisplayMember = "Nombre";
         }
 
         private void buttonCrear_Click_1(object sender, EventArgs e)
         {
             if (textBoxClave.Text!="" && textBoxClave2.Text!="" && textBoxPregPers.Text != "" && textBoxRespuesta.Text != "" && textBoxRespuesta2.Text != "" && textBoxUsuario.Text != "")
             {//comprueba que los campos no esten vacios
-                Rol r=new Rol();
                 if (textBoxClave.Text==textBoxClave2.Text && textBoxRespuesta.Text==textBoxRespuesta2.Text)
                 {
-                    Usuario u = new Usuario(textBoxUsuario.Text, textBoxClave.Text, textBoxPregPers.Text, textBoxRespuesta.Text, r);
+                    Usuario u = new Usuario(textBoxUsuario.Text, textBoxClave.Text, textBoxPregPers.Text, textBoxRespuesta.Text, (Rol)cmbxRol.SelectedItem);
                     ControladorUsuario.insertarUsuario(u);
                     ControladorUsuario.listaUsuarios.Add(u);
                     FrmInicioSesion formu = new FrmInicioSesion();

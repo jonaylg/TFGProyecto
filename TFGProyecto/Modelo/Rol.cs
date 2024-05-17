@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TFGProyecto.Controlador;
 
 namespace TFGProyecto.Modelo
 {
@@ -20,11 +21,14 @@ namespace TFGProyecto.Modelo
 
         public Rol()
         {
+            this.Id = ControladorRol.idRolActivo;
+            ControladorRol.idRolActivo++;
         }
 
-        public Rol(int id, string nombre, string descripcion, List<Privilegio> privilegios)
+        public Rol(string nombre, string descripcion, List<Privilegio> privilegios)
         {
-            this.Id = id;
+            this.Id = ControladorRol.idRolActivo;
+            ControladorRol.idRolActivo++;
             this.Nombre = nombre;
             this.Descripcion = descripcion;
             this.Privilegios = privilegios;

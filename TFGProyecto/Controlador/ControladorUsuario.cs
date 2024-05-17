@@ -19,12 +19,12 @@ namespace TFGProyecto
 
         public static bool insertarUsuario(Usuario u)
         {
-            string query = "INSERT INTO Usuario VALUES(@nick,@clave,@preg,@respuesta)";
+            string query = "INSERT INTO Usuario VALUES(@nick,@clave,@preg,@respuesta,@rol_id)";
             string nick = u.Nick;
             string clave = u.Clave;
             string preg = u.PregPers;
             string respuesta = u.Respuesta;
-            string rol = u.Rol.Nombre;
+            string rol = u.Rol.Id.ToString();
             List<string> datos = new List<string>();
             datos.Add(nick);
             datos.Add(clave);
@@ -73,9 +73,9 @@ namespace TFGProyecto
             SqlDataReader reader = ControladorBBDD.getRegistros(query);
             while (reader.Read())
             {
-                Usuario u = new Usuario(reader["usuario"].ToString(),
-                    reader["clave"].ToString(), reader["pregunta"].ToString(),
-                    reader["respuesta"].ToString(), ControladorRol.listaRoles.Find(r => r.Nombre == reader["rol"].ToString()));
+                Usuario u = new Usuario(reader["nick"].ToString(),
+                    reader["clave"].ToString(), reader["pregPers"].ToString(),
+                    reader["respuesta"].ToString(), ControladorRol.listaRoles.Find(r => r.Id.ToString() == reader["rol_id"].ToString()));
                 listaUsuarios.Add(u);
             }
         }

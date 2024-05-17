@@ -13,7 +13,7 @@ namespace TFGProyecto.Controlador
         public static List<Privilegio> listaPrivilegios = new List<Privilegio>();
         public static bool insertarPrivilegio(Privilegio privilegio)
         {
-            string query = "INSERT INTO Privilegios VALUES(@nombre, @descripcion)";
+            string query = "INSERT INTO Privilegio VALUES(@nombre, @descripcion)";
             List<string> datos = new List<string>();
             datos.Add(privilegio.Nombre);
             datos.Add(privilegio.Descripcion);
@@ -22,7 +22,7 @@ namespace TFGProyecto.Controlador
         public static Privilegio obtenerPrivilegio(int id)
         {
             Privilegio privilegio = null;
-            string query = $"SELECT * FROM Privilegios WHERE id = {id}";
+            string query = $"SELECT * FROM Privilegio WHERE id = {id}";
             using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
             {
                 if (reader.Read())
@@ -38,7 +38,7 @@ namespace TFGProyecto.Controlador
         }
         public static bool modificarPrivilegio(Privilegio privilegio)
         {
-            string query = "UPDATE Privilegios SET nombre = @nombre, descripcion = @descripcion WHERE id = @id";
+            string query = "UPDATE Privilegio SET nombre = @nombre, descripcion = @descripcion WHERE id = @id";
             List<string> datos = new List<string>();
             datos.Add(privilegio.Nombre);
             datos.Add(privilegio.Descripcion);
@@ -47,13 +47,13 @@ namespace TFGProyecto.Controlador
         }
         public static bool eliminarPrivilegio(int id)
         {
-            string query = "DELETE FROM Privilegios WHERE id = @id";
+            string query = "DELETE FROM Privilegio WHERE id = @id";
             List<string> datos = new List<string>();
             datos.Add(id.ToString());
             return ControladorBBDD.ejecutarQueryParams(query, datos);
         }        public static void CargarListaPrivilegios()
         {
-            string query = "SELECT * FROM Privilegios";
+            string query = "SELECT * FROM Privilegio";
             using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
             {
                 while (reader.Read())
@@ -70,7 +70,7 @@ namespace TFGProyecto.Controlador
         public static List<Privilegio> ObtenerPrivilegiosPorRol(int idRol)
         {
             List<Privilegio> privilegios = new List<Privilegio>();
-            string query = $"SELECT * FROM Privilegios WHERE id IN (SELECT idPrivilegio FROM PrivilegiosPorRol WHERE idRol = {idRol})";
+            string query = $"SELECT * FROM Privilegio WHERE id IN (SELECT idPrivilegio FROM PrivilegiosPorRol WHERE idRol = {idRol})";
             using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
             {
                 while (reader.Read())
