@@ -100,6 +100,12 @@
     <Compile Include="Vista\FrmPolizaHogar.Designer.cs">
       <DependentUpon>FrmPolizaHogar.cs</DependentUpon>
     </Compile>
+	<Compile Include="Vista\FrmPolizaVida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmPolizaVida.Designer.cs">
+      <DependentUpon>FrmPolizaVida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmRegistroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmPolizaHogar.resx">
       <DependentUpon>FrmPolizaHogar.cs</DependentUpon>
+    </EmbeddedResource>
+	<EmbeddedResource Include="Vista\FrmPolizaVida.resx">
+      <DependentUpon>FrmPolizaVida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmRegistroUsuario.resx">
       <DependentUpon>FrmRegistroUsuario.cs</DependentUpon>
