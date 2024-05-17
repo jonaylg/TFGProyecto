@@ -18,7 +18,7 @@ namespace TFGProyecto
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPolizaHogar());
+            Application.Run(new FrmInicioSesion());
         }
     }
 }

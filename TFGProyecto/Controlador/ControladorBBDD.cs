@@ -16,7 +16,7 @@ namespace TFGProyecto.Controlador
         {
             // Directorio del archivo de base de datos relativo al directorio de ejecución
             // A diferencia de la anterior version, forzamos a que coja la ruta relativa con el Path.GetFullPath
-            string databaseFileName = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\DatabaseTFG.mdf"));
+            string databaseFileName = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\BBDD\DatabaseTFG.mdf"));
             // Cadena de conexión
             string connectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB; AttachDbFilename ={databaseFileName}; Integrated Security = True";
             // Usar la cadena de conexión
