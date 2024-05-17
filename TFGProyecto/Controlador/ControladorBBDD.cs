@@ -12,18 +12,14 @@ namespace TFGProyecto.Controlador
 {
     public class ControladorBBDD
     {
-        public static string construirCadenaConexión()
+        public static string getCadenaConexión()
         {
-            // Directorio del archivo de base de datos relativo al directorio de ejecución
-            // A diferencia de la anterior version, forzamos a que coja la ruta relativa con el Path.GetFullPath
-            string databaseFileName = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\BBDD\DatabaseTFG.mdf"));
-            // Cadena de conexión
-            string connectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB; AttachDbFilename ={databaseFileName}; Integrated Security = True";
+            string connectionString = "Data Source=serverdatabasetfg.database.windows.net;Initial Catalog=DatabaseTFG;Persist Security Info=True;User ID=adminTFG;Password=***********;Trust Server Certificate=True";
             return connectionString;
         }
         public static SqlDataReader getRegistros(string query)
         {
-            string conexion = construirCadenaConexión();
+            string conexion = getCadenaConexión();
             SqlConnection connection = new SqlConnection(conexion);
             connection.Open();
             SqlCommand command = new SqlCommand(query, connection);
@@ -32,7 +28,7 @@ namespace TFGProyecto.Controlador
         }
         public static bool ejecutarQueryParams(string query, List<string> datos)
         {
-            string conexion = construirCadenaConexión();
+            string conexion = getCadenaConexión();
             using (SqlConnection connection = new SqlConnection(conexion))
             {
                 connection.Open();
