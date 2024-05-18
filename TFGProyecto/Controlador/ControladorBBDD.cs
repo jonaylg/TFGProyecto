@@ -12,18 +12,35 @@ namespace TFGProyecto.Controlador
 {
     public class ControladorBBDD
     {
-        public static string construirCadenaConexión()
+        public static string leerArchivoBinarioCadenadeConexion()
         {
-            // Directorio del archivo de base de datos relativo al directorio de ejecución
-            // A diferencia de la anterior version, forzamos a que coja la ruta relativa con el Path.GetFullPath
-            string databaseFileName = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\BBDD\DatabaseTFG.mdf"));
-            // Cadena de conexión
-            string connectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB; AttachDbFilename ={databaseFileName}; Integrated Security = True";
+            string ruta = "../../BBDD/conexion/cadenaConexion.dat";
+            string cadena = "";
+            try
+            {
+                using (FileStream fs = new FileStream(ruta, FileMode.Open))
+                {
+                    using (BinaryReader br = new BinaryReader(fs))
+                    {
+                        cadena = br.ReadString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al leer el archivo: {ex.Message}");
+            }
+            return cadena;
+        }
+        public static string getCadenaConexión()
+        {
+
+            string connectionString = leerArchivoBinarioCadenadeConexion();
             return connectionString;
         }
         public static SqlDataReader getRegistros(string query)
         {
-            string conexion = construirCadenaConexión();
+            string conexion = getCadenaConexión();
             SqlConnection connection = new SqlConnection(conexion);
             connection.Open();
             SqlCommand command = new SqlCommand(query, connection);
@@ -32,7 +49,7 @@ namespace TFGProyecto.Controlador
         }
         public static bool ejecutarQueryParams(string query, List<string> datos)
         {
-            string conexion = construirCadenaConexión();
+            string conexion = getCadenaConexión();
             using (SqlConnection connection = new SqlConnection(conexion))
             {
                 connection.Open();

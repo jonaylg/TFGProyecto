@@ -187,13 +187,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BBDD\DatabaseTFG.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="BBDD\DatabaseTFG_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>DatabaseTFG.mdf</DependentUpon>
-    </Content>
     <Content Include="BBDD\Scripts\dbo.Empleado.sql" />
     <Content Include="BBDD\Scripts\dbo.Privilegio.sql" />
     <Content Include="BBDD\Scripts\dbo.Rol.sql" />
