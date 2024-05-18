@@ -253,5 +253,10 @@ namespace TFGProyecto.Vista
         {
             MessageBox.Show("este es el precio de la poliza " + (calcularPrecioCoberturas()+ calcularPrecioCoberturasAmp()+ calcularPrecioDetalles()+ calcularPrecioMasDetalles()));
         }
+
+        private void FrmPolizaHogar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

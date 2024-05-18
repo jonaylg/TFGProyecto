@@ -71,6 +71,7 @@
             this.checkBoxFuego = new System.Windows.Forms.CheckBox();
             this.checkBoxRobEnCas = new System.Windows.Forms.CheckBox();
             this.tabPageCA = new System.Windows.Forms.TabPage();
+            this.checkBoxProm = new System.Windows.Forms.CheckBox();
             this.checkBoxJuriAmp = new System.Windows.Forms.CheckBox();
             this.checkBoxRep24h = new System.Windows.Forms.CheckBox();
             this.checkBoxVehEnGar = new System.Windows.Forms.CheckBox();
@@ -78,7 +79,6 @@
             this.checkBoxVandalicos = new System.Windows.Forms.CheckBox();
             this.checkBoxAsisInf = new System.Windows.Forms.CheckBox();
             this.buttonPrecio = new System.Windows.Forms.Button();
-            this.checkBoxProm = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHab)).BeginInit();
@@ -590,6 +590,16 @@
             this.tabPageCA.Text = "Coberturas Avanzadas";
             this.tabPageCA.UseVisualStyleBackColor = true;
             // 
+            // checkBoxProm
+            // 
+            this.checkBoxProm.AutoSize = true;
+            this.checkBoxProm.Location = new System.Drawing.Point(70, 231);
+            this.checkBoxProm.Name = "checkBoxProm";
+            this.checkBoxProm.Size = new System.Drawing.Size(109, 20);
+            this.checkBoxProm.TabIndex = 7;
+            this.checkBoxProm.Text = "Promociones";
+            this.checkBoxProm.UseVisualStyleBackColor = true;
+            // 
             // checkBoxJuriAmp
             // 
             this.checkBoxJuriAmp.AutoSize = true;
@@ -660,16 +670,6 @@
             this.buttonPrecio.UseVisualStyleBackColor = true;
             this.buttonPrecio.Click += new System.EventHandler(this.buttonPrecio_Click);
             // 
-            // checkBoxProm
-            // 
-            this.checkBoxProm.AutoSize = true;
-            this.checkBoxProm.Location = new System.Drawing.Point(70, 231);
-            this.checkBoxProm.Name = "checkBoxProm";
-            this.checkBoxProm.Size = new System.Drawing.Size(109, 20);
-            this.checkBoxProm.TabIndex = 7;
-            this.checkBoxProm.Text = "Promociones";
-            this.checkBoxProm.UseVisualStyleBackColor = true;
-            // 
             // FrmPolizaHogar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -680,6 +680,7 @@
             this.Name = "FrmPolizaHogar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPolizaHogar";
+            this.Load += new System.EventHandler(this.FrmPolizaHogar_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
