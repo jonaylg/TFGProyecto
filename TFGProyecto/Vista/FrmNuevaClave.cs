@@ -20,11 +20,13 @@ namespace ProyectoTFG
         private void buttonCambiar_Click_1(object sender, EventArgs e)
         {
             string respuesta = "";
+            int indice = -1;
             foreach (Usuario item in ControladorUsuario.listaUsuarios)
             {
                 if (item.Nick==ControladorUsuario.usuarioActivo.Nick) {
                     labelRespuesta.Text = item.PregPers.ToString();
                     respuesta = item.Respuesta;
+                    indice=ControladorUsuario.listaUsuarios.IndexOf(item);
                 }
             }
 
@@ -34,6 +36,7 @@ namespace ProyectoTFG
                 {
                     ControladorUsuario.modificarClave(ControladorUsuario.usuarioActivo.Nick,textBoxClave.Text);
                     MessageBox.Show("se modifico la clave");
+                    ControladorUsuario.listaUsuarios.RemoveAt(indice);
                     FrmInicioSesion formu = new FrmInicioSesion();
                     formu.ShowDialog();
                 }

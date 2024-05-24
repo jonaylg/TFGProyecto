@@ -54,7 +54,7 @@ namespace TFGProyecto
         }
         public static bool modificarClave(string nick, string clave)
         {
-            string query = "UPDATE Usuario SET clave = @clave WHERE usuario = @nick";
+            string query = "UPDATE Usuario SET clave = @clave WHERE nick = @nick";
             List<string> datos = new List<string>();
             datos.Add(clave);
             datos.Add(nick);

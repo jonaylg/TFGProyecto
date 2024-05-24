@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TFGProyecto.Modelo;
 
 namespace TFGProyecto.Vista
 {
@@ -28,6 +29,55 @@ namespace TFGProyecto.Vista
             {
                 labelFV.Visible = true;
             }
+        }
+
+        private Cliente crearCliente()
+        {
+            Cliente c = new Cliente();
+            if (maskedTextBoxDni.Text == "" || maskedTextBoxCVV.Text=="" || maskedTextBoxFV.Text=="" || maskedTextBoxTel.Text=="" || textBoxProv.Text=="" || textBoxNomTit.Text == "" || textBoxNombre.Text == "" || textBoxDirFac.Text == "" || textBoxDir.Text == "" || textBoxCorreo.Text == "" || textBoxCiu.Text == "" )
+            {
+                MessageBox.Show("Revise que no se hayan quedado campos sin rellenar");
+            }
+            else if (textBoxNombre.Text!=textBoxNomTit.Text)
+            {
+                MessageBox.Show("el nombre del titular ");
+            }
+            else
+            {
+                c.Provincia=textBoxProv.Text;
+                c.NombreTitular = textBoxNomTit.Text;
+                c.Nombre = textBoxNombre.Text;
+                c.DireccionFacturacion = textBoxDirFac.Text;
+                c.Direccion = textBoxDir.Text;
+                c.CorreoElectronico = textBoxCorreo.Text;
+                c.Ciudad=textBoxCiu.Text;
+                c.Cvv = Int32.Parse(maskedTextBoxCVV.Text);
+                c.FechaVencimiento = maskedTextBoxFV.Text;
+                c.Telefono = maskedTextBoxTel.Text;
+                c.Dni=maskedTextBoxDni.Text;
+            }
+
+            c.FechaNacimiento = dateTimePickerFN.Value;
+
+            if (comboBoxFrecPag.SelectedIndex==-1 || comboBoxMetPag.SelectedIndex == -1 || comboBoxTipo.SelectedIndex == -1)
+            {
+                MessageBox.Show("por favor seleccione algun valor de las diferentes listas");
+            }
+            else
+            {
+                c.MetodoPago=comboBoxMetPag.SelectedItem.ToString();
+                c.FrecuenciaPago=comboBoxFrecPag.SelectedItem.ToString();
+                c.Tipo=comboBoxTipo.SelectedItem.ToString();
+            }
+
+            MessageBox.Show(c.VerCliente());
+
+            return c;
+        }
+
+        private void buttonInserClien_Click(object sender, EventArgs e)
+        {
+            crearCliente();
         }
     }
 }
