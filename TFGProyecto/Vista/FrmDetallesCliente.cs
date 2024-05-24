@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TFGProyecto.Controlador;
 using TFGProyecto.Modelo;
 
 namespace TFGProyecto.Vista
@@ -34,19 +35,20 @@ namespace TFGProyecto.Vista
         private Cliente crearCliente()
         {
             Cliente c = new Cliente();
-            if (maskedTextBoxDni.Text == "" || maskedTextBoxCVV.Text=="" || maskedTextBoxFV.Text=="" || maskedTextBoxTel.Text=="" || textBoxProv.Text=="" || textBoxNomTit.Text == "" || textBoxNombre.Text == "" || textBoxDirFac.Text == "" || textBoxDir.Text == "" || textBoxCorreo.Text == "" || textBoxCiu.Text == "" )
+            if (maskedTextBoxDni.Text == "" || maskedTextBoxCVV.Text=="" || maskedTextBoxFV.Text=="" || maskedTextBoxTel.Text=="" || textBoxProv.Text=="" || textBoxNomTit.Text == "" || textBoxNombre.Text == "" || textBoxDirFac.Text == "" || textBoxDir.Text == "" || textBoxCorreo.Text == "" || textBoxCiu.Text == "" || textBoxApe.Text=="")
             {
                 MessageBox.Show("Revise que no se hayan quedado campos sin rellenar");
             }
             else if (textBoxNombre.Text!=textBoxNomTit.Text)
             {
-                MessageBox.Show("el nombre del titular ");
+                MessageBox.Show(textBoxNombre.Text+"el nombre del titular "+ textBoxNomTit.Text);
             }
             else
             {
                 c.Provincia=textBoxProv.Text;
                 c.NombreTitular = textBoxNomTit.Text;
                 c.Nombre = textBoxNombre.Text;
+                c.Apellido=textBoxApe.Text;
                 c.DireccionFacturacion = textBoxDirFac.Text;
                 c.Direccion = textBoxDir.Text;
                 c.CorreoElectronico = textBoxCorreo.Text;
@@ -70,14 +72,14 @@ namespace TFGProyecto.Vista
                 c.Tipo=comboBoxTipo.SelectedItem.ToString();
             }
 
-            MessageBox.Show(c.VerCliente());
+            MessageBox.Show(c.MostrarDatos());
 
             return c;
         }
 
         private void buttonInserClien_Click(object sender, EventArgs e)
         {
-            crearCliente();
+            ControladorCliente.insertarCliente(crearCliente());
         }
     }
 }

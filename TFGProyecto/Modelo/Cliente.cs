@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -85,9 +86,24 @@ namespace TFGProyecto.Modelo
             this.dni = dni;
         }
 
-        public string VerCliente()
+        public string MostrarDatos()
         {
-            return $"{Nombre} {Apellido} - {Direccion}, {Ciudad}, {Provincia} - Teléfono: {Telefono} - Email: {CorreoElectronico}";
+            return $"DNI: {dni}\n" +
+                   $"Nombre: {Nombre}\n" +
+                   $"Apellido: {Apellido}\n" +
+                   $"Direccion: {Direccion}\n" +
+                   $"Fecha de Nacimiento: {FechaNacimiento.ToShortDateString()}\n" +
+                   $"Telefono: {Telefono}\n" +
+                   $"Correo Electronico: {CorreoElectronico}\n" +
+                   $"Provincia: {Provincia}\n" +
+                   $"Ciudad: {Ciudad}\n" +
+                   $"Tipo: {Tipo}\n" +
+                   $"Direccion de Facturacion: {DireccionFacturacion}\n" +
+                   $"CVV: {cvv}\n" +
+                   $"Fecha de Vencimiento: {FechaVencimiento}\n" +
+                   $"Nombre del Titular: {NombreTitular}\n" +
+                   $"Frecuencia de Pago: {FrecuenciaPago}\n" +
+                   $"Metodo de Pago: {MetodoPago}";
         }
     }
 }
