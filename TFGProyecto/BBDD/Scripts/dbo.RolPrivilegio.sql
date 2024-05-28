@@ -1,7 +1,8 @@
-﻿CREATE TABLE RolPrivilegio (
-    rol_id INT,
-    privilegio_id INT,
-    FOREIGN KEY (rol_id) REFERENCES Rol(id),
-    FOREIGN KEY (privilegio_id) REFERENCES Privilegio(id),
-    PRIMARY KEY (rol_id, privilegio_id)
+﻿CREATE TABLE [dbo].[RolPrivilegio] (
+    [rol_id]        NVARCHAR (50) NOT NULL,
+    [privilegio_id] NVARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([rol_id] ASC, [privilegio_id] ASC),
+    FOREIGN KEY ([privilegio_id]) REFERENCES [dbo].[Privilegio] ([id]),
+    FOREIGN KEY ([rol_id]) REFERENCES [dbo].[Rol] ([id])
 );
+

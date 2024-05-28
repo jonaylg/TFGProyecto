@@ -11,7 +11,6 @@ namespace TFGProyecto.Controlador
     public class ControladorRol
     {
         public static List<Rol> listaRoles = new List<Rol>();
-        public static int idRolActivo = ultimoRol();
 
         public static bool insertarRol(Rol r)
         {
@@ -21,7 +20,13 @@ namespace TFGProyecto.Controlador
             List<string> datos = new List<string>();
             datos.Add(nombre);
             datos.Add(descripcion);
-            return ControladorBBDD.ejecutarQueryParams(query, datos);
+            bool ok = ControladorBBDD.ejecutarQueryParams(query, datos);
+            if (ok)
+            {
+                r.Id = ultimoRol();
+                listaRoles.Add(r);
+            }
+            return ok;
         }
         public static Rol obtenerRol(string id)
         {
@@ -49,14 +54,31 @@ namespace TFGProyecto.Controlador
             }
             query = query.Remove(query.Length - 1);
             query += " WHERE id = @id";
-            return ControladorBBDD.ejecutarQueryParams(query, datos);
+            bool ok = ControladorBBDD.ejecutarQueryParams(query, datos);
+            if (ok)
+            {
+                if (atributos.Contains("nombre"))
+                {
+                    listaRoles.Find(r => r.Id == Convert.ToInt32(datos[atributos.IndexOf("id")])).Nombre = datos[atributos.IndexOf("nombre")];
+                }
+                if (atributos.Contains("descripcion"))
+                {
+                    listaRoles.Find(r => r.Id == Convert.ToInt32(datos[atributos.IndexOf("id")])).Descripcion = datos[atributos.IndexOf("descripcion")];
+                }
+            }
+            return ok;
         }
         public static bool eliminarRol(int id)
         {
             string query = "DELETE FROM Rol WHERE id = @id";
             List<string> datos = new List<string>();
             datos.Add(id.ToString());
-            return ControladorBBDD.ejecutarQueryParams(query, datos);
+            bool ok = ControladorBBDD.ejecutarQueryParams(query, datos);
+            if (ok)
+            {
+                listaRoles.Remove(listaRoles.Find(r => r.Id == id));
+            }
+            return ok;
         }
         public static void CargarListaRoles()
         {
@@ -67,6 +89,13 @@ namespace TFGProyecto.Controlador
                 Rol r = new Rol(reader["nombre"].ToString(), reader["descripcion"].ToString(), new List<Privilegio>());
                 listaRoles.Add(r);
             }
+        }
+        public static int ultimoId()
+        {
+            string query = "SELECT MAX(id) FROM Rol";
+            SqlDataReader reader = ControladorBBDD.getRegistros(query);
+            reader.Read();
+            return reader.GetInt32(0);
         }
         public static int ultimoRol()
         {

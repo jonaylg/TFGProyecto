@@ -31,7 +31,13 @@ namespace TFGProyecto
             datos.Add(preg);
             datos.Add(respuesta);
             datos.Add(rol);
-            return ControladorBBDD.ejecutarQueryParams(query, datos);
+            bool ok = ControladorBBDD.ejecutarQueryParams(query, datos);
+            if (ok)
+            {
+                u.Id = ultimoId();
+                listaUsuarios.Add(u);
+            }
+            return ok;
         }
         public static Usuario obtenerUsuario(string nick)
         {
@@ -58,14 +64,24 @@ namespace TFGProyecto
             List<string> datos = new List<string>();
             datos.Add(clave);
             datos.Add(nick);
-            return ControladorBBDD.ejecutarQueryParams(query, datos);
+            bool ok = ControladorBBDD.ejecutarQueryParams(query, datos);
+            if (ok)
+            {
+                listaUsuarios.Find(u => u.Nick == nick).Clave = clave;
+            }
+            return ok;
         }
         public static bool eliminarUsuario(string nick)
         {
             string query = "DELETE FROM Usuario WHERE usuario = @nick";
             List<string> datos = new List<string>();
             datos.Add(nick);
-            return ControladorBBDD.ejecutarQueryParams(query, datos);
+            bool ok = ControladorBBDD.ejecutarQueryParams(query, datos);
+            if (ok)
+            {
+                listaUsuarios.Remove(listaUsuarios.Find(u => u.Nick == nick));
+            }
+            return ok;
         }
         public static void CargarDatosEnListaUsuario()
         {
@@ -78,6 +94,16 @@ namespace TFGProyecto
                     reader["respuesta"].ToString(), ControladorRol.listaRoles.Find(r => r.Id.ToString() == reader["rol_id"].ToString()));
                 listaUsuarios.Add(u);
             }
+        }
+        public static int ultimoId()
+        {
+            string query = "SELECT MAX(id) FROM Usuario";
+            SqlDataReader reader = ControladorBBDD.getRegistros(query);
+            if (reader.Read())
+            {
+                return Convert.ToInt32(reader[0]);
+            }
+            return 0;
         }
     }
 }

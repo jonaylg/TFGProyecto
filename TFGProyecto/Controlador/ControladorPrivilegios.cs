@@ -17,7 +17,13 @@ namespace TFGProyecto.Controlador
             List<string> datos = new List<string>();
             datos.Add(privilegio.Nombre);
             datos.Add(privilegio.Descripcion);
-            return ControladorBBDD.ejecutarQueryParams(query, datos);
+            bool ok = ControladorBBDD.ejecutarQueryParams(query, datos);
+            if (ok)
+            {
+                privilegio.Id = ultimoId();
+                listaPrivilegios.Add(privilegio);
+            }
+            return ok;
         }
         public static Privilegio obtenerPrivilegio(int id)
         {
@@ -36,14 +42,29 @@ namespace TFGProyecto.Controlador
             }
             return privilegio;
         }
-        public static bool modificarPrivilegio(Privilegio privilegio)
+        public static bool modificarPrivilegio(List<string> atributos, List<string> datos)
         {
-            string query = "UPDATE Privilegio SET nombre = @nombre, descripcion = @descripcion WHERE id = @id";
-            List<string> datos = new List<string>();
-            datos.Add(privilegio.Nombre);
-            datos.Add(privilegio.Descripcion);
-            datos.Add(privilegio.Id.ToString());
-            return ControladorBBDD.ejecutarQueryParams(query, datos);
+            string query = "UPDATE Privilegio SET ";
+            foreach (string atributo in atributos)
+            {
+                query += $"{atributo} = @{atributo},";
+            }
+            query = query.Remove(query.Length - 1);
+            query += " WHERE id = @id";
+            bool ok = ControladorBBDD.ejecutarQueryParams(query, datos);
+            if (ok)
+            {
+                int id = Convert.ToInt32(datos[datos.Count - 1]);
+                if (atributos.Contains("nombre"))
+                {
+                    listaPrivilegios.Find(p => p.Id == id).Nombre = datos[0];
+                }
+                if (atributos.Contains("descripcion"))
+                {
+                    listaPrivilegios.Find(p => p.Id == id).Descripcion = datos[1];
+                }
+            }
+            return ok;
         }
         public static bool eliminarPrivilegio(int id)
         {
@@ -84,6 +105,16 @@ namespace TFGProyecto.Controlador
                 }
             }
             return privilegios;
+        }
+        public static int ultimoId()
+        {
+            string query = "SELECT MAX(id) FROM Privilegio";
+            SqlDataReader reader = ControladorBBDD.getRegistros(query);
+            if (reader.Read())
+            {
+                return Convert.ToInt32(reader[0]);
+            }
+            return 0;
         }
     }
 }

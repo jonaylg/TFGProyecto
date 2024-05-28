@@ -10,12 +10,14 @@ namespace TFGProyecto
 {
     public class Usuario
     {
-        private String nick;
-        private String clave;
-        private String pregPers;
-        private String respuesta;
+        private int id;
+        private string nick;
+        private string clave;
+        private string pregPers;
+        private string respuesta;
         private Rol rol;
 
+        public int Id { get => id; set => id = value; }
         public string Nick { get => nick; set => nick = value; }
         public string Clave { get => clave; set => clave = value; }
         public string PregPers { get => pregPers; set => pregPers = value; }
