@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TFGProyecto.Modelo;
 
 namespace TFGProyecto.Vista
 {
@@ -18,6 +19,8 @@ namespace TFGProyecto.Vista
             InitializeComponent();
         }
 
+        private List<String> complementos1= new List<String>();
+        private List<String> complementos2 = new List<String>();
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -42,6 +45,8 @@ namespace TFGProyecto.Vista
                     precio += 35;
                     break;
             }
+
+            complementos1.Add("Tipo Vivienda:"+ comboBoxTipo.SelectedItem.ToString());
 
             switch (comboBoxZona.SelectedItem.ToString())
             {
@@ -88,6 +93,8 @@ namespace TFGProyecto.Vista
                     break;
             }
 
+            complementos1.Add("Zona Vivienda:" + comboBoxZona.SelectedItem.ToString());
+
             if (numericUpDownAnho.Value<1950)
             {
                 precio *= 2;
@@ -99,23 +106,29 @@ namespace TFGProyecto.Vista
                 precio *= 1.5;
             }
 
+            complementos1.Add(labelAnhoCon.Text +": "+numericUpDownAnho.Value.ToString());
+
             precio += ((double)numericUpDownCons.Value * 0.5);
+            complementos1.Add(labelm2Cons.Text + ": " + numericUpDownCons.Value.ToString());
 
             precio += ((double)numericUpDownTot.Value * 0.4);
+            complementos1.Add(labelm2Tot.Text + ": " + numericUpDownTot.Value.ToString());
 
-            precio += Double.Parse(textBoxValor.Text) / 10000;
+            precio += Double.Parse(maskedTextBoxValor.Text) / 10000;
+            complementos1.Add(labelValorV.Text + ": " + maskedTextBoxValor.Text);
 
-            precio += Double.Parse(textBoxContenido.Text) / 1000;
+            precio += Double.Parse(maskedTextBoxContenido.Text) / 1000;
+            complementos1.Add("Valor del Contenido: " + maskedTextBoxContenido.Text);
 
             precio += ((double)numericUpDownHab.Value*2.5);
+            complementos1.Add(labelNHab.Text + ": " + numericUpDownHab.Value.ToString());
 
-            foreach (Control item in checkedListBox1.Controls)
+            foreach (var item in checkedListBox1.Items)
             {
-                CheckBox cb = (CheckBox)item;
-                if (cb.Checked)
+                if (checkedListBox1.CheckedItems.Contains(item))
                 {
+                    complementos1.Add(item.ToString());
                     precio += 20;
-
                 }
             }
 
@@ -158,6 +171,7 @@ namespace TFGProyecto.Vista
             {
                 precio += 25;
             }
+            complementos1.Add(labelTipoMa.Text + ": " + comboBoxTipMat.SelectedItem.ToString());
 
             switch (comboBoxUsoVivi.SelectedItem.ToString())
             {
@@ -174,7 +188,7 @@ namespace TFGProyecto.Vista
                     precio += 50;
                     break;
             }
-
+            complementos1.Add(labelUsoViv.Text + ": " + comboBoxUsoVivi.SelectedItem.ToString());
             return precio;
         }
 
@@ -205,6 +219,7 @@ namespace TFGProyecto.Vista
                         if (cb.Text == cobertura.Key.Text && cb.Checked)
                         {
                             precio += cobertura.Value;
+                            complementos2.Add(item.Text);
                         }
                     }
 
@@ -239,6 +254,7 @@ namespace TFGProyecto.Vista
                         if (cb.Text == cobertura.Key.Text && cb.Checked)
                         {
                             precio += cobertura.Value;
+                            complementos2.Add(item.Text);
                         }
                     }
 
@@ -251,10 +267,197 @@ namespace TFGProyecto.Vista
 
         private void buttonPrecio_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("este es el precio de la poliza " + (calcularPrecioCoberturas()+ calcularPrecioCoberturasAmp()+ calcularPrecioDetalles()+ calcularPrecioMasDetalles()));
+            if (infoCorrecta())
+            {
+                MessageBox.Show(construirPoliza().MostrarDatos());
+                double precio = (calcularPrecioCoberturas() + calcularPrecioCoberturasAmp() + calcularPrecioDetalles() + calcularPrecioMasDetalles());
+                MessageBox.Show("este es el precio de la poliza " + precio);
+                FrmConfirmarPrecio formu = new FrmConfirmarPrecio(precio, complementos1, complementos2);
+                formu.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("revise los controles en rojo y rellenelos correctamente");
+            }
+        }
+
+        private Boolean infoCorrecta()
+        {
+            Boolean b = true;
+
+            foreach (Control item in tabPageDH.Controls)
+            {
+                if (item is ComboBox) {
+                    ComboBox cb = (ComboBox)item;
+                    if (cb.SelectedIndex == -1)
+                    {
+                        cb.BackColor = Color.Red;
+                        b=false;
+                    }
+                    else
+                    {
+                        cb.BackColor= Color.Green;
+                    }
+                }
+                else if (item is MaskedTextBox)
+                {
+                    MaskedTextBox mtb = (MaskedTextBox)item;
+                    if (mtb.Text=="")
+                    {
+                        mtb.BackColor = Color.Red;
+                        b = false;
+                    }
+                    else
+                    {
+                        mtb.BackColor = Color.Green;
+                    }
+                }
+            }
+
+            foreach (Control item in tabPageMD.Controls)
+            {
+                if (item is ComboBox)
+                {
+                    ComboBox cb = (ComboBox)item;
+                    if (cb.SelectedIndex == -1)
+                    {
+                        cb.BackColor = Color.Red;
+                        b = false;
+                    }
+                    else
+                    {
+                        cb.BackColor = Color.Green;
+                    }
+                }
+            }
+
+            if (maskedTextBox1.Text=="" || maskedTextBox1.Text.Length!=9) { 
+                maskedTextBox1.BackColor = Color.Red;
+                b = false;
+                MessageBox.Show("el dni esta vacio o no tiene el numero de caracteres correctos");
+            }
+            return b;
+        }
+
+        private PolizaHogar construirPoliza()
+        {
+            PolizaHogar pol=new PolizaHogar();
+
+            pol.AnhoConstruccion=Int32.Parse(numericUpDownAnho.Value.ToString());
+            pol.MetrosConstruidos = Int32.Parse(numericUpDownCons.Value.ToString());
+            pol.MetrosTotales = Int32.Parse(numericUpDownTot.Value.ToString());
+            pol.Habitaciones = Int32.Parse(numericUpDownHab.Value.ToString());
+            pol.Dni = maskedTextBox1.Text;
+            pol.ValorContenido = Double.Parse(maskedTextBoxContenido.Text);
+            pol.ValorVivienda = Double.Parse(maskedTextBoxValor.Text);
+            pol.ZonaVivienda = comboBoxZona.SelectedItem.ToString();
+            pol.TipoMaterial = comboBoxTipMat.SelectedItem.ToString();
+            pol.TipoVivienda = comboBoxTipo.SelectedItem.ToString();
+            pol.UsoVivienda = comboBoxUsoVivi.SelectedItem.ToString();
+
+            Dictionary<CheckBox, String> coberturas = new Dictionary<CheckBox, String>();
+            coberturas.Add(checkBoxVehEnGar, "VehiculoEnGaraje");
+            coberturas.Add(checkBoxRep24h, "Reparacion24Horas");
+            coberturas.Add(checkBoxJuriAmp, "JuridicaAvanzada");
+            coberturas.Add(checkBoxAsisEnViaj, "AsistenciaViaje");
+            coberturas.Add(checkBoxProm, "Promociones");
+            coberturas.Add(checkBoxVandalicos, "ActosVandalicos");
+            coberturas.Add(checkBoxAsisInf, "AsistenciaInformacion");
+            coberturas.Add(checkBoxRobEnCas, "RoboEnCasa");
+            coberturas.Add(checkBoxFuego, "Incendio");
+            coberturas.Add(checkBoxFenAtm, "FenomenosAtmosfericos");
+            coberturas.Add(checkBox11ReposDDEE, "ResponsabilidadDaniosEstructurales");
+            coberturas.Add(checkBoxRotoCris, "RoturaCristales");
+            coberturas.Add(checkBoxRotTub, "RoturaTuberias");
+            coberturas.Add(checkBoxAguaYElec, "AguaElectricidad");
+            coberturas.Add(checkBoxInhDelInm, "Inhabitabilidad");
+            coberturas.Add(checkBoxDefJur, "DefensaJuridica");
+            coberturas.Add(checkBoxDerrAcc, "Derrumbe");
+            coberturas.Add(checkBoxAlarma, "Alarma");
+            coberturas.Add(checkBoxVerja, "Verja");
+            coberturas.Add(checkBoxPSegur, "PersonalSeguridad");
+            coberturas.Add(checkBoxCajaF, "CajaFuerte");
+            coberturas.Add(checkBoxCamaras, "Camaras");
+
+            foreach (Control item in tabPageCA.Controls)
+            {
+                if (item is CheckBox)
+                {
+                    CheckBox cb = (CheckBox)item;
+
+                    foreach (KeyValuePair<CheckBox, String> cobertura in coberturas)
+                    {
+                        if (cb.Text == cobertura.Key.Text && cb.Checked)
+                        {
+                            typeof(PolizaHogar).GetProperty(cobertura.Value).SetValue(pol, true);
+                        }
+                    }
+
+                }
+            }
+
+            foreach (Control item in groupBoxCob.Controls)
+            {
+                if (item is CheckBox)
+                {
+                    CheckBox cb = (CheckBox)item;
+
+                    foreach (KeyValuePair<CheckBox, String> cobertura in coberturas)
+                    {
+                        if (cb.Text == cobertura.Key.Text && cb.Checked)
+                        {
+                            typeof(PolizaHogar).GetProperty(cobertura.Value).SetValue(pol, true);
+                        }
+                    }
+
+                }
+            }
+
+            foreach (Control item in groupBoxSS.Controls)
+            {
+                if (item is CheckBox)
+                {
+                    CheckBox cb = (CheckBox)item;
+
+                    foreach (KeyValuePair<CheckBox, String> cobertura in coberturas)
+                    {
+                        if (cb.Text == cobertura.Key.Text && cb.Checked)
+                        {
+                            typeof(PolizaHogar).GetProperty(cobertura.Value).SetValue(pol, true);
+                        }
+                    }
+
+                }
+            }
+
+            foreach (var item in checkedListBox1.Items)
+            {
+                if (checkedListBox1.CheckedItems.Contains(item))
+                {
+                    switch (item.ToString())
+                    {
+                        case "Mascotas":
+                            pol.Mascota = true;
+                            break;
+                        case "Piscina":
+                            pol.Piscina = true;
+                            break;
+                        case "Garaje":
+                            pol.Garaje = true;
+                            break;
+                    }
+                }
+            }
+
+
+            return pol;
         }
 
         private void FrmPolizaHogar_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }

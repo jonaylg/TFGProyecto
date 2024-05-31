@@ -28,37 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.textBoxContenido = new System.Windows.Forms.TextBox();
+            this.tabControlMD = new System.Windows.Forms.TabControl();
+            this.tabPageDH = new System.Windows.Forms.TabPage();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.numericUpDownHab = new System.Windows.Forms.NumericUpDown();
-            this.textBoxValor = new System.Windows.Forms.TextBox();
             this.numericUpDownTot = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownCons = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownAnho = new System.Windows.Forms.NumericUpDown();
             this.comboBoxZona = new System.Windows.Forms.ComboBox();
             this.comboBoxTipo = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label1VC = new System.Windows.Forms.Label();
+            this.labelNHab = new System.Windows.Forms.Label();
+            this.labelValorV = new System.Windows.Forms.Label();
+            this.labelm2Tot = new System.Windows.Forms.Label();
+            this.labelm2Cons = new System.Windows.Forms.Label();
+            this.labelAnhoCon = new System.Windows.Forms.Label();
+            this.labelZonaV = new System.Windows.Forms.Label();
+            this.labelTipov = new System.Windows.Forms.Label();
+            this.tabPageMD = new System.Windows.Forms.TabPage();
             this.groupBoxSS = new System.Windows.Forms.GroupBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxAlarma = new System.Windows.Forms.CheckBox();
+            this.checkBoxVerja = new System.Windows.Forms.CheckBox();
+            this.checkBoxPSegur = new System.Windows.Forms.CheckBox();
+            this.checkBoxCamaras = new System.Windows.Forms.CheckBox();
+            this.checkBoxCajaF = new System.Windows.Forms.CheckBox();
             this.comboBoxTipMat = new System.Windows.Forms.ComboBox();
             this.comboBoxUsoVivi = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.labelUsoViv = new System.Windows.Forms.Label();
+            this.labelTipoMa = new System.Windows.Forms.Label();
+            this.tabPageCC = new System.Windows.Forms.TabPage();
             this.groupBoxCob = new System.Windows.Forms.GroupBox();
             this.checkBoxDerrAcc = new System.Windows.Forms.CheckBox();
             this.checkBoxDefJur = new System.Windows.Forms.CheckBox();
@@ -79,64 +77,62 @@
             this.checkBoxVandalicos = new System.Windows.Forms.CheckBox();
             this.checkBoxAsisInf = new System.Windows.Forms.CheckBox();
             this.buttonPrecio = new System.Windows.Forms.Button();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxValor = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxContenido = new System.Windows.Forms.MaskedTextBox();
+            this.tabControlMD.SuspendLayout();
+            this.tabPageDH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHab)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAnho)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.tabPageMD.SuspendLayout();
             this.groupBoxSS.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.tabPageCC.SuspendLayout();
             this.groupBoxCob.SuspendLayout();
             this.tabPageCA.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabControlMD
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPageCA);
-            this.tabControl1.Location = new System.Drawing.Point(65, 68);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(684, 311);
-            this.tabControl1.TabIndex = 0;
+            this.tabControlMD.Controls.Add(this.tabPageDH);
+            this.tabControlMD.Controls.Add(this.tabPageMD);
+            this.tabControlMD.Controls.Add(this.tabPageCC);
+            this.tabControlMD.Controls.Add(this.tabPageCA);
+            this.tabControlMD.Location = new System.Drawing.Point(65, 68);
+            this.tabControlMD.Name = "tabControlMD";
+            this.tabControlMD.SelectedIndex = 0;
+            this.tabControlMD.Size = new System.Drawing.Size(684, 311);
+            this.tabControlMD.TabIndex = 0;
             // 
-            // tabPage1
+            // tabPageDH
             // 
-            this.tabPage1.Controls.Add(this.textBoxContenido);
-            this.tabPage1.Controls.Add(this.checkedListBox1);
-            this.tabPage1.Controls.Add(this.numericUpDownHab);
-            this.tabPage1.Controls.Add(this.textBoxValor);
-            this.tabPage1.Controls.Add(this.numericUpDownTot);
-            this.tabPage1.Controls.Add(this.numericUpDownCons);
-            this.tabPage1.Controls.Add(this.numericUpDownAnho);
-            this.tabPage1.Controls.Add(this.comboBoxZona);
-            this.tabPage1.Controls.Add(this.comboBoxTipo);
-            this.tabPage1.Controls.Add(this.label11);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(676, 282);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Detalles Hogar";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // textBoxContenido
-            // 
-            this.textBoxContenido.Location = new System.Drawing.Point(485, 244);
-            this.textBoxContenido.Name = "textBoxContenido";
-            this.textBoxContenido.Size = new System.Drawing.Size(100, 22);
-            this.textBoxContenido.TabIndex = 19;
+            this.tabPageDH.Controls.Add(this.maskedTextBoxContenido);
+            this.tabPageDH.Controls.Add(this.maskedTextBoxValor);
+            this.tabPageDH.Controls.Add(this.checkedListBox1);
+            this.tabPageDH.Controls.Add(this.numericUpDownHab);
+            this.tabPageDH.Controls.Add(this.numericUpDownTot);
+            this.tabPageDH.Controls.Add(this.numericUpDownCons);
+            this.tabPageDH.Controls.Add(this.numericUpDownAnho);
+            this.tabPageDH.Controls.Add(this.comboBoxZona);
+            this.tabPageDH.Controls.Add(this.comboBoxTipo);
+            this.tabPageDH.Controls.Add(this.label1VC);
+            this.tabPageDH.Controls.Add(this.labelNHab);
+            this.tabPageDH.Controls.Add(this.labelValorV);
+            this.tabPageDH.Controls.Add(this.labelm2Tot);
+            this.tabPageDH.Controls.Add(this.labelm2Cons);
+            this.tabPageDH.Controls.Add(this.labelAnhoCon);
+            this.tabPageDH.Controls.Add(this.labelZonaV);
+            this.tabPageDH.Controls.Add(this.labelTipov);
+            this.tabPageDH.Location = new System.Drawing.Point(4, 25);
+            this.tabPageDH.Name = "tabPageDH";
+            this.tabPageDH.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageDH.Size = new System.Drawing.Size(676, 282);
+            this.tabPageDH.TabIndex = 0;
+            this.tabPageDH.Text = "Detalles Hogar";
+            this.tabPageDH.UseVisualStyleBackColor = true;
+            this.tabPageDH.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // checkedListBox1
             // 
@@ -166,13 +162,6 @@
             0,
             0,
             0});
-            // 
-            // textBoxValor
-            // 
-            this.textBoxValor.Location = new System.Drawing.Point(485, 32);
-            this.textBoxValor.Name = "textBoxValor";
-            this.textBoxValor.Size = new System.Drawing.Size(100, 22);
-            this.textBoxValor.TabIndex = 16;
             // 
             // numericUpDownTot
             // 
@@ -246,100 +235,100 @@
             this.comboBoxTipo.Size = new System.Drawing.Size(121, 24);
             this.comboBoxTipo.TabIndex = 11;
             // 
-            // label11
+            // label1VC
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(337, 216);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(293, 16);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Valor del Contenido (Joyas, Cuadros, Efectivo...)";
+            this.label1VC.AutoSize = true;
+            this.label1VC.Location = new System.Drawing.Point(337, 216);
+            this.label1VC.Name = "label1VC";
+            this.label1VC.Size = new System.Drawing.Size(293, 16);
+            this.label1VC.TabIndex = 10;
+            this.label1VC.Text = "Valor del Contenido (Joyas, Cuadros, Efectivo...)";
             // 
-            // label8
+            // labelNHab
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(337, 90);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 16);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Nº Habitaciones";
+            this.labelNHab.AutoSize = true;
+            this.labelNHab.Location = new System.Drawing.Point(337, 90);
+            this.labelNHab.Name = "labelNHab";
+            this.labelNHab.Size = new System.Drawing.Size(105, 16);
+            this.labelNHab.TabIndex = 7;
+            this.labelNHab.Text = "Nº Habitaciones";
             // 
-            // label7
+            // labelValorV
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(337, 35);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(95, 16);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Valor Vivienda";
+            this.labelValorV.AutoSize = true;
+            this.labelValorV.Location = new System.Drawing.Point(337, 35);
+            this.labelValorV.Name = "labelValorV";
+            this.labelValorV.Size = new System.Drawing.Size(95, 16);
+            this.labelValorV.TabIndex = 6;
+            this.labelValorV.Text = "Valor Vivienda";
             // 
-            // label5
+            // labelm2Tot
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 216);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 16);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "m^2 Totales";
+            this.labelm2Tot.AutoSize = true;
+            this.labelm2Tot.Location = new System.Drawing.Point(26, 216);
+            this.labelm2Tot.Name = "labelm2Tot";
+            this.labelm2Tot.Size = new System.Drawing.Size(81, 16);
+            this.labelm2Tot.TabIndex = 4;
+            this.labelm2Tot.Text = "m^2 Totales";
             // 
-            // label4
+            // labelm2Cons
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 165);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 16);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "m^2 Construidos";
+            this.labelm2Cons.AutoSize = true;
+            this.labelm2Cons.Location = new System.Drawing.Point(26, 165);
+            this.labelm2Cons.Name = "labelm2Cons";
+            this.labelm2Cons.Size = new System.Drawing.Size(106, 16);
+            this.labelm2Cons.TabIndex = 3;
+            this.labelm2Cons.Text = "m^2 Construidos";
             // 
-            // label3
+            // labelAnhoCon
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 115);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Año Construcción";
+            this.labelAnhoCon.AutoSize = true;
+            this.labelAnhoCon.Location = new System.Drawing.Point(26, 115);
+            this.labelAnhoCon.Name = "labelAnhoCon";
+            this.labelAnhoCon.Size = new System.Drawing.Size(111, 16);
+            this.labelAnhoCon.TabIndex = 2;
+            this.labelAnhoCon.Text = "Año Construcción";
             // 
-            // label2
+            // labelZonaV
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 68);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Zona Vivienda";
+            this.labelZonaV.AutoSize = true;
+            this.labelZonaV.Location = new System.Drawing.Point(26, 68);
+            this.labelZonaV.Name = "labelZonaV";
+            this.labelZonaV.Size = new System.Drawing.Size(94, 16);
+            this.labelZonaV.TabIndex = 1;
+            this.labelZonaV.Text = "Zona Vivienda";
             // 
-            // label1
+            // labelTipov
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tipo Vivienda";
+            this.labelTipov.AutoSize = true;
+            this.labelTipov.Location = new System.Drawing.Point(26, 23);
+            this.labelTipov.Name = "labelTipov";
+            this.labelTipov.Size = new System.Drawing.Size(91, 16);
+            this.labelTipov.TabIndex = 0;
+            this.labelTipov.Text = "Tipo Vivienda";
             // 
-            // tabPage2
+            // tabPageMD
             // 
-            this.tabPage2.Controls.Add(this.groupBoxSS);
-            this.tabPage2.Controls.Add(this.comboBoxTipMat);
-            this.tabPage2.Controls.Add(this.comboBoxUsoVivi);
-            this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(676, 282);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Mas Detalles";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPageMD.Controls.Add(this.groupBoxSS);
+            this.tabPageMD.Controls.Add(this.comboBoxTipMat);
+            this.tabPageMD.Controls.Add(this.comboBoxUsoVivi);
+            this.tabPageMD.Controls.Add(this.labelUsoViv);
+            this.tabPageMD.Controls.Add(this.labelTipoMa);
+            this.tabPageMD.Location = new System.Drawing.Point(4, 25);
+            this.tabPageMD.Name = "tabPageMD";
+            this.tabPageMD.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageMD.Size = new System.Drawing.Size(676, 282);
+            this.tabPageMD.TabIndex = 1;
+            this.tabPageMD.Text = "Mas Detalles";
+            this.tabPageMD.UseVisualStyleBackColor = true;
             // 
             // groupBoxSS
             // 
-            this.groupBoxSS.Controls.Add(this.checkBox5);
-            this.groupBoxSS.Controls.Add(this.checkBox4);
-            this.groupBoxSS.Controls.Add(this.checkBox3);
-            this.groupBoxSS.Controls.Add(this.checkBox2);
-            this.groupBoxSS.Controls.Add(this.checkBox1);
+            this.groupBoxSS.Controls.Add(this.checkBoxAlarma);
+            this.groupBoxSS.Controls.Add(this.checkBoxVerja);
+            this.groupBoxSS.Controls.Add(this.checkBoxPSegur);
+            this.groupBoxSS.Controls.Add(this.checkBoxCamaras);
+            this.groupBoxSS.Controls.Add(this.checkBoxCajaF);
             this.groupBoxSS.Location = new System.Drawing.Point(47, 53);
             this.groupBoxSS.Name = "groupBoxSS";
             this.groupBoxSS.Size = new System.Drawing.Size(225, 177);
@@ -347,56 +336,56 @@
             this.groupBoxSS.TabStop = false;
             this.groupBoxSS.Text = "Sistemas de Seguridad ";
             // 
-            // checkBox5
+            // checkBoxAlarma
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(28, 138);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(72, 20);
-            this.checkBox5.TabIndex = 4;
-            this.checkBox5.Text = "Alarma";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBoxAlarma.AutoSize = true;
+            this.checkBoxAlarma.Location = new System.Drawing.Point(28, 138);
+            this.checkBoxAlarma.Name = "checkBoxAlarma";
+            this.checkBoxAlarma.Size = new System.Drawing.Size(72, 20);
+            this.checkBoxAlarma.TabIndex = 4;
+            this.checkBoxAlarma.Text = "Alarma";
+            this.checkBoxAlarma.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // checkBoxVerja
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(28, 108);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(61, 20);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "Verja";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBoxVerja.AutoSize = true;
+            this.checkBoxVerja.Location = new System.Drawing.Point(28, 108);
+            this.checkBoxVerja.Name = "checkBoxVerja";
+            this.checkBoxVerja.Size = new System.Drawing.Size(61, 20);
+            this.checkBoxVerja.TabIndex = 3;
+            this.checkBoxVerja.Text = "Verja";
+            this.checkBoxVerja.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // checkBoxPSegur
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(28, 31);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(168, 20);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "Personal de Seguridad";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBoxPSegur.AutoSize = true;
+            this.checkBoxPSegur.Location = new System.Drawing.Point(28, 31);
+            this.checkBoxPSegur.Name = "checkBoxPSegur";
+            this.checkBoxPSegur.Size = new System.Drawing.Size(168, 20);
+            this.checkBoxPSegur.TabIndex = 2;
+            this.checkBoxPSegur.Text = "Personal de Seguridad";
+            this.checkBoxPSegur.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBoxCamaras
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(28, 57);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(84, 20);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Camaras";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxCamaras.AutoSize = true;
+            this.checkBoxCamaras.Location = new System.Drawing.Point(28, 57);
+            this.checkBoxCamaras.Name = "checkBoxCamaras";
+            this.checkBoxCamaras.Size = new System.Drawing.Size(84, 20);
+            this.checkBoxCamaras.TabIndex = 1;
+            this.checkBoxCamaras.Text = "Camaras";
+            this.checkBoxCamaras.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // checkBoxCajaF
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(28, 82);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(98, 20);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Caja Fuerte";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBoxCajaF.AutoSize = true;
+            this.checkBoxCajaF.Location = new System.Drawing.Point(28, 82);
+            this.checkBoxCajaF.Name = "checkBoxCajaF";
+            this.checkBoxCajaF.Size = new System.Drawing.Size(98, 20);
+            this.checkBoxCajaF.TabIndex = 0;
+            this.checkBoxCajaF.Text = "Caja Fuerte";
+            this.checkBoxCajaF.UseVisualStyleBackColor = true;
+            this.checkBoxCajaF.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // comboBoxTipMat
             // 
@@ -424,34 +413,34 @@
             this.comboBoxUsoVivi.Size = new System.Drawing.Size(121, 24);
             this.comboBoxUsoVivi.TabIndex = 13;
             // 
-            // label13
+            // labelUsoViv
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(357, 114);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(121, 16);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "Uso de la Vivienda";
+            this.labelUsoViv.AutoSize = true;
+            this.labelUsoViv.Location = new System.Drawing.Point(357, 114);
+            this.labelUsoViv.Name = "labelUsoViv";
+            this.labelUsoViv.Size = new System.Drawing.Size(121, 16);
+            this.labelUsoViv.TabIndex = 2;
+            this.labelUsoViv.Text = "Uso de la Vivienda";
             // 
-            // label12
+            // labelTipoMa
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(357, 72);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(105, 16);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Tipo de Material";
+            this.labelTipoMa.AutoSize = true;
+            this.labelTipoMa.Location = new System.Drawing.Point(357, 72);
+            this.labelTipoMa.Name = "labelTipoMa";
+            this.labelTipoMa.Size = new System.Drawing.Size(105, 16);
+            this.labelTipoMa.TabIndex = 1;
+            this.labelTipoMa.Text = "Tipo de Material";
             // 
-            // tabPage3
+            // tabPageCC
             // 
-            this.tabPage3.Controls.Add(this.groupBoxCob);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(676, 282);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Coberturas";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPageCC.Controls.Add(this.groupBoxCob);
+            this.tabPageCC.Location = new System.Drawing.Point(4, 25);
+            this.tabPageCC.Name = "tabPageCC";
+            this.tabPageCC.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCC.Size = new System.Drawing.Size(676, 282);
+            this.tabPageCC.TabIndex = 2;
+            this.tabPageCC.Text = "Coberturas";
+            this.tabPageCC.UseVisualStyleBackColor = true;
             // 
             // groupBoxCob
             // 
@@ -670,70 +659,102 @@
             this.buttonPrecio.UseVisualStyleBackColor = true;
             this.buttonPrecio.Click += new System.EventHandler(this.buttonPrecio_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(66, 401);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 16);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "DNI:";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(125, 394);
+            this.maskedTextBox1.Mask = "00000000L";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 22);
+            this.maskedTextBox1.TabIndex = 3;
+            // 
+            // maskedTextBoxValor
+            // 
+            this.maskedTextBoxValor.Location = new System.Drawing.Point(483, 35);
+            this.maskedTextBoxValor.Name = "maskedTextBoxValor";
+            this.maskedTextBoxValor.Size = new System.Drawing.Size(100, 22);
+            this.maskedTextBoxValor.TabIndex = 20;
+            // 
+            // maskedTextBoxContenido
+            // 
+            this.maskedTextBoxContenido.Location = new System.Drawing.Point(483, 245);
+            this.maskedTextBoxContenido.Name = "maskedTextBoxContenido";
+            this.maskedTextBoxContenido.Size = new System.Drawing.Size(100, 22);
+            this.maskedTextBoxContenido.TabIndex = 21;
+            // 
             // FrmPolizaHogar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonPrecio);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControlMD);
             this.Name = "FrmPolizaHogar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPolizaHogar";
             this.Load += new System.EventHandler(this.FrmPolizaHogar_Load);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabControlMD.ResumeLayout(false);
+            this.tabPageDH.ResumeLayout(false);
+            this.tabPageDH.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHab)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCons)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAnho)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.tabPageMD.ResumeLayout(false);
+            this.tabPageMD.PerformLayout();
             this.groupBoxSS.ResumeLayout(false);
             this.groupBoxSS.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
+            this.tabPageCC.ResumeLayout(false);
             this.groupBoxCob.ResumeLayout(false);
             this.groupBoxCob.PerformLayout();
             this.tabPageCA.ResumeLayout(false);
             this.tabPageCA.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TabControl tabControlMD;
+        private System.Windows.Forms.TabPage tabPageDH;
+        private System.Windows.Forms.TabPage tabPageMD;
+        private System.Windows.Forms.Label label1VC;
+        private System.Windows.Forms.Label labelNHab;
+        private System.Windows.Forms.Label labelValorV;
+        private System.Windows.Forms.Label labelm2Tot;
+        private System.Windows.Forms.Label labelm2Cons;
+        private System.Windows.Forms.Label labelAnhoCon;
+        private System.Windows.Forms.Label labelZonaV;
+        private System.Windows.Forms.Label labelTipov;
+        private System.Windows.Forms.Label labelTipoMa;
         private System.Windows.Forms.ComboBox comboBoxTipo;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label labelUsoViv;
         private System.Windows.Forms.ComboBox comboBoxZona;
         private System.Windows.Forms.ComboBox comboBoxTipMat;
         private System.Windows.Forms.ComboBox comboBoxUsoVivi;
         private System.Windows.Forms.NumericUpDown numericUpDownTot;
         private System.Windows.Forms.NumericUpDown numericUpDownCons;
         private System.Windows.Forms.NumericUpDown numericUpDownAnho;
-        private System.Windows.Forms.TextBox textBoxValor;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.NumericUpDown numericUpDownHab;
-        private System.Windows.Forms.TextBox textBoxContenido;
         private System.Windows.Forms.GroupBox groupBoxSS;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.CheckBox checkBoxCajaF;
+        private System.Windows.Forms.CheckBox checkBoxAlarma;
+        private System.Windows.Forms.CheckBox checkBoxVerja;
+        private System.Windows.Forms.CheckBox checkBoxPSegur;
+        private System.Windows.Forms.CheckBox checkBoxCamaras;
+        private System.Windows.Forms.TabPage tabPageCC;
         private System.Windows.Forms.GroupBox groupBoxCob;
         private System.Windows.Forms.CheckBox checkBoxInhDelInm;
         private System.Windows.Forms.CheckBox checkBox11ReposDDEE;
@@ -754,5 +775,9 @@
         private System.Windows.Forms.CheckBox checkBoxAsisInf;
         private System.Windows.Forms.Button buttonPrecio;
         private System.Windows.Forms.CheckBox checkBoxProm;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxContenido;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxValor;
     }
 }
