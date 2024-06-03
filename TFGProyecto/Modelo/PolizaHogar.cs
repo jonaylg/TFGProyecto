@@ -44,6 +44,7 @@ namespace TFGProyecto.Modelo
         private bool vehiculoEnGaraje;
         private bool juridicaAvanzada;
         private string dni;
+        private double precio;
 
         // Propiedades
         public string TipoVivienda { get => tipoVivienda; set => tipoVivienda = value; }
@@ -82,6 +83,7 @@ namespace TFGProyecto.Modelo
         public bool VehiculoEnGaraje { get => vehiculoEnGaraje; set => vehiculoEnGaraje = value; }
         public bool JuridicaAvanzada { get => juridicaAvanzada; set => juridicaAvanzada = value; }
         public string Dni { get => dni; set => dni = value; }
+        public double Precio { get => precio; set => precio = value; }
 
         // Constructores
         public PolizaHogar()
@@ -94,7 +96,7 @@ namespace TFGProyecto.Modelo
                     string usoVivienda, bool roboEnCasa, bool incendio, bool fenomenosAtmosfericos, bool responsabilidadDaniosEstructurales,
                     bool roturaCristales, bool aguaElectricidad, bool inhabitabilidad, bool defensaJuridica, bool roturaTuberias,
                     bool derrumbe, bool asistenciaInformacion, bool asistenciaViaje, bool actosVandalicos, bool promociones,
-                    bool reparacion24Horas, bool vehiculoEnGaraje, bool juridicaAvanzada, string dni)
+                    bool reparacion24Horas, bool vehiculoEnGaraje, bool juridicaAvanzada, string dni, double precio)
         {
             this.tipoVivienda = tipoVivienda;
             this.zonaVivienda = zonaVivienda;
@@ -132,6 +134,7 @@ namespace TFGProyecto.Modelo
             this.vehiculoEnGaraje = vehiculoEnGaraje;
             this.juridicaAvanzada = juridicaAvanzada;
             this.dni = dni;
+            this.precio = precio;
         }
 
         public string MostrarDatos()
@@ -171,7 +174,8 @@ namespace TFGProyecto.Modelo
            $"¿Reparación 24 horas?: {(reparacion24Horas ? "Sí" : "No")}\n" +
            $"¿Vehículo en garaje cubierto?: {(vehiculoEnGaraje ? "Sí" : "No")}\n" +
            $"¿Defensa jurídica avanzada?: {(juridicaAvanzada ? "Sí" : "No")}\n" +
-           $"DNI: {dni}";
+           $"DNI: {dni}\n" +
+           $"Precio: {precio}";
 }
 
     }

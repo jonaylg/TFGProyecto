@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TFGProyecto.Controlador;
 using TFGProyecto.Modelo;
 
 namespace TFGProyecto.Vista
@@ -269,10 +270,10 @@ namespace TFGProyecto.Vista
         {
             if (infoCorrecta())
             {
+                ControladorPolHog.insertarPolHog(construirPoliza());
                 MessageBox.Show(construirPoliza().MostrarDatos());
-                double precio = (calcularPrecioCoberturas() + calcularPrecioCoberturasAmp() + calcularPrecioDetalles() + calcularPrecioMasDetalles());
-                MessageBox.Show("este es el precio de la poliza " + precio);
-                FrmConfirmarPrecio formu = new FrmConfirmarPrecio(precio, complementos1, complementos2);
+                MessageBox.Show("este es el precio de la poliza " + construirPoliza().Precio);
+                FrmConfirmarPrecio formu = new FrmConfirmarPrecio(construirPoliza().Precio, complementos1, complementos2);
                 formu.ShowDialog();
             }
             else
@@ -448,7 +449,8 @@ namespace TFGProyecto.Vista
                     }
                 }
             }
-
+            double precio = (calcularPrecioCoberturas() + calcularPrecioCoberturasAmp() + calcularPrecioDetalles() + calcularPrecioMasDetalles());
+            pol.Precio = precio;
 
             return pol;
         }
