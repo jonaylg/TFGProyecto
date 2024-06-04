@@ -20,6 +20,12 @@ namespace TFGProyecto.Vista
             InitializeComponent();
         }
 
+        public FrmPolizaHogar(PolizaHogar ph)
+        {
+            InitializeComponent();
+            obtenerDatosPoliza(ph);
+        }
+
         private List<String> complementos1= new List<String>();
         private List<String> complementos2 = new List<String>();
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -453,6 +459,46 @@ namespace TFGProyecto.Vista
             pol.Precio = precio;
 
             return pol;
+        }
+
+        private void obtenerDatosPoliza(PolizaHogar ph)
+        {
+            maskedTextBox1.Text = ph.Dni;
+            comboBoxTipo.SelectedItem = ph.TipoVivienda;
+            comboBoxZona.SelectedItem = ph.ZonaVivienda;
+            numericUpDownAnho.Value = ph.AnhoConstruccion;
+            numericUpDownCons.Value = ph.MetrosConstruidos;
+            numericUpDownTot.Value = ph.MetrosTotales;
+            maskedTextBoxValor.Text = ph.ValorVivienda.ToString();
+            maskedTextBoxContenido.Text=ph.ValorContenido.ToString();
+            numericUpDownHab.Value = ph.Habitaciones;
+            checkBoxCamaras.Checked = ph.Camaras;
+            checkBoxPSegur.Checked = ph.PersonalSeguridad;
+            checkBoxCajaF.Checked = ph.PersonalSeguridad;
+            checkBoxVerja.Checked = ph.PersonalSeguridad;
+            checkBoxAlarma.Checked = ph.PersonalSeguridad;
+            comboBoxTipMat.SelectedItem = ph.TipoMaterial;
+            comboBoxUsoVivi.SelectedItem = ph.UsoVivienda;
+            checkBoxRobEnCas.Checked = ph.RoboEnCasa;
+            checkBoxFuego.Checked = ph.Incendio;
+            checkBoxFenAtm.Checked = ph.FenomenosAtmosfericos;
+            checkBox11ReposDDEE.Checked = ph.ResponsabilidadDaniosEstructurales;
+            checkBoxRotoCris.Checked = ph.RoturaCristales;
+            checkBoxAguaYElec.Checked = ph.AguaElectricidad;
+            checkBoxInhDelInm.Checked = ph.Inhabitabilidad;
+            checkBoxDefJur.Checked = ph.DefensaJuridica;
+            checkBoxRotTub.Checked = ph.RoturaTuberias;
+            checkBoxDerrAcc.Checked = ph.Derrumbe;
+            checkBoxAsisEnViaj.Checked = ph.AsistenciaViaje;
+            checkBoxAsisInf.Checked = ph.AsistenciaInformacion;
+            checkBoxVandalicos.Checked = ph.ActosVandalicos;
+            checkBoxProm.Checked = ph.Promociones;
+            checkBoxRep24h.Checked = ph.Reparacion24Horas;
+            checkBoxJuriAmp.Checked = ph.JuridicaAvanzada;
+            checkBoxVehEnGar.Checked = ph.VehiculoEnGaraje;
+            checkedListBox1.SetItemChecked(0,ph.Mascota);
+            checkedListBox1.SetItemChecked(1, ph.Piscina);
+            checkedListBox1.SetItemChecked(2, ph.Garaje);
         }
 
         private void FrmPolizaHogar_Load(object sender, EventArgs e)
