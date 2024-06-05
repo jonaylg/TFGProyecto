@@ -30,6 +30,8 @@
         {
             this.tabControlMD = new System.Windows.Forms.TabControl();
             this.tabPageDH = new System.Windows.Forms.TabPage();
+            this.maskedTextBoxContenido = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxValor = new System.Windows.Forms.MaskedTextBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.numericUpDownHab = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownTot = new System.Windows.Forms.NumericUpDown();
@@ -79,8 +81,10 @@
             this.buttonPrecio = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBoxValor = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBoxContenido = new System.Windows.Forms.MaskedTextBox();
+            this.labelFecCom = new System.Windows.Forms.Label();
+            this.labelfecExp = new System.Windows.Forms.Label();
+            this.dateTimePickerFC = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerFE = new System.Windows.Forms.DateTimePicker();
             this.tabControlMD.SuspendLayout();
             this.tabPageDH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHab)).BeginInit();
@@ -133,6 +137,20 @@
             this.tabPageDH.Text = "Detalles Hogar";
             this.tabPageDH.UseVisualStyleBackColor = true;
             this.tabPageDH.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // maskedTextBoxContenido
+            // 
+            this.maskedTextBoxContenido.Location = new System.Drawing.Point(483, 245);
+            this.maskedTextBoxContenido.Name = "maskedTextBoxContenido";
+            this.maskedTextBoxContenido.Size = new System.Drawing.Size(100, 22);
+            this.maskedTextBoxContenido.TabIndex = 21;
+            // 
+            // maskedTextBoxValor
+            // 
+            this.maskedTextBoxValor.Location = new System.Drawing.Point(483, 35);
+            this.maskedTextBoxValor.Name = "maskedTextBoxValor";
+            this.maskedTextBoxValor.Size = new System.Drawing.Size(100, 22);
+            this.maskedTextBoxValor.TabIndex = 20;
             // 
             // checkedListBox1
             // 
@@ -309,6 +327,10 @@
             // 
             // tabPageMD
             // 
+            this.tabPageMD.Controls.Add(this.dateTimePickerFE);
+            this.tabPageMD.Controls.Add(this.dateTimePickerFC);
+            this.tabPageMD.Controls.Add(this.labelfecExp);
+            this.tabPageMD.Controls.Add(this.labelFecCom);
             this.tabPageMD.Controls.Add(this.groupBoxSS);
             this.tabPageMD.Controls.Add(this.comboBoxTipMat);
             this.tabPageMD.Controls.Add(this.comboBoxUsoVivi);
@@ -676,19 +698,37 @@
             this.maskedTextBox1.Size = new System.Drawing.Size(100, 22);
             this.maskedTextBox1.TabIndex = 3;
             // 
-            // maskedTextBoxValor
+            // labelFecCom
             // 
-            this.maskedTextBoxValor.Location = new System.Drawing.Point(483, 35);
-            this.maskedTextBoxValor.Name = "maskedTextBoxValor";
-            this.maskedTextBoxValor.Size = new System.Drawing.Size(100, 22);
-            this.maskedTextBoxValor.TabIndex = 20;
+            this.labelFecCom.AutoSize = true;
+            this.labelFecCom.Location = new System.Drawing.Point(357, 165);
+            this.labelFecCom.Name = "labelFecCom";
+            this.labelFecCom.Size = new System.Drawing.Size(108, 16);
+            this.labelFecCom.TabIndex = 16;
+            this.labelFecCom.Text = "Fecha Comienzo";
             // 
-            // maskedTextBoxContenido
+            // labelfecExp
             // 
-            this.maskedTextBoxContenido.Location = new System.Drawing.Point(483, 245);
-            this.maskedTextBoxContenido.Name = "maskedTextBoxContenido";
-            this.maskedTextBoxContenido.Size = new System.Drawing.Size(100, 22);
-            this.maskedTextBoxContenido.TabIndex = 21;
+            this.labelfecExp.AutoSize = true;
+            this.labelfecExp.Location = new System.Drawing.Point(357, 214);
+            this.labelfecExp.Name = "labelfecExp";
+            this.labelfecExp.Size = new System.Drawing.Size(111, 16);
+            this.labelfecExp.TabIndex = 17;
+            this.labelfecExp.Text = "Fecha Expiracion";
+            // 
+            // dateTimePickerFC
+            // 
+            this.dateTimePickerFC.Location = new System.Drawing.Point(512, 165);
+            this.dateTimePickerFC.Name = "dateTimePickerFC";
+            this.dateTimePickerFC.Size = new System.Drawing.Size(148, 22);
+            this.dateTimePickerFC.TabIndex = 18;
+            // 
+            // dateTimePickerFE
+            // 
+            this.dateTimePickerFE.Location = new System.Drawing.Point(512, 214);
+            this.dateTimePickerFE.Name = "dateTimePickerFE";
+            this.dateTimePickerFE.Size = new System.Drawing.Size(148, 22);
+            this.dateTimePickerFE.TabIndex = 19;
             // 
             // FrmPolizaHogar
             // 
@@ -779,5 +819,9 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxContenido;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxValor;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFE;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFC;
+        private System.Windows.Forms.Label labelfecExp;
+        private System.Windows.Forms.Label labelFecCom;
     }
 }

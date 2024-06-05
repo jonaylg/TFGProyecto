@@ -19,6 +19,33 @@ namespace TFGProyecto.Vista
             InitializeComponent();
         }
 
+        public FrmDetallesCliente(Cliente c)
+        {
+            InitializeComponent();
+            rellenarCampos(c);
+        }
+
+        private void rellenarCampos(Cliente c)
+        {
+            maskedTextBoxDni.Text = c.Dni;
+            textBoxNombre.Text = c.Nombre;
+            textBoxApe.Text = c.Apellido;
+            textBoxDir.Text=c.Direccion;
+            dateTimePickerFN.Value = c.FechaNacimiento;
+            maskedTextBoxTel.Text = c.Telefono;
+            textBoxCorreo.Text = c.CorreoElectronico;
+            textBoxProv.Text = c.Provincia;
+            textBoxCiu.Text = c.Ciudad;
+            comboBoxTipo.SelectedItem = c.Tipo;
+            textBoxDirFac.Text = c.DireccionFacturacion;
+            maskedTextBoxCVV.Text = c.Cvv.ToString();
+            maskedTextBoxFV.Text = c.FechaVencimiento;
+            textBoxNomTit.Text = c.NombreTitular;
+            comboBoxFrecPag.SelectedItem = c.FrecuenciaPago;
+            comboBoxMetPag.SelectedItem = c.MetodoPago;
+
+        }
+
         private void label9_Click(object sender, EventArgs e)
         {
 

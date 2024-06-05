@@ -58,7 +58,7 @@ namespace TFGProyecto.Controlador
         public static Cliente obtenerCliente(string dni)
         {
             Cliente Cliente = null;
-            string query = $"SELECT * FROM Cliente WHERE Cliente = {dni}";
+            string query = $"SELECT * FROM Cliente WHERE DNI = '{dni}'";
             using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
             {
                 if (reader.Read())

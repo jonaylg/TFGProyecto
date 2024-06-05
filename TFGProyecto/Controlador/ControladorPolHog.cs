@@ -24,7 +24,7 @@ namespace TFGProyecto.Controlador
                 "@roturaCristales, @aguaElectricidad, @inhabitabilidad, @defensaJuridica, " +
                 "@roturaTuberias, @derrumbe, @asistenciaInformacion, @asistenciaViaje, " +
                 "@actosVandalicos, @promociones, @reparacion24Horas, @vehiculoEnGaraje, " +
-                "@juridicaAvanzada, @dni, @precio)";
+                "@juridicaAvanzada, @dni, @precio, @fechaComienzo, @fechaExpiracion)";
             string tipoVivienda = ph.TipoVivienda;
             string zonaVivienda = ph.ZonaVivienda;
             string anhoConstruccion = ph.AnhoConstruccion.ToString();
@@ -62,6 +62,8 @@ namespace TFGProyecto.Controlador
             string juridicaAvanzada = ph.JuridicaAvanzada ? "1" : "0";
             string dni = ph.Dni;
             string precio = ph.Precio.ToString();
+            string fechaComienzo=ph.FechaComienzo.ToString();
+            string fechaExpiracion = ph.FechaExpiracion.ToString();
 
             // Agregar los valores a la lista de datos
             List<string> datos = new List<string>
@@ -73,7 +75,7 @@ namespace TFGProyecto.Controlador
                 responsabilidadDaniosEstructurales, roturaCristales, aguaElectricidad,
                 inhabitabilidad, defensaJuridica, roturaTuberias, derrumbe,
                 asistenciaInformacion, asistenciaViaje, actosVandalicos, promociones,
-                reparacion24Horas, vehiculoEnGaraje, juridicaAvanzada, dni, precio
+                reparacion24Horas, vehiculoEnGaraje, juridicaAvanzada, dni, precio, fechaComienzo, fechaExpiracion
             };
             bool ok = ControladorBBDD.ejecutarQueryParams(query, datos);
             
@@ -98,14 +100,14 @@ namespace TFGProyecto.Controlador
                         Double.Parse(reader["valorVivienda"].ToString()),
                         Double.Parse(reader["valorContenido"].ToString()),
                         Int32.Parse(reader["habitaciones"].ToString()),
-                        (reader["mascota"].ToString()=="1"),
+                        (reader["mascota"].ToString() == "1"),
                         (reader["piscina"].ToString() == "1"),
                         (reader["garaje"].ToString() == "1"),
                         (reader["personalSeguridad"].ToString() == "1"),
                         (reader["camaras"].ToString() == "1"),
                         (reader["cajaFuerte"].ToString() == "1"),
                         (reader["verja"].ToString() == "1"),
-                        (reader["alarma"].ToString() == "1"), 
+                        (reader["alarma"].ToString() == "1"),
                         reader["tipoMaterial"].ToString(),
                         reader["usoVivienda"].ToString(),
                         (reader["roboEnCasa"].ToString() == "1"),
@@ -126,8 +128,10 @@ namespace TFGProyecto.Controlador
                         (reader["vehiculoEnGaraje"].ToString() == "1"),
                         (reader["juridicaAvanzada"].ToString() == "1"),
                         reader["dni"].ToString(),
-                        Double.Parse(reader["precio"].ToString())
-                    );
+                        Double.Parse(reader["precio"].ToString()),
+                        DateTime.Parse(reader["fechaComienzo"].ToString()),
+                        DateTime.Parse(reader["fechaExpiracion"].ToString())
+                    ); ;
                 }
             }
             return PolizaHogar;

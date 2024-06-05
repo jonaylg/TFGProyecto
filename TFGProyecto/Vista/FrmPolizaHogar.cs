@@ -343,6 +343,20 @@ namespace TFGProyecto.Vista
                 b = false;
                 MessageBox.Show("el dni esta vacio o no tiene el numero de caracteres correctos");
             }
+
+            if (dateTimePickerFC.Value<DateTime.Now || dateTimePickerFC.Value>dateTimePickerFE.Value)
+            {
+                dateTimePickerFC.BackColor = Color.Red;
+                dateTimePickerFE.BackColor = Color.Red;
+                b = false;
+                MessageBox.Show(dateTimePickerFC.Value+ DateTime.Now.ToString()+ dateTimePickerFE.Value + "la fecha de comienzo es anterior a la fecha actual o es mayor a la fecha expiracion");
+            }
+            else
+            {
+                dateTimePickerFC.BackColor = Color.Green;
+                dateTimePickerFE.BackColor = Color.Green;
+            }
+
             return b;
         }
 
@@ -458,6 +472,10 @@ namespace TFGProyecto.Vista
             double precio = (calcularPrecioCoberturas() + calcularPrecioCoberturasAmp() + calcularPrecioDetalles() + calcularPrecioMasDetalles());
             pol.Precio = precio;
 
+
+            pol.FechaComienzo = dateTimePickerFC.Value;
+            pol.FechaExpiracion = dateTimePickerFE.Value;
+
             return pol;
         }
 
@@ -499,6 +517,8 @@ namespace TFGProyecto.Vista
             checkedListBox1.SetItemChecked(0,ph.Mascota);
             checkedListBox1.SetItemChecked(1, ph.Piscina);
             checkedListBox1.SetItemChecked(2, ph.Garaje);
+            dateTimePickerFC.Value = ph.FechaComienzo;
+            dateTimePickerFE.Value = ph.FechaExpiracion;
         }
 
         private void FrmPolizaHogar_Load(object sender, EventArgs e)

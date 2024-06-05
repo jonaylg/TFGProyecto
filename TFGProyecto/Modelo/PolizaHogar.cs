@@ -45,6 +45,8 @@ namespace TFGProyecto.Modelo
         private bool juridicaAvanzada;
         private string dni;
         private double precio;
+        private DateTime fechaComienzo;
+        private DateTime fechaExpiracion;
 
         // Propiedades
         public string TipoVivienda { get => tipoVivienda; set => tipoVivienda = value; }
@@ -84,6 +86,8 @@ namespace TFGProyecto.Modelo
         public bool JuridicaAvanzada { get => juridicaAvanzada; set => juridicaAvanzada = value; }
         public string Dni { get => dni; set => dni = value; }
         public double Precio { get => precio; set => precio = value; }
+        public DateTime FechaComienzo { get => fechaComienzo; set => fechaComienzo = value; }
+        public DateTime FechaExpiracion { get => fechaExpiracion; set => fechaExpiracion = value; }
 
         // Constructores
         public PolizaHogar()
@@ -137,6 +141,49 @@ namespace TFGProyecto.Modelo
             this.precio = precio;
         }
 
+        public PolizaHogar(string tipoVivienda, string zonaVivienda, int anhoConstruccion, int metrosConstruidos, int metrosTotales, double valorVivienda, double valorContenido, int habitaciones, bool mascota, bool piscina, bool garaje, bool personalSeguridad, bool camaras, bool cajaFuerte, bool verja, bool alarma, string tipoMaterial, string usoVivienda, bool roboEnCasa, bool incendio, bool fenomenosAtmosfericos, bool responsabilidadDaniosEstructurales, bool roturaCristales, bool aguaElectricidad, bool inhabitabilidad, bool defensaJuridica, bool roturaTuberias, bool derrumbe, bool asistenciaInformacion, bool asistenciaViaje, bool actosVandalicos, bool promociones, bool reparacion24Horas, bool vehiculoEnGaraje, bool juridicaAvanzada, string dni, double precio, DateTime fechaComienzo, DateTime fechaExpiracion)
+        {
+            this.tipoVivienda = tipoVivienda;
+            this.zonaVivienda = zonaVivienda;
+            this.anhoConstruccion = anhoConstruccion;
+            this.metrosConstruidos = metrosConstruidos;
+            this.metrosTotales = metrosTotales;
+            this.valorVivienda = valorVivienda;
+            this.valorContenido = valorContenido;
+            this.habitaciones = habitaciones;
+            this.mascota = mascota;
+            this.piscina = piscina;
+            this.garaje = garaje;
+            this.personalSeguridad = personalSeguridad;
+            this.camaras = camaras;
+            this.cajaFuerte = cajaFuerte;
+            this.verja = verja;
+            this.alarma = alarma;
+            this.tipoMaterial = tipoMaterial;
+            this.usoVivienda = usoVivienda;
+            this.roboEnCasa = roboEnCasa;
+            this.incendio = incendio;
+            this.fenomenosAtmosfericos = fenomenosAtmosfericos;
+            this.responsabilidadDaniosEstructurales = responsabilidadDaniosEstructurales;
+            this.roturaCristales = roturaCristales;
+            this.aguaElectricidad = aguaElectricidad;
+            this.inhabitabilidad = inhabitabilidad;
+            this.defensaJuridica = defensaJuridica;
+            this.roturaTuberias = roturaTuberias;
+            this.derrumbe = derrumbe;
+            this.asistenciaInformacion = asistenciaInformacion;
+            this.asistenciaViaje = asistenciaViaje;
+            this.actosVandalicos = actosVandalicos;
+            this.promociones = promociones;
+            this.reparacion24Horas = reparacion24Horas;
+            this.vehiculoEnGaraje = vehiculoEnGaraje;
+            this.juridicaAvanzada = juridicaAvanzada;
+            this.dni = dni;
+            this.precio = precio;
+            this.fechaComienzo = fechaComienzo;
+            this.fechaExpiracion = fechaExpiracion;
+        }
+
         public string MostrarDatos()
 {
     return $"Tipo de vivienda: {tipoVivienda}\n" +
@@ -175,7 +222,9 @@ namespace TFGProyecto.Modelo
            $"¿Vehículo en garaje cubierto?: {(vehiculoEnGaraje ? "Sí" : "No")}\n" +
            $"¿Defensa jurídica avanzada?: {(juridicaAvanzada ? "Sí" : "No")}\n" +
            $"DNI: {dni}\n" +
-           $"Precio: {precio}";
+           $"Precio: {precio}\n"+
+           $"Fecha Comienzo: {fechaComienzo}\n" +
+           $"Fecha Expiracion: {fechaExpiracion}";
 }
 
     }
