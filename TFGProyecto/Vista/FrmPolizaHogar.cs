@@ -279,7 +279,7 @@ namespace TFGProyecto.Vista
                 ControladorPolHog.insertarPolHog(construirPoliza());
                 MessageBox.Show(construirPoliza().MostrarDatos());
                 MessageBox.Show("este es el precio de la poliza " + construirPoliza().Precio);
-                FrmConfirmarPrecio formu = new FrmConfirmarPrecio(construirPoliza().Precio, complementos1, complementos2);
+                FrmConfirmarPrecio formu = new FrmConfirmarPrecio(construirPoliza().Precio, complementos1, complementos2,ControladorPolHog.obtenerUltCod(), construirPoliza());
                 formu.ShowDialog();
             }
             else
@@ -475,6 +475,7 @@ namespace TFGProyecto.Vista
 
             pol.FechaComienzo = dateTimePickerFC.Value;
             pol.FechaExpiracion = dateTimePickerFE.Value;
+            pol.Aceptada = false;
 
             return pol;
         }

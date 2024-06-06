@@ -179,6 +179,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="DatabaseTFGDataSet.xsc">
       <DependentUpon>DatabaseTFGDataSet.xsd</DependentUpon>
@@ -222,6 +223,9 @@
     <Content Include="BBDD\Scripts\dbo.Rol.sql" />
     <Content Include="BBDD\Scripts\dbo.RolPrivilegio.sql" />
     <Content Include="BBDD\Scripts\dbo.Usuario.sql" />
+    <None Include="Resources\Diseño sin título %281%29.png" />
+    <None Include="Resources\logo.jpg" />
+    <None Include="Resources\fotor-ai-2024060620564.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

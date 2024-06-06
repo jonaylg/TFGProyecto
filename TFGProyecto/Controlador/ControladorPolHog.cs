@@ -24,7 +24,7 @@ namespace TFGProyecto.Controlador
                 "@roturaCristales, @aguaElectricidad, @inhabitabilidad, @defensaJuridica, " +
                 "@roturaTuberias, @derrumbe, @asistenciaInformacion, @asistenciaViaje, " +
                 "@actosVandalicos, @promociones, @reparacion24Horas, @vehiculoEnGaraje, " +
-                "@juridicaAvanzada, @dni, @precio, @fechaComienzo, @fechaExpiracion)";
+                "@juridicaAvanzada, @dni, @precio, @fechaComienzo, @fechaExpiracion, @aceptada)";
             string tipoVivienda = ph.TipoVivienda;
             string zonaVivienda = ph.ZonaVivienda;
             string anhoConstruccion = ph.AnhoConstruccion.ToString();
@@ -64,6 +64,7 @@ namespace TFGProyecto.Controlador
             string precio = ph.Precio.ToString();
             string fechaComienzo=ph.FechaComienzo.ToString();
             string fechaExpiracion = ph.FechaExpiracion.ToString();
+            string aceptada = ph.Aceptada ? "1" : "0";
 
             // Agregar los valores a la lista de datos
             List<string> datos = new List<string>
@@ -75,7 +76,7 @@ namespace TFGProyecto.Controlador
                 responsabilidadDaniosEstructurales, roturaCristales, aguaElectricidad,
                 inhabitabilidad, defensaJuridica, roturaTuberias, derrumbe,
                 asistenciaInformacion, asistenciaViaje, actosVandalicos, promociones,
-                reparacion24Horas, vehiculoEnGaraje, juridicaAvanzada, dni, precio, fechaComienzo, fechaExpiracion
+                reparacion24Horas, vehiculoEnGaraje, juridicaAvanzada, dni, precio, fechaComienzo, fechaExpiracion, aceptada
             };
             bool ok = ControladorBBDD.ejecutarQueryParams(query, datos);
             
@@ -130,11 +131,26 @@ namespace TFGProyecto.Controlador
                         reader["dni"].ToString(),
                         Double.Parse(reader["precio"].ToString()),
                         DateTime.Parse(reader["fechaComienzo"].ToString()),
-                        DateTime.Parse(reader["fechaExpiracion"].ToString())
+                        DateTime.Parse(reader["fechaExpiracion"].ToString()),
+                        (reader["aceptada"].ToString() == "1")
                     ); ;
                 }
             }
             return PolizaHogar;
+        }
+
+        public static int obtenerUltCod()
+        {
+            int ulti=-1;
+            string query = $"SELECT max(id) as ulti FROM PolizaHogar";
+            using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
+            {
+                if (reader.Read())
+                {
+                    ulti=Int32.Parse(reader["ulti"].ToString());
+                }
+            }
+            return ulti;
         }
 
     }

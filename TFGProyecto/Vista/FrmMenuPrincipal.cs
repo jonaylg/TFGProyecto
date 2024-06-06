@@ -181,5 +181,12 @@ namespace TFGProyecto.Vista
         {
             rellenarDataGridXFiltro(tipoFiltrado(textBox1.Text));
         }
+
+        private void buttonMenu_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Visible=false;
+            buttonMenu.Visible=false;
+            menuStrip1.Visible=true;
+        }
     }
 }
