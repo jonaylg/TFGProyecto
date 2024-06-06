@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuCliente));
             this.buttonFilt = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxTipo = new System.Windows.Forms.ComboBox();
@@ -39,8 +40,22 @@
             this.radioButtonNom = new System.Windows.Forms.RadioButton();
             this.radioButtonDni = new System.Windows.Forms.RadioButton();
             this.dataGridViewCLientes = new System.Windows.Forms.DataGridView();
+            this.buttonMenu = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.polizaHogarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hogarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxRB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCLientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonFilt
@@ -159,11 +174,97 @@
             this.dataGridViewCLientes.TabIndex = 7;
             this.dataGridViewCLientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPolizas_CellClick);
             // 
+            // buttonMenu
+            // 
+            this.buttonMenu.Location = new System.Drawing.Point(2, 6);
+            this.buttonMenu.Name = "buttonMenu";
+            this.buttonMenu.Size = new System.Drawing.Size(73, 73);
+            this.buttonMenu.TabIndex = 15;
+            this.buttonMenu.Text = "________________________";
+            this.buttonMenu.UseVisualStyleBackColor = true;
+            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(81, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(75, 73);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.TabIndex = 16;
+            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Visible = false;
+            // 
+            // empleadosToolStripMenuItem
+            // 
+            this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(97, 24);
+            this.empleadosToolStripMenuItem.Text = "Empleados";
+            // 
+            // polizaHogarToolStripMenuItem
+            // 
+            this.polizaHogarToolStripMenuItem.Name = "polizaHogarToolStripMenuItem";
+            this.polizaHogarToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
+            this.polizaHogarToolStripMenuItem.Text = "Polizas";
+            // 
+            // vidaToolStripMenuItem
+            // 
+            this.vidaToolStripMenuItem.Name = "vidaToolStripMenuItem";
+            this.vidaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.vidaToolStripMenuItem.Text = "Vida";
+            // 
+            // hogarToolStripMenuItem
+            // 
+            this.hogarToolStripMenuItem.Name = "hogarToolStripMenuItem";
+            this.hogarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.hogarToolStripMenuItem.Text = "Hogar";
+            // 
+            // altaToolStripMenuItem
+            // 
+            this.altaToolStripMenuItem.Name = "altaToolStripMenuItem";
+            this.altaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.altaToolStripMenuItem.Text = "Alta";
+            // 
+            // menuToolStripMenuItem
+            // 
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.menuToolStripMenuItem.Text = "Menu";
+            // 
+            // clientesToolStripMenuItem
+            // 
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.clientesToolStripMenuItem.Text = "Clientes";
+            // 
+            // altaToolStripMenuItem1
+            // 
+            this.altaToolStripMenuItem1.Name = "altaToolStripMenuItem1";
+            this.altaToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.altaToolStripMenuItem1.Text = "Alta";
+            // 
+            // menuToolStripMenuItem1
+            // 
+            this.menuToolStripMenuItem1.Name = "menuToolStripMenuItem1";
+            this.menuToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.menuToolStripMenuItem1.Text = "Menu";
+            // 
             // FrmMenuCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonMenu);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonFilt);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxTipo);
@@ -171,12 +272,17 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBoxRB);
             this.Controls.Add(this.dataGridViewCLientes);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMenuCliente";
             this.Text = "FrmMenuCliente";
             this.Load += new System.EventHandler(this.FrmMenuCliente_Load);
             this.groupBoxRB.ResumeLayout(false);
             this.groupBoxRB.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCLientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,5 +301,17 @@
         private System.Windows.Forms.RadioButton radioButtonNom;
         private System.Windows.Forms.RadioButton radioButtonDni;
         private System.Windows.Forms.DataGridView dataGridViewCLientes;
+        private System.Windows.Forms.Button buttonMenu;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem polizaHogarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vidaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hogarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem1;
     }
 }

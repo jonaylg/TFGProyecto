@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.maskedTextBoxDni = new System.Windows.Forms.MaskedTextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.dateTimePickerFN = new System.Windows.Forms.DateTimePicker();
             this.maskedTextBoxTel = new System.Windows.Forms.MaskedTextBox();
             this.textBoxProv = new System.Windows.Forms.TextBox();
@@ -62,8 +64,7 @@
             this.labelFV = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.buttonInserClien = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.maskedTextBoxDni = new System.Windows.Forms.MaskedTextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -106,6 +107,23 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Personales";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // maskedTextBoxDni
+            // 
+            this.maskedTextBoxDni.Location = new System.Drawing.Point(501, 22);
+            this.maskedTextBoxDni.Mask = "00000000L";
+            this.maskedTextBoxDni.Name = "maskedTextBoxDni";
+            this.maskedTextBoxDni.Size = new System.Drawing.Size(100, 22);
+            this.maskedTextBoxDni.TabIndex = 17;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(368, 25);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(30, 16);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "DNI";
             // 
             // dateTimePickerFN
             // 
@@ -398,36 +416,30 @@
             // 
             // buttonInserClien
             // 
-            this.buttonInserClien.Location = new System.Drawing.Point(376, 406);
+            this.buttonInserClien.Location = new System.Drawing.Point(309, 406);
             this.buttonInserClien.Name = "buttonInserClien";
             this.buttonInserClien.Size = new System.Drawing.Size(75, 23);
             this.buttonInserClien.TabIndex = 1;
-            this.buttonInserClien.Text = "crear";
+            this.buttonInserClien.Text = "Crear";
             this.buttonInserClien.UseVisualStyleBackColor = true;
             this.buttonInserClien.Click += new System.EventHandler(this.buttonInserClien_Click);
             // 
-            // label10
+            // button1
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(368, 25);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(30, 16);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "DNI";
-            // 
-            // maskedTextBoxDni
-            // 
-            this.maskedTextBoxDni.Location = new System.Drawing.Point(501, 22);
-            this.maskedTextBoxDni.Mask = "00000000L";
-            this.maskedTextBoxDni.Name = "maskedTextBoxDni";
-            this.maskedTextBoxDni.Size = new System.Drawing.Size(100, 22);
-            this.maskedTextBoxDni.TabIndex = 17;
+            this.button1.Location = new System.Drawing.Point(427, 405);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Eliminar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmDetallesCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonInserClien);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmDetallesCliente";
@@ -479,5 +491,6 @@
         private System.Windows.Forms.Button buttonInserClien;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxDni;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button1;
     }
 }

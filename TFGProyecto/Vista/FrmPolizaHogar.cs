@@ -15,9 +15,18 @@ namespace TFGProyecto.Vista
 {
     public partial class FrmPolizaHogar : Form
     {
+
+        private int codPol;
         public FrmPolizaHogar()
         {
             InitializeComponent();
+        }
+
+        public FrmPolizaHogar(PolizaHogar ph, int codPol)
+        {
+            InitializeComponent();
+            obtenerDatosPoliza(ph);
+            this.codPol = codPol;
         }
 
         public FrmPolizaHogar(PolizaHogar ph)
@@ -529,6 +538,14 @@ namespace TFGProyecto.Vista
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (this.codPol>0)
+            {
+                ControladorPolHog.eliminarPolizaHogar(this.codPol);
+            }
         }
     }
 }

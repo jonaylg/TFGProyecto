@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -151,6 +152,45 @@ namespace TFGProyecto.Controlador
                 }
             }
             return ulti;
+        }
+
+        public static bool eliminarPolizaHogar(int id)
+        {
+            Boolean b=true;
+
+            Boolean resultado = true;
+            try
+            {
+                string connectionString = ControladorBBDD.getCadenaConexión();
+                using (SqlConnection cnn = new SqlConnection(connectionString))
+                {
+                    cnn.Open();
+                    SqlCommand comando = cnn.CreateCommand();
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "delete PolizaHogar WHERE id = " + id + "";
+                    SqlDataAdapter adaptador = new SqlDataAdapter();
+                    adaptador.UpdateCommand = comando;
+                    if (adaptador.UpdateCommand.ExecuteNonQuery() == 0)
+                    {
+                        resultado = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("se elimino el registro");
+                    }
+                    adaptador.Dispose();
+                    comando.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("si esta saltando este error prueba a volver a seleccionar el datos en el datagrid y presionar el boton de nuevo");
+                MessageBox.Show(ex.ToString());
+                Console.WriteLine("Error al actualizar " + ex.Message);
+                resultado = false;
+            }
+
+            return b;
         }
 
     }

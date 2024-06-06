@@ -108,5 +108,13 @@ namespace TFGProyecto.Vista
         {
             ControladorCliente.insertarCliente(crearCliente());
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (maskedTextBoxDni.Text!="" || maskedTextBoxDni.Text != null)
+            {
+                ControladorCliente.eliminarCliente(maskedTextBoxDni.Text);
+            }
+        }
     }
 }

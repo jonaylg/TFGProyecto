@@ -173,7 +173,7 @@ namespace TFGProyecto.Vista
 
         private void dataGridViewPolizas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            FrmPolizaHogar formu=new FrmPolizaHogar(ControladorPolHog.obtenerPolizaHogar(Int32.Parse(dataGridViewPolizas.CurrentRow.Cells[0].Value.ToString())));
+            FrmPolizaHogar formu=new FrmPolizaHogar(ControladorPolHog.obtenerPolizaHogar(Int32.Parse(dataGridViewPolizas.CurrentRow.Cells[0].Value.ToString())), Int32.Parse(dataGridViewPolizas.CurrentRow.Cells[0].Value.ToString()));
             formu.ShowDialog();
         }
 

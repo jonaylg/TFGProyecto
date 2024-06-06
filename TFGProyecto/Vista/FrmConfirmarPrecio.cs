@@ -90,24 +90,31 @@ namespace TFGProyecto.Vista
             catch (Exception ex)
             {
                 MessageBox.Show("si esta saltando este error prueba a volver a seleccionar el datos en el datagrid y presionar el boton de nuevo");
-                MessageBox.Show(e.ToString());
+                MessageBox.Show(ex.ToString());
                 Console.WriteLine("Error al actualizar " + ex.Message);
                 resultado = false;
             }
 
-            if (resultado && comboBox1.SelectedItem.ToString()=="Existente")
+            if (comboBox1.SelectedIndex!=-1)
             {
-                FrmMenuCliente formu=new FrmMenuCliente();
-                formu.ShowDialog();
-            }
-            else if(resultado && comboBox1.SelectedItem.ToString() == "Nuevo")
-            {
-                FrmDetallesCliente formu = new FrmDetallesCliente();
-                formu.ShowDialog();
+                if (resultado && comboBox1.SelectedItem.ToString() == "Existente")
+                {
+                    FrmMenuCliente formu = new FrmMenuCliente();
+                    formu.ShowDialog();
+                }
+                else if (resultado && comboBox1.SelectedItem.ToString() == "Nuevo")
+                {
+                    FrmDetallesCliente formu = new FrmDetallesCliente();
+                    formu.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("ha ocurrido un problema en la modificacion del registro");
+                }
             }
             else
             {
-                MessageBox.Show("ha ocurrido un problema en la modificacion del registro");
+                MessageBox.Show("selecciona el tipo de cliente");
             }
         }
 

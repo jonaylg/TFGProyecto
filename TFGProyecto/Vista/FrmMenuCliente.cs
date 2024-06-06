@@ -160,5 +160,12 @@ namespace TFGProyecto.Vista
                 MessageBox.Show("selecciona el tipo de accion");
             }
         }
+
+        private void buttonMenu_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = false;
+            buttonMenu.Visible = false;
+            menuStrip1.Visible = true;
+        }
     }
 }

@@ -73,9 +73,9 @@ namespace TFGProyecto.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fotor_ai_2024060620564 {
+        internal static System.Drawing.Bitmap Diseño_sin_título__1_1 {
             get {
-                object obj = ResourceManager.GetObject("fotor-ai-2024060620564", resourceCulture);
+                object obj = ResourceManager.GetObject("Diseño sin título (1)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace TFGProyecto.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logo {
+        internal static System.Drawing.Bitmap fotor_ai_2024060620564 {
             get {
-                object obj = ResourceManager.GetObject("logo", resourceCulture);
+                object obj = ResourceManager.GetObject("fotor_ai_2024060620564", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

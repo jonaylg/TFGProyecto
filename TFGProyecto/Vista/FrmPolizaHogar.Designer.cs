@@ -48,6 +48,10 @@
             this.labelZonaV = new System.Windows.Forms.Label();
             this.labelTipov = new System.Windows.Forms.Label();
             this.tabPageMD = new System.Windows.Forms.TabPage();
+            this.dateTimePickerFE = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerFC = new System.Windows.Forms.DateTimePicker();
+            this.labelfecExp = new System.Windows.Forms.Label();
+            this.labelFecCom = new System.Windows.Forms.Label();
             this.groupBoxSS = new System.Windows.Forms.GroupBox();
             this.checkBoxAlarma = new System.Windows.Forms.CheckBox();
             this.checkBoxVerja = new System.Windows.Forms.CheckBox();
@@ -81,10 +85,7 @@
             this.buttonPrecio = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.labelFecCom = new System.Windows.Forms.Label();
-            this.labelfecExp = new System.Windows.Forms.Label();
-            this.dateTimePickerFC = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerFE = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControlMD.SuspendLayout();
             this.tabPageDH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHab)).BeginInit();
@@ -343,6 +344,38 @@
             this.tabPageMD.TabIndex = 1;
             this.tabPageMD.Text = "Mas Detalles";
             this.tabPageMD.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePickerFE
+            // 
+            this.dateTimePickerFE.Location = new System.Drawing.Point(512, 214);
+            this.dateTimePickerFE.Name = "dateTimePickerFE";
+            this.dateTimePickerFE.Size = new System.Drawing.Size(148, 22);
+            this.dateTimePickerFE.TabIndex = 19;
+            // 
+            // dateTimePickerFC
+            // 
+            this.dateTimePickerFC.Location = new System.Drawing.Point(512, 165);
+            this.dateTimePickerFC.Name = "dateTimePickerFC";
+            this.dateTimePickerFC.Size = new System.Drawing.Size(148, 22);
+            this.dateTimePickerFC.TabIndex = 18;
+            // 
+            // labelfecExp
+            // 
+            this.labelfecExp.AutoSize = true;
+            this.labelfecExp.Location = new System.Drawing.Point(357, 214);
+            this.labelfecExp.Name = "labelfecExp";
+            this.labelfecExp.Size = new System.Drawing.Size(111, 16);
+            this.labelfecExp.TabIndex = 17;
+            this.labelfecExp.Text = "Fecha Expiracion";
+            // 
+            // labelFecCom
+            // 
+            this.labelFecCom.AutoSize = true;
+            this.labelFecCom.Location = new System.Drawing.Point(357, 165);
+            this.labelFecCom.Name = "labelFecCom";
+            this.labelFecCom.Size = new System.Drawing.Size(108, 16);
+            this.labelFecCom.TabIndex = 16;
+            this.labelFecCom.Text = "Fecha Comienzo";
             // 
             // groupBoxSS
             // 
@@ -698,43 +731,22 @@
             this.maskedTextBox1.Size = new System.Drawing.Size(100, 22);
             this.maskedTextBox1.TabIndex = 3;
             // 
-            // labelFecCom
+            // button1
             // 
-            this.labelFecCom.AutoSize = true;
-            this.labelFecCom.Location = new System.Drawing.Point(357, 165);
-            this.labelFecCom.Name = "labelFecCom";
-            this.labelFecCom.Size = new System.Drawing.Size(108, 16);
-            this.labelFecCom.TabIndex = 16;
-            this.labelFecCom.Text = "Fecha Comienzo";
-            // 
-            // labelfecExp
-            // 
-            this.labelfecExp.AutoSize = true;
-            this.labelfecExp.Location = new System.Drawing.Point(357, 214);
-            this.labelfecExp.Name = "labelfecExp";
-            this.labelfecExp.Size = new System.Drawing.Size(111, 16);
-            this.labelfecExp.TabIndex = 17;
-            this.labelfecExp.Text = "Fecha Expiracion";
-            // 
-            // dateTimePickerFC
-            // 
-            this.dateTimePickerFC.Location = new System.Drawing.Point(512, 165);
-            this.dateTimePickerFC.Name = "dateTimePickerFC";
-            this.dateTimePickerFC.Size = new System.Drawing.Size(148, 22);
-            this.dateTimePickerFC.TabIndex = 18;
-            // 
-            // dateTimePickerFE
-            // 
-            this.dateTimePickerFE.Location = new System.Drawing.Point(512, 214);
-            this.dateTimePickerFE.Name = "dateTimePickerFE";
-            this.dateTimePickerFE.Size = new System.Drawing.Size(148, 22);
-            this.dateTimePickerFE.TabIndex = 19;
+            this.button1.Location = new System.Drawing.Point(552, 398);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(84, 26);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Eliminar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmPolizaHogar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonPrecio);
@@ -823,5 +835,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerFC;
         private System.Windows.Forms.Label labelfecExp;
         private System.Windows.Forms.Label labelFecCom;
+        private System.Windows.Forms.Button button1;
     }
 }
