@@ -63,6 +63,26 @@ namespace TFGProyecto.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Captura2 {
+            get {
+                object obj = ResourceManager.GetObject("Captura2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Captura3 {
+            get {
+                object obj = ResourceManager.GetObject("Captura3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Diseño_sin_título__1_ {
             get {
                 object obj = ResourceManager.GetObject("Diseño sin título (1)", resourceCulture);
@@ -86,6 +106,16 @@ namespace TFGProyecto.Properties {
         internal static System.Drawing.Bitmap fotor_ai_2024060620564 {
             get {
                 object obj = ResourceManager.GetObject("fotor_ai_2024060620564", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fotor_ai_202406062056422 {
+            get {
+                object obj = ResourceManager.GetObject("fotor-ai-202406062056422", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

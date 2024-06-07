@@ -62,5 +62,10 @@ namespace ProyectoTFG
                 }
             }
         }
+
+        private void FrmNuevaClave_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
     }
 }

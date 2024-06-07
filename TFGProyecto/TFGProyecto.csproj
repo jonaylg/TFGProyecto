@@ -223,6 +223,9 @@
     <Content Include="BBDD\Scripts\dbo.Rol.sql" />
     <Content Include="BBDD\Scripts\dbo.RolPrivilegio.sql" />
     <Content Include="BBDD\Scripts\dbo.Usuario.sql" />
+    <None Include="Resources\Captura3.JPG" />
+    <None Include="Resources\Captura2.JPG" />
+    <None Include="Resources\fotor-ai-202406062056422.jpg" />
     <None Include="Resources\fotor-ai-2024060620564.jpg" />
     <None Include="Resources\Image1.bmp" />
     <None Include="Resources\Diseño sin título %281%291.png" />

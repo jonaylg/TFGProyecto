@@ -41,8 +41,20 @@
             this.radioButtonDni = new System.Windows.Forms.RadioButton();
             this.dataGridViewCLientes = new System.Windows.Forms.DataGridView();
             this.buttonMenu = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.empleadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.polizasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vidaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.hogarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.polizaHogarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,25 +64,13 @@
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.empleadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.polizasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vidaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.hogarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonAct = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBoxRB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCLientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonFilt
@@ -205,16 +205,6 @@
             this.buttonMenu.UseVisualStyleBackColor = true;
             this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(80, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 73);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -228,6 +218,104 @@
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.Visible = false;
+            // 
+            // empleadosToolStripMenuItem1
+            // 
+            this.empleadosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaToolStripMenuItem2,
+            this.menuToolStripMenuItem2});
+            this.empleadosToolStripMenuItem1.Name = "empleadosToolStripMenuItem1";
+            this.empleadosToolStripMenuItem1.Size = new System.Drawing.Size(97, 26);
+            this.empleadosToolStripMenuItem1.Text = "Empleados";
+            // 
+            // altaToolStripMenuItem2
+            // 
+            this.altaToolStripMenuItem2.Name = "altaToolStripMenuItem2";
+            this.altaToolStripMenuItem2.Size = new System.Drawing.Size(129, 26);
+            this.altaToolStripMenuItem2.Text = "Alta";
+            // 
+            // menuToolStripMenuItem2
+            // 
+            this.menuToolStripMenuItem2.Name = "menuToolStripMenuItem2";
+            this.menuToolStripMenuItem2.Size = new System.Drawing.Size(129, 26);
+            this.menuToolStripMenuItem2.Text = "Menu";
+            // 
+            // polizasToolStripMenuItem
+            // 
+            this.polizasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vidaToolStripMenuItem1,
+            this.hogarToolStripMenuItem1});
+            this.polizasToolStripMenuItem.Name = "polizasToolStripMenuItem";
+            this.polizasToolStripMenuItem.Size = new System.Drawing.Size(68, 26);
+            this.polizasToolStripMenuItem.Text = "Polizas";
+            // 
+            // vidaToolStripMenuItem1
+            // 
+            this.vidaToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaToolStripMenuItem4,
+            this.menuToolStripMenuItem4});
+            this.vidaToolStripMenuItem1.Name = "vidaToolStripMenuItem1";
+            this.vidaToolStripMenuItem1.Size = new System.Drawing.Size(134, 26);
+            this.vidaToolStripMenuItem1.Text = "Vida";
+            // 
+            // altaToolStripMenuItem4
+            // 
+            this.altaToolStripMenuItem4.Name = "altaToolStripMenuItem4";
+            this.altaToolStripMenuItem4.Size = new System.Drawing.Size(129, 26);
+            this.altaToolStripMenuItem4.Text = "Alta";
+            this.altaToolStripMenuItem4.Click += new System.EventHandler(this.altaToolStripMenuItem4_Click);
+            // 
+            // menuToolStripMenuItem4
+            // 
+            this.menuToolStripMenuItem4.Name = "menuToolStripMenuItem4";
+            this.menuToolStripMenuItem4.Size = new System.Drawing.Size(129, 26);
+            this.menuToolStripMenuItem4.Text = "Menu";
+            // 
+            // hogarToolStripMenuItem1
+            // 
+            this.hogarToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaToolStripMenuItem3,
+            this.menuToolStripMenuItem3});
+            this.hogarToolStripMenuItem1.Name = "hogarToolStripMenuItem1";
+            this.hogarToolStripMenuItem1.Size = new System.Drawing.Size(134, 26);
+            this.hogarToolStripMenuItem1.Text = "Hogar";
+            // 
+            // altaToolStripMenuItem3
+            // 
+            this.altaToolStripMenuItem3.Name = "altaToolStripMenuItem3";
+            this.altaToolStripMenuItem3.Size = new System.Drawing.Size(129, 26);
+            this.altaToolStripMenuItem3.Text = "Alta";
+            this.altaToolStripMenuItem3.Click += new System.EventHandler(this.altaToolStripMenuItem3_Click);
+            // 
+            // menuToolStripMenuItem3
+            // 
+            this.menuToolStripMenuItem3.Name = "menuToolStripMenuItem3";
+            this.menuToolStripMenuItem3.Size = new System.Drawing.Size(129, 26);
+            this.menuToolStripMenuItem3.Text = "Menu";
+            this.menuToolStripMenuItem3.Click += new System.EventHandler(this.menuToolStripMenuItem3_Click);
+            // 
+            // clientesToolStripMenuItem1
+            // 
+            this.clientesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaToolStripMenuItem5,
+            this.menuToolStripMenuItem5});
+            this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(75, 26);
+            this.clientesToolStripMenuItem1.Text = "Clientes";
+            // 
+            // altaToolStripMenuItem5
+            // 
+            this.altaToolStripMenuItem5.Name = "altaToolStripMenuItem5";
+            this.altaToolStripMenuItem5.Size = new System.Drawing.Size(129, 26);
+            this.altaToolStripMenuItem5.Text = "Alta";
+            this.altaToolStripMenuItem5.Click += new System.EventHandler(this.altaToolStripMenuItem5_Click);
+            // 
+            // menuToolStripMenuItem5
+            // 
+            this.menuToolStripMenuItem5.Name = "menuToolStripMenuItem5";
+            this.menuToolStripMenuItem5.Size = new System.Drawing.Size(129, 26);
+            this.menuToolStripMenuItem5.Text = "Menu";
+            this.menuToolStripMenuItem5.Click += new System.EventHandler(this.menuToolStripMenuItem5_Click);
             // 
             // empleadosToolStripMenuItem
             // 
@@ -283,104 +371,6 @@
             this.menuToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.menuToolStripMenuItem1.Text = "Menu";
             // 
-            // empleadosToolStripMenuItem1
-            // 
-            this.empleadosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.altaToolStripMenuItem2,
-            this.menuToolStripMenuItem2});
-            this.empleadosToolStripMenuItem1.Name = "empleadosToolStripMenuItem1";
-            this.empleadosToolStripMenuItem1.Size = new System.Drawing.Size(97, 26);
-            this.empleadosToolStripMenuItem1.Text = "Empleados";
-            // 
-            // altaToolStripMenuItem2
-            // 
-            this.altaToolStripMenuItem2.Name = "altaToolStripMenuItem2";
-            this.altaToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
-            this.altaToolStripMenuItem2.Text = "Alta";
-            // 
-            // menuToolStripMenuItem2
-            // 
-            this.menuToolStripMenuItem2.Name = "menuToolStripMenuItem2";
-            this.menuToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
-            this.menuToolStripMenuItem2.Text = "Menu";
-            // 
-            // polizasToolStripMenuItem
-            // 
-            this.polizasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.vidaToolStripMenuItem1,
-            this.hogarToolStripMenuItem1});
-            this.polizasToolStripMenuItem.Name = "polizasToolStripMenuItem";
-            this.polizasToolStripMenuItem.Size = new System.Drawing.Size(68, 26);
-            this.polizasToolStripMenuItem.Text = "Polizas";
-            // 
-            // vidaToolStripMenuItem1
-            // 
-            this.vidaToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.altaToolStripMenuItem4,
-            this.menuToolStripMenuItem4});
-            this.vidaToolStripMenuItem1.Name = "vidaToolStripMenuItem1";
-            this.vidaToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.vidaToolStripMenuItem1.Text = "Vida";
-            // 
-            // hogarToolStripMenuItem1
-            // 
-            this.hogarToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.altaToolStripMenuItem3,
-            this.menuToolStripMenuItem3});
-            this.hogarToolStripMenuItem1.Name = "hogarToolStripMenuItem1";
-            this.hogarToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.hogarToolStripMenuItem1.Text = "Hogar";
-            // 
-            // altaToolStripMenuItem3
-            // 
-            this.altaToolStripMenuItem3.Name = "altaToolStripMenuItem3";
-            this.altaToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
-            this.altaToolStripMenuItem3.Text = "Alta";
-            this.altaToolStripMenuItem3.Click += new System.EventHandler(this.altaToolStripMenuItem3_Click);
-            // 
-            // menuToolStripMenuItem3
-            // 
-            this.menuToolStripMenuItem3.Name = "menuToolStripMenuItem3";
-            this.menuToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
-            this.menuToolStripMenuItem3.Text = "Menu";
-            this.menuToolStripMenuItem3.Click += new System.EventHandler(this.menuToolStripMenuItem3_Click);
-            // 
-            // altaToolStripMenuItem4
-            // 
-            this.altaToolStripMenuItem4.Name = "altaToolStripMenuItem4";
-            this.altaToolStripMenuItem4.Size = new System.Drawing.Size(224, 26);
-            this.altaToolStripMenuItem4.Text = "Alta";
-            this.altaToolStripMenuItem4.Click += new System.EventHandler(this.altaToolStripMenuItem4_Click);
-            // 
-            // menuToolStripMenuItem4
-            // 
-            this.menuToolStripMenuItem4.Name = "menuToolStripMenuItem4";
-            this.menuToolStripMenuItem4.Size = new System.Drawing.Size(224, 26);
-            this.menuToolStripMenuItem4.Text = "Menu";
-            // 
-            // clientesToolStripMenuItem1
-            // 
-            this.clientesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.altaToolStripMenuItem5,
-            this.menuToolStripMenuItem5});
-            this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(75, 26);
-            this.clientesToolStripMenuItem1.Text = "Clientes";
-            // 
-            // altaToolStripMenuItem5
-            // 
-            this.altaToolStripMenuItem5.Name = "altaToolStripMenuItem5";
-            this.altaToolStripMenuItem5.Size = new System.Drawing.Size(224, 26);
-            this.altaToolStripMenuItem5.Text = "Alta";
-            this.altaToolStripMenuItem5.Click += new System.EventHandler(this.altaToolStripMenuItem5_Click);
-            // 
-            // menuToolStripMenuItem5
-            // 
-            this.menuToolStripMenuItem5.Name = "menuToolStripMenuItem5";
-            this.menuToolStripMenuItem5.Size = new System.Drawing.Size(224, 26);
-            this.menuToolStripMenuItem5.Text = "Menu";
-            this.menuToolStripMenuItem5.Click += new System.EventHandler(this.menuToolStripMenuItem5_Click);
-            // 
             // buttonAct
             // 
             this.buttonAct.Location = new System.Drawing.Point(437, 407);
@@ -400,6 +390,16 @@
             this.label3.Size = new System.Drawing.Size(152, 34);
             this.label3.TabIndex = 18;
             this.label3.Text = "Menu Cliente";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(80, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(75, 73);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmMenuCliente
             // 
@@ -421,14 +421,15 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMenuCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMenuCliente";
             this.Load += new System.EventHandler(this.FrmMenuCliente_Load);
             this.groupBoxRB.ResumeLayout(false);
             this.groupBoxRB.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCLientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
