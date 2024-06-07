@@ -207,5 +207,13 @@ namespace TFGProyecto.Vista
         {
             rellenarDataGrid();
         }
+
+        private void groupBoxRB_Paint(object sender, PaintEventArgs e)
+        {
+            GroupBox box = (GroupBox)sender;
+            e.Graphics.Clear(Color.LightSkyBlue); // Cambia este color según tu diseño
+            e.Graphics.DrawRectangle(Pens.Black, 0, 0, box.Width - 1, box.Height - 1);
+            e.Graphics.DrawString(box.Text, box.Font, Brushes.Black, 10, 1);
+        }
     }
 }

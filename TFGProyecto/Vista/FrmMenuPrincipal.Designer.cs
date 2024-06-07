@@ -57,6 +57,7 @@
             this.altaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonAct = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPolizas)).BeginInit();
             this.groupBoxRB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,8 +68,9 @@
             // 
             this.dataGridViewPolizas.AllowUserToAddRows = false;
             this.dataGridViewPolizas.AllowUserToDeleteRows = false;
+            this.dataGridViewPolizas.BackgroundColor = System.Drawing.Color.LightSkyBlue;
             this.dataGridViewPolizas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPolizas.Location = new System.Drawing.Point(58, 172);
+            this.dataGridViewPolizas.Location = new System.Drawing.Point(57, 179);
             this.dataGridViewPolizas.Name = "dataGridViewPolizas";
             this.dataGridViewPolizas.RowHeadersWidth = 51;
             this.dataGridViewPolizas.RowTemplate.Height = 24;
@@ -78,17 +80,19 @@
             // 
             // groupBoxRB
             // 
+            this.groupBoxRB.BackColor = System.Drawing.Color.LightSkyBlue;
             this.groupBoxRB.Controls.Add(this.radioButtonDni);
             this.groupBoxRB.Controls.Add(this.radioButtonAC);
             this.groupBoxRB.Controls.Add(this.radioButtonVV);
             this.groupBoxRB.Controls.Add(this.radioButtonZV);
             this.groupBoxRB.Controls.Add(this.radioButtonTV);
-            this.groupBoxRB.Location = new System.Drawing.Point(201, 59);
+            this.groupBoxRB.Location = new System.Drawing.Point(200, 66);
             this.groupBoxRB.Name = "groupBoxRB";
             this.groupBoxRB.Size = new System.Drawing.Size(375, 65);
             this.groupBoxRB.TabIndex = 1;
             this.groupBoxRB.TabStop = false;
             this.groupBoxRB.Text = "Tipo de Filtrado";
+            this.groupBoxRB.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBoxRB_Paint);
             // 
             // radioButtonAC
             // 
@@ -136,7 +140,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(328, 130);
+            this.textBox1.Location = new System.Drawing.Point(327, 137);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(106, 22);
             this.textBox1.TabIndex = 2;
@@ -144,7 +148,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(251, 133);
+            this.label1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.label1.Location = new System.Drawing.Point(250, 140);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 16);
             this.label1.TabIndex = 3;
@@ -157,7 +162,7 @@
             "Mayor",
             "Menor",
             "Igual"});
-            this.comboBoxMayMenIgu.Location = new System.Drawing.Point(612, 100);
+            this.comboBoxMayMenIgu.Location = new System.Drawing.Point(611, 107);
             this.comboBoxMayMenIgu.Name = "comboBoxMayMenIgu";
             this.comboBoxMayMenIgu.Size = new System.Drawing.Size(121, 24);
             this.comboBoxMayMenIgu.TabIndex = 4;
@@ -165,7 +170,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(609, 58);
+            this.label2.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.label2.Location = new System.Drawing.Point(608, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 32);
             this.label2.TabIndex = 5;
@@ -173,7 +179,7 @@
             // 
             // buttonFilt
             // 
-            this.buttonFilt.Location = new System.Drawing.Point(277, 377);
+            this.buttonFilt.Location = new System.Drawing.Point(291, 399);
             this.buttonFilt.Name = "buttonFilt";
             this.buttonFilt.Size = new System.Drawing.Size(75, 23);
             this.buttonFilt.TabIndex = 6;
@@ -326,7 +332,7 @@
             // 
             // buttonAct
             // 
-            this.buttonAct.Location = new System.Drawing.Point(453, 377);
+            this.buttonAct.Location = new System.Drawing.Point(452, 399);
             this.buttonAct.Name = "buttonAct";
             this.buttonAct.Size = new System.Drawing.Size(75, 23);
             this.buttonAct.TabIndex = 10;
@@ -334,11 +340,23 @@
             this.buttonAct.UseVisualStyleBackColor = true;
             this.buttonAct.Click += new System.EventHandler(this.buttonAct_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Monotype Corsiva", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(312, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(212, 34);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Menu Poliza Hogar";
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonAct);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.pictureBox1);
@@ -354,6 +372,7 @@
             this.Name = "FrmMenuPrincipal";
             this.Text = "FrmMenuPrincipal";
             this.Load += new System.EventHandler(this.FrmMenuPrincipal_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmMenuPrincipal_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPolizas)).EndInit();
             this.groupBoxRB.ResumeLayout(false);
             this.groupBoxRB.PerformLayout();
@@ -396,5 +415,6 @@
         private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem3;
         private System.Windows.Forms.Button buttonAct;
+        private System.Windows.Forms.Label label3;
     }
 }

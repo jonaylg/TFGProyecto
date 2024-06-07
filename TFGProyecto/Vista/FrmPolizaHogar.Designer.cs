@@ -86,6 +86,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabControlMD.SuspendLayout();
             this.tabPageDH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHab)).BeginInit();
@@ -97,6 +99,7 @@
             this.tabPageCC.SuspendLayout();
             this.groupBoxCob.SuspendLayout();
             this.tabPageCA.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlMD
@@ -105,10 +108,10 @@
             this.tabControlMD.Controls.Add(this.tabPageMD);
             this.tabControlMD.Controls.Add(this.tabPageCC);
             this.tabControlMD.Controls.Add(this.tabPageCA);
-            this.tabControlMD.Location = new System.Drawing.Point(65, 68);
+            this.tabControlMD.Location = new System.Drawing.Point(59, 84);
             this.tabControlMD.Name = "tabControlMD";
             this.tabControlMD.SelectedIndex = 0;
-            this.tabControlMD.Size = new System.Drawing.Size(684, 311);
+            this.tabControlMD.Size = new System.Drawing.Size(690, 295);
             this.tabControlMD.TabIndex = 0;
             // 
             // tabPageDH
@@ -134,21 +137,21 @@
             this.tabPageDH.Location = new System.Drawing.Point(4, 25);
             this.tabPageDH.Name = "tabPageDH";
             this.tabPageDH.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageDH.Size = new System.Drawing.Size(676, 282);
+            this.tabPageDH.Size = new System.Drawing.Size(682, 266);
             this.tabPageDH.TabIndex = 0;
             this.tabPageDH.Text = "Detalles Hogar";
             this.tabPageDH.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // maskedTextBoxContenido
             // 
-            this.maskedTextBoxContenido.Location = new System.Drawing.Point(483, 245);
+            this.maskedTextBoxContenido.Location = new System.Drawing.Point(485, 238);
             this.maskedTextBoxContenido.Name = "maskedTextBoxContenido";
             this.maskedTextBoxContenido.Size = new System.Drawing.Size(100, 22);
             this.maskedTextBoxContenido.TabIndex = 21;
             // 
             // maskedTextBoxValor
             // 
-            this.maskedTextBoxValor.Location = new System.Drawing.Point(483, 35);
+            this.maskedTextBoxValor.Location = new System.Drawing.Point(485, 28);
             this.maskedTextBoxValor.Name = "maskedTextBoxValor";
             this.maskedTextBoxValor.Size = new System.Drawing.Size(100, 22);
             this.maskedTextBoxValor.TabIndex = 20;
@@ -160,14 +163,14 @@
             "Mascotas",
             "Piscina",
             "Garaje"});
-            this.checkedListBox1.Location = new System.Drawing.Point(483, 130);
+            this.checkedListBox1.Location = new System.Drawing.Point(485, 123);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(122, 55);
             this.checkedListBox1.TabIndex = 18;
             // 
             // numericUpDownHab
             // 
-            this.numericUpDownHab.Location = new System.Drawing.Point(485, 88);
+            this.numericUpDownHab.Location = new System.Drawing.Point(487, 81);
             this.numericUpDownHab.Maximum = new decimal(new int[] {
             50000,
             0,
@@ -184,7 +187,7 @@
             // 
             // numericUpDownTot
             // 
-            this.numericUpDownTot.Location = new System.Drawing.Point(156, 214);
+            this.numericUpDownTot.Location = new System.Drawing.Point(158, 207);
             this.numericUpDownTot.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -201,7 +204,7 @@
             // 
             // numericUpDownCons
             // 
-            this.numericUpDownCons.Location = new System.Drawing.Point(156, 163);
+            this.numericUpDownCons.Location = new System.Drawing.Point(158, 156);
             this.numericUpDownCons.Maximum = new decimal(new int[] {
             50000,
             0,
@@ -218,7 +221,7 @@
             // 
             // numericUpDownAnho
             // 
-            this.numericUpDownAnho.Location = new System.Drawing.Point(156, 113);
+            this.numericUpDownAnho.Location = new System.Drawing.Point(158, 106);
             this.numericUpDownAnho.Maximum = new decimal(new int[] {
             2028,
             0,
@@ -241,7 +244,7 @@
             "Urbana",
             "Rural",
             "Costera"});
-            this.comboBoxZona.Location = new System.Drawing.Point(156, 60);
+            this.comboBoxZona.Location = new System.Drawing.Point(158, 53);
             this.comboBoxZona.Name = "comboBoxZona";
             this.comboBoxZona.Size = new System.Drawing.Size(121, 24);
             this.comboBoxZona.TabIndex = 12;
@@ -254,7 +257,7 @@
             "Piso",
             "Chalet",
             "Adosado"});
-            this.comboBoxTipo.Location = new System.Drawing.Point(156, 26);
+            this.comboBoxTipo.Location = new System.Drawing.Point(158, 19);
             this.comboBoxTipo.Name = "comboBoxTipo";
             this.comboBoxTipo.Size = new System.Drawing.Size(121, 24);
             this.comboBoxTipo.TabIndex = 11;
@@ -262,7 +265,7 @@
             // label1VC
             // 
             this.label1VC.AutoSize = true;
-            this.label1VC.Location = new System.Drawing.Point(337, 216);
+            this.label1VC.Location = new System.Drawing.Point(339, 209);
             this.label1VC.Name = "label1VC";
             this.label1VC.Size = new System.Drawing.Size(293, 16);
             this.label1VC.TabIndex = 10;
@@ -271,7 +274,7 @@
             // labelNHab
             // 
             this.labelNHab.AutoSize = true;
-            this.labelNHab.Location = new System.Drawing.Point(337, 90);
+            this.labelNHab.Location = new System.Drawing.Point(339, 83);
             this.labelNHab.Name = "labelNHab";
             this.labelNHab.Size = new System.Drawing.Size(105, 16);
             this.labelNHab.TabIndex = 7;
@@ -280,7 +283,7 @@
             // labelValorV
             // 
             this.labelValorV.AutoSize = true;
-            this.labelValorV.Location = new System.Drawing.Point(337, 35);
+            this.labelValorV.Location = new System.Drawing.Point(339, 28);
             this.labelValorV.Name = "labelValorV";
             this.labelValorV.Size = new System.Drawing.Size(95, 16);
             this.labelValorV.TabIndex = 6;
@@ -289,7 +292,7 @@
             // labelm2Tot
             // 
             this.labelm2Tot.AutoSize = true;
-            this.labelm2Tot.Location = new System.Drawing.Point(26, 216);
+            this.labelm2Tot.Location = new System.Drawing.Point(28, 209);
             this.labelm2Tot.Name = "labelm2Tot";
             this.labelm2Tot.Size = new System.Drawing.Size(81, 16);
             this.labelm2Tot.TabIndex = 4;
@@ -298,7 +301,7 @@
             // labelm2Cons
             // 
             this.labelm2Cons.AutoSize = true;
-            this.labelm2Cons.Location = new System.Drawing.Point(26, 165);
+            this.labelm2Cons.Location = new System.Drawing.Point(28, 158);
             this.labelm2Cons.Name = "labelm2Cons";
             this.labelm2Cons.Size = new System.Drawing.Size(106, 16);
             this.labelm2Cons.TabIndex = 3;
@@ -307,7 +310,7 @@
             // labelAnhoCon
             // 
             this.labelAnhoCon.AutoSize = true;
-            this.labelAnhoCon.Location = new System.Drawing.Point(26, 115);
+            this.labelAnhoCon.Location = new System.Drawing.Point(28, 108);
             this.labelAnhoCon.Name = "labelAnhoCon";
             this.labelAnhoCon.Size = new System.Drawing.Size(111, 16);
             this.labelAnhoCon.TabIndex = 2;
@@ -316,7 +319,7 @@
             // labelZonaV
             // 
             this.labelZonaV.AutoSize = true;
-            this.labelZonaV.Location = new System.Drawing.Point(26, 68);
+            this.labelZonaV.Location = new System.Drawing.Point(28, 61);
             this.labelZonaV.Name = "labelZonaV";
             this.labelZonaV.Size = new System.Drawing.Size(94, 16);
             this.labelZonaV.TabIndex = 1;
@@ -327,7 +330,7 @@
             this.labelTipov.AutoSize = true;
             this.labelTipov.BackColor = System.Drawing.Color.LightSkyBlue;
             this.labelTipov.ForeColor = System.Drawing.Color.Black;
-            this.labelTipov.Location = new System.Drawing.Point(26, 23);
+            this.labelTipov.Location = new System.Drawing.Point(28, 16);
             this.labelTipov.Name = "labelTipov";
             this.labelTipov.Size = new System.Drawing.Size(91, 16);
             this.labelTipov.TabIndex = 0;
@@ -348,7 +351,7 @@
             this.tabPageMD.Location = new System.Drawing.Point(4, 25);
             this.tabPageMD.Name = "tabPageMD";
             this.tabPageMD.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMD.Size = new System.Drawing.Size(676, 282);
+            this.tabPageMD.Size = new System.Drawing.Size(682, 266);
             this.tabPageMD.TabIndex = 1;
             this.tabPageMD.Text = "Mas Detalles";
             // 
@@ -638,7 +641,7 @@
             this.tabPageCA.Location = new System.Drawing.Point(4, 25);
             this.tabPageCA.Name = "tabPageCA";
             this.tabPageCA.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCA.Size = new System.Drawing.Size(676, 282);
+            this.tabPageCA.Size = new System.Drawing.Size(682, 266);
             this.tabPageCA.TabIndex = 3;
             this.tabPageCA.Text = "Coberturas Avanzadas";
             // 
@@ -714,12 +717,13 @@
             // 
             // buttonPrecio
             // 
-            this.buttonPrecio.Location = new System.Drawing.Point(332, 398);
+            this.buttonPrecio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.buttonPrecio.Location = new System.Drawing.Point(330, 394);
             this.buttonPrecio.Name = "buttonPrecio";
-            this.buttonPrecio.Size = new System.Drawing.Size(139, 23);
+            this.buttonPrecio.Size = new System.Drawing.Size(147, 30);
             this.buttonPrecio.TabIndex = 1;
             this.buttonPrecio.Text = "Calcular Precio";
-            this.buttonPrecio.UseVisualStyleBackColor = true;
+            this.buttonPrecio.UseVisualStyleBackColor = false;
             this.buttonPrecio.Click += new System.EventHandler(this.buttonPrecio_Click);
             // 
             // label1
@@ -741,13 +745,34 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(552, 398);
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(515, 394);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 26);
+            this.button1.Size = new System.Drawing.Size(84, 30);
             this.button1.TabIndex = 4;
             this.button1.Text = "Eliminar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TFGProyecto.Properties.Resources.Diseño_sin_título__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(697, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(73, 66);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(282, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(238, 41);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Alta Poliza Hogar";
             // 
             // FrmPolizaHogar
             // 
@@ -755,6 +780,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label1);
@@ -780,6 +807,7 @@
             this.groupBoxCob.PerformLayout();
             this.tabPageCA.ResumeLayout(false);
             this.tabPageCA.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -845,5 +873,7 @@
         private System.Windows.Forms.Label labelfecExp;
         private System.Windows.Forms.Label labelFecCom;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
     }
 }
