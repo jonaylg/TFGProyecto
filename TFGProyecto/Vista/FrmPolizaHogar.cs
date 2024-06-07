@@ -8,15 +8,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TFGProyecto.Controlador;
 using TFGProyecto.Modelo;
 
 namespace TFGProyecto.Vista
 {
     public partial class FrmPolizaHogar : Form
     {
+
+        private int codPol;
         public FrmPolizaHogar()
         {
             InitializeComponent();
+        }
+
+        public FrmPolizaHogar(PolizaHogar ph, int codPol)
+        {
+            InitializeComponent();
+            obtenerDatosPoliza(ph);
+            this.codPol = codPol;
+        }
+
+        public FrmPolizaHogar(PolizaHogar ph)
+        {
+            InitializeComponent();
+            obtenerDatosPoliza(ph);
         }
 
         private List<String> complementos1= new List<String>();
@@ -269,10 +285,10 @@ namespace TFGProyecto.Vista
         {
             if (infoCorrecta())
             {
+                ControladorPolHog.insertarPolHog(construirPoliza());
                 MessageBox.Show(construirPoliza().MostrarDatos());
-                double precio = (calcularPrecioCoberturas() + calcularPrecioCoberturasAmp() + calcularPrecioDetalles() + calcularPrecioMasDetalles());
-                MessageBox.Show("este es el precio de la poliza " + precio);
-                FrmConfirmarPrecio formu = new FrmConfirmarPrecio(precio, complementos1, complementos2);
+                MessageBox.Show("este es el precio de la poliza " + construirPoliza().Precio);
+                FrmConfirmarPrecio formu = new FrmConfirmarPrecio(construirPoliza().Precio, complementos1, complementos2,ControladorPolHog.obtenerUltCod(), construirPoliza());
                 formu.ShowDialog();
             }
             else
@@ -314,6 +330,17 @@ namespace TFGProyecto.Vista
                 }
             }
 
+            if (numericUpDownCons.Value>numericUpDownTot.Value)
+            {
+                MessageBox.Show("El numero de metros construidos no pueden ser menores al total");
+                b = false;
+                numericUpDownTot.BackColor= Color.Red;
+            }
+            else
+            {
+                numericUpDownTot.BackColor = Color.Green;
+            }
+
             foreach (Control item in tabPageMD.Controls)
             {
                 if (item is ComboBox)
@@ -336,6 +363,20 @@ namespace TFGProyecto.Vista
                 b = false;
                 MessageBox.Show("el dni esta vacio o no tiene el numero de caracteres correctos");
             }
+
+            if (dateTimePickerFC.Value<DateTime.Now || dateTimePickerFC.Value>dateTimePickerFE.Value)
+            {
+                dateTimePickerFC.BackColor = Color.Red;
+                dateTimePickerFE.BackColor = Color.Red;
+                b = false;
+                MessageBox.Show(dateTimePickerFC.Value+ DateTime.Now.ToString()+ dateTimePickerFE.Value + "la fecha de comienzo es anterior a la fecha actual o es mayor a la fecha expiracion");
+            }
+            else
+            {
+                dateTimePickerFC.BackColor = Color.Green;
+                dateTimePickerFE.BackColor = Color.Green;
+            }
+
             return b;
         }
 
@@ -448,9 +489,57 @@ namespace TFGProyecto.Vista
                     }
                 }
             }
+            double precio = (calcularPrecioCoberturas() + calcularPrecioCoberturasAmp() + calcularPrecioDetalles() + calcularPrecioMasDetalles());
+            pol.Precio = precio;
 
+
+            pol.FechaComienzo = dateTimePickerFC.Value;
+            pol.FechaExpiracion = dateTimePickerFE.Value;
+            pol.Aceptada = false;
 
             return pol;
+        }
+
+        private void obtenerDatosPoliza(PolizaHogar ph)
+        {
+            maskedTextBox1.Text = ph.Dni;
+            comboBoxTipo.SelectedItem = ph.TipoVivienda;
+            comboBoxZona.SelectedItem = ph.ZonaVivienda;
+            numericUpDownAnho.Value = ph.AnhoConstruccion;
+            numericUpDownCons.Value = ph.MetrosConstruidos;
+            numericUpDownTot.Value = ph.MetrosTotales;
+            maskedTextBoxValor.Text = ph.ValorVivienda.ToString();
+            maskedTextBoxContenido.Text=ph.ValorContenido.ToString();
+            numericUpDownHab.Value = ph.Habitaciones;
+            checkBoxCamaras.Checked = ph.Camaras;
+            checkBoxPSegur.Checked = ph.PersonalSeguridad;
+            checkBoxCajaF.Checked = ph.PersonalSeguridad;
+            checkBoxVerja.Checked = ph.PersonalSeguridad;
+            checkBoxAlarma.Checked = ph.PersonalSeguridad;
+            comboBoxTipMat.SelectedItem = ph.TipoMaterial;
+            comboBoxUsoVivi.SelectedItem = ph.UsoVivienda;
+            checkBoxRobEnCas.Checked = ph.RoboEnCasa;
+            checkBoxFuego.Checked = ph.Incendio;
+            checkBoxFenAtm.Checked = ph.FenomenosAtmosfericos;
+            checkBox11ReposDDEE.Checked = ph.ResponsabilidadDaniosEstructurales;
+            checkBoxRotoCris.Checked = ph.RoturaCristales;
+            checkBoxAguaYElec.Checked = ph.AguaElectricidad;
+            checkBoxInhDelInm.Checked = ph.Inhabitabilidad;
+            checkBoxDefJur.Checked = ph.DefensaJuridica;
+            checkBoxRotTub.Checked = ph.RoturaTuberias;
+            checkBoxDerrAcc.Checked = ph.Derrumbe;
+            checkBoxAsisEnViaj.Checked = ph.AsistenciaViaje;
+            checkBoxAsisInf.Checked = ph.AsistenciaInformacion;
+            checkBoxVandalicos.Checked = ph.ActosVandalicos;
+            checkBoxProm.Checked = ph.Promociones;
+            checkBoxRep24h.Checked = ph.Reparacion24Horas;
+            checkBoxJuriAmp.Checked = ph.JuridicaAvanzada;
+            checkBoxVehEnGar.Checked = ph.VehiculoEnGaraje;
+            checkedListBox1.SetItemChecked(0,ph.Mascota);
+            checkedListBox1.SetItemChecked(1, ph.Piscina);
+            checkedListBox1.SetItemChecked(2, ph.Garaje);
+            dateTimePickerFC.Value = ph.FechaComienzo;
+            dateTimePickerFE.Value = ph.FechaExpiracion;
         }
 
         private void FrmPolizaHogar_Load(object sender, EventArgs e)
@@ -460,6 +549,25 @@ namespace TFGProyecto.Vista
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (this.codPol>0)
+            {
+                ControladorPolHog.eliminarPolizaHogar(this.codPol);
+                if (maskedTextBox1.Text!="" || maskedTextBox1.Text!=null)
+                {
+                    if (ControladorPolHog.numPolizasCliente(maskedTextBox1.Text) == 0)
+                    {
+                        ControladorCliente.eliminarCliente(maskedTextBox1.Text);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("el campo dni deberia estar relleno");
+                }
+            }
         }
     }
 }

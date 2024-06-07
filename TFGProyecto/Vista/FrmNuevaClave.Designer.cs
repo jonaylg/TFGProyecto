@@ -39,21 +39,24 @@ namespace ProyectoTFG
             this.textBoxClave = new System.Windows.Forms.TextBox();
             this.textBoxClave2 = new System.Windows.Forms.TextBox();
             this.buttonCambiar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelRespuesta
             // 
             this.labelRespuesta.AutoSize = true;
-            this.labelRespuesta.Location = new System.Drawing.Point(285, 91);
+            this.labelRespuesta.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.labelRespuesta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRespuesta.Location = new System.Drawing.Point(266, 90);
             this.labelRespuesta.Name = "labelRespuesta";
-            this.labelRespuesta.Size = new System.Drawing.Size(188, 16);
+            this.labelRespuesta.Size = new System.Drawing.Size(271, 25);
             this.labelRespuesta.TabIndex = 0;
             this.labelRespuesta.Text = "Label que llevara la respuesta";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(179, 146);
+            this.label2.Location = new System.Drawing.Point(194, 163);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 16);
             this.label2.TabIndex = 1;
@@ -62,7 +65,7 @@ namespace ProyectoTFG
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(179, 234);
+            this.label3.Location = new System.Drawing.Point(194, 251);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 16);
             this.label3.TabIndex = 2;
@@ -71,7 +74,7 @@ namespace ProyectoTFG
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(179, 188);
+            this.label4.Location = new System.Drawing.Point(194, 205);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 16);
             this.label4.TabIndex = 3;
@@ -79,7 +82,7 @@ namespace ProyectoTFG
             // 
             // textBoxRespuesta
             // 
-            this.textBoxRespuesta.Location = new System.Drawing.Point(321, 143);
+            this.textBoxRespuesta.Location = new System.Drawing.Point(336, 160);
             this.textBoxRespuesta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxRespuesta.Name = "textBoxRespuesta";
             this.textBoxRespuesta.Size = new System.Drawing.Size(125, 22);
@@ -87,7 +90,7 @@ namespace ProyectoTFG
             // 
             // textBoxClave
             // 
-            this.textBoxClave.Location = new System.Drawing.Point(321, 186);
+            this.textBoxClave.Location = new System.Drawing.Point(336, 203);
             this.textBoxClave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxClave.Name = "textBoxClave";
             this.textBoxClave.Size = new System.Drawing.Size(125, 22);
@@ -95,7 +98,7 @@ namespace ProyectoTFG
             // 
             // textBoxClave2
             // 
-            this.textBoxClave2.Location = new System.Drawing.Point(321, 231);
+            this.textBoxClave2.Location = new System.Drawing.Point(336, 248);
             this.textBoxClave2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxClave2.Name = "textBoxClave2";
             this.textBoxClave2.Size = new System.Drawing.Size(125, 22);
@@ -103,20 +106,33 @@ namespace ProyectoTFG
             // 
             // buttonCambiar
             // 
-            this.buttonCambiar.Location = new System.Drawing.Point(595, 188);
+            this.buttonCambiar.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.buttonCambiar.Location = new System.Drawing.Point(561, 205);
             this.buttonCambiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCambiar.Name = "buttonCambiar";
-            this.buttonCambiar.Size = new System.Drawing.Size(94, 23);
+            this.buttonCambiar.Size = new System.Drawing.Size(94, 40);
             this.buttonCambiar.TabIndex = 7;
             this.buttonCambiar.Text = "Cambiar";
-            this.buttonCambiar.UseVisualStyleBackColor = true;
+            this.buttonCambiar.UseVisualStyleBackColor = false;
             this.buttonCambiar.Click += new System.EventHandler(this.buttonCambiar_Click_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(263, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(274, 41);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Crea Tu Nueva Clave";
             // 
             // FrmNuevaClave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(800, 360);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCambiar);
             this.Controls.Add(this.textBoxClave2);
             this.Controls.Add(this.textBoxClave);
@@ -127,8 +143,10 @@ namespace ProyectoTFG
             this.Controls.Add(this.labelRespuesta);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmNuevaClave";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmNuevaClave";
             this.Load += new System.EventHandler(this.FrmNuevaClave_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmNuevaClave_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,5 +162,6 @@ namespace ProyectoTFG
         private TextBox textBoxClave;
         private TextBox textBoxClave2;
         private Button buttonCambiar;
+        private Label label1;
     }
 }

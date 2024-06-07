@@ -44,6 +44,11 @@ namespace TFGProyecto.Modelo
         private bool vehiculoEnGaraje;
         private bool juridicaAvanzada;
         private string dni;
+        private double precio;
+        private DateTime fechaComienzo;
+        private DateTime fechaExpiracion;
+        private bool aceptada;
+
 
         // Propiedades
         public string TipoVivienda { get => tipoVivienda; set => tipoVivienda = value; }
@@ -82,6 +87,10 @@ namespace TFGProyecto.Modelo
         public bool VehiculoEnGaraje { get => vehiculoEnGaraje; set => vehiculoEnGaraje = value; }
         public bool JuridicaAvanzada { get => juridicaAvanzada; set => juridicaAvanzada = value; }
         public string Dni { get => dni; set => dni = value; }
+        public double Precio { get => precio; set => precio = value; }
+        public DateTime FechaComienzo { get => fechaComienzo; set => fechaComienzo = value; }
+        public DateTime FechaExpiracion { get => fechaExpiracion; set => fechaExpiracion = value; }
+        public bool Aceptada { get => aceptada; set => aceptada = value; }
 
         // Constructores
         public PolizaHogar()
@@ -94,7 +103,7 @@ namespace TFGProyecto.Modelo
                     string usoVivienda, bool roboEnCasa, bool incendio, bool fenomenosAtmosfericos, bool responsabilidadDaniosEstructurales,
                     bool roturaCristales, bool aguaElectricidad, bool inhabitabilidad, bool defensaJuridica, bool roturaTuberias,
                     bool derrumbe, bool asistenciaInformacion, bool asistenciaViaje, bool actosVandalicos, bool promociones,
-                    bool reparacion24Horas, bool vehiculoEnGaraje, bool juridicaAvanzada, string dni)
+                    bool reparacion24Horas, bool vehiculoEnGaraje, bool juridicaAvanzada, string dni, double precio)
         {
             this.tipoVivienda = tipoVivienda;
             this.zonaVivienda = zonaVivienda;
@@ -132,6 +141,51 @@ namespace TFGProyecto.Modelo
             this.vehiculoEnGaraje = vehiculoEnGaraje;
             this.juridicaAvanzada = juridicaAvanzada;
             this.dni = dni;
+            this.precio = precio;
+        }
+
+        public PolizaHogar(string tipoVivienda, string zonaVivienda, int anhoConstruccion, int metrosConstruidos, int metrosTotales, double valorVivienda, double valorContenido, int habitaciones, bool mascota, bool piscina, bool garaje, bool personalSeguridad, bool camaras, bool cajaFuerte, bool verja, bool alarma, string tipoMaterial, string usoVivienda, bool roboEnCasa, bool incendio, bool fenomenosAtmosfericos, bool responsabilidadDaniosEstructurales, bool roturaCristales, bool aguaElectricidad, bool inhabitabilidad, bool defensaJuridica, bool roturaTuberias, bool derrumbe, bool asistenciaInformacion, bool asistenciaViaje, bool actosVandalicos, bool promociones, bool reparacion24Horas, bool vehiculoEnGaraje, bool juridicaAvanzada, string dni, double precio, DateTime fechaComienzo, DateTime fechaExpiracion, bool aceptada)
+        {
+            this.tipoVivienda = tipoVivienda;
+            this.zonaVivienda = zonaVivienda;
+            this.anhoConstruccion = anhoConstruccion;
+            this.metrosConstruidos = metrosConstruidos;
+            this.metrosTotales = metrosTotales;
+            this.valorVivienda = valorVivienda;
+            this.valorContenido = valorContenido;
+            this.habitaciones = habitaciones;
+            this.mascota = mascota;
+            this.piscina = piscina;
+            this.garaje = garaje;
+            this.personalSeguridad = personalSeguridad;
+            this.camaras = camaras;
+            this.cajaFuerte = cajaFuerte;
+            this.verja = verja;
+            this.alarma = alarma;
+            this.tipoMaterial = tipoMaterial;
+            this.usoVivienda = usoVivienda;
+            this.roboEnCasa = roboEnCasa;
+            this.incendio = incendio;
+            this.fenomenosAtmosfericos = fenomenosAtmosfericos;
+            this.responsabilidadDaniosEstructurales = responsabilidadDaniosEstructurales;
+            this.roturaCristales = roturaCristales;
+            this.aguaElectricidad = aguaElectricidad;
+            this.inhabitabilidad = inhabitabilidad;
+            this.defensaJuridica = defensaJuridica;
+            this.roturaTuberias = roturaTuberias;
+            this.derrumbe = derrumbe;
+            this.asistenciaInformacion = asistenciaInformacion;
+            this.asistenciaViaje = asistenciaViaje;
+            this.actosVandalicos = actosVandalicos;
+            this.promociones = promociones;
+            this.reparacion24Horas = reparacion24Horas;
+            this.vehiculoEnGaraje = vehiculoEnGaraje;
+            this.juridicaAvanzada = juridicaAvanzada;
+            this.dni = dni;
+            this.precio = precio;
+            this.fechaComienzo = fechaComienzo;
+            this.fechaExpiracion = fechaExpiracion;
+            this.aceptada = aceptada;
         }
 
         public string MostrarDatos()
@@ -171,7 +225,11 @@ namespace TFGProyecto.Modelo
            $"¿Reparación 24 horas?: {(reparacion24Horas ? "Sí" : "No")}\n" +
            $"¿Vehículo en garaje cubierto?: {(vehiculoEnGaraje ? "Sí" : "No")}\n" +
            $"¿Defensa jurídica avanzada?: {(juridicaAvanzada ? "Sí" : "No")}\n" +
-           $"DNI: {dni}";
+           $"DNI: {dni}\n" +
+           $"Precio: {precio}\n"+
+           $"Fecha Comienzo: {fechaComienzo}\n" +
+           $"Fecha Expiracion: {fechaExpiracion}\n" +
+           $"¿Aceptada?: {(aceptada ? "Sí" : "No")}";
 }
 
     }

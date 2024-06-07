@@ -66,6 +66,7 @@
     <Compile Include="Controlador\ControladorCliente.cs" />
     <Compile Include="Controlador\ControladorBBDD.cs" />
     <Compile Include="Controlador\ControladorEmpleado.cs" />
+    <Compile Include="Controlador\ControladorPolHog.cs" />
     <Compile Include="Controlador\ControladorPrivilegios.cs" />
     <Compile Include="Controlador\ControladorRol.cs" />
     <Compile Include="Controlador\ControladorUsuario.cs" />
@@ -80,6 +81,11 @@
     <Compile Include="Modelo\PolizaHogar.cs" />
     <Compile Include="Modelo\Privilegio.cs" />
     <Compile Include="Modelo\Rol.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,18 @@
     </Compile>
     <Compile Include="Vista\FrmInicioSesion.Designer.cs">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmMenuCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmMenuCliente.Designer.cs">
+      <DependentUpon>FrmMenuCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmMenuPrincipal.Designer.cs">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\FrmNuevaClave.cs">
       <SubType>Form</SubType>
@@ -140,6 +158,12 @@
     <EmbeddedResource Include="Vista\FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmMenuCliente.resx">
+      <DependentUpon>FrmMenuCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmMenuPrincipal.resx">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmNuevaClave.resx">
       <DependentUpon>FrmNuevaClave.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,13 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="DatabaseTFGDataSet.xsc">
       <DependentUpon>DatabaseTFGDataSet.xsd</DependentUpon>
     </None>
@@ -203,6 +223,13 @@
     <Content Include="BBDD\Scripts\dbo.Rol.sql" />
     <Content Include="BBDD\Scripts\dbo.RolPrivilegio.sql" />
     <Content Include="BBDD\Scripts\dbo.Usuario.sql" />
+    <None Include="Resources\Captura3.JPG" />
+    <None Include="Resources\Captura2.JPG" />
+    <None Include="Resources\fotor-ai-202406062056422.jpg" />
+    <None Include="Resources\fotor-ai-2024060620564.jpg" />
+    <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\Diseño sin título %281%291.png" />
+    <None Include="Resources\Diseño sin título %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

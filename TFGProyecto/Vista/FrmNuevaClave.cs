@@ -30,7 +30,7 @@ namespace ProyectoTFG
                 }
             }
 
-            if (textBoxRespuesta.Text.ToString()==respuesta)
+            if (textBoxRespuesta.Text.ToString()==respuesta && textBoxClave.Text!="" && textBoxClave2.Text!="")
             {
                 if (textBoxClave.Text == textBoxClave2.Text)
                 {
@@ -61,6 +61,11 @@ namespace ProyectoTFG
                     labelRespuesta.Text = item.PregPers;
                 }
             }
+        }
+
+        private void FrmNuevaClave_Paint(object sender, PaintEventArgs e)
+        {
+            
         }
     }
 }
