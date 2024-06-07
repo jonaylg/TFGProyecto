@@ -49,6 +49,7 @@ namespace TFGProyecto.Modelo
         private DateTime fechaExpiracion;
         private bool aceptada;
 
+
         // Propiedades
         public string TipoVivienda { get => tipoVivienda; set => tipoVivienda = value; }
         public string ZonaVivienda { get => zonaVivienda; set => zonaVivienda = value; }

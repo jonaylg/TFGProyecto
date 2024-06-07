@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControlGen = new System.Windows.Forms.TabControl();
+            this.tabPagePers = new System.Windows.Forms.TabPage();
             this.maskedTextBoxDni = new System.Windows.Forms.MaskedTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dateTimePickerFN = new System.Windows.Forms.DateTimePicker();
@@ -45,10 +45,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelFN = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPageBan = new System.Windows.Forms.TabPage();
             this.textBoxNomTit = new System.Windows.Forms.TextBox();
             this.textBoxDirFac = new System.Windows.Forms.TextBox();
             this.comboBoxMetPag = new System.Windows.Forms.ComboBox();
@@ -65,54 +65,55 @@
             this.label9 = new System.Windows.Forms.Label();
             this.buttonInserClien = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.tabControlGen.SuspendLayout();
+            this.tabPagePers.SuspendLayout();
+            this.tabPageBan.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabControlGen
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(72, 35);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(657, 365);
-            this.tabControl1.TabIndex = 0;
+            this.tabControlGen.Controls.Add(this.tabPagePers);
+            this.tabControlGen.Controls.Add(this.tabPageBan);
+            this.tabControlGen.Location = new System.Drawing.Point(72, 35);
+            this.tabControlGen.Name = "tabControlGen";
+            this.tabControlGen.SelectedIndex = 0;
+            this.tabControlGen.Size = new System.Drawing.Size(657, 365);
+            this.tabControlGen.TabIndex = 0;
             // 
-            // tabPage1
+            // tabPagePers
             // 
-            this.tabPage1.Controls.Add(this.maskedTextBoxDni);
-            this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Controls.Add(this.dateTimePickerFN);
-            this.tabPage1.Controls.Add(this.maskedTextBoxTel);
-            this.tabPage1.Controls.Add(this.textBoxProv);
-            this.tabPage1.Controls.Add(this.textBoxDir);
-            this.tabPage1.Controls.Add(this.textBoxApe);
-            this.tabPage1.Controls.Add(this.textBoxCorreo);
-            this.tabPage1.Controls.Add(this.textBoxCiu);
-            this.tabPage1.Controls.Add(this.textBoxNombre);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(649, 336);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Personales";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPagePers.Controls.Add(this.maskedTextBoxDni);
+            this.tabPagePers.Controls.Add(this.label10);
+            this.tabPagePers.Controls.Add(this.dateTimePickerFN);
+            this.tabPagePers.Controls.Add(this.maskedTextBoxTel);
+            this.tabPagePers.Controls.Add(this.textBoxProv);
+            this.tabPagePers.Controls.Add(this.textBoxDir);
+            this.tabPagePers.Controls.Add(this.textBoxApe);
+            this.tabPagePers.Controls.Add(this.textBoxCorreo);
+            this.tabPagePers.Controls.Add(this.textBoxCiu);
+            this.tabPagePers.Controls.Add(this.textBoxNombre);
+            this.tabPagePers.Controls.Add(this.label8);
+            this.tabPagePers.Controls.Add(this.label7);
+            this.tabPagePers.Controls.Add(this.label6);
+            this.tabPagePers.Controls.Add(this.label5);
+            this.tabPagePers.Controls.Add(this.label4);
+            this.tabPagePers.Controls.Add(this.labelFN);
+            this.tabPagePers.Controls.Add(this.label2);
+            this.tabPagePers.Controls.Add(this.label1);
+            this.tabPagePers.Location = new System.Drawing.Point(4, 25);
+            this.tabPagePers.Name = "tabPagePers";
+            this.tabPagePers.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPagePers.Size = new System.Drawing.Size(649, 336);
+            this.tabPagePers.TabIndex = 0;
+            this.tabPagePers.Text = "Personales";
+            this.tabPagePers.UseVisualStyleBackColor = true;
             // 
             // maskedTextBoxDni
             // 
             this.maskedTextBoxDni.Location = new System.Drawing.Point(501, 22);
             this.maskedTextBoxDni.Mask = "00000000L";
             this.maskedTextBoxDni.Name = "maskedTextBoxDni";
+            this.maskedTextBoxDni.ReadOnly = true;
             this.maskedTextBoxDni.Size = new System.Drawing.Size(100, 22);
             this.maskedTextBoxDni.TabIndex = 17;
             // 
@@ -227,14 +228,14 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Dirección";
             // 
-            // label3
+            // labelFN
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(52, 257);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Fecha de Nacimiento";
+            this.labelFN.AutoSize = true;
+            this.labelFN.Location = new System.Drawing.Point(52, 257);
+            this.labelFN.Name = "labelFN";
+            this.labelFN.Size = new System.Drawing.Size(135, 16);
+            this.labelFN.TabIndex = 2;
+            this.labelFN.Text = "Fecha de Nacimiento";
             // 
             // label2
             // 
@@ -254,29 +255,29 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
-            // tabPage2
+            // tabPageBan
             // 
-            this.tabPage2.Controls.Add(this.textBoxNomTit);
-            this.tabPage2.Controls.Add(this.textBoxDirFac);
-            this.tabPage2.Controls.Add(this.comboBoxMetPag);
-            this.tabPage2.Controls.Add(this.comboBoxFrecPag);
-            this.tabPage2.Controls.Add(this.maskedTextBoxCVV);
-            this.tabPage2.Controls.Add(this.maskedTextBoxFV);
-            this.tabPage2.Controls.Add(this.comboBoxTipo);
-            this.tabPage2.Controls.Add(this.label15);
-            this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.labelFV);
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(649, 336);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Bancarios";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPageBan.Controls.Add(this.textBoxNomTit);
+            this.tabPageBan.Controls.Add(this.textBoxDirFac);
+            this.tabPageBan.Controls.Add(this.comboBoxMetPag);
+            this.tabPageBan.Controls.Add(this.comboBoxFrecPag);
+            this.tabPageBan.Controls.Add(this.maskedTextBoxCVV);
+            this.tabPageBan.Controls.Add(this.maskedTextBoxFV);
+            this.tabPageBan.Controls.Add(this.comboBoxTipo);
+            this.tabPageBan.Controls.Add(this.label15);
+            this.tabPageBan.Controls.Add(this.label14);
+            this.tabPageBan.Controls.Add(this.label13);
+            this.tabPageBan.Controls.Add(this.label12);
+            this.tabPageBan.Controls.Add(this.label11);
+            this.tabPageBan.Controls.Add(this.labelFV);
+            this.tabPageBan.Controls.Add(this.label9);
+            this.tabPageBan.Location = new System.Drawing.Point(4, 25);
+            this.tabPageBan.Name = "tabPageBan";
+            this.tabPageBan.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageBan.Size = new System.Drawing.Size(649, 336);
+            this.tabPageBan.TabIndex = 1;
+            this.tabPageBan.Text = "Bancarios";
+            this.tabPageBan.UseVisualStyleBackColor = true;
             // 
             // textBoxNomTit
             // 
@@ -441,28 +442,28 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonInserClien);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControlGen);
             this.Name = "FrmDetallesCliente";
             this.Text = "FrmDetallesCliente";
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.tabControlGen.ResumeLayout(false);
+            this.tabPagePers.ResumeLayout(false);
+            this.tabPagePers.PerformLayout();
+            this.tabPageBan.ResumeLayout(false);
+            this.tabPageBan.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabControl tabControlGen;
+        private System.Windows.Forms.TabPage tabPagePers;
+        private System.Windows.Forms.TabPage tabPageBan;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelFN;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxNombre;

@@ -154,6 +154,20 @@ namespace TFGProyecto.Controlador
             return ulti;
         }
 
+        public static int numPolizasCliente(String dni)
+        {
+            int numero = -1;
+            string query = $"SELECT count(id) as numero FROM PolizaHogar where dni='{dni}'";
+            using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
+            {
+                if (reader.Read())
+                {
+                    numero = Int32.Parse(reader["numero"].ToString());
+                }
+            }
+            return numero;
+        }
+
         public static bool eliminarPolizaHogar(int id)
         {
             Boolean b=true;

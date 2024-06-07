@@ -99,12 +99,19 @@ namespace TFGProyecto.Vista
             {
                 if (resultado && comboBox1.SelectedItem.ToString() == "Existente")
                 {
-                    FrmMenuCliente formu = new FrmMenuCliente();
-                    formu.ShowDialog();
+                    if (ControladorCliente.existeCliente(ph.Dni)!=0 && ControladorCliente.existeCliente(ph.Dni) != -1)
+                    {
+                        FrmMenuPrincipal formu = new FrmMenuPrincipal();
+                        formu.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("el dni proporcionado no coincide con ninguno de los guardados en la base de datos, seleccione nuevo o cambie el dni en el anterior formulario");
+                    }
                 }
                 else if (resultado && comboBox1.SelectedItem.ToString() == "Nuevo")
                 {
-                    FrmDetallesCliente formu = new FrmDetallesCliente();
+                    FrmDetallesCliente formu = new FrmDetallesCliente(ph.Dni);
                     formu.ShowDialog();
                 }
                 else

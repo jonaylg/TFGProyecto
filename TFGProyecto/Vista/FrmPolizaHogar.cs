@@ -330,6 +330,17 @@ namespace TFGProyecto.Vista
                 }
             }
 
+            if (numericUpDownCons.Value>numericUpDownTot.Value)
+            {
+                MessageBox.Show("El numero de metros construidos no pueden ser menores al total");
+                b = false;
+                numericUpDownTot.BackColor= Color.Red;
+            }
+            else
+            {
+                numericUpDownTot.BackColor = Color.Green;
+            }
+
             foreach (Control item in tabPageMD.Controls)
             {
                 if (item is ComboBox)
@@ -545,6 +556,17 @@ namespace TFGProyecto.Vista
             if (this.codPol>0)
             {
                 ControladorPolHog.eliminarPolizaHogar(this.codPol);
+                if (maskedTextBox1.Text!="" || maskedTextBox1.Text!=null)
+                {
+                    if (ControladorPolHog.numPolizasCliente(maskedTextBox1.Text) == 0)
+                    {
+                        ControladorCliente.eliminarCliente(maskedTextBox1.Text);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("el campo dni deberia estar relleno");
+                }
             }
         }
     }

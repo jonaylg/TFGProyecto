@@ -100,6 +100,20 @@ namespace TFGProyecto.Controlador
             datos.Add(dni);
             return ControladorBBDD.ejecutarQueryParams(query, datos);
         }
+
+        public static int existeCliente(String dni)
+        {
+            int numero = -1;
+            string query = $"SELECT count(DNI) as numero FROM Cliente where DNI='{dni}'";
+            using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
+            {
+                if (reader.Read())
+                {
+                    numero = Int32.Parse(reader["numero"].ToString());
+                }
+            }
+            return numero;
+        }
         public static void CargarDatosEnListaCliente()
         {
             string query = "SELECT * FROM Cliente";

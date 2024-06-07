@@ -24,9 +24,9 @@ namespace ProyectoTFG
         }       
         private void FrmInicioSesion_Load(object sender, EventArgs e)
         {
-            ControladorRol.CargarListaRoles();
+            //ControladorRol.CargarListaRoles();
             ControladorEmpleado.CargarListaEmpleados();
-            ControladorPrivilegios.CargarListaPrivilegios();
+            //ControladorPrivilegios.CargarListaPrivilegios();
             ControladorUsuario.CargarDatosEnListaUsuario();
         }
 

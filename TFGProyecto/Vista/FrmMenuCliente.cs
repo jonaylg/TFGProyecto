@@ -154,6 +154,11 @@ namespace TFGProyecto.Vista
                     FrmDetallesCliente formu = new FrmDetallesCliente(ControladorCliente.obtenerCliente(dataGridViewCLientes.CurrentRow.Cells[0].Value.ToString()));
                     formu.ShowDialog();
                 }
+                else
+                {
+                    FrmMenuPrincipal formu = new FrmMenuPrincipal(dataGridViewCLientes.CurrentRow.Cells[0].Value.ToString());
+                    formu.ShowDialog();
+                }
             }
             else
             {
@@ -166,6 +171,41 @@ namespace TFGProyecto.Vista
             pictureBox1.Visible = false;
             buttonMenu.Visible = false;
             menuStrip1.Visible = true;
+        }
+
+        private void altaToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            FrmPolizaVida formu = new FrmPolizaVida();
+            formu.ShowDialog();
+        }
+
+        private void altaToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            FrmPolizaHogar formu = new FrmPolizaHogar();
+            formu.ShowDialog();
+        }
+
+        private void menuToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            FrmMenuPrincipal formu=new FrmMenuPrincipal();
+            formu.ShowDialog();
+        }
+
+        private void altaToolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            FrmDetallesCliente formu=new FrmDetallesCliente();
+            formu.ShowDialog();
+        }
+
+        private void menuToolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            FrmMenuCliente formu=new FrmMenuCliente();
+            formu.ShowDialog();
+        }
+
+        private void buttonAct_Click(object sender, EventArgs e)
+        {
+            rellenarDataGrid();
         }
     }
 }

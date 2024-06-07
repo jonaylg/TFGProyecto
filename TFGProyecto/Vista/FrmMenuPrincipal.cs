@@ -18,11 +18,20 @@ namespace TFGProyecto.Vista
         public FrmMenuPrincipal()
         {
             InitializeComponent();
+            rellenarDataGrid();
+        }
+
+        public FrmMenuPrincipal(String dni)
+        {
+            InitializeComponent();
+            textBox1.Text = dni;
+            radioButtonDni.Checked = true;
+            rellenarDataGridXFiltro(tipoFiltrado(dni));
         }
 
         private void FrmMenuPrincipal_Load(object sender, EventArgs e)
         {
-            rellenarDataGrid();
+            MessageBox.Show("Bienvenido al menu de poliza hogar");
         }
 
         private String tipoFiltrado(String filtro)
@@ -78,6 +87,9 @@ namespace TFGProyecto.Vista
                                     MessageBox.Show("debes seleccionar el tipo de operando");
                                     query = "error";
                                 }
+                                break;
+                            case "Dni":
+                                query = $"SELECT id, dni, tipoVivienda, zonaVivienda, valorVivienda, precio FROM PolizaHogar where dni='{filtro}'";
                                 break;
                         }
                     }
@@ -187,6 +199,39 @@ namespace TFGProyecto.Vista
             pictureBox1.Visible=false;
             buttonMenu.Visible=false;
             menuStrip1.Visible=true;
+        }
+
+        private void polizaVidaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void altaToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            FrmDetallesCliente formu=new FrmDetallesCliente();
+            formu.ShowDialog();
+        }
+
+        private void menuToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            FrmMenuCliente formu= new FrmMenuCliente();
+            formu.ShowDialog();
+        }
+
+        private void altaToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FrmPolizaHogar formu=new FrmPolizaHogar();
+            formu.ShowDialog();
+        }
+
+        private void menuToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("ya estas en la ventana seleccionada");
+        }
+
+        private void buttonAct_Click(object sender, EventArgs e)
+        {
+            rellenarDataGrid();
         }
     }
 }

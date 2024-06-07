@@ -52,6 +52,20 @@
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.empleadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.polizasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vidaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.hogarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonAct = new System.Windows.Forms.Button();
             this.groupBoxRB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCLientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,7 +74,7 @@
             // 
             // buttonFilt
             // 
-            this.buttonFilt.Location = new System.Drawing.Point(367, 382);
+            this.buttonFilt.Location = new System.Drawing.Point(274, 382);
             this.buttonFilt.Name = "buttonFilt";
             this.buttonFilt.Size = new System.Drawing.Size(75, 23);
             this.buttonFilt.TabIndex = 13;
@@ -176,7 +190,7 @@
             // 
             // buttonMenu
             // 
-            this.buttonMenu.Location = new System.Drawing.Point(2, 6);
+            this.buttonMenu.Location = new System.Drawing.Point(1, 6);
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.Size = new System.Drawing.Size(73, 73);
             this.buttonMenu.TabIndex = 15;
@@ -187,7 +201,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(81, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(80, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(75, 73);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -197,9 +211,13 @@
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.empleadosToolStripMenuItem1,
+            this.polizasToolStripMenuItem,
+            this.clientesToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.Visible = false;
@@ -258,11 +276,120 @@
             this.menuToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.menuToolStripMenuItem1.Text = "Menu";
             // 
+            // empleadosToolStripMenuItem1
+            // 
+            this.empleadosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaToolStripMenuItem2,
+            this.menuToolStripMenuItem2});
+            this.empleadosToolStripMenuItem1.Name = "empleadosToolStripMenuItem1";
+            this.empleadosToolStripMenuItem1.Size = new System.Drawing.Size(97, 26);
+            this.empleadosToolStripMenuItem1.Text = "Empleados";
+            // 
+            // altaToolStripMenuItem2
+            // 
+            this.altaToolStripMenuItem2.Name = "altaToolStripMenuItem2";
+            this.altaToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.altaToolStripMenuItem2.Text = "Alta";
+            // 
+            // menuToolStripMenuItem2
+            // 
+            this.menuToolStripMenuItem2.Name = "menuToolStripMenuItem2";
+            this.menuToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.menuToolStripMenuItem2.Text = "Menu";
+            // 
+            // polizasToolStripMenuItem
+            // 
+            this.polizasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vidaToolStripMenuItem1,
+            this.hogarToolStripMenuItem1});
+            this.polizasToolStripMenuItem.Name = "polizasToolStripMenuItem";
+            this.polizasToolStripMenuItem.Size = new System.Drawing.Size(68, 26);
+            this.polizasToolStripMenuItem.Text = "Polizas";
+            // 
+            // vidaToolStripMenuItem1
+            // 
+            this.vidaToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaToolStripMenuItem4,
+            this.menuToolStripMenuItem4});
+            this.vidaToolStripMenuItem1.Name = "vidaToolStripMenuItem1";
+            this.vidaToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.vidaToolStripMenuItem1.Text = "Vida";
+            // 
+            // hogarToolStripMenuItem1
+            // 
+            this.hogarToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaToolStripMenuItem3,
+            this.menuToolStripMenuItem3});
+            this.hogarToolStripMenuItem1.Name = "hogarToolStripMenuItem1";
+            this.hogarToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.hogarToolStripMenuItem1.Text = "Hogar";
+            // 
+            // altaToolStripMenuItem3
+            // 
+            this.altaToolStripMenuItem3.Name = "altaToolStripMenuItem3";
+            this.altaToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.altaToolStripMenuItem3.Text = "Alta";
+            this.altaToolStripMenuItem3.Click += new System.EventHandler(this.altaToolStripMenuItem3_Click);
+            // 
+            // menuToolStripMenuItem3
+            // 
+            this.menuToolStripMenuItem3.Name = "menuToolStripMenuItem3";
+            this.menuToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.menuToolStripMenuItem3.Text = "Menu";
+            this.menuToolStripMenuItem3.Click += new System.EventHandler(this.menuToolStripMenuItem3_Click);
+            // 
+            // altaToolStripMenuItem4
+            // 
+            this.altaToolStripMenuItem4.Name = "altaToolStripMenuItem4";
+            this.altaToolStripMenuItem4.Size = new System.Drawing.Size(224, 26);
+            this.altaToolStripMenuItem4.Text = "Alta";
+            this.altaToolStripMenuItem4.Click += new System.EventHandler(this.altaToolStripMenuItem4_Click);
+            // 
+            // menuToolStripMenuItem4
+            // 
+            this.menuToolStripMenuItem4.Name = "menuToolStripMenuItem4";
+            this.menuToolStripMenuItem4.Size = new System.Drawing.Size(224, 26);
+            this.menuToolStripMenuItem4.Text = "Menu";
+            // 
+            // clientesToolStripMenuItem1
+            // 
+            this.clientesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaToolStripMenuItem5,
+            this.menuToolStripMenuItem5});
+            this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(75, 26);
+            this.clientesToolStripMenuItem1.Text = "Clientes";
+            // 
+            // altaToolStripMenuItem5
+            // 
+            this.altaToolStripMenuItem5.Name = "altaToolStripMenuItem5";
+            this.altaToolStripMenuItem5.Size = new System.Drawing.Size(224, 26);
+            this.altaToolStripMenuItem5.Text = "Alta";
+            this.altaToolStripMenuItem5.Click += new System.EventHandler(this.altaToolStripMenuItem5_Click);
+            // 
+            // menuToolStripMenuItem5
+            // 
+            this.menuToolStripMenuItem5.Name = "menuToolStripMenuItem5";
+            this.menuToolStripMenuItem5.Size = new System.Drawing.Size(224, 26);
+            this.menuToolStripMenuItem5.Text = "Menu";
+            this.menuToolStripMenuItem5.Click += new System.EventHandler(this.menuToolStripMenuItem5_Click);
+            // 
+            // buttonAct
+            // 
+            this.buttonAct.Location = new System.Drawing.Point(436, 382);
+            this.buttonAct.Name = "buttonAct";
+            this.buttonAct.Size = new System.Drawing.Size(75, 23);
+            this.buttonAct.TabIndex = 17;
+            this.buttonAct.Text = "Actualizar";
+            this.buttonAct.UseVisualStyleBackColor = true;
+            this.buttonAct.Click += new System.EventHandler(this.buttonAct_Click);
+            // 
             // FrmMenuCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonAct);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonFilt);
@@ -313,5 +440,19 @@
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem polizasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vidaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem hogarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem5;
+        private System.Windows.Forms.Button buttonAct;
     }
 }

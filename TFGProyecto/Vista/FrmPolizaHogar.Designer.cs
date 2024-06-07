@@ -113,6 +113,7 @@
             // 
             // tabPageDH
             // 
+            this.tabPageDH.BackColor = System.Drawing.Color.LightSkyBlue;
             this.tabPageDH.Controls.Add(this.maskedTextBoxContenido);
             this.tabPageDH.Controls.Add(this.maskedTextBoxValor);
             this.tabPageDH.Controls.Add(this.checkedListBox1);
@@ -136,7 +137,6 @@
             this.tabPageDH.Size = new System.Drawing.Size(676, 282);
             this.tabPageDH.TabIndex = 0;
             this.tabPageDH.Text = "Detalles Hogar";
-            this.tabPageDH.UseVisualStyleBackColor = true;
             this.tabPageDH.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // maskedTextBoxContenido
@@ -185,6 +185,11 @@
             // numericUpDownTot
             // 
             this.numericUpDownTot.Location = new System.Drawing.Point(156, 214);
+            this.numericUpDownTot.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.numericUpDownTot.Name = "numericUpDownTot";
             this.numericUpDownTot.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownTot.TabIndex = 15;
@@ -320,6 +325,8 @@
             // labelTipov
             // 
             this.labelTipov.AutoSize = true;
+            this.labelTipov.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.labelTipov.ForeColor = System.Drawing.Color.Black;
             this.labelTipov.Location = new System.Drawing.Point(26, 23);
             this.labelTipov.Name = "labelTipov";
             this.labelTipov.Size = new System.Drawing.Size(91, 16);
@@ -328,6 +335,7 @@
             // 
             // tabPageMD
             // 
+            this.tabPageMD.BackColor = System.Drawing.Color.LightSkyBlue;
             this.tabPageMD.Controls.Add(this.dateTimePickerFE);
             this.tabPageMD.Controls.Add(this.dateTimePickerFC);
             this.tabPageMD.Controls.Add(this.labelfecExp);
@@ -343,7 +351,6 @@
             this.tabPageMD.Size = new System.Drawing.Size(676, 282);
             this.tabPageMD.TabIndex = 1;
             this.tabPageMD.Text = "Mas Detalles";
-            this.tabPageMD.UseVisualStyleBackColor = true;
             // 
             // dateTimePickerFE
             // 
@@ -488,14 +495,15 @@
             // 
             // tabPageCC
             // 
+            this.tabPageCC.BackColor = System.Drawing.Color.LightSkyBlue;
             this.tabPageCC.Controls.Add(this.groupBoxCob);
+            this.tabPageCC.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tabPageCC.Location = new System.Drawing.Point(4, 25);
             this.tabPageCC.Name = "tabPageCC";
             this.tabPageCC.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageCC.Size = new System.Drawing.Size(676, 282);
             this.tabPageCC.TabIndex = 2;
             this.tabPageCC.Text = "Coberturas";
-            this.tabPageCC.UseVisualStyleBackColor = true;
             // 
             // groupBoxCob
             // 
@@ -619,6 +627,7 @@
             // 
             // tabPageCA
             // 
+            this.tabPageCA.BackColor = System.Drawing.Color.LightSkyBlue;
             this.tabPageCA.Controls.Add(this.checkBoxProm);
             this.tabPageCA.Controls.Add(this.checkBoxJuriAmp);
             this.tabPageCA.Controls.Add(this.checkBoxRep24h);
@@ -632,7 +641,6 @@
             this.tabPageCA.Size = new System.Drawing.Size(676, 282);
             this.tabPageCA.TabIndex = 3;
             this.tabPageCA.Text = "Coberturas Avanzadas";
-            this.tabPageCA.UseVisualStyleBackColor = true;
             // 
             // checkBoxProm
             // 
@@ -745,6 +753,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.maskedTextBox1);
