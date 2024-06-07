@@ -10,7 +10,6 @@ namespace TFGProyecto.Controlador
 {
     public class ControladorEmpleado
     {
-        public static List<Empleado> listaEmpleados = new List<Empleado>();
 
         public static bool insertarEmpleado(Empleado e)
         {
@@ -68,7 +67,7 @@ namespace TFGProyecto.Controlador
             }
             return empleado;
         }
-        public static bool ModificarEmpleado(List<string> atributos, List<string> datos)
+        public static bool ModificarEmpleado(List<string> atributos, List<string> datos,Empleado e)
         {
             string query = "UPDATE Empleado SET ";
             foreach (string atributo in atributos)
@@ -76,7 +75,7 @@ namespace TFGProyecto.Controlador
                 query += $"{atributo} = @{atributo},";
             }
             query = query.Remove(query.Length - 1);
-            query += " WHERE id = @id";
+            query += $" WHERE id = {e.Id}";
             return ControladorBBDD.ejecutarQueryParams(query, datos);
         }
         public static bool EliminarEmpleado(int id)
@@ -85,22 +84,6 @@ namespace TFGProyecto.Controlador
             List<string> datos = new List<string>();
             datos.Add(id.ToString());
             return ControladorBBDD.ejecutarQueryParams(query, datos);
-        }
-        public static void CargarListaEmpleados()
-        {
-            string query = "SELECT * FROM Empleado";
-            SqlDataReader reader = ControladorBBDD.getRegistros(query);
-            while (reader.Read())
-            {
-                Empleado e = new Empleado(int.Parse(reader["id"].ToString()),
-                    ControladorUsuario.listaUsuarios.Find(u => u.Nick == reader["usuario"].ToString()),
-                    reader["nombre"].ToString(), reader["apellido1"].ToString(),
-                    reader["apellido2"].ToString(), DateTime.Parse(reader["fechaNac"].ToString()),
-                    DateTime.Parse(reader["fechaContr"].ToString()), (Puesto)Enum.Parse(typeof(Puesto),
-                    reader["puesto"].ToString()), double.Parse(reader["salario"].ToString()),
-                    reader["email"].ToString(), int.Parse(reader["telefono"].ToString()), reader["direccion"].ToString());
-                listaEmpleados.Add(e);
-            }
         }
     }
 }

@@ -55,6 +55,9 @@
             this.rdbttnCard = new System.Windows.Forms.CheckBox();
             this.tbpgEstilo = new System.Windows.Forms.TabPage();
             this.grbbxAct = new System.Windows.Forms.GroupBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rdbttnAlta = new System.Windows.Forms.RadioButton();
             this.grpbxDieta = new System.Windows.Forms.GroupBox();
             this.rdbttnGrasAzu = new System.Windows.Forms.RadioButton();
             this.rdbttnGras = new System.Windows.Forms.RadioButton();
@@ -65,14 +68,12 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tbpgCoberturas = new System.Windows.Forms.TabPage();
-            this.rdbttnAlta = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.chkbxAcc = new System.Windows.Forms.CheckBox();
-            this.chkbxITP = new System.Windows.Forms.CheckBox();
-            this.chkbxTerm = new System.Windows.Forms.CheckBox();
-            this.chkbxCap = new System.Windows.Forms.CheckBox();
             this.nudCap = new System.Windows.Forms.NumericUpDown();
+            this.chkbxCap = new System.Windows.Forms.CheckBox();
+            this.chkbxTerm = new System.Windows.Forms.CheckBox();
+            this.chkbxITP = new System.Windows.Forms.CheckBox();
+            this.chkbxAcc = new System.Windows.Forms.CheckBox();
+            this.bttnAceptar = new System.Windows.Forms.Button();
             this.tbcntrlVida.SuspendLayout();
             this.tbpgCaracteristicas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAlt)).BeginInit();
@@ -420,6 +421,39 @@
             this.grbbxAct.TabStop = false;
             this.grbbxAct.Text = "Nivel de Actividad";
             // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(21, 72);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(46, 17);
+            this.radioButton2.TabIndex = 3;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Baja";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(21, 46);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(54, 17);
+            this.radioButton1.TabIndex = 2;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Media";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // rdbttnAlta
+            // 
+            this.rdbttnAlta.AutoSize = true;
+            this.rdbttnAlta.Location = new System.Drawing.Point(21, 23);
+            this.rdbttnAlta.Name = "rdbttnAlta";
+            this.rdbttnAlta.Size = new System.Drawing.Size(43, 17);
+            this.rdbttnAlta.TabIndex = 1;
+            this.rdbttnAlta.TabStop = true;
+            this.rdbttnAlta.Text = "Alta";
+            this.rdbttnAlta.UseVisualStyleBackColor = true;
+            // 
             // grpbxDieta
             // 
             this.grpbxDieta.Controls.Add(this.rdbttnGrasAzu);
@@ -535,83 +569,6 @@
             this.tbpgCoberturas.Text = "Suplementos";
             this.tbpgCoberturas.UseVisualStyleBackColor = true;
             // 
-            // rdbttnAlta
-            // 
-            this.rdbttnAlta.AutoSize = true;
-            this.rdbttnAlta.Location = new System.Drawing.Point(21, 23);
-            this.rdbttnAlta.Name = "rdbttnAlta";
-            this.rdbttnAlta.Size = new System.Drawing.Size(43, 17);
-            this.rdbttnAlta.TabIndex = 1;
-            this.rdbttnAlta.TabStop = true;
-            this.rdbttnAlta.Text = "Alta";
-            this.rdbttnAlta.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(21, 46);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(54, 17);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Media";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(21, 72);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(46, 17);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Baja";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // chkbxAcc
-            // 
-            this.chkbxAcc.AutoSize = true;
-            this.chkbxAcc.Location = new System.Drawing.Point(69, 41);
-            this.chkbxAcc.Margin = new System.Windows.Forms.Padding(2);
-            this.chkbxAcc.Name = "chkbxAcc";
-            this.chkbxAcc.Size = new System.Drawing.Size(155, 17);
-            this.chkbxAcc.TabIndex = 0;
-            this.chkbxAcc.Text = "Fallecimiento por accidente";
-            this.chkbxAcc.UseVisualStyleBackColor = true;
-            // 
-            // chkbxITP
-            // 
-            this.chkbxITP.AutoSize = true;
-            this.chkbxITP.Location = new System.Drawing.Point(69, 137);
-            this.chkbxITP.Margin = new System.Windows.Forms.Padding(2);
-            this.chkbxITP.Name = "chkbxITP";
-            this.chkbxITP.Size = new System.Drawing.Size(166, 17);
-            this.chkbxITP.TabIndex = 2;
-            this.chkbxITP.Text = "Incapazidad total permanente";
-            this.chkbxITP.UseVisualStyleBackColor = true;
-            // 
-            // chkbxTerm
-            // 
-            this.chkbxTerm.AutoSize = true;
-            this.chkbxTerm.Location = new System.Drawing.Point(69, 90);
-            this.chkbxTerm.Margin = new System.Windows.Forms.Padding(2);
-            this.chkbxTerm.Name = "chkbxTerm";
-            this.chkbxTerm.Size = new System.Drawing.Size(219, 17);
-            this.chkbxTerm.TabIndex = 3;
-            this.chkbxTerm.Text = "Pago anticipado por enfermedad terminal";
-            this.chkbxTerm.UseVisualStyleBackColor = true;
-            // 
-            // chkbxCap
-            // 
-            this.chkbxCap.AutoSize = true;
-            this.chkbxCap.Location = new System.Drawing.Point(338, 65);
-            this.chkbxCap.Margin = new System.Windows.Forms.Padding(2);
-            this.chkbxCap.Name = "chkbxCap";
-            this.chkbxCap.Size = new System.Drawing.Size(58, 17);
-            this.chkbxCap.TabIndex = 4;
-            this.chkbxCap.Text = "Capital";
-            this.chkbxCap.UseVisualStyleBackColor = true;
-            // 
             // nudCap
             // 
             this.nudCap.Enabled = false;
@@ -636,11 +593,66 @@
             0,
             0});
             // 
+            // chkbxCap
+            // 
+            this.chkbxCap.AutoSize = true;
+            this.chkbxCap.Location = new System.Drawing.Point(338, 65);
+            this.chkbxCap.Margin = new System.Windows.Forms.Padding(2);
+            this.chkbxCap.Name = "chkbxCap";
+            this.chkbxCap.Size = new System.Drawing.Size(58, 17);
+            this.chkbxCap.TabIndex = 4;
+            this.chkbxCap.Text = "Capital";
+            this.chkbxCap.UseVisualStyleBackColor = true;
+            // 
+            // chkbxTerm
+            // 
+            this.chkbxTerm.AutoSize = true;
+            this.chkbxTerm.Location = new System.Drawing.Point(69, 90);
+            this.chkbxTerm.Margin = new System.Windows.Forms.Padding(2);
+            this.chkbxTerm.Name = "chkbxTerm";
+            this.chkbxTerm.Size = new System.Drawing.Size(219, 17);
+            this.chkbxTerm.TabIndex = 3;
+            this.chkbxTerm.Text = "Pago anticipado por enfermedad terminal";
+            this.chkbxTerm.UseVisualStyleBackColor = true;
+            // 
+            // chkbxITP
+            // 
+            this.chkbxITP.AutoSize = true;
+            this.chkbxITP.Location = new System.Drawing.Point(69, 137);
+            this.chkbxITP.Margin = new System.Windows.Forms.Padding(2);
+            this.chkbxITP.Name = "chkbxITP";
+            this.chkbxITP.Size = new System.Drawing.Size(166, 17);
+            this.chkbxITP.TabIndex = 2;
+            this.chkbxITP.Text = "Incapazidad total permanente";
+            this.chkbxITP.UseVisualStyleBackColor = true;
+            // 
+            // chkbxAcc
+            // 
+            this.chkbxAcc.AutoSize = true;
+            this.chkbxAcc.Location = new System.Drawing.Point(69, 41);
+            this.chkbxAcc.Margin = new System.Windows.Forms.Padding(2);
+            this.chkbxAcc.Name = "chkbxAcc";
+            this.chkbxAcc.Size = new System.Drawing.Size(155, 17);
+            this.chkbxAcc.TabIndex = 0;
+            this.chkbxAcc.Text = "Fallecimiento por accidente";
+            this.chkbxAcc.UseVisualStyleBackColor = true;
+            // 
+            // bttnAceptar
+            // 
+            this.bttnAceptar.Location = new System.Drawing.Point(256, 331);
+            this.bttnAceptar.Name = "bttnAceptar";
+            this.bttnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.bttnAceptar.TabIndex = 1;
+            this.bttnAceptar.Text = "Aceptar";
+            this.bttnAceptar.UseVisualStyleBackColor = true;
+            this.bttnAceptar.Click += new System.EventHandler(this.bttnAceptar_Click);
+            // 
             // FrmPolizaVida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.bttnAceptar);
             this.Controls.Add(this.tbcntrlVida);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmPolizaVida";
@@ -715,5 +727,6 @@
         private System.Windows.Forms.CheckBox chkbxAcc;
         private System.Windows.Forms.NumericUpDown nudCap;
         private System.Windows.Forms.CheckBox chkbxCap;
+        private System.Windows.Forms.Button bttnAceptar;
     }
 }

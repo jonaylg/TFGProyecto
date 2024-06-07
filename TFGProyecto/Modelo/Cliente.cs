@@ -9,6 +9,7 @@ namespace TFGProyecto.Modelo
 {
     public class Cliente
     {
+        public int id;
         private string nombre;
         private string apellido;
         private string direccion;
@@ -26,6 +27,7 @@ namespace TFGProyecto.Modelo
         private string metodoPago;
         private string dni;
 
+        public int Id { get => id; set => id = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
         public string Direccion { get => direccion; set => direccion = value; }
@@ -43,8 +45,9 @@ namespace TFGProyecto.Modelo
         public string MetodoPago { get => metodoPago; set => metodoPago = value; }
         public string Dni { get => dni; set => dni = value; }
 
-        public Cliente(string nombre, string apellido, string direccion, DateTime fechaNacimiento, string telefono, string correoElectronico, string provincia, string ciudad, string tipo, string direccionFacturacion, int cvv, string fechaVencimiento, string nombreTitular, string frecuenciaPago, string metodoPago)
+        public Cliente(int id, string nombre, string apellido, string direccion, DateTime fechaNacimiento, string telefono, string correoElectronico, string provincia, string ciudad, string tipo, string direccionFacturacion, int cvv, string fechaVencimiento, string nombreTitular, string frecuenciaPago, string metodoPago)
         {
+            this.Id = id;
             this.Nombre = nombre;
             this.Apellido = apellido;
             this.Direccion = direccion;
@@ -66,8 +69,9 @@ namespace TFGProyecto.Modelo
         {
         }
 
-        public Cliente(string nombre, string apellido, string direccion, DateTime fechaNacimiento, string telefono, string correoElectronico, string provincia, string ciudad, string tipo, string direccionFacturacion, int cvv, string fechaVencimiento, string nombreTitular, string frecuenciaPago, string metodoPago, string dni)
+        public Cliente(int id, string nombre, string apellido, string direccion, DateTime fechaNacimiento, string telefono, string correoElectronico, string provincia, string ciudad, string tipo, string direccionFacturacion, int cvv, string fechaVencimiento, string nombreTitular, string frecuenciaPago, string metodoPago, string dni)
         {
+            this.id = id;
             this.nombre = nombre;
             this.apellido = apellido;
             this.direccion = direccion;
