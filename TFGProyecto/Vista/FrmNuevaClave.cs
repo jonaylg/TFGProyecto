@@ -30,7 +30,7 @@ namespace ProyectoTFG
                 }
             }
 
-            if (textBoxRespuesta.Text.ToString()==respuesta)
+            if (textBoxRespuesta.Text.ToString()==respuesta && textBoxClave.Text!="" && textBoxClave2.Text!="")
             {
                 if (textBoxClave.Text == textBoxClave2.Text)
                 {

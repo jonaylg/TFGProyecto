@@ -19,24 +19,17 @@ namespace TFGProyecto
 
         public static bool insertarUsuario(Usuario u)
         {
-            string query = "INSERT INTO Usuario VALUES(@nick,@clave,@preg,@respuesta,@rol_id)";
+            string query = "INSERT INTO Usuario VALUES(@nick,@clave,@preg,@respuesta)";
             string nick = u.Nick;
             string clave = u.Clave;
             string preg = u.PregPers;
             string respuesta = u.Respuesta;
-            string rol = u.Rol.Id.ToString();
             List<string> datos = new List<string>();
             datos.Add(nick);
             datos.Add(clave);
             datos.Add(preg);
             datos.Add(respuesta);
-            datos.Add(rol);
             bool ok = ControladorBBDD.ejecutarQueryParams(query, datos);
-            if (ok)
-            {
-                u.Id = ultimoId();
-                listaUsuarios.Add(u);
-            }
             return ok;
         }
         public static Usuario obtenerUsuario(string nick)
@@ -51,8 +44,7 @@ namespace TFGProyecto
                         reader["usuario"].ToString(),
                         reader["clave"].ToString(),
                         reader["pregunta"].ToString(),
-                        reader["respuesta"].ToString(),
-                        ControladorRol.listaRoles.Find(r => r.Nombre == reader["rol"].ToString())
+                        reader["respuesta"].ToString()
                     );
                 }
             }
@@ -91,19 +83,9 @@ namespace TFGProyecto
             {
                 Usuario u = new Usuario(reader["nick"].ToString(),
                     reader["clave"].ToString(), reader["pregPers"].ToString(),
-                    reader["respuesta"].ToString(), ControladorRol.listaRoles.Find(r => r.Id.ToString() == reader["rol_id"].ToString()));
+                    reader["respuesta"].ToString());
                 listaUsuarios.Add(u);
             }
-        }
-        public static int ultimoId()
-        {
-            string query = "SELECT MAX(id) FROM Usuario";
-            SqlDataReader reader = ControladorBBDD.getRegistros(query);
-            if (reader.Read())
-            {
-                return Convert.ToInt32(reader[0]);
-            }
-            return 0;
         }
     }
 }

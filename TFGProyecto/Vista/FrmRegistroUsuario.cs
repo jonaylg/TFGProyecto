@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,17 +29,15 @@ namespace ProyectoTFG
         }
         private void FrmRegistroUsuario_Load(object sender, EventArgs e)
         {
-            cmbxRol.DataSource = ControladorRol.listaRoles;
-            cmbxRol.DisplayMember = "Nombre";
         }
 
         private void buttonCrear_Click_1(object sender, EventArgs e)
         {
-            if (textBoxClave.Text!="" && textBoxClave2.Text!="" && textBoxPregPers.Text != "" && textBoxRespuesta.Text != "" && textBoxRespuesta2.Text != "" && textBoxUsuario.Text != "")
+            if (textBoxClave.Text != "" && textBoxClave2.Text != "" && textBoxPregPers.Text != "" && textBoxRespuesta.Text != "" && textBoxRespuesta2.Text != "" && textBoxUsuario.Text != "")
             {//comprueba que los campos no esten vacios
-                if (textBoxClave.Text==textBoxClave2.Text && textBoxRespuesta.Text==textBoxRespuesta2.Text)
+                if (textBoxClave.Text == textBoxClave2.Text && textBoxRespuesta.Text == textBoxRespuesta2.Text)
                 {
-                    Usuario u = new Usuario(textBoxUsuario.Text, textBoxClave.Text, textBoxPregPers.Text, textBoxRespuesta.Text, (Rol)cmbxRol.SelectedItem);
+                    Usuario u = new Usuario(textBoxUsuario.Text, textBoxClave.Text, textBoxPregPers.Text, textBoxRespuesta.Text);
                     ControladorUsuario.insertarUsuario(u);
                     ControladorUsuario.listaUsuarios.Add(u);
                     FrmInicioSesion formu = new FrmInicioSesion();

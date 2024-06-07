@@ -15,22 +15,19 @@ namespace TFGProyecto
         private string clave;
         private string pregPers;
         private string respuesta;
-        private Rol rol;
 
         public int Id { get => id; set => id = value; }
         public string Nick { get => nick; set => nick = value; }
         public string Clave { get => clave; set => clave = value; }
         public string PregPers { get => pregPers; set => pregPers = value; }
         public string Respuesta { get => respuesta; set => respuesta = value; }
-        public Rol Rol { get => rol; set => rol = value; }
 
-        public Usuario(string nick, string clave, string pregPers, string respuesta, Rol rol)
+        public Usuario(string nick, string clave, string pregPers, string respuesta)
         {
             this.Nick = nick;
             this.Clave = clave;
             this.PregPers = pregPers;
             this.respuesta = respuesta;
-            this.Rol = rol;
         }
 
         public Usuario()
