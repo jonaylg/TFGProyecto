@@ -141,7 +141,7 @@ namespace TFGProyecto.Controlador
                 return Convert.ToInt32(reader[0]);
             }
         }
-        public static int numPolizasClnte(string dni)
+        public static int numPolizasCliente(string dni)
         {
             string query = "SELECT COUNT(*) FROM PolizaVida WHERE Dni = '" + dni + "'";
             using (SqlDataReader reader = ControladorBBDD.getRegistros(query))

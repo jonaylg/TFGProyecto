@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonAct = new System.Windows.Forms.Button();
             this.menuToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.altaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,21 +48,63 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxMayMenIgu = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.radioButtonDni = new System.Windows.Forms.RadioButton();
-            this.radioButtonAC = new System.Windows.Forms.RadioButton();
-            this.radioButtonVV = new System.Windows.Forms.RadioButton();
-            this.radioButtonZV = new System.Windows.Forms.RadioButton();
-            this.radioButtonTV = new System.Windows.Forms.RadioButton();
+            this.rdbttnCapital = new System.Windows.Forms.RadioButton();
+            this.rdbttnOcupacion = new System.Windows.Forms.RadioButton();
+            this.rdbttnEdad = new System.Windows.Forms.RadioButton();
+            this.rdbttnSexo = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBoxRB = new System.Windows.Forms.GroupBox();
             this.dataGridViewPolizas = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.grpbxFiltro = new System.Windows.Forms.GroupBox();
+            this.cmbxGen = new System.Windows.Forms.ComboBox();
+            this.trabajoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseTFGDataSet1 = new TFGProyecto.DatabaseTFGDataSet1();
+            this.nudGen = new System.Windows.Forms.NumericUpDown();
+            this.msktxtbxDni = new System.Windows.Forms.MaskedTextBox();
+            this.trabajoTableAdapter = new TFGProyecto.DatabaseTFGDataSet1TableAdapters.TrabajoTableAdapter();
+            this.tableAdapterManager = new TFGProyecto.DatabaseTFGDataSet1TableAdapters.TableAdapterManager();
+            this.polizaVidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.polizaVidaTableAdapter = new TFGProyecto.DatabaseTFGDataSet1TableAdapters.PolizaVidaTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ocupacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pesoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dietaIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.actividadIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.consumeAlcoholDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.consumeTabacoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.consumeDrogasDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.hematologicasDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.gastrointestinalesDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.endocrinasDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.infecciosasDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.autoinmunesDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.neurologicasDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.renalesDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.hepaticasDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.diabetesDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cancerDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.respiratoriasDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cardiacasDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tieneTerminacionAnticipadaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tieneIncapacidadTemporalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tieneAccidentesDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.capitalAseguradoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dniDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.groupBoxRB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPolizas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.grpbxFiltro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trabajoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseTFGDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.polizaVidaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonAct
@@ -155,7 +198,7 @@
             // altaToolStripMenuItem
             // 
             this.altaToolStripMenuItem.Name = "altaToolStripMenuItem";
-            this.altaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.altaToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.altaToolStripMenuItem.Text = "Alta";
             // 
             // empleadosToolStripMenuItem
@@ -186,6 +229,7 @@
             this.buttonFilt.TabIndex = 26;
             this.buttonFilt.Text = "Filtrar";
             this.buttonFilt.UseVisualStyleBackColor = true;
+            this.buttonFilt.Click += new System.EventHandler(this.buttonFilt_Click);
             // 
             // label2
             // 
@@ -215,20 +259,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.label1.Location = new System.Drawing.Point(187, 113);
+            this.label1.Location = new System.Drawing.Point(187, 120);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 23;
             this.label1.Text = "Buscar:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(244, 110);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(80, 20);
-            this.textBox1.TabIndex = 22;
             // 
             // menuStrip1
             // 
@@ -256,54 +292,59 @@
             this.radioButtonDni.TabStop = true;
             this.radioButtonDni.Text = "Dni";
             this.radioButtonDni.UseVisualStyleBackColor = true;
+            this.radioButtonDni.CheckedChanged += new System.EventHandler(this.radioButtonDni_CheckedChanged);
             // 
-            // radioButtonAC
+            // rdbttnCapital
             // 
-            this.radioButtonAC.AutoSize = true;
-            this.radioButtonAC.Location = new System.Drawing.Point(95, 32);
-            this.radioButtonAC.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButtonAC.Name = "radioButtonAC";
-            this.radioButtonAC.Size = new System.Drawing.Size(97, 17);
-            this.radioButtonAC.TabIndex = 3;
-            this.radioButtonAC.TabStop = true;
-            this.radioButtonAC.Text = "Año Construido";
-            this.radioButtonAC.UseVisualStyleBackColor = true;
+            this.rdbttnCapital.AutoSize = true;
+            this.rdbttnCapital.Location = new System.Drawing.Point(95, 32);
+            this.rdbttnCapital.Margin = new System.Windows.Forms.Padding(2);
+            this.rdbttnCapital.Name = "rdbttnCapital";
+            this.rdbttnCapital.Size = new System.Drawing.Size(57, 17);
+            this.rdbttnCapital.TabIndex = 3;
+            this.rdbttnCapital.TabStop = true;
+            this.rdbttnCapital.Text = "Capital";
+            this.rdbttnCapital.UseVisualStyleBackColor = true;
+            this.rdbttnCapital.CheckedChanged += new System.EventHandler(this.rdbttnCapital_CheckedChanged);
             // 
-            // radioButtonVV
+            // rdbttnOcupacion
             // 
-            this.radioButtonVV.AutoSize = true;
-            this.radioButtonVV.Location = new System.Drawing.Point(4, 32);
-            this.radioButtonVV.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButtonVV.Name = "radioButtonVV";
-            this.radioButtonVV.Size = new System.Drawing.Size(93, 17);
-            this.radioButtonVV.TabIndex = 2;
-            this.radioButtonVV.TabStop = true;
-            this.radioButtonVV.Text = "Valor Vivienda";
-            this.radioButtonVV.UseVisualStyleBackColor = true;
+            this.rdbttnOcupacion.AutoSize = true;
+            this.rdbttnOcupacion.Location = new System.Drawing.Point(4, 32);
+            this.rdbttnOcupacion.Margin = new System.Windows.Forms.Padding(2);
+            this.rdbttnOcupacion.Name = "rdbttnOcupacion";
+            this.rdbttnOcupacion.Size = new System.Drawing.Size(77, 17);
+            this.rdbttnOcupacion.TabIndex = 2;
+            this.rdbttnOcupacion.TabStop = true;
+            this.rdbttnOcupacion.Text = "Ocupacion";
+            this.rdbttnOcupacion.UseVisualStyleBackColor = true;
+            this.rdbttnOcupacion.CheckedChanged += new System.EventHandler(this.rdbttnOcupacion_CheckedChanged);
             // 
-            // radioButtonZV
+            // rdbttnEdad
             // 
-            this.radioButtonZV.AutoSize = true;
-            this.radioButtonZV.Location = new System.Drawing.Point(157, 12);
-            this.radioButtonZV.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButtonZV.Name = "radioButtonZV";
-            this.radioButtonZV.Size = new System.Drawing.Size(94, 17);
-            this.radioButtonZV.TabIndex = 1;
-            this.radioButtonZV.TabStop = true;
-            this.radioButtonZV.Text = "Zona Vivienda";
-            this.radioButtonZV.UseVisualStyleBackColor = true;
+            this.rdbttnEdad.AutoSize = true;
+            this.rdbttnEdad.Location = new System.Drawing.Point(157, 12);
+            this.rdbttnEdad.Margin = new System.Windows.Forms.Padding(2);
+            this.rdbttnEdad.Name = "rdbttnEdad";
+            this.rdbttnEdad.Size = new System.Drawing.Size(50, 17);
+            this.rdbttnEdad.TabIndex = 1;
+            this.rdbttnEdad.TabStop = true;
+            this.rdbttnEdad.Text = "Edad";
+            this.rdbttnEdad.UseVisualStyleBackColor = true;
+            this.rdbttnEdad.CheckedChanged += new System.EventHandler(this.rdbttnEdad_CheckedChanged);
             // 
-            // radioButtonTV
+            // rdbttnSexo
             // 
-            this.radioButtonTV.AutoSize = true;
-            this.radioButtonTV.Location = new System.Drawing.Point(57, 12);
-            this.radioButtonTV.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButtonTV.Name = "radioButtonTV";
-            this.radioButtonTV.Size = new System.Drawing.Size(90, 17);
-            this.radioButtonTV.TabIndex = 0;
-            this.radioButtonTV.TabStop = true;
-            this.radioButtonTV.Text = "Tipo Vivienda";
-            this.radioButtonTV.UseVisualStyleBackColor = true;
+            this.rdbttnSexo.AutoSize = true;
+            this.rdbttnSexo.Location = new System.Drawing.Point(57, 12);
+            this.rdbttnSexo.Margin = new System.Windows.Forms.Padding(2);
+            this.rdbttnSexo.Name = "rdbttnSexo";
+            this.rdbttnSexo.Size = new System.Drawing.Size(49, 17);
+            this.rdbttnSexo.TabIndex = 0;
+            this.rdbttnSexo.TabStop = true;
+            this.rdbttnSexo.Text = "Sexo";
+            this.rdbttnSexo.UseVisualStyleBackColor = true;
+            this.rdbttnSexo.CheckedChanged += new System.EventHandler(this.rdbttnSexo_CheckedChanged);
             // 
             // label3
             // 
@@ -320,10 +361,10 @@
             // 
             this.groupBoxRB.BackColor = System.Drawing.Color.LightSkyBlue;
             this.groupBoxRB.Controls.Add(this.radioButtonDni);
-            this.groupBoxRB.Controls.Add(this.radioButtonAC);
-            this.groupBoxRB.Controls.Add(this.radioButtonVV);
-            this.groupBoxRB.Controls.Add(this.radioButtonZV);
-            this.groupBoxRB.Controls.Add(this.radioButtonTV);
+            this.groupBoxRB.Controls.Add(this.rdbttnCapital);
+            this.groupBoxRB.Controls.Add(this.rdbttnOcupacion);
+            this.groupBoxRB.Controls.Add(this.rdbttnEdad);
+            this.groupBoxRB.Controls.Add(this.rdbttnSexo);
             this.groupBoxRB.Location = new System.Drawing.Point(149, 53);
             this.groupBoxRB.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxRB.Name = "groupBoxRB";
@@ -337,8 +378,40 @@
             // 
             this.dataGridViewPolizas.AllowUserToAddRows = false;
             this.dataGridViewPolizas.AllowUserToDeleteRows = false;
+            this.dataGridViewPolizas.AllowUserToResizeColumns = false;
+            this.dataGridViewPolizas.AutoGenerateColumns = false;
             this.dataGridViewPolizas.BackgroundColor = System.Drawing.Color.LightSkyBlue;
             this.dataGridViewPolizas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPolizas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.edadDataGridViewTextBoxColumn,
+            this.sexoDataGridViewTextBoxColumn,
+            this.ocupacionDataGridViewTextBoxColumn,
+            this.pesoDataGridViewTextBoxColumn,
+            this.alturaDataGridViewTextBoxColumn,
+            this.dietaIdDataGridViewTextBoxColumn,
+            this.actividadIdDataGridViewTextBoxColumn,
+            this.consumeAlcoholDataGridViewCheckBoxColumn,
+            this.consumeTabacoDataGridViewCheckBoxColumn,
+            this.consumeDrogasDataGridViewCheckBoxColumn,
+            this.hematologicasDataGridViewCheckBoxColumn,
+            this.gastrointestinalesDataGridViewCheckBoxColumn,
+            this.endocrinasDataGridViewCheckBoxColumn,
+            this.infecciosasDataGridViewCheckBoxColumn,
+            this.autoinmunesDataGridViewCheckBoxColumn,
+            this.neurologicasDataGridViewCheckBoxColumn,
+            this.renalesDataGridViewCheckBoxColumn,
+            this.hepaticasDataGridViewCheckBoxColumn,
+            this.diabetesDataGridViewCheckBoxColumn,
+            this.cancerDataGridViewCheckBoxColumn,
+            this.respiratoriasDataGridViewCheckBoxColumn,
+            this.cardiacasDataGridViewCheckBoxColumn,
+            this.tieneTerminacionAnticipadaDataGridViewCheckBoxColumn,
+            this.tieneIncapacidadTemporalDataGridViewCheckBoxColumn,
+            this.tieneAccidentesDataGridViewCheckBoxColumn,
+            this.capitalAseguradoDataGridViewTextBoxColumn,
+            this.dniDataGridViewTextBoxColumn});
+            this.dataGridViewPolizas.DataSource = this.polizaVidaBindingSource;
             this.dataGridViewPolizas.Location = new System.Drawing.Point(42, 144);
             this.dataGridViewPolizas.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewPolizas.Name = "dataGridViewPolizas";
@@ -358,12 +431,258 @@
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
             // 
+            // grpbxFiltro
+            // 
+            this.grpbxFiltro.Controls.Add(this.cmbxGen);
+            this.grpbxFiltro.Controls.Add(this.nudGen);
+            this.grpbxFiltro.Controls.Add(this.msktxtbxDni);
+            this.grpbxFiltro.Location = new System.Drawing.Point(235, 111);
+            this.grpbxFiltro.Name = "grpbxFiltro";
+            this.grpbxFiltro.Size = new System.Drawing.Size(159, 32);
+            this.grpbxFiltro.TabIndex = 32;
+            this.grpbxFiltro.TabStop = false;
+            // 
+            // cmbxGen
+            // 
+            this.cmbxGen.DataSource = this.trabajoBindingSource;
+            this.cmbxGen.DisplayMember = "Nombre";
+            this.cmbxGen.FormattingEnabled = true;
+            this.cmbxGen.Location = new System.Drawing.Point(3, 5);
+            this.cmbxGen.Name = "cmbxGen";
+            this.cmbxGen.Size = new System.Drawing.Size(121, 21);
+            this.cmbxGen.TabIndex = 0;
+            this.cmbxGen.ValueMember = "ID";
+            this.cmbxGen.Visible = false;
+            // 
+            // trabajoBindingSource
+            // 
+            this.trabajoBindingSource.DataMember = "Trabajo";
+            this.trabajoBindingSource.DataSource = this.databaseTFGDataSet1;
+            // 
+            // databaseTFGDataSet1
+            // 
+            this.databaseTFGDataSet1.DataSetName = "DatabaseTFGDataSet1";
+            this.databaseTFGDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // nudGen
+            // 
+            this.nudGen.Location = new System.Drawing.Point(3, 6);
+            this.nudGen.Name = "nudGen";
+            this.nudGen.Size = new System.Drawing.Size(120, 20);
+            this.nudGen.TabIndex = 1;
+            this.nudGen.Visible = false;
+            // 
+            // msktxtbxDni
+            // 
+            this.msktxtbxDni.Location = new System.Drawing.Point(6, 6);
+            this.msktxtbxDni.Mask = "00000000L";
+            this.msktxtbxDni.Name = "msktxtbxDni";
+            this.msktxtbxDni.Size = new System.Drawing.Size(100, 20);
+            this.msktxtbxDni.TabIndex = 2;
+            this.msktxtbxDni.Visible = false;
+            // 
+            // trabajoTableAdapter
+            // 
+            this.trabajoTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.ActividadTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ClienteTableAdapter = null;
+            this.tableAdapterManager.DietaTableAdapter = null;
+            this.tableAdapterManager.EmpleadoTableAdapter = null;
+            this.tableAdapterManager.PolizaHogarTableAdapter = null;
+            this.tableAdapterManager.PolizaVidaTableAdapter = null;
+            this.tableAdapterManager.TrabajoTableAdapter = this.trabajoTableAdapter;
+            this.tableAdapterManager.UpdateOrder = TFGProyecto.DatabaseTFGDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UsuarioTableAdapter = null;
+            // 
+            // polizaVidaBindingSource
+            // 
+            this.polizaVidaBindingSource.DataMember = "PolizaVida";
+            this.polizaVidaBindingSource.DataSource = this.databaseTFGDataSet1;
+            // 
+            // polizaVidaTableAdapter
+            // 
+            this.polizaVidaTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // edadDataGridViewTextBoxColumn
+            // 
+            this.edadDataGridViewTextBoxColumn.DataPropertyName = "Edad";
+            this.edadDataGridViewTextBoxColumn.HeaderText = "Edad";
+            this.edadDataGridViewTextBoxColumn.Name = "edadDataGridViewTextBoxColumn";
+            // 
+            // sexoDataGridViewTextBoxColumn
+            // 
+            this.sexoDataGridViewTextBoxColumn.DataPropertyName = "Sexo";
+            this.sexoDataGridViewTextBoxColumn.HeaderText = "Sexo";
+            this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
+            // 
+            // ocupacionDataGridViewTextBoxColumn
+            // 
+            this.ocupacionDataGridViewTextBoxColumn.DataPropertyName = "Ocupacion";
+            this.ocupacionDataGridViewTextBoxColumn.HeaderText = "Ocupacion";
+            this.ocupacionDataGridViewTextBoxColumn.Name = "ocupacionDataGridViewTextBoxColumn";
+            // 
+            // pesoDataGridViewTextBoxColumn
+            // 
+            this.pesoDataGridViewTextBoxColumn.DataPropertyName = "Peso";
+            this.pesoDataGridViewTextBoxColumn.HeaderText = "Peso";
+            this.pesoDataGridViewTextBoxColumn.Name = "pesoDataGridViewTextBoxColumn";
+            // 
+            // alturaDataGridViewTextBoxColumn
+            // 
+            this.alturaDataGridViewTextBoxColumn.DataPropertyName = "Altura";
+            this.alturaDataGridViewTextBoxColumn.HeaderText = "Altura";
+            this.alturaDataGridViewTextBoxColumn.Name = "alturaDataGridViewTextBoxColumn";
+            // 
+            // dietaIdDataGridViewTextBoxColumn
+            // 
+            this.dietaIdDataGridViewTextBoxColumn.DataPropertyName = "DietaId";
+            this.dietaIdDataGridViewTextBoxColumn.HeaderText = "DietaId";
+            this.dietaIdDataGridViewTextBoxColumn.Name = "dietaIdDataGridViewTextBoxColumn";
+            // 
+            // actividadIdDataGridViewTextBoxColumn
+            // 
+            this.actividadIdDataGridViewTextBoxColumn.DataPropertyName = "ActividadId";
+            this.actividadIdDataGridViewTextBoxColumn.HeaderText = "ActividadId";
+            this.actividadIdDataGridViewTextBoxColumn.Name = "actividadIdDataGridViewTextBoxColumn";
+            // 
+            // consumeAlcoholDataGridViewCheckBoxColumn
+            // 
+            this.consumeAlcoholDataGridViewCheckBoxColumn.DataPropertyName = "ConsumeAlcohol";
+            this.consumeAlcoholDataGridViewCheckBoxColumn.HeaderText = "ConsumeAlcohol";
+            this.consumeAlcoholDataGridViewCheckBoxColumn.Name = "consumeAlcoholDataGridViewCheckBoxColumn";
+            // 
+            // consumeTabacoDataGridViewCheckBoxColumn
+            // 
+            this.consumeTabacoDataGridViewCheckBoxColumn.DataPropertyName = "ConsumeTabaco";
+            this.consumeTabacoDataGridViewCheckBoxColumn.HeaderText = "ConsumeTabaco";
+            this.consumeTabacoDataGridViewCheckBoxColumn.Name = "consumeTabacoDataGridViewCheckBoxColumn";
+            // 
+            // consumeDrogasDataGridViewCheckBoxColumn
+            // 
+            this.consumeDrogasDataGridViewCheckBoxColumn.DataPropertyName = "ConsumeDrogas";
+            this.consumeDrogasDataGridViewCheckBoxColumn.HeaderText = "ConsumeDrogas";
+            this.consumeDrogasDataGridViewCheckBoxColumn.Name = "consumeDrogasDataGridViewCheckBoxColumn";
+            // 
+            // hematologicasDataGridViewCheckBoxColumn
+            // 
+            this.hematologicasDataGridViewCheckBoxColumn.DataPropertyName = "Hematologicas";
+            this.hematologicasDataGridViewCheckBoxColumn.HeaderText = "Hematologicas";
+            this.hematologicasDataGridViewCheckBoxColumn.Name = "hematologicasDataGridViewCheckBoxColumn";
+            // 
+            // gastrointestinalesDataGridViewCheckBoxColumn
+            // 
+            this.gastrointestinalesDataGridViewCheckBoxColumn.DataPropertyName = "Gastrointestinales";
+            this.gastrointestinalesDataGridViewCheckBoxColumn.HeaderText = "Gastrointestinales";
+            this.gastrointestinalesDataGridViewCheckBoxColumn.Name = "gastrointestinalesDataGridViewCheckBoxColumn";
+            // 
+            // endocrinasDataGridViewCheckBoxColumn
+            // 
+            this.endocrinasDataGridViewCheckBoxColumn.DataPropertyName = "Endocrinas";
+            this.endocrinasDataGridViewCheckBoxColumn.HeaderText = "Endocrinas";
+            this.endocrinasDataGridViewCheckBoxColumn.Name = "endocrinasDataGridViewCheckBoxColumn";
+            // 
+            // infecciosasDataGridViewCheckBoxColumn
+            // 
+            this.infecciosasDataGridViewCheckBoxColumn.DataPropertyName = "Infecciosas";
+            this.infecciosasDataGridViewCheckBoxColumn.HeaderText = "Infecciosas";
+            this.infecciosasDataGridViewCheckBoxColumn.Name = "infecciosasDataGridViewCheckBoxColumn";
+            // 
+            // autoinmunesDataGridViewCheckBoxColumn
+            // 
+            this.autoinmunesDataGridViewCheckBoxColumn.DataPropertyName = "Autoinmunes";
+            this.autoinmunesDataGridViewCheckBoxColumn.HeaderText = "Autoinmunes";
+            this.autoinmunesDataGridViewCheckBoxColumn.Name = "autoinmunesDataGridViewCheckBoxColumn";
+            // 
+            // neurologicasDataGridViewCheckBoxColumn
+            // 
+            this.neurologicasDataGridViewCheckBoxColumn.DataPropertyName = "Neurologicas";
+            this.neurologicasDataGridViewCheckBoxColumn.HeaderText = "Neurologicas";
+            this.neurologicasDataGridViewCheckBoxColumn.Name = "neurologicasDataGridViewCheckBoxColumn";
+            // 
+            // renalesDataGridViewCheckBoxColumn
+            // 
+            this.renalesDataGridViewCheckBoxColumn.DataPropertyName = "Renales";
+            this.renalesDataGridViewCheckBoxColumn.HeaderText = "Renales";
+            this.renalesDataGridViewCheckBoxColumn.Name = "renalesDataGridViewCheckBoxColumn";
+            // 
+            // hepaticasDataGridViewCheckBoxColumn
+            // 
+            this.hepaticasDataGridViewCheckBoxColumn.DataPropertyName = "Hepaticas";
+            this.hepaticasDataGridViewCheckBoxColumn.HeaderText = "Hepaticas";
+            this.hepaticasDataGridViewCheckBoxColumn.Name = "hepaticasDataGridViewCheckBoxColumn";
+            // 
+            // diabetesDataGridViewCheckBoxColumn
+            // 
+            this.diabetesDataGridViewCheckBoxColumn.DataPropertyName = "Diabetes";
+            this.diabetesDataGridViewCheckBoxColumn.HeaderText = "Diabetes";
+            this.diabetesDataGridViewCheckBoxColumn.Name = "diabetesDataGridViewCheckBoxColumn";
+            // 
+            // cancerDataGridViewCheckBoxColumn
+            // 
+            this.cancerDataGridViewCheckBoxColumn.DataPropertyName = "Cancer";
+            this.cancerDataGridViewCheckBoxColumn.HeaderText = "Cancer";
+            this.cancerDataGridViewCheckBoxColumn.Name = "cancerDataGridViewCheckBoxColumn";
+            // 
+            // respiratoriasDataGridViewCheckBoxColumn
+            // 
+            this.respiratoriasDataGridViewCheckBoxColumn.DataPropertyName = "Respiratorias";
+            this.respiratoriasDataGridViewCheckBoxColumn.HeaderText = "Respiratorias";
+            this.respiratoriasDataGridViewCheckBoxColumn.Name = "respiratoriasDataGridViewCheckBoxColumn";
+            // 
+            // cardiacasDataGridViewCheckBoxColumn
+            // 
+            this.cardiacasDataGridViewCheckBoxColumn.DataPropertyName = "Cardiacas";
+            this.cardiacasDataGridViewCheckBoxColumn.HeaderText = "Cardiacas";
+            this.cardiacasDataGridViewCheckBoxColumn.Name = "cardiacasDataGridViewCheckBoxColumn";
+            // 
+            // tieneTerminacionAnticipadaDataGridViewCheckBoxColumn
+            // 
+            this.tieneTerminacionAnticipadaDataGridViewCheckBoxColumn.DataPropertyName = "TieneTerminacionAnticipada";
+            this.tieneTerminacionAnticipadaDataGridViewCheckBoxColumn.HeaderText = "TieneTerminacionAnticipada";
+            this.tieneTerminacionAnticipadaDataGridViewCheckBoxColumn.Name = "tieneTerminacionAnticipadaDataGridViewCheckBoxColumn";
+            // 
+            // tieneIncapacidadTemporalDataGridViewCheckBoxColumn
+            // 
+            this.tieneIncapacidadTemporalDataGridViewCheckBoxColumn.DataPropertyName = "TieneIncapacidadTemporal";
+            this.tieneIncapacidadTemporalDataGridViewCheckBoxColumn.HeaderText = "TieneIncapacidadTemporal";
+            this.tieneIncapacidadTemporalDataGridViewCheckBoxColumn.Name = "tieneIncapacidadTemporalDataGridViewCheckBoxColumn";
+            // 
+            // tieneAccidentesDataGridViewCheckBoxColumn
+            // 
+            this.tieneAccidentesDataGridViewCheckBoxColumn.DataPropertyName = "TieneAccidentes";
+            this.tieneAccidentesDataGridViewCheckBoxColumn.HeaderText = "TieneAccidentes";
+            this.tieneAccidentesDataGridViewCheckBoxColumn.Name = "tieneAccidentesDataGridViewCheckBoxColumn";
+            // 
+            // capitalAseguradoDataGridViewTextBoxColumn
+            // 
+            this.capitalAseguradoDataGridViewTextBoxColumn.DataPropertyName = "CapitalAsegurado";
+            this.capitalAseguradoDataGridViewTextBoxColumn.HeaderText = "CapitalAsegurado";
+            this.capitalAseguradoDataGridViewTextBoxColumn.Name = "capitalAseguradoDataGridViewTextBoxColumn";
+            // 
+            // dniDataGridViewTextBoxColumn
+            // 
+            this.dniDataGridViewTextBoxColumn.DataPropertyName = "Dni";
+            this.dniDataGridViewTextBoxColumn.HeaderText = "Dni";
+            this.dniDataGridViewTextBoxColumn.Name = "dniDataGridViewTextBoxColumn";
+            // 
             // FrmMenuVida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.grpbxFiltro);
             this.Controls.Add(this.buttonAct);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonMenu);
@@ -371,20 +690,26 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxMayMenIgu);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBoxRB);
             this.Controls.Add(this.dataGridViewPolizas);
+            this.Controls.Add(this.menuStrip1);
             this.Name = "FrmMenuVida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMenuVida";
+            this.Load += new System.EventHandler(this.FrmMenuVida_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBoxRB.ResumeLayout(false);
             this.groupBoxRB.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPolizas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.grpbxFiltro.ResumeLayout(false);
+            this.grpbxFiltro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trabajoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseTFGDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.polizaVidaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,15 +737,52 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxMayMenIgu;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.RadioButton radioButtonDni;
-        private System.Windows.Forms.RadioButton radioButtonAC;
-        private System.Windows.Forms.RadioButton radioButtonVV;
-        private System.Windows.Forms.RadioButton radioButtonZV;
-        private System.Windows.Forms.RadioButton radioButtonTV;
+        private System.Windows.Forms.RadioButton rdbttnCapital;
+        private System.Windows.Forms.RadioButton rdbttnOcupacion;
+        private System.Windows.Forms.RadioButton rdbttnEdad;
+        private System.Windows.Forms.RadioButton rdbttnSexo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBoxRB;
         private System.Windows.Forms.DataGridView dataGridViewPolizas;
+        private System.Windows.Forms.GroupBox grpbxFiltro;
+        private System.Windows.Forms.MaskedTextBox msktxtbxDni;
+        private System.Windows.Forms.NumericUpDown nudGen;
+        private System.Windows.Forms.ComboBox cmbxGen;
+        private DatabaseTFGDataSet1 databaseTFGDataSet1;
+        private System.Windows.Forms.BindingSource trabajoBindingSource;
+        private DatabaseTFGDataSet1TableAdapters.TrabajoTableAdapter trabajoTableAdapter;
+        private DatabaseTFGDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingSource polizaVidaBindingSource;
+        private DatabaseTFGDataSet1TableAdapters.PolizaVidaTableAdapter polizaVidaTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sexoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ocupacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pesoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn alturaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dietaIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn actividadIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn consumeAlcoholDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn consumeTabacoDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn consumeDrogasDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn hematologicasDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn gastrointestinalesDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn endocrinasDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn infecciosasDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn autoinmunesDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn neurologicasDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn renalesDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn hepaticasDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn diabetesDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn cancerDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn respiratoriasDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn cardiacasDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn tieneTerminacionAnticipadaDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn tieneIncapacidadTemporalDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn tieneAccidentesDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn capitalAseguradoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dniDataGridViewTextBoxColumn;
     }
 }

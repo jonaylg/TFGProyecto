@@ -16,15 +16,17 @@ namespace TFGProyecto.Vista
     public partial class FrmPolizaVida : Form
     {
         PolizaVida polizaVida = null;
+        int idPoliza;
         public FrmPolizaVida()
         {
             InitializeComponent();
         }
-        public FrmPolizaVida(PolizaVida pv)
+        public FrmPolizaVida(PolizaVida pv, int idPoliza)
         {
             InitializeComponent();
             cargarDatos(pv);
             polizaVida = pv;
+            this.idPoliza = idPoliza;
         }
         public bool validarCampos()
         {
@@ -283,7 +285,7 @@ namespace TFGProyecto.Vista
         {
             if (polizaVida != null)
             {
-                //ControladorPolizaVida.eliminarPolizaVida(polizaVida);
+                ControladorPolizaVida.eliminarPolizaVida(idPoliza);
             }
         }
         private void cargarDatos(PolizaVida pv)
