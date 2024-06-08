@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TFGProyecto;
 using TFGProyecto.Controlador;
+using TFGProyecto.Vista;
 
 namespace ProyectoTFG
 {
@@ -38,6 +39,8 @@ namespace ProyectoTFG
                     {
                         MessageBox.Show("bienvenido "+u.Nick);
                         encontrado = true;//prueba
+                        FrmMenuInicio formu=new FrmMenuInicio(u.Nick);
+                        formu.ShowDialog();
                     }
                 }
                 if (!encontrado) {

@@ -12,9 +12,10 @@ namespace TFGProyecto.Vista
 {
     public partial class FrmMenuInicio : Form
     {
-        public FrmMenuInicio()
+        public FrmMenuInicio(String nick)
         {
             InitializeComponent();
+            labelNom.Text += " "+nick;
         }
 
         private void buttonCli_Click(object sender, EventArgs e)
@@ -61,6 +62,11 @@ namespace TFGProyecto.Vista
         {
             buttonAPolV.Visible = true;
             buttonMPV.Visible = true;
+        }
+
+        private void FrmMenuInicio_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
