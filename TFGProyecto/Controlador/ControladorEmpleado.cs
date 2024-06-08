@@ -13,8 +13,7 @@ namespace TFGProyecto.Controlador
 
         public static bool insertarEmpleado(Empleado e)
         {
-            string query = "INSERT INTO Empleado VALUES(@id, @usuario, @nombre, @apellido1, @apellido2, @fechaNac, @fechaContr, @puesto, @salario, @email, @telefono, @direccion)";
-            string id = e.Id.ToString();
+            string query = "INSERT INTO Empleado VALUES(@usuario_nick, @nombre, @apellido1, @apellido2, @fechaNac, @fechaContr, @puesto, @salario, @email, @telefono, @direccion, @dni)";
             string usuario = e.Usuario.Nick;
             string nombre = e.Nombre;
             string apellido1 = e.Apellido1;
@@ -26,8 +25,8 @@ namespace TFGProyecto.Controlador
             string email = e.Email;
             string telefono = e.Telefono.ToString();
             string direccion = e.Direccion;
+            string dni = e.Dni;
             List<string> datos = new List<string>();
-            datos.Add(id);
             datos.Add(usuario);
             datos.Add(nombre);
             datos.Add(apellido1);
@@ -39,19 +38,19 @@ namespace TFGProyecto.Controlador
             datos.Add(email);
             datos.Add(telefono);
             datos.Add(direccion);
+            datos.Add(dni);
             return ControladorBBDD.ejecutarQueryParams(query, datos);
         }
-        public static Empleado obtenerEmpleado(string id)
+        public static Empleado obtenerEmpleado(string dni)
         {
             Empleado empleado = null;
-            string query = $"SELECT * FROM Empleado WHERE id = {id}";
+            string query = $"SELECT * FROM Empleado WHERE dni = {dni}";
             using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
             {
                 if (reader.Read())
                 {
                     empleado = new Empleado(
-                        Convert.ToInt32(reader["id"]),
-                        ControladorUsuario.obtenerUsuario(reader["usuario"].ToString()),
+                        ControladorUsuario.obtenerUsuario(reader["usuario_nick"].ToString()),
                         reader["nombre"].ToString(),
                         reader["apellido1"].ToString(),
                         reader["apellido2"].ToString(),
@@ -61,7 +60,8 @@ namespace TFGProyecto.Controlador
                         Convert.ToDouble(reader["salario"]),
                         reader["email"].ToString(),
                         Convert.ToInt32(reader["telefono"]),
-                        reader["direccion"].ToString()
+                        reader["direccion"].ToString(),
+                        reader["dni"].ToString()
                     );
                 }
             }
@@ -75,15 +75,13 @@ namespace TFGProyecto.Controlador
                 query += $"{atributo} = @{atributo},";
             }
             query = query.Remove(query.Length - 1);
-            query += $" WHERE id = {e.Id}";
+            query += $" WHERE dni = '{e.Dni}'";
             return ControladorBBDD.ejecutarQueryParams(query, datos);
         }
-        public static bool EliminarEmpleado(int id)
+        public static bool EliminarEmpleado(string dni)
         {
-            string query = "DELETE FROM Empleado WHERE id = @id";
-            List<string> datos = new List<string>();
-            datos.Add(id.ToString());
-            return ControladorBBDD.ejecutarQueryParams(query, datos);
+            string query = $"DELETE FROM Empleado WHERE dni = '{dni}'";
+            return ControladorBBDD.ejecutarQuery(query);
         }
     }
 }

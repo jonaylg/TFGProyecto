@@ -248,5 +248,23 @@ namespace TFGProyecto.Vista
             e.Graphics.DrawRectangle(Pens.Black, 0, 0, box.Width - 1, box.Height - 1);
             e.Graphics.DrawString(box.Text, box.Font, Brushes.Black, 10, 1);
         }
+
+        private void altaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmDetallesEmpleado formu=new FrmDetallesEmpleado();
+            formu.ShowDialog();
+        }
+
+        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMenuEmpleado formu=new FrmMenuEmpleado();
+            formu.ShowDialog();
+        }
+
+        private void menuToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmMenuVida formu=new FrmMenuVida();
+            formu.ShowDialog();
+        }
     }
 }

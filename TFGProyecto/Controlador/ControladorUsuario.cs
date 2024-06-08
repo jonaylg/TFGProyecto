@@ -35,15 +35,15 @@ namespace TFGProyecto
         public static Usuario obtenerUsuario(string nick)
         {
             Usuario usuario = null;
-            string query = $"SELECT * FROM Usuario WHERE usuario = {nick}";
+            string query = $"SELECT * FROM Usuario WHERE nick = '{nick}'";
             using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
             {
                 if (reader.Read())
                 {
                     usuario = new Usuario(
-                        reader["usuario"].ToString(),
+                        reader["nick"].ToString(),
                         reader["clave"].ToString(),
-                        reader["pregunta"].ToString(),
+                        reader["pregPers"].ToString(),
                         reader["respuesta"].ToString()
                     );
                 }

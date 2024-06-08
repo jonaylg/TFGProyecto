@@ -21,33 +21,60 @@ namespace TFGProyecto.Vista
 
         private void buttonFilt_Click(object sender, EventArgs e)
         {
-            
+            string filtro = "";
+            DataView vista = new DataView(databaseTFGDataSet1.Empleado);
+            foreach (var control in groupBoxRB.Controls)
+            {
+                if (control is RadioButton radio)
+                {
+                    if (radio.Checked)
+                    {
+                        string texto = radio.Text;
+                        string orden = "=";
+                        if (cmbxMay.SelectedIndex != -1)
+                        {
+                            switch (cmbxMay.SelectedItem.ToString())
+                            {
+                                case "Mayor":
+                                    orden = ">";
+                                    break;
+                                case "Menor":
+                                    orden = "<";
+                                    break;
+                                case "Igual":
+                                    orden = "=";
+                                    break;
+                            }
+                        }
+                        switch (texto)
+                        {
+                            case "Nombre":
+                                filtro = "Nombre = '" + txtbxGen.Text + "'";
+                                break;
+                            case "Primer Apellido":
+                                filtro = "Apellido1 = '" + txtbxGen.Text + "'";
+                                break;
+                            case "Puesto":
+                                filtro = "Puesto = '" + cmbxPuesto.Text.ToString() + "'";
+                                break;
+                            case "Salario":
+                                filtro = $"Salario {orden} " + nudSal.Value.ToString();
+                                break;
+                        }
+                    }
+                }
+            }
+            vista.RowFilter = filtro;
+            dataGridViewEmpleados.DataSource = vista;
         }
 
         private void FrmMenuCliente_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'databaseTFGDataSet1.Empleado' Puede moverla o quitarla según sea necesario.
             this.empleadoTableAdapter.Fill(this.databaseTFGDataSet1.Empleado);
-        }
-
-        private void dataGridViewPolizas_CellClick(object sender, DataGridViewCellEventArgs e)
-        {            
-            if (comboBoxTipo.SelectedIndex!=-1)
-            {
-                if (comboBoxTipo.SelectedItem == "Modificar")
-                {
-                    FrmDetallesEmpleado formu = new FrmDetallesEmpleado(ControladorEmpleado.obtenerEmpleado(dataGridViewEmpleados.CurrentRow.Cells[0].Value.ToString()));
-                    formu.ShowDialog();
-                }
-                else
-                {
-                    FrmMenuPrincipal formu = new FrmMenuPrincipal(dataGridViewEmpleados.CurrentRow.Cells[0].Value.ToString());
-                    formu.ShowDialog();
-                }
-            }
-            else
-            {
-                MessageBox.Show("selecciona el tipo de accion");
-            }
+            // TODO: esta línea de código carga datos en la tabla 'databaseTFGDataSet1.Puestos' Puede moverla o quitarla según sea necesario.
+            this.puestosTableAdapter.Fill(this.databaseTFGDataSet1.Puestos);
+            this.empleadoTableAdapter.Fill(this.databaseTFGDataSet1.Empleado);
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)
@@ -89,7 +116,13 @@ namespace TFGProyecto.Vista
 
         private void buttonAct_Click(object sender, EventArgs e)
         {
-
+            txtbxGen.Text = "";
+            nudSal.Minimum = 0;
+            nudSal.Maximum = 0;
+            nudSal.Value = 0;
+            cmbxMay.SelectedIndex = -1;
+            cmbxPuesto.SelectedIndex = -1;
+            dataGridViewEmpleados.DataSource = databaseTFGDataSet1.Empleado;
         }
 
         private void groupBoxRB_Paint(object sender, PaintEventArgs e)
@@ -104,6 +137,88 @@ namespace TFGProyecto.Vista
         {
             FrmDetallesEmpleado formu = new FrmDetallesEmpleado();
             formu.ShowDialog();
+        }
+
+        private void radioButtonNom_CheckedChanged(object sender, EventArgs e)
+        {
+            foreach (var control in grbxFiltro.Controls)
+            {
+                if (control is TextBox caja)
+                {
+                    caja.Visible = true;
+                }
+                if (control is ComboBox combo)
+                {
+                    combo.Visible = false;
+                }
+                if (control is NumericUpDown nud)
+                {
+                    nud.Visible = false;
+                }
+            }
+        }
+
+        private void rdbttnApellido1_CheckedChanged(object sender, EventArgs e)
+        {
+            foreach (var control in grbxFiltro.Controls)
+            {
+                if (control is TextBox caja)
+                {
+                    caja.Visible = true;
+                }
+                if (control is ComboBox combo)
+                {
+                    combo.Visible = false;
+                }
+                if (control is NumericUpDown nud)
+                {
+                    nud.Visible = false;
+                }
+            }
+        }
+
+        private void rdbttnPuesto_CheckedChanged(object sender, EventArgs e)
+        {
+            foreach (var control in grbxFiltro.Controls)
+            {
+                if (control is TextBox caja)
+                {
+                    caja.Visible = false;
+                }
+                if (control is ComboBox combo)
+                {
+                    combo.Visible = true;
+                }
+                if (control is NumericUpDown nud)
+                {
+                    nud.Visible = false;
+                }
+            }
+        }
+
+        private void rdbttnSalario_CheckedChanged(object sender, EventArgs e)
+        {
+            foreach (var control in grbxFiltro.Controls)
+            {
+                if (control is TextBox caja)
+                {
+                    caja.Visible = false;
+                }
+                if (control is ComboBox combo)
+                {
+                    combo.Visible = false;
+                }
+                if (control is NumericUpDown nud)
+                {
+                    nud.Visible = true;
+                }
+            }
+        }
+
+        private void menuToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            FrmMenuEmpleado frmMenuEmpleado = new FrmMenuEmpleado();
+            frmMenuEmpleado.ShowDialog();
         }
     }
 }

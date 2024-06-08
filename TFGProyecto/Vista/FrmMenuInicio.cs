@@ -26,7 +26,8 @@ namespace TFGProyecto.Vista
 
         private void buttonAEmp_Click(object sender, EventArgs e)
         {
-            
+            FrmDetallesEmpleado formu = new FrmDetallesEmpleado();
+            formu.ShowDialog();
         }
 
         private void buttonMPV_Click(object sender, EventArgs e)
@@ -37,7 +38,7 @@ namespace TFGProyecto.Vista
 
         private void buttonMPH_Click(object sender, EventArgs e)
         {
-            FrmPolizaHogar formu=new FrmPolizaHogar();
+            FrmMenuPrincipal formu = new FrmMenuPrincipal();
             formu.ShowDialog();
         }
 
@@ -73,6 +74,12 @@ namespace TFGProyecto.Vista
         private void buttonAPolV_Click(object sender, EventArgs e)
         {
             FrmPolizaVida formu = new FrmPolizaVida();
+            formu.ShowDialog();
+        }
+
+        private void buttonMenuEmp_Click(object sender, EventArgs e)
+        {
+            FrmMenuEmpleado formu = new FrmMenuEmpleado();
             formu.ShowDialog();
         }
     }

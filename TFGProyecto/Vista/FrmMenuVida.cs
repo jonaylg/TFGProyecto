@@ -211,5 +211,47 @@ namespace TFGProyecto.Vista
             comboBoxMayMenIgu.SelectedIndex = -1;
             dataGridViewPolizas.DataSource = databaseTFGDataSet1.PolizaVida;
         }
+
+        private void altaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmDetallesEmpleado frm = new FrmDetallesEmpleado();
+            frm.ShowDialog();
+        }
+
+        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMenuEmpleado frm = new FrmMenuEmpleado();
+            frm.ShowDialog();
+        }
+
+        private void altaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmPolizaVida frm = new FrmPolizaVida();
+            frm.ShowDialog();
+        }
+
+        private void altaToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FrmPolizaHogar frm = new FrmPolizaHogar();
+            frm.ShowDialog();
+        }
+
+        private void menuToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FrmMenuPrincipal frm = new FrmMenuPrincipal();
+            frm.ShowDialog();
+        }
+
+        private void altaToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            FrmDetallesCliente frm = new FrmDetallesCliente();
+            frm.ShowDialog();
+        }
+
+        private void menuToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            FrmMenuCliente frm = new FrmMenuCliente();
+            frm.ShowDialog();
+        }
     }
 }

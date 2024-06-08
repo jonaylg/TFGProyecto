@@ -103,6 +103,12 @@
     <Compile Include="Vista\FrmDetallesCliente.Designer.cs">
       <DependentUpon>FrmDetallesCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FrmDetallesEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmDetallesEmpleado.Designer.cs">
+      <DependentUpon>FrmDetallesEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmInicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,12 @@
     </Compile>
     <Compile Include="Vista\FrmMenuCliente.Designer.cs">
       <DependentUpon>FrmMenuCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmMenuEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmMenuEmpleado.Designer.cs">
+      <DependentUpon>FrmMenuEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\FrmMenuInicio.cs">
       <SubType>Form</SubType>
@@ -166,11 +178,17 @@
     <EmbeddedResource Include="Vista\FrmDetallesCliente.resx">
       <DependentUpon>FrmDetallesCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmDetallesEmpleado.resx">
+      <DependentUpon>FrmDetallesEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmMenuCliente.resx">
       <DependentUpon>FrmMenuCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmMenuEmpleado.resx">
+      <DependentUpon>FrmMenuEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmMenuInicio.resx">
       <DependentUpon>FrmMenuInicio.cs</DependentUpon>

@@ -19,7 +19,6 @@ namespace TFGProyecto.Modelo
     }
     public class Empleado
     {
-        private int id;
         private Usuario usuario;
         private string nombre;
         private string apellido1;
@@ -31,8 +30,8 @@ namespace TFGProyecto.Modelo
         private string email;
         private int telefono;
         private string direccion;
+        private string dni;
 
-        public int Id { get => id; set => id = value; }
         public Usuario Usuario { get => usuario; set => usuario = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido1 { get => apellido1; set => apellido1 = value; }
@@ -44,10 +43,10 @@ namespace TFGProyecto.Modelo
         public string Email { get => email; set => email = value; }
         public int Telefono { get => telefono; set => telefono = value; }
         public string Direccion { get => direccion; set => direccion = value; }
+        public string Dni { get => dni; set => dni = value; }
 
-        public Empleado(int id, Usuario usuario, string nombre, string apellido1, string apellido2, DateTime fechaNac, DateTime fechaContr, Puesto puesto, double salario, string email, int telefono, string direccion)
+        public Empleado(Usuario usuario, string nombre, string apellido1, string apellido2, DateTime fechaNac, DateTime fechaContr, Puesto puesto, double salario, string email, int telefono, string direccion, string dni)
         {
-            this.Id = id;
             this.Usuario = usuario;
             this.Nombre = nombre;
             this.Apellido1 = apellido1;
@@ -59,30 +58,8 @@ namespace TFGProyecto.Modelo
             this.Email = email;
             this.Telefono = telefono;
             this.Direccion = direccion;
+            this.Dni = dni;
         }
-
-        public int CalcularEdad()
-        {
-            DateTime fechaActual = DateTime.Now;
-            int edad = fechaActual.Year - FechaNac.Year;
-
-            if (fechaActual.Month < FechaNac.Month || (fechaActual.Month == FechaNac.Month && fechaActual.Day < FechaNac.Day))
-            {
-                edad--;
-            }
-            return edad;
-        }
-
-        public int CalcularAntiguedad()
-        {
-            DateTime fechaActual = DateTime.Now;
-            int antiguedad = fechaActual.Year - FechaContr.Year;
-
-            if (fechaActual.Month < FechaContr.Month || (fechaActual.Month == FechaContr.Month && fechaActual.Day < FechaContr.Day))
-            {
-                antiguedad--;
-            }
-            return antiguedad;
-        }
+        public Empleado() { }
     }
 }

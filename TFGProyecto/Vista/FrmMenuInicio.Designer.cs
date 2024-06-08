@@ -47,7 +47,7 @@
             this.buttonEmp.BackColor = System.Drawing.Color.LemonChiffon;
             this.buttonEmp.Font = new System.Drawing.Font("Monotype Corsiva", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEmp.Location = new System.Drawing.Point(-1, 1);
-            this.buttonEmp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonEmp.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEmp.Name = "buttonEmp";
             this.buttonEmp.Size = new System.Drawing.Size(142, 170);
             this.buttonEmp.TabIndex = 0;
@@ -60,7 +60,7 @@
             this.buttonCli.BackColor = System.Drawing.Color.LemonChiffon;
             this.buttonCli.Font = new System.Drawing.Font("Monotype Corsiva", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCli.Location = new System.Drawing.Point(-1, 167);
-            this.buttonCli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCli.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCli.Name = "buttonCli";
             this.buttonCli.Size = new System.Drawing.Size(142, 170);
             this.buttonCli.TabIndex = 1;
@@ -73,7 +73,7 @@
             this.buttonPH.BackColor = System.Drawing.Color.LemonChiffon;
             this.buttonPH.Font = new System.Drawing.Font("Monotype Corsiva", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPH.Location = new System.Drawing.Point(440, 167);
-            this.buttonPH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonPH.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPH.Name = "buttonPH";
             this.buttonPH.Size = new System.Drawing.Size(142, 170);
             this.buttonPH.TabIndex = 2;
@@ -86,7 +86,7 @@
             this.buttonPV.BackColor = System.Drawing.Color.LemonChiffon;
             this.buttonPV.Font = new System.Drawing.Font("Monotype Corsiva", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPV.Location = new System.Drawing.Point(440, 1);
-            this.buttonPV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonPV.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPV.Name = "buttonPV";
             this.buttonPV.Size = new System.Drawing.Size(142, 170);
             this.buttonPV.TabIndex = 3;
@@ -99,20 +99,21 @@
             this.buttonMenuEmp.BackColor = System.Drawing.Color.LightSkyBlue;
             this.buttonMenuEmp.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMenuEmp.Location = new System.Drawing.Point(-1, 1);
-            this.buttonMenuEmp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonMenuEmp.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMenuEmp.Name = "buttonMenuEmp";
             this.buttonMenuEmp.Size = new System.Drawing.Size(142, 88);
             this.buttonMenuEmp.TabIndex = 4;
             this.buttonMenuEmp.Text = "Menu Empleados";
             this.buttonMenuEmp.UseVisualStyleBackColor = false;
             this.buttonMenuEmp.Visible = false;
+            this.buttonMenuEmp.Click += new System.EventHandler(this.buttonMenuEmp_Click);
             // 
             // buttonAEmp
             // 
             this.buttonAEmp.BackColor = System.Drawing.Color.LightSkyBlue;
             this.buttonAEmp.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAEmp.Location = new System.Drawing.Point(-1, 83);
-            this.buttonAEmp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAEmp.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAEmp.Name = "buttonAEmp";
             this.buttonAEmp.Size = new System.Drawing.Size(142, 88);
             this.buttonAEmp.TabIndex = 5;
@@ -126,7 +127,7 @@
             this.buttonMPV.BackColor = System.Drawing.Color.LightSkyBlue;
             this.buttonMPV.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMPV.Location = new System.Drawing.Point(440, 1);
-            this.buttonMPV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonMPV.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMPV.Name = "buttonMPV";
             this.buttonMPV.Size = new System.Drawing.Size(142, 88);
             this.buttonMPV.TabIndex = 6;
@@ -140,7 +141,7 @@
             this.buttonAPolV.BackColor = System.Drawing.Color.LightSkyBlue;
             this.buttonAPolV.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAPolV.Location = new System.Drawing.Point(440, 83);
-            this.buttonAPolV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAPolV.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAPolV.Name = "buttonAPolV";
             this.buttonAPolV.Size = new System.Drawing.Size(142, 88);
             this.buttonAPolV.TabIndex = 7;
@@ -154,7 +155,7 @@
             this.buttonMPH.BackColor = System.Drawing.Color.LightSkyBlue;
             this.buttonMPH.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMPH.Location = new System.Drawing.Point(440, 167);
-            this.buttonMPH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonMPH.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMPH.Name = "buttonMPH";
             this.buttonMPH.Size = new System.Drawing.Size(142, 88);
             this.buttonMPH.TabIndex = 8;
@@ -168,7 +169,7 @@
             this.buttonAPH.BackColor = System.Drawing.Color.LightSkyBlue;
             this.buttonAPH.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAPH.Location = new System.Drawing.Point(440, 249);
-            this.buttonAPH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAPH.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAPH.Name = "buttonAPH";
             this.buttonAPH.Size = new System.Drawing.Size(142, 88);
             this.buttonAPH.TabIndex = 9;
@@ -218,7 +219,7 @@
             this.Controls.Add(this.buttonPH);
             this.Controls.Add(this.buttonCli);
             this.Controls.Add(this.buttonEmp);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmMenuInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMenuInicio";

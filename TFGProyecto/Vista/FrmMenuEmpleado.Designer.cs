@@ -32,14 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuEmpleado));
             this.buttonFilt = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBoxTipo = new System.Windows.Forms.ComboBox();
+            this.cmbxMay = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBoxRB = new System.Windows.Forms.GroupBox();
-            this.radioButtonCiudad = new System.Windows.Forms.RadioButton();
-            this.radioButtonTel = new System.Windows.Forms.RadioButton();
+            this.rdbttnSalario = new System.Windows.Forms.RadioButton();
+            this.rdbttnPuesto = new System.Windows.Forms.RadioButton();
             this.radioButtonNom = new System.Windows.Forms.RadioButton();
-            this.radioButtonDni = new System.Windows.Forms.RadioButton();
+            this.rdbttnApellido1 = new System.Windows.Forms.RadioButton();
             this.dataGridViewEmpleados = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarionickDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,7 +66,6 @@
             this.altaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.polizaHogarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,14 +79,23 @@
             this.buttonAct = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.empleadoTableAdapter = new TFGProyecto.DatabaseTFGDataSet1TableAdapters.EmpleadoTableAdapter();
+            this.grbxFiltro = new System.Windows.Forms.GroupBox();
+            this.cmbxPuesto = new System.Windows.Forms.ComboBox();
+            this.puestosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nudSal = new System.Windows.Forms.NumericUpDown();
+            this.txtbxGen = new System.Windows.Forms.TextBox();
             this.tableAdapterManager = new TFGProyecto.DatabaseTFGDataSet1TableAdapters.TableAdapterManager();
+            this.puestosTableAdapter = new TFGProyecto.DatabaseTFGDataSet1TableAdapters.PuestosTableAdapter();
+            this.empleadoTableAdapter = new TFGProyecto.DatabaseTFGDataSet1TableAdapters.EmpleadoTableAdapter();
             this.groupBoxRB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseTFGDataSet1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.grbxFiltro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.puestosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSal)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonFilt
@@ -109,48 +116,41 @@
             this.label2.Location = new System.Drawing.Point(466, 58);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 13);
+            this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 12;
-            this.label2.Text = "Seleccione tipo de accion\r\n";
+            this.label2.Text = "Numerico:";
             // 
-            // comboBoxTipo
+            // cmbxMay
             // 
-            this.comboBoxTipo.FormattingEnabled = true;
-            this.comboBoxTipo.Items.AddRange(new object[] {
-            "Polizas",
-            "Modificar"});
-            this.comboBoxTipo.Location = new System.Drawing.Point(468, 92);
-            this.comboBoxTipo.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxTipo.Name = "comboBoxTipo";
-            this.comboBoxTipo.Size = new System.Drawing.Size(92, 21);
-            this.comboBoxTipo.TabIndex = 11;
+            this.cmbxMay.FormattingEnabled = true;
+            this.cmbxMay.Items.AddRange(new object[] {
+            "Mayor",
+            "Igual",
+            "Menor"});
+            this.cmbxMay.Location = new System.Drawing.Point(468, 92);
+            this.cmbxMay.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbxMay.Name = "cmbxMay";
+            this.cmbxMay.Size = new System.Drawing.Size(92, 21);
+            this.cmbxMay.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.label1.Location = new System.Drawing.Point(197, 119);
+            this.label1.Location = new System.Drawing.Point(197, 125);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 10;
             this.label1.Text = "Buscar:";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(255, 116);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(80, 20);
-            this.textBox1.TabIndex = 9;
-            // 
             // groupBoxRB
             // 
             this.groupBoxRB.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.groupBoxRB.Controls.Add(this.radioButtonCiudad);
-            this.groupBoxRB.Controls.Add(this.radioButtonTel);
+            this.groupBoxRB.Controls.Add(this.rdbttnSalario);
+            this.groupBoxRB.Controls.Add(this.rdbttnPuesto);
             this.groupBoxRB.Controls.Add(this.radioButtonNom);
-            this.groupBoxRB.Controls.Add(this.radioButtonDni);
+            this.groupBoxRB.Controls.Add(this.rdbttnApellido1);
             this.groupBoxRB.Location = new System.Drawing.Point(160, 58);
             this.groupBoxRB.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxRB.Name = "groupBoxRB";
@@ -161,34 +161,36 @@
             this.groupBoxRB.Text = "Tipo de Filtrado";
             this.groupBoxRB.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBoxRB_Paint);
             // 
-            // radioButtonCiudad
+            // rdbttnSalario
             // 
-            this.radioButtonCiudad.AutoSize = true;
-            this.radioButtonCiudad.Location = new System.Drawing.Point(138, 31);
-            this.radioButtonCiudad.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButtonCiudad.Name = "radioButtonCiudad";
-            this.radioButtonCiudad.Size = new System.Drawing.Size(58, 17);
-            this.radioButtonCiudad.TabIndex = 3;
-            this.radioButtonCiudad.TabStop = true;
-            this.radioButtonCiudad.Text = "Ciudad";
-            this.radioButtonCiudad.UseVisualStyleBackColor = true;
+            this.rdbttnSalario.AutoSize = true;
+            this.rdbttnSalario.Location = new System.Drawing.Point(200, 31);
+            this.rdbttnSalario.Margin = new System.Windows.Forms.Padding(2);
+            this.rdbttnSalario.Name = "rdbttnSalario";
+            this.rdbttnSalario.Size = new System.Drawing.Size(57, 17);
+            this.rdbttnSalario.TabIndex = 4;
+            this.rdbttnSalario.TabStop = true;
+            this.rdbttnSalario.Text = "Salario";
+            this.rdbttnSalario.UseVisualStyleBackColor = true;
+            this.rdbttnSalario.CheckedChanged += new System.EventHandler(this.rdbttnSalario_CheckedChanged);
             // 
-            // radioButtonTel
+            // rdbttnPuesto
             // 
-            this.radioButtonTel.AutoSize = true;
-            this.radioButtonTel.Location = new System.Drawing.Point(20, 31);
-            this.radioButtonTel.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButtonTel.Name = "radioButtonTel";
-            this.radioButtonTel.Size = new System.Drawing.Size(67, 17);
-            this.radioButtonTel.TabIndex = 2;
-            this.radioButtonTel.TabStop = true;
-            this.radioButtonTel.Text = "Telefono";
-            this.radioButtonTel.UseVisualStyleBackColor = true;
+            this.rdbttnPuesto.AutoSize = true;
+            this.rdbttnPuesto.Location = new System.Drawing.Point(46, 31);
+            this.rdbttnPuesto.Margin = new System.Windows.Forms.Padding(2);
+            this.rdbttnPuesto.Name = "rdbttnPuesto";
+            this.rdbttnPuesto.Size = new System.Drawing.Size(58, 17);
+            this.rdbttnPuesto.TabIndex = 3;
+            this.rdbttnPuesto.TabStop = true;
+            this.rdbttnPuesto.Text = "Puesto";
+            this.rdbttnPuesto.UseVisualStyleBackColor = true;
+            this.rdbttnPuesto.CheckedChanged += new System.EventHandler(this.rdbttnPuesto_CheckedChanged);
             // 
             // radioButtonNom
             // 
             this.radioButtonNom.AutoSize = true;
-            this.radioButtonNom.Location = new System.Drawing.Point(190, 11);
+            this.radioButtonNom.Location = new System.Drawing.Point(95, 10);
             this.radioButtonNom.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonNom.Name = "radioButtonNom";
             this.radioButtonNom.Size = new System.Drawing.Size(62, 17);
@@ -196,18 +198,20 @@
             this.radioButtonNom.TabStop = true;
             this.radioButtonNom.Text = "Nombre";
             this.radioButtonNom.UseVisualStyleBackColor = true;
+            this.radioButtonNom.CheckedChanged += new System.EventHandler(this.radioButtonNom_CheckedChanged);
             // 
-            // radioButtonDni
+            // rdbttnApellido1
             // 
-            this.radioButtonDni.AutoSize = true;
-            this.radioButtonDni.Location = new System.Drawing.Point(98, 10);
-            this.radioButtonDni.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButtonDni.Name = "radioButtonDni";
-            this.radioButtonDni.Size = new System.Drawing.Size(41, 17);
-            this.radioButtonDni.TabIndex = 0;
-            this.radioButtonDni.TabStop = true;
-            this.radioButtonDni.Text = "Dni";
-            this.radioButtonDni.UseVisualStyleBackColor = true;
+            this.rdbttnApellido1.AutoSize = true;
+            this.rdbttnApellido1.Location = new System.Drawing.Point(183, 10);
+            this.rdbttnApellido1.Margin = new System.Windows.Forms.Padding(2);
+            this.rdbttnApellido1.Name = "rdbttnApellido1";
+            this.rdbttnApellido1.Size = new System.Drawing.Size(94, 17);
+            this.rdbttnApellido1.TabIndex = 0;
+            this.rdbttnApellido1.TabStop = true;
+            this.rdbttnApellido1.Text = "Primer Apellido";
+            this.rdbttnApellido1.UseVisualStyleBackColor = true;
+            this.rdbttnApellido1.CheckedChanged += new System.EventHandler(this.rdbttnApellido1_CheckedChanged);
             // 
             // dataGridViewEmpleados
             // 
@@ -238,7 +242,6 @@
             this.dataGridViewEmpleados.RowTemplate.Height = 24;
             this.dataGridViewEmpleados.Size = new System.Drawing.Size(515, 162);
             this.dataGridViewEmpleados.TabIndex = 7;
-            this.dataGridViewEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPolizas_CellClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -359,7 +362,7 @@
             // altaToolStripMenuItem2
             // 
             this.altaToolStripMenuItem2.Name = "altaToolStripMenuItem2";
-            this.altaToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.altaToolStripMenuItem2.Size = new System.Drawing.Size(95, 22);
             this.altaToolStripMenuItem2.Text = "Alta";
             this.altaToolStripMenuItem2.Click += new System.EventHandler(this.altaToolStripMenuItem2_Click);
             // 
@@ -378,7 +381,7 @@
             this.altaToolStripMenuItem4,
             this.menuToolStripMenuItem4});
             this.vidaToolStripMenuItem1.Name = "vidaToolStripMenuItem1";
-            this.vidaToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
+            this.vidaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.vidaToolStripMenuItem1.Text = "Vida";
             // 
             // altaToolStripMenuItem4
@@ -391,8 +394,9 @@
             // menuToolStripMenuItem4
             // 
             this.menuToolStripMenuItem4.Name = "menuToolStripMenuItem4";
-            this.menuToolStripMenuItem4.Size = new System.Drawing.Size(105, 22);
+            this.menuToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
             this.menuToolStripMenuItem4.Text = "Menu";
+            this.menuToolStripMenuItem4.Click += new System.EventHandler(this.menuToolStripMenuItem4_Click);
             // 
             // hogarToolStripMenuItem1
             // 
@@ -420,23 +424,15 @@
             // clientesToolStripMenuItem1
             // 
             this.clientesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.altaToolStripMenuItem5,
             this.menuToolStripMenuItem5});
             this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
             this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(61, 20);
             this.clientesToolStripMenuItem1.Text = "Clientes";
             // 
-            // altaToolStripMenuItem5
-            // 
-            this.altaToolStripMenuItem5.Name = "altaToolStripMenuItem5";
-            this.altaToolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
-            this.altaToolStripMenuItem5.Text = "Alta";
-            this.altaToolStripMenuItem5.Click += new System.EventHandler(this.altaToolStripMenuItem5_Click);
-            // 
             // menuToolStripMenuItem5
             // 
             this.menuToolStripMenuItem5.Name = "menuToolStripMenuItem5";
-            this.menuToolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.menuToolStripMenuItem5.Size = new System.Drawing.Size(105, 22);
             this.menuToolStripMenuItem5.Text = "Menu";
             this.menuToolStripMenuItem5.Click += new System.EventHandler(this.menuToolStripMenuItem5_Click);
             // 
@@ -527,22 +523,69 @@
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
-            // empleadoTableAdapter
+            // grbxFiltro
             // 
-            this.empleadoTableAdapter.ClearBeforeFill = true;
+            this.grbxFiltro.Controls.Add(this.cmbxPuesto);
+            this.grbxFiltro.Controls.Add(this.nudSal);
+            this.grbxFiltro.Controls.Add(this.txtbxGen);
+            this.grbxFiltro.Location = new System.Drawing.Point(245, 116);
+            this.grbxFiltro.Name = "grbxFiltro";
+            this.grbxFiltro.Size = new System.Drawing.Size(203, 34);
+            this.grbxFiltro.TabIndex = 19;
+            this.grbxFiltro.TabStop = false;
+            // 
+            // cmbxPuesto
+            // 
+            this.cmbxPuesto.DataSource = this.puestosBindingSource;
+            this.cmbxPuesto.DisplayMember = "PuestoNombre";
+            this.cmbxPuesto.FormattingEnabled = true;
+            this.cmbxPuesto.Location = new System.Drawing.Point(3, 8);
+            this.cmbxPuesto.Name = "cmbxPuesto";
+            this.cmbxPuesto.Size = new System.Drawing.Size(121, 21);
+            this.cmbxPuesto.TabIndex = 23;
+            this.cmbxPuesto.ValueMember = "PuestoId";
+            // 
+            // puestosBindingSource
+            // 
+            this.puestosBindingSource.DataMember = "Puestos";
+            this.puestosBindingSource.DataSource = this.databaseTFGDataSet1;
+            // 
+            // nudSal
+            // 
+            this.nudSal.Location = new System.Drawing.Point(6, 7);
+            this.nudSal.Name = "nudSal";
+            this.nudSal.Size = new System.Drawing.Size(120, 20);
+            this.nudSal.TabIndex = 21;
+            // 
+            // txtbxGen
+            // 
+            this.txtbxGen.Location = new System.Drawing.Point(6, 8);
+            this.txtbxGen.Name = "txtbxGen";
+            this.txtbxGen.Size = new System.Drawing.Size(100, 20);
+            this.txtbxGen.TabIndex = 20;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.ActividadTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.ClienteTableAdapter = null;
+            this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.DietaTableAdapter = null;
-            this.tableAdapterManager.EmpleadoTableAdapter = this.empleadoTableAdapter;
+            this.tableAdapterManager.EmpleadoTableAdapter = null;
             this.tableAdapterManager.PolizaHogarTableAdapter = null;
             this.tableAdapterManager.PolizaVidaTableAdapter = null;
+            this.tableAdapterManager.PuestosTableAdapter = null;
             this.tableAdapterManager.TrabajoTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = TFGProyecto.DatabaseTFGDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuarioTableAdapter = null;
+            // 
+            // puestosTableAdapter
+            // 
+            this.puestosTableAdapter.ClearBeforeFill = true;
+            // 
+            // empleadoTableAdapter
+            // 
+            this.empleadoTableAdapter.ClearBeforeFill = true;
             // 
             // FrmMenuEmpleado
             // 
@@ -550,15 +593,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.grbxFiltro);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonAct);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonFilt);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBoxTipo);
+            this.Controls.Add(this.cmbxMay);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBoxRB);
             this.Controls.Add(this.dataGridViewEmpleados);
             this.Controls.Add(this.menuStrip1);
@@ -576,6 +619,10 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.grbxFiltro.ResumeLayout(false);
+            this.grbxFiltro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.puestosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -585,14 +632,12 @@
 
         private System.Windows.Forms.Button buttonFilt;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBoxTipo;
+        private System.Windows.Forms.ComboBox cmbxMay;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBoxRB;
-        private System.Windows.Forms.RadioButton radioButtonCiudad;
-        private System.Windows.Forms.RadioButton radioButtonTel;
+        private System.Windows.Forms.RadioButton rdbttnPuesto;
         private System.Windows.Forms.RadioButton radioButtonNom;
-        private System.Windows.Forms.RadioButton radioButtonDni;
+        private System.Windows.Forms.RadioButton rdbttnApellido1;
         private System.Windows.Forms.DataGridView dataGridViewEmpleados;
         private System.Windows.Forms.Button buttonMenu;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -616,14 +661,20 @@
         private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem5;
         private System.Windows.Forms.Button buttonAct;
         private System.Windows.Forms.Label label3;
         private DatabaseTFGDataSet1 databaseTFGDataSet1;
+        private DatabaseTFGDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.RadioButton rdbttnSalario;
+        private System.Windows.Forms.GroupBox grbxFiltro;
+        private System.Windows.Forms.ComboBox cmbxPuesto;
+        private System.Windows.Forms.NumericUpDown nudSal;
+        private System.Windows.Forms.TextBox txtbxGen;
+        private System.Windows.Forms.BindingSource puestosBindingSource;
+        private DatabaseTFGDataSet1TableAdapters.PuestosTableAdapter puestosTableAdapter;
         private System.Windows.Forms.BindingSource empleadoBindingSource;
         private DatabaseTFGDataSet1TableAdapters.EmpleadoTableAdapter empleadoTableAdapter;
-        private DatabaseTFGDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarionickDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
