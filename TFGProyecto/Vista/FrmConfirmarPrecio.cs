@@ -25,7 +25,7 @@ namespace TFGProyecto.Vista
         private List<String> complementos2;
         private int codPoliza;
         private PolizaHogar ph;
-        private PolizaVida pv;
+        private PolizaVida pv = null;
 
         public FrmConfirmarPrecio(double precio, List<String> complementos1, List<String> complementos2, int codPoliza, PolizaHogar ph)
         {
@@ -80,21 +80,24 @@ namespace TFGProyecto.Vista
                 using (SqlConnection cnn = new SqlConnection(connectionString))
                 {
                     cnn.Open();
-                    SqlCommand comando = cnn.CreateCommand();
-                    comando.CommandType = CommandType.Text;
-                    comando.CommandText = "UPDATE PolizaHogar SET aceptada='1' WHERE id = " + this.codPoliza + "";
-                    SqlDataAdapter adaptador = new SqlDataAdapter();
-                    adaptador.UpdateCommand = comando;
-                    if (adaptador.UpdateCommand.ExecuteNonQuery() == 0)
+                    if (pv == null)
                     {
-                        resultado = false;
+                        SqlCommand comando = cnn.CreateCommand();
+                        comando.CommandType = CommandType.Text;
+                        comando.CommandText = "UPDATE PolizaHogar SET aceptada='1' WHERE id = " + this.codPoliza + "";
+                        SqlDataAdapter adaptador = new SqlDataAdapter();
+                        adaptador.UpdateCommand = comando;
+                        if (adaptador.UpdateCommand.ExecuteNonQuery() == 0)
+                        {
+                            resultado = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("se modifico el registro");
+                        }
+                        adaptador.Dispose();
+                        comando.Dispose();
                     }
-                    else
-                    {
-                        MessageBox.Show("se modifico el registro");
-                    }
-                    adaptador.Dispose();
-                    comando.Dispose();
                 }
             }
             catch (Exception ex)
@@ -109,20 +112,42 @@ namespace TFGProyecto.Vista
             {
                 if (resultado && comboBox1.SelectedItem.ToString() == "Existente")
                 {
-                    if (ControladorCliente.existeCliente(ph.Dni)!=0 && ControladorCliente.existeCliente(ph.Dni) != -1)
-                    {
-                        FrmMenuPrincipal formu = new FrmMenuPrincipal();
-                        formu.ShowDialog();
-                    }
+                    if (pv == null) {
+                        if (ControladorCliente.existeCliente(ph.Dni) != 0 && ControladorCliente.existeCliente(ph.Dni) != -1)
+                        {
+                            FrmMenuPrincipal formu = new FrmMenuPrincipal();
+                            formu.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("el dni proporcionado no coincide con ninguno de los guardados en la base de datos, seleccione nuevo o cambie el dni en el anterior formulario");
+                        }
+                    } 
                     else
                     {
-                        MessageBox.Show("el dni proporcionado no coincide con ninguno de los guardados en la base de datos, seleccione nuevo o cambie el dni en el anterior formulario");
+                        if (ControladorCliente.existeCliente(pv.Dni) != 0 && ControladorCliente.existeCliente(pv.Dni) != -1)
+                        {
+                            FrmMenuPrincipal formu = new FrmMenuPrincipal();
+                            formu.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("el dni proporcionado no coincide con ninguno de los guardados en la base de datos, seleccione nuevo o cambie el dni en el anterior formulario");
+                        }
                     }
                 }
                 else if (resultado && comboBox1.SelectedItem.ToString() == "Nuevo")
                 {
-                    FrmDetallesCliente formu = new FrmDetallesCliente(ph.Dni);
-                    formu.ShowDialog();
+                    if (pv == null)
+                    {
+                        FrmDetallesCliente formu = new FrmDetallesCliente(ph.Dni);
+                        formu.ShowDialog();
+                    }
+                    else
+                    {
+                        FrmDetallesCliente formu = new FrmDetallesCliente(pv.Dni);
+                        formu.ShowDialog();
+                    }
                 }
                 else
                 {

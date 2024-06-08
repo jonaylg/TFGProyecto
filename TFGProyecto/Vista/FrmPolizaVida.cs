@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TFGProyecto.Controlador;
 using System.Data.SqlClient;
 using TFGProyecto.Modelo;
+using TFGProyecto.DatabaseTFGDataSet1TableAdapters;
 
 namespace TFGProyecto.Vista
 {
@@ -28,6 +29,10 @@ namespace TFGProyecto.Vista
             polizaVida = pv;
             this.idPoliza = idPoliza;
         }
+
+        private List<String> complementos1 = new List<String>();
+        private List<String> complementos2 = new List<String>();
+
         public bool validarCampos()
         {
             bool ok = true;
@@ -38,13 +43,13 @@ namespace TFGProyecto.Vista
             }
             else
             {
+                double imc = calcularIMC((int)nudAlt.Value, (int)nudPeso.Value);
                 if (cmbxSexo.SelectedItem == "H")
                 {
                     if (nudAlt.Value<140 || nudAlt.Value>220)
                     {
                         ok = false;
-                    } else if (calcularIMC((int)nudAlt.Value, (int)nudPeso.Value)>35 
-                        || calcularIMC((int)nudAlt.Value, (int)nudPeso.Value)<18.5)
+                    } else if (imc>35 || imc<18.5)
                     {
                         ok = false;
                         MessageBox.Show("IMC fuera de rango");
@@ -55,8 +60,7 @@ namespace TFGProyecto.Vista
                     {
                         ok = false;
                     }
-                    else if (calcularIMC((int)nudAlt.Value, (int)nudPeso.Value) > 35
-                        || calcularIMC((int)nudAlt.Value, (int)nudPeso.Value) < 18.5)
+                    else if (imc > 35 || imc < 18.5)
                     {
                         ok = false;
                         MessageBox.Show("IMC fuera de rango");
@@ -88,25 +92,61 @@ namespace TFGProyecto.Vista
                 ok = false;
                 MessageBox.Show("Actividad no seleccionada");
             }
+            if (msktxtbxDNI.Text.Length != 9)
+            {
+                ok = false;
+                MessageBox.Show("DNI incorrecto");
+            }
+            if (ok)
+            {
+                complementos1.Add("Sexo: " + cmbxSexo.SelectedItem.ToString());
+                complementos1.Add("Altura: " + nudAlt.Value.ToString());
+                complementos1.Add("Peso: " + nudPeso.Value.ToString());
+                complementos1.Add("Ocupación: " + cmbxOcu.SelectedValue.ToString());
+                complementos1.Add("Dieta: " + grpbxDieta.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text);
+                complementos1.Add("Actividad: " + grbbxAct.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text);
+                complementos1.Add("Alcohol: " + chkbxAlcohol.Checked.ToString());
+                complementos1.Add("Tabaco: " + chkbxTabaco.Checked.ToString());
+                complementos1.Add("Drogas: " + chkbxDrogas.Checked.ToString());
+                complementos1.Add("Cáncer: " + chkbxCan.Checked.ToString());
+                complementos1.Add("Diabetes: " + chkbxDia.Checked.ToString());
+                complementos1.Add("Endocrinas: " + chkbxEndo.Checked.ToString());
+                complementos1.Add("Gastrointestinales: " + chkbxGastro.Checked.ToString());
+                complementos1.Add("Hematológicas: " + chkbxHema.Checked.ToString());
+                complementos1.Add("Infecciosas: " + chkbxInfec.Checked.ToString());
+                complementos1.Add("Neurológicas: " + chkbxNeu.Checked.ToString());
+                complementos1.Add("Renales: " + chkbxRen.Checked.ToString());
+                complementos1.Add("Respiratorias: " + chkbxResp.Checked.ToString());
+                complementos1.Add("Cardíacas: " + chkbxCard.Checked.ToString());
+                complementos1.Add("Hepáticas: " + chkbxHepa.Checked.ToString());
+                complementos1.Add("Autoinmunes: " + chkbxAuto.Checked.ToString());
+                complementos2.Add("Capital asegurado: " + nudCap.Value.ToString());
+                complementos2.Add("Terminación anticipada: " + chkbxTerm.Checked.ToString());
+                complementos2.Add("Incapacidad temporal: " + chkbxITP.Checked.ToString());
+                complementos2.Add("Accidentes: " + chkbxAcc.Checked.ToString());
+            }
             return ok;
         }
         public double calcularIMC(int altura, int peso)
         {
-            return peso/Math.Pow(altura/100,2);
+            return ((double)peso)/Math.Pow((double)altura/100,2);
         }
         public bool trabajoPeligroso()
         {
             bool peligroso = false;
-            string query = "SELECT * FROM Trabajo WHERE ID = " + cmbxOcu.SelectedValue;
-            SqlDataReader reader = Controlador.ControladorBBDD.getRegistros(query);
-            if (reader.HasRows)
+            string query = "SELECT Peligroso FROM Trabajo WHERE Id = " + cmbxOcu.SelectedValue.ToString();
+            using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
             {
-                if (reader["Peligroso"].ToString() == "1")
+                if (reader.HasRows)
                 {
-                    peligroso = true;
+                    reader.Read();
+                    if (reader[0].ToString() == "1")
+                    {
+                        peligroso = true;
+                    }
                 }
+                return peligroso;
             }
-            return peligroso;
         }
         public bool validarDieta()
         {
@@ -261,15 +301,38 @@ namespace TFGProyecto.Vista
         private double calcularCoeficienteCapital()
         {
             double coeficienteCapital = 1.0;
-            if (nudCap.Value > 100000)
+            double capital = (double)nudCap.Value;
+
+            if (capital > 100000 && capital <= 200000)
+            {
+                coeficienteCapital = 1.1;
+            }
+            else if (capital > 200000 && capital <= 500000)
             {
                 coeficienteCapital = 1.2;
+            }
+            else if (capital > 500000 && capital <= 1000000)
+            {
+                coeficienteCapital = 1.3;
+            }
+            else if (capital > 1000000 && capital <= 2000000)
+            {
+                coeficienteCapital = 1.4;
+            }
+            else if (capital > 2000000 && capital <= 3000000)
+            {
+                coeficienteCapital = 1.5;
             }
             return coeficienteCapital;
         }
 
+
         private void buttonPrecio_Click(object sender, EventArgs e)
         {
+            if (!validarCampos())
+            {
+                return;
+            }
             double coeficienteEdad = calcularCoeficienteEdad();
             double coeficienteSexo = calcularCoeficienteSexo();
             double coeficienteSalud = calcularCoeficienteSalud();
@@ -279,6 +342,11 @@ namespace TFGProyecto.Vista
             double precioBaseMensual = 50;
             double precioMensualTotal = precioBaseMensual * coeficienteEdad * coeficienteSexo * coeficienteSalud * coeficienteCoberturas * coeficienteCapital;
             MessageBox.Show("El precio mensual de la póliza es de " + precioMensualTotal + "€");
+            PolizaVida pv = construirPolizaVida(precioMensualTotal);
+            if (ControladorPolizaVida.insertarPolVida(pv)) {
+                FrmConfirmarPrecio frmConfirmarPrecio = new FrmConfirmarPrecio(precioMensualTotal, complementos1, complementos2, ControladorPolizaVida.obtenerUltCod(), pv);
+                frmConfirmarPrecio.Show();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -337,6 +405,65 @@ namespace TFGProyecto.Vista
             chkbxCard.Checked = pv.Cardiacas;
             chkbxHepa.Checked = pv.Hépaticas;
             chkbxAuto.Checked = pv.Autoinmunes;
+        }
+        public PolizaVida construirPolizaVida(double precio)
+        {
+            PolizaVida pv = new PolizaVida();
+            pv.Dni = msktxtbxDNI.Text;
+            pv.Edad = (int)nudEdad.Value;
+            pv.Altura = (int)nudAlt.Value;
+            pv.Peso = (int)nudPeso.Value;
+            pv.Sexo = cmbxSexo.SelectedItem.ToString();
+            pv.Ocupacion = (int)cmbxOcu.SelectedValue;
+            pv.ConsumeAlcohol = chkbxAlcohol.Checked;
+            pv.ConsumeTabaco = chkbxTabaco.Checked;
+            pv.ConsumeDrogas = chkbxDrogas.Checked;
+            pv.TieneTerminacionAnticipada = chkbxTerm.Checked;
+            pv.TieneIncapacidadTemporal = chkbxITP.Checked;
+            pv.TieneAccidentes = chkbxAcc.Checked;
+            pv.CapitalAsegurado = (int)nudCap.Value;
+            pv.Dieta = ControladorPolizaVida.obtenerDieta(
+                grpbxDieta.Controls.OfType<RadioButton>().FirstOrDefault(
+                    r => r.Checked).Text);
+            pv.Actividad = ControladorPolizaVida.obtenerActividad(
+                grbbxAct.Controls.OfType<RadioButton>().FirstOrDefault(
+                    r => r.Checked).Text);
+            pv.Cancer = chkbxCan.Checked;
+            pv.Diabetes = chkbxDia.Checked;
+            pv.Endocrinas = chkbxEndo.Checked;
+            pv.Gastrointestinales = chkbxGastro.Checked;
+            pv.Hematologicas = chkbxHema.Checked;
+            pv.Infecciosas = chkbxInfec.Checked;
+            pv.Neurologicas = chkbxNeu.Checked;
+            pv.Renales = chkbxRen.Checked;
+            pv.Respiratorias = chkbxResp.Checked;
+            pv.Cardiacas = chkbxCard.Checked;
+            pv.Hépaticas = chkbxHepa.Checked;
+            pv.Autoinmunes = chkbxAuto.Checked;
+            pv.Precio = precio;
+            return pv;
+        }
+
+        private void cmbxSexo_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cmbxSexo.SelectedItem.ToString() == "H")
+            {
+                nudAlt.Minimum = 140;
+                nudAlt.Maximum = 220;
+                nudAlt.Value = 140;
+                nudPeso.Minimum = 50;
+                nudPeso.Maximum = 150;
+                nudPeso.Value = 50;
+            }
+            else
+            {
+                nudAlt.Minimum = 130;
+                nudAlt.Maximum = 200;
+                nudAlt.Value = 130;
+                nudPeso.Minimum = 40;
+                nudPeso.Maximum = 120;
+                nudPeso.Value = 40;
+            }
         }
     }
 }

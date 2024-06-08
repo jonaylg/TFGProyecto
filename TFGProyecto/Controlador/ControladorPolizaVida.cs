@@ -5,37 +5,38 @@ using System.Text;
 using System.Threading.Tasks;
 using TFGProyecto.Modelo;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace TFGProyecto.Controlador
 {
     public class ControladorPolizaVida
     {
-        public static bool insertarPolVid(PolizaVida pv) {
+        public static bool insertarPolVida(PolizaVida pv) {
             bool ok = true;
             string query = "INSERT INTO PolizaVida (" +
-                "Edad,Sexo,Ocupacion,Peso,Altura,DietaId," +
+                "Edad,Sexo,OcupacionId,Peso,Altura,DietaId," +
                 "ActividadId,ConsumeAlcohol,ConsumeTabaco," +
                 "ConsumeDrogas,Hematologicas,Gastrointestinales," +
                 "Endocrinas,Infecciosas,Autoinmunes,Neurologicas," +
                 "Renales,Hepaticas,Diabetes,Cancer,Respiratorias," +
                 "Cardiacas,TieneTerminacionAnticipada," +
                 "TieneIncapacidadTemporal,TieneAccidentes," +
-                "CapitalAsegurado,Dni" +
+                "CapitalAsegurado,Precio,Dni" +
                 ") VALUES (" +
-                "@Edad,@Sexo,@Ocupacion,@Peso,@Altura,@DietaId," +
+                "@Edad,@Sexo,@OcupacionId,@Peso,@Altura,@DietaId," +
                 "@ActividadId,@ConsumeAlcohol,@ConsumeTabaco,@ConsumeDrogas," +
                 "@Hematologicas,@Gastrointestinales,@Endocrinas,@Infecciosas," +
                 "@Autoinmunes,@Neurologicas,@Renales,@Hepaticas,@Diabetes," +
                 "@Cancer,@Respiratorias,@Cardiacas,@TieneTerminacionAnticipada," +
                 "@TieneIncapacidadTemporal,@TieneAccidentes," +
-                "@CapitalAsegurado,@Dni";
+                "@CapitalAsegurado,@Precio,@Dni)";
             string edad = pv.Edad.ToString();
             string sexo = pv.Sexo;
-            string ocupacion = pv.Ocupacion;
+            string ocupacion = pv.Ocupacion.ToString();
             string peso = pv.Peso.ToString();
             string altura = pv.Altura.ToString();
-            string dietaId = pv.Dieta.ToString();
-            string actividadId = pv.Actividad.ToString();
+            string dietaId = obtenerIdDieta(pv.Dieta.ToString()).ToString();
+            string actividadId = obtenerIdActividad(pv.Actividad.ToString()).ToString();
             string consumeAlcohol = pv.ConsumeAlcohol.ToString();
             string consumeTabaco = pv.ConsumeTabaco.ToString();
             string consumeDrogas = pv.ConsumeDrogas.ToString();
@@ -55,6 +56,7 @@ namespace TFGProyecto.Controlador
             string tieneIncapacidadTemporal = pv.TieneIncapacidadTemporal.ToString();
             string tieneAccidentes = pv.TieneAccidentes.ToString();
             string capitalAsegurado = pv.CapitalAsegurado.ToString();
+            string precio = pv.Precio.ToString();
             string dni = pv.Dni;
             List<string> datos = new List<string>
             {
@@ -63,13 +65,22 @@ namespace TFGProyecto.Controlador
                 hematologicas,gastrointestinales,endocrinas,infecciosas,
                 autoinmunes,neurologicas,renales,hepaticas,diabetes,
                 cancer,respiratorias,cardiacas,tieneTerminacionAnticipada,
-                tieneIncapacidadTemporal,tieneAccidentes,capitalAsegurado,dni
+                tieneIncapacidadTemporal,tieneAccidentes,capitalAsegurado,precio,dni
             };
             return ControladorBBDD.ejecutarQueryParams(query, datos);
         }
+        public static Dietas obtenerDieta(string Nombre)
+        {
+            string query = "SELECT * FROM Dieta WHERE Nombre = '" + Nombre + "'";
+            using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
+            {
+                reader.Read();
+                return (Dietas)Enum.Parse(typeof(Dietas), reader["Nombre"].ToString());
+            }
+        }
         public static Dietas obtenerDieta(int id)
         {
-            string query = "SELECT * FROM Dietas WHERE Id = " + id;
+            string query = "SELECT * FROM Dieta WHERE Id = " + id;
             using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
             {
                 reader.Read();
@@ -77,14 +88,41 @@ namespace TFGProyecto.Controlador
                 return (Dietas)Enum.Parse(typeof(Dietas),nombre);                
             }
         }
+        public static int obtenerIdDieta(string Nombre)
+        {
+            string query = "SELECT * FROM Dieta WHERE Nombre = '" + Nombre + "'";
+            using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
+            {
+                reader.Read();
+                return Convert.ToInt32(reader["Id"]);
+            }
+        }
+        public static Actividades obtenerActividad(string Nombre)
+        {
+            string query = "SELECT * FROM Actividad WHERE Nombre = '" + Nombre + "'";
+            using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
+            {
+                reader.Read();
+                return (Actividades)Enum.Parse(typeof(Actividades), reader["Nombre"].ToString());
+            }
+        }
         public static Actividades obtenerActividad(int id)
         {
-            string query = "SELECT * FROM Actividades WHERE Id = " + id;
+            string query = "SELECT * FROM Actividad WHERE Id = " + id;
             using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
             {
                 reader.Read();
                 string nombre = reader["Nombre"].ToString();
                 return (Actividades)Enum.Parse(typeof(Actividades), nombre);
+            }
+        }
+        public static int obtenerIdActividad(string Nombre)
+        {
+            string query = "SELECT * FROM Actividad WHERE Nombre = '" + Nombre + "'";
+            using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
+            {
+                reader.Read();
+                return Convert.ToInt32(reader["Id"]);
             }
         }
         public static PolizaVida obtenerPolizaVida(int id)
@@ -98,7 +136,7 @@ namespace TFGProyecto.Controlador
                     PolizaVida pv = new PolizaVida(
                         Convert.ToInt32(reader["Edad"]),
                         reader["Sexo"].ToString(),
-                        reader["Ocupacion"].ToString(),
+                        Convert.ToInt32(reader["Ocupacion"]),
                         Convert.ToDouble(reader["Peso"]),
                         Convert.ToDouble(reader["Altura"]),
                         obtenerDieta(Convert.ToInt32(reader["DietaId"])),
@@ -122,6 +160,7 @@ namespace TFGProyecto.Controlador
                         Convert.ToBoolean(reader["TieneIncapacidadTemporal"]),
                         Convert.ToBoolean(reader["TieneAccidentes"]),
                         Convert.ToDouble(reader["CapitalAsegurado"]),
+                        Convert.ToDouble(reader["Precio"]),
                         reader["Dni"].ToString()
                         );
                     return pv;

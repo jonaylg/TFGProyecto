@@ -57,11 +57,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBoxRB = new System.Windows.Forms.GroupBox();
             this.dataGridViewPolizas = new System.Windows.Forms.DataGridView();
+            this.databaseTFGDataSet1 = new TFGProyecto.DatabaseTFGDataSet1();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grpbxFiltro = new System.Windows.Forms.GroupBox();
             this.cmbxGen = new System.Windows.Forms.ComboBox();
             this.trabajoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseTFGDataSet1 = new TFGProyecto.DatabaseTFGDataSet1();
             this.nudGen = new System.Windows.Forms.NumericUpDown();
             this.msktxtbxDni = new System.Windows.Forms.MaskedTextBox();
             this.trabajoTableAdapter = new TFGProyecto.DatabaseTFGDataSet1TableAdapters.TrabajoTableAdapter();
@@ -71,7 +71,6 @@
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sexoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ocupacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pesoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dietaIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,13 +95,15 @@
             this.tieneAccidentesDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.capitalAseguradoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dniDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ocupacionIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.groupBoxRB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPolizas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseTFGDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpbxFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trabajoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseTFGDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.polizaVidaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -116,6 +117,7 @@
             this.buttonAct.TabIndex = 30;
             this.buttonAct.Text = "Actualizar";
             this.buttonAct.UseVisualStyleBackColor = true;
+            this.buttonAct.Click += new System.EventHandler(this.buttonAct_Click);
             // 
             // menuToolStripMenuItem3
             // 
@@ -386,7 +388,6 @@
             this.idDataGridViewTextBoxColumn,
             this.edadDataGridViewTextBoxColumn,
             this.sexoDataGridViewTextBoxColumn,
-            this.ocupacionDataGridViewTextBoxColumn,
             this.pesoDataGridViewTextBoxColumn,
             this.alturaDataGridViewTextBoxColumn,
             this.dietaIdDataGridViewTextBoxColumn,
@@ -410,15 +411,23 @@
             this.tieneIncapacidadTemporalDataGridViewCheckBoxColumn,
             this.tieneAccidentesDataGridViewCheckBoxColumn,
             this.capitalAseguradoDataGridViewTextBoxColumn,
-            this.dniDataGridViewTextBoxColumn});
+            this.dniDataGridViewTextBoxColumn,
+            this.ocupacionIdDataGridViewTextBoxColumn,
+            this.precioDataGridViewTextBoxColumn});
             this.dataGridViewPolizas.DataSource = this.polizaVidaBindingSource;
             this.dataGridViewPolizas.Location = new System.Drawing.Point(42, 144);
             this.dataGridViewPolizas.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewPolizas.Name = "dataGridViewPolizas";
+            this.dataGridViewPolizas.ReadOnly = true;
             this.dataGridViewPolizas.RowHeadersWidth = 51;
             this.dataGridViewPolizas.RowTemplate.Height = 24;
             this.dataGridViewPolizas.Size = new System.Drawing.Size(515, 162);
             this.dataGridViewPolizas.TabIndex = 20;
+            // 
+            // databaseTFGDataSet1
+            // 
+            this.databaseTFGDataSet1.DataSetName = "DatabaseTFGDataSet1";
+            this.databaseTFGDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pictureBox1
             // 
@@ -458,11 +467,6 @@
             // 
             this.trabajoBindingSource.DataMember = "Trabajo";
             this.trabajoBindingSource.DataSource = this.databaseTFGDataSet1;
-            // 
-            // databaseTFGDataSet1
-            // 
-            this.databaseTFGDataSet1.DataSetName = "DatabaseTFGDataSet1";
-            this.databaseTFGDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // nudGen
             // 
@@ -525,12 +529,6 @@
             this.sexoDataGridViewTextBoxColumn.DataPropertyName = "Sexo";
             this.sexoDataGridViewTextBoxColumn.HeaderText = "Sexo";
             this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
-            // 
-            // ocupacionDataGridViewTextBoxColumn
-            // 
-            this.ocupacionDataGridViewTextBoxColumn.DataPropertyName = "Ocupacion";
-            this.ocupacionDataGridViewTextBoxColumn.HeaderText = "Ocupacion";
-            this.ocupacionDataGridViewTextBoxColumn.Name = "ocupacionDataGridViewTextBoxColumn";
             // 
             // pesoDataGridViewTextBoxColumn
             // 
@@ -676,6 +674,18 @@
             this.dniDataGridViewTextBoxColumn.HeaderText = "Dni";
             this.dniDataGridViewTextBoxColumn.Name = "dniDataGridViewTextBoxColumn";
             // 
+            // ocupacionIdDataGridViewTextBoxColumn
+            // 
+            this.ocupacionIdDataGridViewTextBoxColumn.DataPropertyName = "OcupacionId";
+            this.ocupacionIdDataGridViewTextBoxColumn.HeaderText = "OcupacionId";
+            this.ocupacionIdDataGridViewTextBoxColumn.Name = "ocupacionIdDataGridViewTextBoxColumn";
+            // 
+            // precioDataGridViewTextBoxColumn
+            // 
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
+            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            // 
             // FrmMenuVida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -703,11 +713,11 @@
             this.groupBoxRB.ResumeLayout(false);
             this.groupBoxRB.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPolizas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseTFGDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grpbxFiltro.ResumeLayout(false);
             this.grpbxFiltro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trabajoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseTFGDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.polizaVidaBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -754,12 +764,12 @@
         private System.Windows.Forms.BindingSource trabajoBindingSource;
         private DatabaseTFGDataSet1TableAdapters.TrabajoTableAdapter trabajoTableAdapter;
         private DatabaseTFGDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ocupacionDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource polizaVidaBindingSource;
         private DatabaseTFGDataSet1TableAdapters.PolizaVidaTableAdapter polizaVidaTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sexoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ocupacionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pesoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn alturaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dietaIdDataGridViewTextBoxColumn;
@@ -784,5 +794,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn tieneAccidentesDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn capitalAseguradoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dniDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ocupacionIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
     }
 }

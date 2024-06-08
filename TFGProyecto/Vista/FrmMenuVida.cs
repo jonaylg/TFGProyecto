@@ -54,9 +54,11 @@ namespace TFGProyecto.Vista
                 if (control is ComboBox combo)
                 {
                     combo.Visible = true;
+                    combo.DataSource = null;
                     combo.Items.Clear();
                     combo.DataSource = trabajoBindingSource;
                     combo.DisplayMember = "Nombre";
+                    combo.ValueMember = "ID";
                     combo.SelectedIndex = 0;
                 }
                 if (control is NumericUpDown nud)
@@ -81,6 +83,8 @@ namespace TFGProyecto.Vista
                 if (control is NumericUpDown nud)
                 {
                     nud.Visible = true;
+                    nud.Minimum = 18;
+                    nud.Maximum = 75;
                 }
             }
         }
@@ -100,6 +104,8 @@ namespace TFGProyecto.Vista
                 if (control is NumericUpDown nud)
                 {
                     nud.Visible = true;
+                    nud.Minimum = 200000;
+                    nud.Maximum = 3000000;
                 }
             }
         }
@@ -133,6 +139,10 @@ namespace TFGProyecto.Vista
 
         private void FrmMenuVida_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'databaseTFGDataSet1.PolizaVida' Puede moverla o quitarla según sea necesario.
+            this.polizaVidaTableAdapter.Fill(this.databaseTFGDataSet1.PolizaVida);
+            // TODO: esta línea de código carga datos en la tabla 'databaseTFGDataSet1.PolizaVida' Puede moverla o quitarla según sea necesario.
+            this.polizaVidaTableAdapter.Fill(this.databaseTFGDataSet1.PolizaVida);
             // TODO: esta línea de código carga datos en la tabla 'databaseTFGDataSet1.PolizaVida' Puede moverla o quitarla según sea necesario.
             this.polizaVidaTableAdapter.Fill(this.databaseTFGDataSet1.PolizaVida);
             this.trabajoTableAdapter.Fill(this.databaseTFGDataSet1.Trabajo);
@@ -174,14 +184,14 @@ namespace TFGProyecto.Vista
                             case "Sexo":
                                 filtro += "Sexo = '" + cmbxGen.Text + "'";
                                 break;
-                            case "Ocupación":
-                                filtro += "Ocupacion = '" + cmbxGen.Text + "'";
+                            case "Ocupacion":
+                                filtro += "OcupacionId = '" + cmbxGen.SelectedValue + "'";
                                 break;
                             case "Edad":
                                 filtro += $"Edad {orden} " + nudGen.Value;
                                 break;
-                            case "Capital":
-                                filtro += $"Capital {orden} " + nudGen.Value;
+                            case "CapitalAsegurado":
+                                filtro += $"CapitalAsegurado {orden} " + nudGen.Value;
                                 break;
                         }
                     }
@@ -189,6 +199,17 @@ namespace TFGProyecto.Vista
             }
             dv.RowFilter = filtro;
             dataGridViewPolizas.DataSource = dv;
+        }
+
+        private void buttonAct_Click(object sender, EventArgs e)
+        {
+            msktxtbxDni.Text = "";
+            cmbxGen.SelectedIndex = -1;
+            nudGen.Minimum = 0;
+            nudGen.Maximum = 0;
+            nudGen.Value = 0;
+            comboBoxMayMenIgu.SelectedIndex = -1;
+            dataGridViewPolizas.DataSource = databaseTFGDataSet1.PolizaVida;
         }
     }
 }

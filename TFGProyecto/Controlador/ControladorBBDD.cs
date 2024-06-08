@@ -80,11 +80,16 @@ namespace TFGProyecto.Controlador
                     string patron = @"@\w+";
 
                     MatchCollection coincidencias = Regex.Matches(query, patron);
-
+                                        
                     int i = 0;
                     foreach (Match match in coincidencias)
                     {
-                        command.Parameters.AddWithValue(match.Value, datos[i]);
+                        if (i >= datos.Count)
+                        {
+                            MessageBox.Show("Error: no hay suficientes datos para reemplazar los parámetros");
+                            return false;
+                        }
+                            command.Parameters.AddWithValue(match.Value, datos[i]);                        
                         i++;
                     }
                     try

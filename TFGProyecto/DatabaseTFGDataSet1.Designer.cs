@@ -46,6 +46,8 @@ namespace TFGProyecto {
         
         private global::System.Data.DataRelation relationFK__PolizaVid__Dieta__19DFD96B;
         
+        private global::System.Data.DataRelation relationFK__PolizaVid__Ocupa__32AB8735;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -371,6 +373,7 @@ namespace TFGProyecto {
             this.relationFK__Empleado__usuari__68487DD7 = this.Relations["FK__Empleado__usuari__68487DD7"];
             this.relationFK__PolizaVid__Activ__1AD3FDA4 = this.Relations["FK__PolizaVid__Activ__1AD3FDA4"];
             this.relationFK__PolizaVid__Dieta__19DFD96B = this.Relations["FK__PolizaVid__Dieta__19DFD96B"];
+            this.relationFK__PolizaVid__Ocupa__32AB8735 = this.Relations["FK__PolizaVid__Ocupa__32AB8735"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -409,6 +412,10 @@ namespace TFGProyecto {
                         this.tableDieta.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tablePolizaVida.DietaIdColumn}, false);
             this.Relations.Add(this.relationFK__PolizaVid__Dieta__19DFD96B);
+            this.relationFK__PolizaVid__Ocupa__32AB8735 = new global::System.Data.DataRelation("FK__PolizaVid__Ocupa__32AB8735", new global::System.Data.DataColumn[] {
+                        this.tableTrabajo.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePolizaVida.OcupacionIdColumn}, false);
+            this.Relations.Add(this.relationFK__PolizaVid__Ocupa__32AB8735);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3582,8 +3589,6 @@ namespace TFGProyecto {
             
             private global::System.Data.DataColumn columnSexo;
             
-            private global::System.Data.DataColumn columnOcupacion;
-            
             private global::System.Data.DataColumn columnPeso;
             
             private global::System.Data.DataColumn columnAltura;
@@ -3631,6 +3636,10 @@ namespace TFGProyecto {
             private global::System.Data.DataColumn columnCapitalAsegurado;
             
             private global::System.Data.DataColumn columnDni;
+            
+            private global::System.Data.DataColumn columnOcupacionId;
+            
+            private global::System.Data.DataColumn columnPrecio;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -3686,14 +3695,6 @@ namespace TFGProyecto {
             public global::System.Data.DataColumn SexoColumn {
                 get {
                     return this.columnSexo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn OcupacionColumn {
-                get {
-                    return this.columnOcupacion;
                 }
             }
             
@@ -3891,6 +3892,22 @@ namespace TFGProyecto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn OcupacionIdColumn {
+                get {
+                    return this.columnOcupacionId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PrecioColumn {
+                get {
+                    return this.columnPrecio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3929,7 +3946,6 @@ namespace TFGProyecto {
             public PolizaVidaRow AddPolizaVidaRow(
                         int Edad, 
                         string Sexo, 
-                        string Ocupacion, 
                         double Peso, 
                         double Altura, 
                         DietaRow parentDietaRowByFK__PolizaVid__Dieta__19DFD96B, 
@@ -3953,13 +3969,14 @@ namespace TFGProyecto {
                         bool TieneIncapacidadTemporal, 
                         bool TieneAccidentes, 
                         double CapitalAsegurado, 
-                        string Dni) {
+                        string Dni, 
+                        TrabajoRow parentTrabajoRowByFK__PolizaVid__Ocupa__32AB8735, 
+                        string Precio) {
                 PolizaVidaRow rowPolizaVidaRow = ((PolizaVidaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Edad,
                         Sexo,
-                        Ocupacion,
                         Peso,
                         Altura,
                         null,
@@ -3983,12 +4000,17 @@ namespace TFGProyecto {
                         TieneIncapacidadTemporal,
                         TieneAccidentes,
                         CapitalAsegurado,
-                        Dni};
+                        Dni,
+                        null,
+                        Precio};
                 if ((parentDietaRowByFK__PolizaVid__Dieta__19DFD96B != null)) {
-                    columnValuesArray[6] = parentDietaRowByFK__PolizaVid__Dieta__19DFD96B[0];
+                    columnValuesArray[5] = parentDietaRowByFK__PolizaVid__Dieta__19DFD96B[0];
                 }
                 if ((parentActividadRowByFK__PolizaVid__Activ__1AD3FDA4 != null)) {
-                    columnValuesArray[7] = parentActividadRowByFK__PolizaVid__Activ__1AD3FDA4[0];
+                    columnValuesArray[6] = parentActividadRowByFK__PolizaVid__Activ__1AD3FDA4[0];
+                }
+                if ((parentTrabajoRowByFK__PolizaVid__Ocupa__32AB8735 != null)) {
+                    columnValuesArray[27] = parentTrabajoRowByFK__PolizaVid__Ocupa__32AB8735[0];
                 }
                 rowPolizaVidaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPolizaVidaRow);
@@ -4022,7 +4044,6 @@ namespace TFGProyecto {
                 this.columnId = base.Columns["Id"];
                 this.columnEdad = base.Columns["Edad"];
                 this.columnSexo = base.Columns["Sexo"];
-                this.columnOcupacion = base.Columns["Ocupacion"];
                 this.columnPeso = base.Columns["Peso"];
                 this.columnAltura = base.Columns["Altura"];
                 this.columnDietaId = base.Columns["DietaId"];
@@ -4047,6 +4068,8 @@ namespace TFGProyecto {
                 this.columnTieneAccidentes = base.Columns["TieneAccidentes"];
                 this.columnCapitalAsegurado = base.Columns["CapitalAsegurado"];
                 this.columnDni = base.Columns["Dni"];
+                this.columnOcupacionId = base.Columns["OcupacionId"];
+                this.columnPrecio = base.Columns["Precio"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4058,8 +4081,6 @@ namespace TFGProyecto {
                 base.Columns.Add(this.columnEdad);
                 this.columnSexo = new global::System.Data.DataColumn("Sexo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSexo);
-                this.columnOcupacion = new global::System.Data.DataColumn("Ocupacion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOcupacion);
                 this.columnPeso = new global::System.Data.DataColumn("Peso", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPeso);
                 this.columnAltura = new global::System.Data.DataColumn("Altura", typeof(double), null, global::System.Data.MappingType.Element);
@@ -4108,6 +4129,10 @@ namespace TFGProyecto {
                 base.Columns.Add(this.columnCapitalAsegurado);
                 this.columnDni = new global::System.Data.DataColumn("Dni", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDni);
+                this.columnOcupacionId = new global::System.Data.DataColumn("OcupacionId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOcupacionId);
+                this.columnPrecio = new global::System.Data.DataColumn("Precio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrecio);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -4119,8 +4144,6 @@ namespace TFGProyecto {
                 this.columnEdad.AllowDBNull = false;
                 this.columnSexo.AllowDBNull = false;
                 this.columnSexo.MaxLength = 10;
-                this.columnOcupacion.AllowDBNull = false;
-                this.columnOcupacion.MaxLength = 100;
                 this.columnPeso.AllowDBNull = false;
                 this.columnAltura.AllowDBNull = false;
                 this.columnDietaId.AllowDBNull = false;
@@ -4146,6 +4169,9 @@ namespace TFGProyecto {
                 this.columnCapitalAsegurado.AllowDBNull = false;
                 this.columnDni.AllowDBNull = false;
                 this.columnDni.MaxLength = 20;
+                this.columnOcupacionId.AllowDBNull = false;
+                this.columnPrecio.AllowDBNull = false;
+                this.columnPrecio.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5354,6 +5380,17 @@ namespace TFGProyecto {
             public void SetDescripcionNull() {
                 this[this.tableTrabajo.DescripcionColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public PolizaVidaRow[] GetPolizaVidaRows() {
+                if ((this.Table.ChildRelations["FK__PolizaVid__Ocupa__32AB8735"] == null)) {
+                    return new PolizaVidaRow[0];
+                }
+                else {
+                    return ((PolizaVidaRow[])(base.GetChildRows(this.Table.ChildRelations["FK__PolizaVid__Ocupa__32AB8735"])));
+                }
+            }
         }
         
         /// <summary>
@@ -5617,17 +5654,6 @@ namespace TFGProyecto {
                 }
                 set {
                     this[this.tablePolizaVida.SexoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Ocupacion {
-                get {
-                    return ((string)(this[this.tablePolizaVida.OcupacionColumn]));
-                }
-                set {
-                    this[this.tablePolizaVida.OcupacionColumn] = value;
                 }
             }
             
@@ -5897,6 +5923,28 @@ namespace TFGProyecto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int OcupacionId {
+                get {
+                    return ((int)(this[this.tablePolizaVida.OcupacionIdColumn]));
+                }
+                set {
+                    this[this.tablePolizaVida.OcupacionIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Precio {
+                get {
+                    return ((string)(this[this.tablePolizaVida.PrecioColumn]));
+                }
+                set {
+                    this[this.tablePolizaVida.PrecioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ActividadRow ActividadRow {
                 get {
                     return ((ActividadRow)(this.GetParentRow(this.Table.ParentRelations["FK__PolizaVid__Activ__1AD3FDA4"])));
@@ -5914,6 +5962,17 @@ namespace TFGProyecto {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__PolizaVid__Dieta__19DFD96B"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TrabajoRow TrabajoRow {
+                get {
+                    return ((TrabajoRow)(this.GetParentRow(this.Table.ParentRelations["FK__PolizaVid__Ocupa__32AB8735"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__PolizaVid__Ocupa__32AB8735"]);
                 }
             }
         }
@@ -11076,7 +11135,6 @@ SELECT nick, clave, pregPers, respuesta FROM Usuario WHERE (nick = @nick)";
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Edad", "Edad");
             tableMapping.ColumnMappings.Add("Sexo", "Sexo");
-            tableMapping.ColumnMappings.Add("Ocupacion", "Ocupacion");
             tableMapping.ColumnMappings.Add("Peso", "Peso");
             tableMapping.ColumnMappings.Add("Altura", "Altura");
             tableMapping.ColumnMappings.Add("DietaId", "DietaId");
@@ -11101,160 +11159,167 @@ SELECT nick, clave, pregPers, respuesta FROM Usuario WHERE (nick = @nick)";
             tableMapping.ColumnMappings.Add("TieneAccidentes", "TieneAccidentes");
             tableMapping.ColumnMappings.Add("CapitalAsegurado", "CapitalAsegurado");
             tableMapping.ColumnMappings.Add("Dni", "Dni");
+            tableMapping.ColumnMappings.Add("OcupacionId", "OcupacionId");
+            tableMapping.ColumnMappings.Add("Precio", "Precio");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[PolizaVida] WHERE (([Id] = @Original_Id) AND ([Edad] = @Original_Edad) AND ([Sexo] = @Original_Sexo) AND ([Ocupacion] = @Original_Ocupacion) AND ([Peso] = @Original_Peso) AND ([Altura] = @Original_Altura) AND ([DietaId] = @Original_DietaId) AND ([ActividadId] = @Original_ActividadId) AND ([ConsumeAlcohol] = @Original_ConsumeAlcohol) AND ([ConsumeTabaco] = @Original_ConsumeTabaco) AND ([ConsumeDrogas] = @Original_ConsumeDrogas) AND ([Hematologicas] = @Original_Hematologicas) AND ([Gastrointestinales] = @Original_Gastrointestinales) AND ([Endocrinas] = @Original_Endocrinas) AND ([Infecciosas] = @Original_Infecciosas) AND ([Autoinmunes] = @Original_Autoinmunes) AND ([Neurologicas] = @Original_Neurologicas) AND ([Renales] = @Original_Renales) AND ([Hepaticas] = @Original_Hepaticas) AND ([Diabetes] = @Original_Diabetes) AND ([Cancer] = @Original_Cancer) AND ([Respiratorias] = @Original_Respiratorias) AND ([Cardiacas] = @Original_Cardiacas) AND ([TieneTerminacionAnticipada] = @Original_TieneTerminacionAnticipada) AND ([TieneIncapacidadTemporal] = @Original_TieneIncapacidadTemporal) AND ([TieneAccidentes] = @Original_TieneAccidentes) AND ([CapitalAsegurado] = @Original_CapitalAsegurado) AND ([Dni] = @Original_Dni))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [PolizaVida] WHERE (([Id] = @Original_Id) AND ([Edad] = @Original_Edad) AND ([Sexo] = @Original_Sexo) AND ([Peso] = @Original_Peso) AND ([Altura] = @Original_Altura) AND ([DietaId] = @Original_DietaId) AND ([ActividadId] = @Original_ActividadId) AND ([ConsumeAlcohol] = @Original_ConsumeAlcohol) AND ([ConsumeTabaco] = @Original_ConsumeTabaco) AND ([ConsumeDrogas] = @Original_ConsumeDrogas) AND ([Hematologicas] = @Original_Hematologicas) AND ([Gastrointestinales] = @Original_Gastrointestinales) AND ([Endocrinas] = @Original_Endocrinas) AND ([Infecciosas] = @Original_Infecciosas) AND ([Autoinmunes] = @Original_Autoinmunes) AND ([Neurologicas] = @Original_Neurologicas) AND ([Renales] = @Original_Renales) AND ([Hepaticas] = @Original_Hepaticas) AND ([Diabetes] = @Original_Diabetes) AND ([Cancer] = @Original_Cancer) AND ([Respiratorias] = @Original_Respiratorias) AND ([Cardiacas] = @Original_Cardiacas) AND ([TieneTerminacionAnticipada] = @Original_TieneTerminacionAnticipada) AND ([TieneIncapacidadTemporal] = @Original_TieneIncapacidadTemporal) AND ([TieneAccidentes] = @Original_TieneAccidentes) AND ([CapitalAsegurado] = @Original_CapitalAsegurado) AND ([Dni] = @Original_Dni) AND ([OcupacionId] = @Original_OcupacionId) AND ([Precio] = @Original_Precio))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Edad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Edad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Edad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Edad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sexo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sexo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ocupacion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ocupacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Peso", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Peso", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Altura", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Altura", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Peso", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Peso", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Altura", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Altura", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DietaId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DietaId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ActividadId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActividadId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ConsumeAlcohol", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeAlcohol", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ConsumeTabaco", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeTabaco", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ConsumeDrogas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeDrogas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hematologicas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hematologicas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Gastrointestinales", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gastrointestinales", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Endocrinas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Endocrinas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Infecciosas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Infecciosas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Autoinmunes", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Autoinmunes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Neurologicas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Neurologicas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Renales", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Renales", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hepaticas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hepaticas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Diabetes", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Diabetes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cancer", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cancer", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Respiratorias", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Respiratorias", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cardiacas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cardiacas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TieneTerminacionAnticipada", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneTerminacionAnticipada", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TieneIncapacidadTemporal", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneIncapacidadTemporal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TieneAccidentes", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneAccidentes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CapitalAsegurado", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CapitalAsegurado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ConsumeAlcohol", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeAlcohol", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ConsumeTabaco", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeTabaco", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ConsumeDrogas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeDrogas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hematologicas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hematologicas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Gastrointestinales", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gastrointestinales", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Endocrinas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Endocrinas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Infecciosas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Infecciosas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Autoinmunes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Autoinmunes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Neurologicas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Neurologicas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Renales", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Renales", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hepaticas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hepaticas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Diabetes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Diabetes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cancer", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cancer", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Respiratorias", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Respiratorias", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cardiacas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cardiacas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TieneTerminacionAnticipada", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneTerminacionAnticipada", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TieneIncapacidadTemporal", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneIncapacidadTemporal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TieneAccidentes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneAccidentes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CapitalAsegurado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CapitalAsegurado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Dni", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Dni", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OcupacionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OcupacionId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Precio", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Precio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[PolizaVida] ([Edad], [Sexo], [Ocupacion], [Peso], [Altura], [DietaId], [ActividadId], [ConsumeAlcohol], [ConsumeTabaco], [ConsumeDrogas], [Hematologicas], [Gastrointestinales], [Endocrinas], [Infecciosas], [Autoinmunes], [Neurologicas], [Renales], [Hepaticas], [Diabetes], [Cancer], [Respiratorias], [Cardiacas], [TieneTerminacionAnticipada], [TieneIncapacidadTemporal], [TieneAccidentes], [CapitalAsegurado], [Dni]) VALUES (@Edad, @Sexo, @Ocupacion, @Peso, @Altura, @DietaId, @ActividadId, @ConsumeAlcohol, @ConsumeTabaco, @ConsumeDrogas, @Hematologicas, @Gastrointestinales, @Endocrinas, @Infecciosas, @Autoinmunes, @Neurologicas, @Renales, @Hepaticas, @Diabetes, @Cancer, @Respiratorias, @Cardiacas, @TieneTerminacionAnticipada, @TieneIncapacidadTemporal, @TieneAccidentes, @CapitalAsegurado, @Dni);
-SELECT Id, Edad, Sexo, Ocupacion, Peso, Altura, DietaId, ActividadId, ConsumeAlcohol, ConsumeTabaco, ConsumeDrogas, Hematologicas, Gastrointestinales, Endocrinas, Infecciosas, Autoinmunes, Neurologicas, Renales, Hepaticas, Diabetes, Cancer, Respiratorias, Cardiacas, TieneTerminacionAnticipada, TieneIncapacidadTemporal, TieneAccidentes, CapitalAsegurado, Dni FROM PolizaVida WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [PolizaVida] ([Edad], [Sexo], [Peso], [Altura], [DietaId], [ActividadId], [ConsumeAlcohol], [ConsumeTabaco], [ConsumeDrogas], [Hematologicas], [Gastrointestinales], [Endocrinas], [Infecciosas], [Autoinmunes], [Neurologicas], [Renales], [Hepaticas], [Diabetes], [Cancer], [Respiratorias], [Cardiacas], [TieneTerminacionAnticipada], [TieneIncapacidadTemporal], [TieneAccidentes], [CapitalAsegurado], [Dni], [OcupacionId], [Precio]) VALUES (@Edad, @Sexo, @Peso, @Altura, @DietaId, @ActividadId, @ConsumeAlcohol, @ConsumeTabaco, @ConsumeDrogas, @Hematologicas, @Gastrointestinales, @Endocrinas, @Infecciosas, @Autoinmunes, @Neurologicas, @Renales, @Hepaticas, @Diabetes, @Cancer, @Respiratorias, @Cardiacas, @TieneTerminacionAnticipada, @TieneIncapacidadTemporal, @TieneAccidentes, @CapitalAsegurado, @Dni, @OcupacionId, @Precio);
+SELECT Id, Edad, Sexo, Peso, Altura, DietaId, ActividadId, ConsumeAlcohol, ConsumeTabaco, ConsumeDrogas, Hematologicas, Gastrointestinales, Endocrinas, Infecciosas, Autoinmunes, Neurologicas, Renales, Hepaticas, Diabetes, Cancer, Respiratorias, Cardiacas, TieneTerminacionAnticipada, TieneIncapacidadTemporal, TieneAccidentes, CapitalAsegurado, Dni, OcupacionId, Precio FROM PolizaVida WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Edad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Edad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Edad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Edad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sexo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sexo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ocupacion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ocupacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Peso", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Peso", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Altura", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Altura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Peso", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Peso", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Altura", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Altura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DietaId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DietaId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActividadId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActividadId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ConsumeAlcohol", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeAlcohol", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ConsumeTabaco", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeTabaco", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ConsumeDrogas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeDrogas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hematologicas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hematologicas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gastrointestinales", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gastrointestinales", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Endocrinas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Endocrinas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Infecciosas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Infecciosas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Autoinmunes", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Autoinmunes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Neurologicas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Neurologicas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Renales", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Renales", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hepaticas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hepaticas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Diabetes", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Diabetes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cancer", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cancer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Respiratorias", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Respiratorias", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cardiacas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cardiacas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TieneTerminacionAnticipada", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneTerminacionAnticipada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TieneIncapacidadTemporal", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneIncapacidadTemporal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TieneAccidentes", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneAccidentes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CapitalAsegurado", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CapitalAsegurado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ConsumeAlcohol", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeAlcohol", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ConsumeTabaco", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeTabaco", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ConsumeDrogas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeDrogas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hematologicas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hematologicas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gastrointestinales", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gastrointestinales", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Endocrinas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Endocrinas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Infecciosas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Infecciosas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Autoinmunes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Autoinmunes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Neurologicas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Neurologicas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Renales", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Renales", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hepaticas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hepaticas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Diabetes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Diabetes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cancer", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cancer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Respiratorias", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Respiratorias", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cardiacas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cardiacas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TieneTerminacionAnticipada", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneTerminacionAnticipada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TieneIncapacidadTemporal", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneIncapacidadTemporal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TieneAccidentes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneAccidentes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CapitalAsegurado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CapitalAsegurado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Dni", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Dni", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OcupacionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OcupacionId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Precio", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Precio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[PolizaVida] SET [Edad] = @Edad, [Sexo] = @Sexo, [Ocupacion] = @Ocup" +
-                "acion, [Peso] = @Peso, [Altura] = @Altura, [DietaId] = @DietaId, [ActividadId] =" +
-                " @ActividadId, [ConsumeAlcohol] = @ConsumeAlcohol, [ConsumeTabaco] = @ConsumeTab" +
-                "aco, [ConsumeDrogas] = @ConsumeDrogas, [Hematologicas] = @Hematologicas, [Gastro" +
-                "intestinales] = @Gastrointestinales, [Endocrinas] = @Endocrinas, [Infecciosas] =" +
-                " @Infecciosas, [Autoinmunes] = @Autoinmunes, [Neurologicas] = @Neurologicas, [Re" +
-                "nales] = @Renales, [Hepaticas] = @Hepaticas, [Diabetes] = @Diabetes, [Cancer] = " +
-                "@Cancer, [Respiratorias] = @Respiratorias, [Cardiacas] = @Cardiacas, [TieneTermi" +
-                "nacionAnticipada] = @TieneTerminacionAnticipada, [TieneIncapacidadTemporal] = @T" +
-                "ieneIncapacidadTemporal, [TieneAccidentes] = @TieneAccidentes, [CapitalAsegurado" +
-                "] = @CapitalAsegurado, [Dni] = @Dni WHERE (([Id] = @Original_Id) AND ([Edad] = @" +
-                "Original_Edad) AND ([Sexo] = @Original_Sexo) AND ([Ocupacion] = @Original_Ocupac" +
-                "ion) AND ([Peso] = @Original_Peso) AND ([Altura] = @Original_Altura) AND ([Dieta" +
-                "Id] = @Original_DietaId) AND ([ActividadId] = @Original_ActividadId) AND ([Consu" +
-                "meAlcohol] = @Original_ConsumeAlcohol) AND ([ConsumeTabaco] = @Original_ConsumeT" +
-                "abaco) AND ([ConsumeDrogas] = @Original_ConsumeDrogas) AND ([Hematologicas] = @O" +
-                "riginal_Hematologicas) AND ([Gastrointestinales] = @Original_Gastrointestinales)" +
-                " AND ([Endocrinas] = @Original_Endocrinas) AND ([Infecciosas] = @Original_Infecc" +
-                "iosas) AND ([Autoinmunes] = @Original_Autoinmunes) AND ([Neurologicas] = @Origin" +
-                "al_Neurologicas) AND ([Renales] = @Original_Renales) AND ([Hepaticas] = @Origina" +
-                "l_Hepaticas) AND ([Diabetes] = @Original_Diabetes) AND ([Cancer] = @Original_Can" +
-                "cer) AND ([Respiratorias] = @Original_Respiratorias) AND ([Cardiacas] = @Origina" +
-                "l_Cardiacas) AND ([TieneTerminacionAnticipada] = @Original_TieneTerminacionAntic" +
-                "ipada) AND ([TieneIncapacidadTemporal] = @Original_TieneIncapacidadTemporal) AND" +
-                " ([TieneAccidentes] = @Original_TieneAccidentes) AND ([CapitalAsegurado] = @Orig" +
-                "inal_CapitalAsegurado) AND ([Dni] = @Original_Dni));\r\nSELECT Id, Edad, Sexo, Ocu" +
-                "pacion, Peso, Altura, DietaId, ActividadId, ConsumeAlcohol, ConsumeTabaco, Consu" +
-                "meDrogas, Hematologicas, Gastrointestinales, Endocrinas, Infecciosas, Autoinmune" +
-                "s, Neurologicas, Renales, Hepaticas, Diabetes, Cancer, Respiratorias, Cardiacas," +
-                " TieneTerminacionAnticipada, TieneIncapacidadTemporal, TieneAccidentes, CapitalA" +
-                "segurado, Dni FROM PolizaVida WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [PolizaVida] SET [Edad] = @Edad, [Sexo] = @Sexo, [Peso] = @Peso, [Altura] " +
+                "= @Altura, [DietaId] = @DietaId, [ActividadId] = @ActividadId, [ConsumeAlcohol] " +
+                "= @ConsumeAlcohol, [ConsumeTabaco] = @ConsumeTabaco, [ConsumeDrogas] = @ConsumeD" +
+                "rogas, [Hematologicas] = @Hematologicas, [Gastrointestinales] = @Gastrointestina" +
+                "les, [Endocrinas] = @Endocrinas, [Infecciosas] = @Infecciosas, [Autoinmunes] = @" +
+                "Autoinmunes, [Neurologicas] = @Neurologicas, [Renales] = @Renales, [Hepaticas] =" +
+                " @Hepaticas, [Diabetes] = @Diabetes, [Cancer] = @Cancer, [Respiratorias] = @Resp" +
+                "iratorias, [Cardiacas] = @Cardiacas, [TieneTerminacionAnticipada] = @TieneTermin" +
+                "acionAnticipada, [TieneIncapacidadTemporal] = @TieneIncapacidadTemporal, [TieneA" +
+                "ccidentes] = @TieneAccidentes, [CapitalAsegurado] = @CapitalAsegurado, [Dni] = @" +
+                "Dni, [OcupacionId] = @OcupacionId, [Precio] = @Precio WHERE (([Id] = @Original_I" +
+                "d) AND ([Edad] = @Original_Edad) AND ([Sexo] = @Original_Sexo) AND ([Peso] = @Or" +
+                "iginal_Peso) AND ([Altura] = @Original_Altura) AND ([DietaId] = @Original_DietaI" +
+                "d) AND ([ActividadId] = @Original_ActividadId) AND ([ConsumeAlcohol] = @Original" +
+                "_ConsumeAlcohol) AND ([ConsumeTabaco] = @Original_ConsumeTabaco) AND ([ConsumeDr" +
+                "ogas] = @Original_ConsumeDrogas) AND ([Hematologicas] = @Original_Hematologicas)" +
+                " AND ([Gastrointestinales] = @Original_Gastrointestinales) AND ([Endocrinas] = @" +
+                "Original_Endocrinas) AND ([Infecciosas] = @Original_Infecciosas) AND ([Autoinmun" +
+                "es] = @Original_Autoinmunes) AND ([Neurologicas] = @Original_Neurologicas) AND (" +
+                "[Renales] = @Original_Renales) AND ([Hepaticas] = @Original_Hepaticas) AND ([Dia" +
+                "betes] = @Original_Diabetes) AND ([Cancer] = @Original_Cancer) AND ([Respiratori" +
+                "as] = @Original_Respiratorias) AND ([Cardiacas] = @Original_Cardiacas) AND ([Tie" +
+                "neTerminacionAnticipada] = @Original_TieneTerminacionAnticipada) AND ([TieneInca" +
+                "pacidadTemporal] = @Original_TieneIncapacidadTemporal) AND ([TieneAccidentes] = " +
+                "@Original_TieneAccidentes) AND ([CapitalAsegurado] = @Original_CapitalAsegurado)" +
+                " AND ([Dni] = @Original_Dni) AND ([OcupacionId] = @Original_OcupacionId) AND ([P" +
+                "recio] = @Original_Precio));\r\nSELECT Id, Edad, Sexo, Peso, Altura, DietaId, Acti" +
+                "vidadId, ConsumeAlcohol, ConsumeTabaco, ConsumeDrogas, Hematologicas, Gastrointe" +
+                "stinales, Endocrinas, Infecciosas, Autoinmunes, Neurologicas, Renales, Hepaticas" +
+                ", Diabetes, Cancer, Respiratorias, Cardiacas, TieneTerminacionAnticipada, TieneI" +
+                "ncapacidadTemporal, TieneAccidentes, CapitalAsegurado, Dni, OcupacionId, Precio " +
+                "FROM PolizaVida WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Edad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Edad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Edad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Edad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sexo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sexo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ocupacion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ocupacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Peso", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Peso", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Altura", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Altura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Peso", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Peso", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Altura", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Altura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DietaId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DietaId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActividadId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActividadId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ConsumeAlcohol", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeAlcohol", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ConsumeTabaco", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeTabaco", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ConsumeDrogas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeDrogas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hematologicas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hematologicas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gastrointestinales", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gastrointestinales", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Endocrinas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Endocrinas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Infecciosas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Infecciosas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Autoinmunes", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Autoinmunes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Neurologicas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Neurologicas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Renales", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Renales", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hepaticas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hepaticas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Diabetes", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Diabetes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cancer", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cancer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Respiratorias", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Respiratorias", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cardiacas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cardiacas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TieneTerminacionAnticipada", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneTerminacionAnticipada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TieneIncapacidadTemporal", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneIncapacidadTemporal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TieneAccidentes", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneAccidentes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CapitalAsegurado", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CapitalAsegurado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ConsumeAlcohol", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeAlcohol", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ConsumeTabaco", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeTabaco", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ConsumeDrogas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeDrogas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hematologicas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hematologicas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gastrointestinales", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gastrointestinales", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Endocrinas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Endocrinas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Infecciosas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Infecciosas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Autoinmunes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Autoinmunes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Neurologicas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Neurologicas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Renales", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Renales", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hepaticas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hepaticas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Diabetes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Diabetes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cancer", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cancer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Respiratorias", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Respiratorias", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cardiacas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cardiacas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TieneTerminacionAnticipada", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneTerminacionAnticipada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TieneIncapacidadTemporal", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneIncapacidadTemporal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TieneAccidentes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneAccidentes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CapitalAsegurado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CapitalAsegurado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Dni", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Dni", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OcupacionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OcupacionId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Precio", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Precio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Edad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Edad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Edad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Edad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sexo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sexo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ocupacion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ocupacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Peso", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Peso", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Altura", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Altura", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Peso", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Peso", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Altura", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Altura", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DietaId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DietaId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ActividadId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActividadId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ConsumeAlcohol", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeAlcohol", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ConsumeTabaco", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeTabaco", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ConsumeDrogas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeDrogas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hematologicas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hematologicas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Gastrointestinales", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gastrointestinales", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Endocrinas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Endocrinas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Infecciosas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Infecciosas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Autoinmunes", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Autoinmunes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Neurologicas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Neurologicas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Renales", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Renales", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hepaticas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hepaticas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Diabetes", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Diabetes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cancer", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cancer", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Respiratorias", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Respiratorias", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cardiacas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cardiacas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TieneTerminacionAnticipada", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneTerminacionAnticipada", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TieneIncapacidadTemporal", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneIncapacidadTemporal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TieneAccidentes", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneAccidentes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CapitalAsegurado", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CapitalAsegurado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ConsumeAlcohol", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeAlcohol", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ConsumeTabaco", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeTabaco", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ConsumeDrogas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConsumeDrogas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hematologicas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hematologicas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Gastrointestinales", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gastrointestinales", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Endocrinas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Endocrinas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Infecciosas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Infecciosas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Autoinmunes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Autoinmunes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Neurologicas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Neurologicas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Renales", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Renales", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hepaticas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hepaticas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Diabetes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Diabetes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cancer", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cancer", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Respiratorias", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Respiratorias", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cardiacas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cardiacas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TieneTerminacionAnticipada", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneTerminacionAnticipada", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TieneIncapacidadTemporal", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneIncapacidadTemporal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TieneAccidentes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TieneAccidentes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CapitalAsegurado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CapitalAsegurado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Dni", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Dni", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OcupacionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OcupacionId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Precio", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Precio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -11271,7 +11336,7 @@ SELECT Id, Edad, Sexo, Ocupacion, Peso, Altura, DietaId, ActividadId, ConsumeAlc
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT Id, Edad, Sexo, Ocupacion, Peso, Altura, DietaId, ActividadId, ConsumeAlcohol, ConsumeTabaco, ConsumeDrogas, Hematologicas, Gastrointestinales, Endocrinas, Infecciosas, Autoinmunes, Neurologicas, Renales, Hepaticas, Diabetes, Cancer, Respiratorias, Cardiacas, TieneTerminacionAnticipada, TieneIncapacidadTemporal, TieneAccidentes, CapitalAsegurado, Dni FROM dbo.PolizaVida";
+            this._commandCollection[0].CommandText = @"SELECT Id, Edad, Sexo, Peso, Altura, DietaId, ActividadId, ConsumeAlcohol, ConsumeTabaco, ConsumeDrogas, Hematologicas, Gastrointestinales, Endocrinas, Infecciosas, Autoinmunes, Neurologicas, Renales, Hepaticas, Diabetes, Cancer, Respiratorias, Cardiacas, TieneTerminacionAnticipada, TieneIncapacidadTemporal, TieneAccidentes, CapitalAsegurado, Dni, OcupacionId, Precio FROM PolizaVida";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -11334,75 +11399,187 @@ SELECT Id, Edad, Sexo, Ocupacion, Peso, Altura, DietaId, ActividadId, ConsumeAlc
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
         public virtual int Delete(
                     int Original_Id, 
-                    int Original_Edad, 
+                    string Original_Edad, 
                     string Original_Sexo, 
-                    string Original_Ocupacion, 
-                    double Original_Peso, 
-                    double Original_Altura, 
+                    string Original_Peso, 
+                    string Original_Altura, 
                     int Original_DietaId, 
                     int Original_ActividadId, 
-                    bool Original_ConsumeAlcohol, 
-                    bool Original_ConsumeTabaco, 
-                    bool Original_ConsumeDrogas, 
-                    bool Original_Hematologicas, 
-                    bool Original_Gastrointestinales, 
-                    bool Original_Endocrinas, 
-                    bool Original_Infecciosas, 
-                    bool Original_Autoinmunes, 
-                    bool Original_Neurologicas, 
-                    bool Original_Renales, 
-                    bool Original_Hepaticas, 
-                    bool Original_Diabetes, 
-                    bool Original_Cancer, 
-                    bool Original_Respiratorias, 
-                    bool Original_Cardiacas, 
-                    bool Original_TieneTerminacionAnticipada, 
-                    bool Original_TieneIncapacidadTemporal, 
-                    bool Original_TieneAccidentes, 
-                    double Original_CapitalAsegurado, 
-                    string Original_Dni) {
+                    string Original_ConsumeAlcohol, 
+                    string Original_ConsumeTabaco, 
+                    string Original_ConsumeDrogas, 
+                    string Original_Hematologicas, 
+                    string Original_Gastrointestinales, 
+                    string Original_Endocrinas, 
+                    string Original_Infecciosas, 
+                    string Original_Autoinmunes, 
+                    string Original_Neurologicas, 
+                    string Original_Renales, 
+                    string Original_Hepaticas, 
+                    string Original_Diabetes, 
+                    string Original_Cancer, 
+                    string Original_Respiratorias, 
+                    string Original_Cardiacas, 
+                    string Original_TieneTerminacionAnticipada, 
+                    string Original_TieneIncapacidadTemporal, 
+                    string Original_TieneAccidentes, 
+                    string Original_CapitalAsegurado, 
+                    string Original_Dni, 
+                    int Original_OcupacionId, 
+                    string Original_Precio) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Edad));
+            if ((Original_Edad == null)) {
+                throw new global::System.ArgumentNullException("Original_Edad");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Edad));
+            }
             if ((Original_Sexo == null)) {
                 throw new global::System.ArgumentNullException("Original_Sexo");
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Sexo));
             }
-            if ((Original_Ocupacion == null)) {
-                throw new global::System.ArgumentNullException("Original_Ocupacion");
+            if ((Original_Peso == null)) {
+                throw new global::System.ArgumentNullException("Original_Peso");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Ocupacion));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Peso));
             }
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((double)(Original_Peso));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((double)(Original_Altura));
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_DietaId));
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_ActividadId));
-            this.Adapter.DeleteCommand.Parameters[8].Value = ((bool)(Original_ConsumeAlcohol));
-            this.Adapter.DeleteCommand.Parameters[9].Value = ((bool)(Original_ConsumeTabaco));
-            this.Adapter.DeleteCommand.Parameters[10].Value = ((bool)(Original_ConsumeDrogas));
-            this.Adapter.DeleteCommand.Parameters[11].Value = ((bool)(Original_Hematologicas));
-            this.Adapter.DeleteCommand.Parameters[12].Value = ((bool)(Original_Gastrointestinales));
-            this.Adapter.DeleteCommand.Parameters[13].Value = ((bool)(Original_Endocrinas));
-            this.Adapter.DeleteCommand.Parameters[14].Value = ((bool)(Original_Infecciosas));
-            this.Adapter.DeleteCommand.Parameters[15].Value = ((bool)(Original_Autoinmunes));
-            this.Adapter.DeleteCommand.Parameters[16].Value = ((bool)(Original_Neurologicas));
-            this.Adapter.DeleteCommand.Parameters[17].Value = ((bool)(Original_Renales));
-            this.Adapter.DeleteCommand.Parameters[18].Value = ((bool)(Original_Hepaticas));
-            this.Adapter.DeleteCommand.Parameters[19].Value = ((bool)(Original_Diabetes));
-            this.Adapter.DeleteCommand.Parameters[20].Value = ((bool)(Original_Cancer));
-            this.Adapter.DeleteCommand.Parameters[21].Value = ((bool)(Original_Respiratorias));
-            this.Adapter.DeleteCommand.Parameters[22].Value = ((bool)(Original_Cardiacas));
-            this.Adapter.DeleteCommand.Parameters[23].Value = ((bool)(Original_TieneTerminacionAnticipada));
-            this.Adapter.DeleteCommand.Parameters[24].Value = ((bool)(Original_TieneIncapacidadTemporal));
-            this.Adapter.DeleteCommand.Parameters[25].Value = ((bool)(Original_TieneAccidentes));
-            this.Adapter.DeleteCommand.Parameters[26].Value = ((double)(Original_CapitalAsegurado));
+            if ((Original_Altura == null)) {
+                throw new global::System.ArgumentNullException("Original_Altura");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Altura));
+            }
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_DietaId));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_ActividadId));
+            if ((Original_ConsumeAlcohol == null)) {
+                throw new global::System.ArgumentNullException("Original_ConsumeAlcohol");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_ConsumeAlcohol));
+            }
+            if ((Original_ConsumeTabaco == null)) {
+                throw new global::System.ArgumentNullException("Original_ConsumeTabaco");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_ConsumeTabaco));
+            }
+            if ((Original_ConsumeDrogas == null)) {
+                throw new global::System.ArgumentNullException("Original_ConsumeDrogas");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_ConsumeDrogas));
+            }
+            if ((Original_Hematologicas == null)) {
+                throw new global::System.ArgumentNullException("Original_Hematologicas");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_Hematologicas));
+            }
+            if ((Original_Gastrointestinales == null)) {
+                throw new global::System.ArgumentNullException("Original_Gastrointestinales");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_Gastrointestinales));
+            }
+            if ((Original_Endocrinas == null)) {
+                throw new global::System.ArgumentNullException("Original_Endocrinas");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Endocrinas));
+            }
+            if ((Original_Infecciosas == null)) {
+                throw new global::System.ArgumentNullException("Original_Infecciosas");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((string)(Original_Infecciosas));
+            }
+            if ((Original_Autoinmunes == null)) {
+                throw new global::System.ArgumentNullException("Original_Autoinmunes");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_Autoinmunes));
+            }
+            if ((Original_Neurologicas == null)) {
+                throw new global::System.ArgumentNullException("Original_Neurologicas");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((string)(Original_Neurologicas));
+            }
+            if ((Original_Renales == null)) {
+                throw new global::System.ArgumentNullException("Original_Renales");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_Renales));
+            }
+            if ((Original_Hepaticas == null)) {
+                throw new global::System.ArgumentNullException("Original_Hepaticas");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((string)(Original_Hepaticas));
+            }
+            if ((Original_Diabetes == null)) {
+                throw new global::System.ArgumentNullException("Original_Diabetes");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_Diabetes));
+            }
+            if ((Original_Cancer == null)) {
+                throw new global::System.ArgumentNullException("Original_Cancer");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((string)(Original_Cancer));
+            }
+            if ((Original_Respiratorias == null)) {
+                throw new global::System.ArgumentNullException("Original_Respiratorias");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_Respiratorias));
+            }
+            if ((Original_Cardiacas == null)) {
+                throw new global::System.ArgumentNullException("Original_Cardiacas");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((string)(Original_Cardiacas));
+            }
+            if ((Original_TieneTerminacionAnticipada == null)) {
+                throw new global::System.ArgumentNullException("Original_TieneTerminacionAnticipada");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_TieneTerminacionAnticipada));
+            }
+            if ((Original_TieneIncapacidadTemporal == null)) {
+                throw new global::System.ArgumentNullException("Original_TieneIncapacidadTemporal");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((string)(Original_TieneIncapacidadTemporal));
+            }
+            if ((Original_TieneAccidentes == null)) {
+                throw new global::System.ArgumentNullException("Original_TieneAccidentes");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_TieneAccidentes));
+            }
+            if ((Original_CapitalAsegurado == null)) {
+                throw new global::System.ArgumentNullException("Original_CapitalAsegurado");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((string)(Original_CapitalAsegurado));
+            }
             if ((Original_Dni == null)) {
                 throw new global::System.ArgumentNullException("Original_Dni");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[27].Value = ((string)(Original_Dni));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_Dni));
+            }
+            this.Adapter.DeleteCommand.Parameters[27].Value = ((int)(Original_OcupacionId));
+            if ((Original_Precio == null)) {
+                throw new global::System.ArgumentNullException("Original_Precio");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_Precio));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -11425,74 +11602,186 @@ SELECT Id, Edad, Sexo, Ocupacion, Peso, Altura, DietaId, ActividadId, ConsumeAlc
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
         public virtual int Insert(
-                    int Edad, 
+                    string Edad, 
                     string Sexo, 
-                    string Ocupacion, 
-                    double Peso, 
-                    double Altura, 
+                    string Peso, 
+                    string Altura, 
                     int DietaId, 
                     int ActividadId, 
-                    bool ConsumeAlcohol, 
-                    bool ConsumeTabaco, 
-                    bool ConsumeDrogas, 
-                    bool Hematologicas, 
-                    bool Gastrointestinales, 
-                    bool Endocrinas, 
-                    bool Infecciosas, 
-                    bool Autoinmunes, 
-                    bool Neurologicas, 
-                    bool Renales, 
-                    bool Hepaticas, 
-                    bool Diabetes, 
-                    bool Cancer, 
-                    bool Respiratorias, 
-                    bool Cardiacas, 
-                    bool TieneTerminacionAnticipada, 
-                    bool TieneIncapacidadTemporal, 
-                    bool TieneAccidentes, 
-                    double CapitalAsegurado, 
-                    string Dni) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Edad));
+                    string ConsumeAlcohol, 
+                    string ConsumeTabaco, 
+                    string ConsumeDrogas, 
+                    string Hematologicas, 
+                    string Gastrointestinales, 
+                    string Endocrinas, 
+                    string Infecciosas, 
+                    string Autoinmunes, 
+                    string Neurologicas, 
+                    string Renales, 
+                    string Hepaticas, 
+                    string Diabetes, 
+                    string Cancer, 
+                    string Respiratorias, 
+                    string Cardiacas, 
+                    string TieneTerminacionAnticipada, 
+                    string TieneIncapacidadTemporal, 
+                    string TieneAccidentes, 
+                    string CapitalAsegurado, 
+                    string Dni, 
+                    int OcupacionId, 
+                    string Precio) {
+            if ((Edad == null)) {
+                throw new global::System.ArgumentNullException("Edad");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Edad));
+            }
             if ((Sexo == null)) {
                 throw new global::System.ArgumentNullException("Sexo");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Sexo));
             }
-            if ((Ocupacion == null)) {
-                throw new global::System.ArgumentNullException("Ocupacion");
+            if ((Peso == null)) {
+                throw new global::System.ArgumentNullException("Peso");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Ocupacion));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Peso));
             }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((double)(Peso));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((double)(Altura));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(DietaId));
-            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(ActividadId));
-            this.Adapter.InsertCommand.Parameters[7].Value = ((bool)(ConsumeAlcohol));
-            this.Adapter.InsertCommand.Parameters[8].Value = ((bool)(ConsumeTabaco));
-            this.Adapter.InsertCommand.Parameters[9].Value = ((bool)(ConsumeDrogas));
-            this.Adapter.InsertCommand.Parameters[10].Value = ((bool)(Hematologicas));
-            this.Adapter.InsertCommand.Parameters[11].Value = ((bool)(Gastrointestinales));
-            this.Adapter.InsertCommand.Parameters[12].Value = ((bool)(Endocrinas));
-            this.Adapter.InsertCommand.Parameters[13].Value = ((bool)(Infecciosas));
-            this.Adapter.InsertCommand.Parameters[14].Value = ((bool)(Autoinmunes));
-            this.Adapter.InsertCommand.Parameters[15].Value = ((bool)(Neurologicas));
-            this.Adapter.InsertCommand.Parameters[16].Value = ((bool)(Renales));
-            this.Adapter.InsertCommand.Parameters[17].Value = ((bool)(Hepaticas));
-            this.Adapter.InsertCommand.Parameters[18].Value = ((bool)(Diabetes));
-            this.Adapter.InsertCommand.Parameters[19].Value = ((bool)(Cancer));
-            this.Adapter.InsertCommand.Parameters[20].Value = ((bool)(Respiratorias));
-            this.Adapter.InsertCommand.Parameters[21].Value = ((bool)(Cardiacas));
-            this.Adapter.InsertCommand.Parameters[22].Value = ((bool)(TieneTerminacionAnticipada));
-            this.Adapter.InsertCommand.Parameters[23].Value = ((bool)(TieneIncapacidadTemporal));
-            this.Adapter.InsertCommand.Parameters[24].Value = ((bool)(TieneAccidentes));
-            this.Adapter.InsertCommand.Parameters[25].Value = ((double)(CapitalAsegurado));
+            if ((Altura == null)) {
+                throw new global::System.ArgumentNullException("Altura");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Altura));
+            }
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(DietaId));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(ActividadId));
+            if ((ConsumeAlcohol == null)) {
+                throw new global::System.ArgumentNullException("ConsumeAlcohol");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(ConsumeAlcohol));
+            }
+            if ((ConsumeTabaco == null)) {
+                throw new global::System.ArgumentNullException("ConsumeTabaco");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(ConsumeTabaco));
+            }
+            if ((ConsumeDrogas == null)) {
+                throw new global::System.ArgumentNullException("ConsumeDrogas");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(ConsumeDrogas));
+            }
+            if ((Hematologicas == null)) {
+                throw new global::System.ArgumentNullException("Hematologicas");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Hematologicas));
+            }
+            if ((Gastrointestinales == null)) {
+                throw new global::System.ArgumentNullException("Gastrointestinales");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Gastrointestinales));
+            }
+            if ((Endocrinas == null)) {
+                throw new global::System.ArgumentNullException("Endocrinas");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(Endocrinas));
+            }
+            if ((Infecciosas == null)) {
+                throw new global::System.ArgumentNullException("Infecciosas");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(Infecciosas));
+            }
+            if ((Autoinmunes == null)) {
+                throw new global::System.ArgumentNullException("Autoinmunes");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(Autoinmunes));
+            }
+            if ((Neurologicas == null)) {
+                throw new global::System.ArgumentNullException("Neurologicas");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(Neurologicas));
+            }
+            if ((Renales == null)) {
+                throw new global::System.ArgumentNullException("Renales");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(Renales));
+            }
+            if ((Hepaticas == null)) {
+                throw new global::System.ArgumentNullException("Hepaticas");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(Hepaticas));
+            }
+            if ((Diabetes == null)) {
+                throw new global::System.ArgumentNullException("Diabetes");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(Diabetes));
+            }
+            if ((Cancer == null)) {
+                throw new global::System.ArgumentNullException("Cancer");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(Cancer));
+            }
+            if ((Respiratorias == null)) {
+                throw new global::System.ArgumentNullException("Respiratorias");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(Respiratorias));
+            }
+            if ((Cardiacas == null)) {
+                throw new global::System.ArgumentNullException("Cardiacas");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(Cardiacas));
+            }
+            if ((TieneTerminacionAnticipada == null)) {
+                throw new global::System.ArgumentNullException("TieneTerminacionAnticipada");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(TieneTerminacionAnticipada));
+            }
+            if ((TieneIncapacidadTemporal == null)) {
+                throw new global::System.ArgumentNullException("TieneIncapacidadTemporal");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(TieneIncapacidadTemporal));
+            }
+            if ((TieneAccidentes == null)) {
+                throw new global::System.ArgumentNullException("TieneAccidentes");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(TieneAccidentes));
+            }
+            if ((CapitalAsegurado == null)) {
+                throw new global::System.ArgumentNullException("CapitalAsegurado");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(CapitalAsegurado));
+            }
             if ((Dni == null)) {
                 throw new global::System.ArgumentNullException("Dni");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(Dni));
+                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(Dni));
+            }
+            this.Adapter.InsertCommand.Parameters[26].Value = ((int)(OcupacionId));
+            if ((Precio == null)) {
+                throw new global::System.ArgumentNullException("Precio");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(Precio));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -11515,148 +11804,372 @@ SELECT Id, Edad, Sexo, Ocupacion, Peso, Altura, DietaId, ActividadId, ConsumeAlc
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    int Edad, 
+                    string Edad, 
                     string Sexo, 
-                    string Ocupacion, 
-                    double Peso, 
-                    double Altura, 
+                    string Peso, 
+                    string Altura, 
                     int DietaId, 
                     int ActividadId, 
-                    bool ConsumeAlcohol, 
-                    bool ConsumeTabaco, 
-                    bool ConsumeDrogas, 
-                    bool Hematologicas, 
-                    bool Gastrointestinales, 
-                    bool Endocrinas, 
-                    bool Infecciosas, 
-                    bool Autoinmunes, 
-                    bool Neurologicas, 
-                    bool Renales, 
-                    bool Hepaticas, 
-                    bool Diabetes, 
-                    bool Cancer, 
-                    bool Respiratorias, 
-                    bool Cardiacas, 
-                    bool TieneTerminacionAnticipada, 
-                    bool TieneIncapacidadTemporal, 
-                    bool TieneAccidentes, 
-                    double CapitalAsegurado, 
+                    string ConsumeAlcohol, 
+                    string ConsumeTabaco, 
+                    string ConsumeDrogas, 
+                    string Hematologicas, 
+                    string Gastrointestinales, 
+                    string Endocrinas, 
+                    string Infecciosas, 
+                    string Autoinmunes, 
+                    string Neurologicas, 
+                    string Renales, 
+                    string Hepaticas, 
+                    string Diabetes, 
+                    string Cancer, 
+                    string Respiratorias, 
+                    string Cardiacas, 
+                    string TieneTerminacionAnticipada, 
+                    string TieneIncapacidadTemporal, 
+                    string TieneAccidentes, 
+                    string CapitalAsegurado, 
                     string Dni, 
+                    int OcupacionId, 
+                    string Precio, 
                     int Original_Id, 
-                    int Original_Edad, 
+                    string Original_Edad, 
                     string Original_Sexo, 
-                    string Original_Ocupacion, 
-                    double Original_Peso, 
-                    double Original_Altura, 
+                    string Original_Peso, 
+                    string Original_Altura, 
                     int Original_DietaId, 
                     int Original_ActividadId, 
-                    bool Original_ConsumeAlcohol, 
-                    bool Original_ConsumeTabaco, 
-                    bool Original_ConsumeDrogas, 
-                    bool Original_Hematologicas, 
-                    bool Original_Gastrointestinales, 
-                    bool Original_Endocrinas, 
-                    bool Original_Infecciosas, 
-                    bool Original_Autoinmunes, 
-                    bool Original_Neurologicas, 
-                    bool Original_Renales, 
-                    bool Original_Hepaticas, 
-                    bool Original_Diabetes, 
-                    bool Original_Cancer, 
-                    bool Original_Respiratorias, 
-                    bool Original_Cardiacas, 
-                    bool Original_TieneTerminacionAnticipada, 
-                    bool Original_TieneIncapacidadTemporal, 
-                    bool Original_TieneAccidentes, 
-                    double Original_CapitalAsegurado, 
+                    string Original_ConsumeAlcohol, 
+                    string Original_ConsumeTabaco, 
+                    string Original_ConsumeDrogas, 
+                    string Original_Hematologicas, 
+                    string Original_Gastrointestinales, 
+                    string Original_Endocrinas, 
+                    string Original_Infecciosas, 
+                    string Original_Autoinmunes, 
+                    string Original_Neurologicas, 
+                    string Original_Renales, 
+                    string Original_Hepaticas, 
+                    string Original_Diabetes, 
+                    string Original_Cancer, 
+                    string Original_Respiratorias, 
+                    string Original_Cardiacas, 
+                    string Original_TieneTerminacionAnticipada, 
+                    string Original_TieneIncapacidadTemporal, 
+                    string Original_TieneAccidentes, 
+                    string Original_CapitalAsegurado, 
                     string Original_Dni, 
+                    int Original_OcupacionId, 
+                    string Original_Precio, 
                     int Id) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Edad));
+            if ((Edad == null)) {
+                throw new global::System.ArgumentNullException("Edad");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Edad));
+            }
             if ((Sexo == null)) {
                 throw new global::System.ArgumentNullException("Sexo");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Sexo));
             }
-            if ((Ocupacion == null)) {
-                throw new global::System.ArgumentNullException("Ocupacion");
+            if ((Peso == null)) {
+                throw new global::System.ArgumentNullException("Peso");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Ocupacion));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Peso));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((double)(Peso));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((double)(Altura));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(DietaId));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(ActividadId));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((bool)(ConsumeAlcohol));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((bool)(ConsumeTabaco));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((bool)(ConsumeDrogas));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((bool)(Hematologicas));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((bool)(Gastrointestinales));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((bool)(Endocrinas));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((bool)(Infecciosas));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((bool)(Autoinmunes));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((bool)(Neurologicas));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((bool)(Renales));
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((bool)(Hepaticas));
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((bool)(Diabetes));
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((bool)(Cancer));
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((bool)(Respiratorias));
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((bool)(Cardiacas));
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((bool)(TieneTerminacionAnticipada));
-            this.Adapter.UpdateCommand.Parameters[23].Value = ((bool)(TieneIncapacidadTemporal));
-            this.Adapter.UpdateCommand.Parameters[24].Value = ((bool)(TieneAccidentes));
-            this.Adapter.UpdateCommand.Parameters[25].Value = ((double)(CapitalAsegurado));
+            if ((Altura == null)) {
+                throw new global::System.ArgumentNullException("Altura");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Altura));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(DietaId));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ActividadId));
+            if ((ConsumeAlcohol == null)) {
+                throw new global::System.ArgumentNullException("ConsumeAlcohol");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(ConsumeAlcohol));
+            }
+            if ((ConsumeTabaco == null)) {
+                throw new global::System.ArgumentNullException("ConsumeTabaco");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(ConsumeTabaco));
+            }
+            if ((ConsumeDrogas == null)) {
+                throw new global::System.ArgumentNullException("ConsumeDrogas");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(ConsumeDrogas));
+            }
+            if ((Hematologicas == null)) {
+                throw new global::System.ArgumentNullException("Hematologicas");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Hematologicas));
+            }
+            if ((Gastrointestinales == null)) {
+                throw new global::System.ArgumentNullException("Gastrointestinales");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Gastrointestinales));
+            }
+            if ((Endocrinas == null)) {
+                throw new global::System.ArgumentNullException("Endocrinas");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Endocrinas));
+            }
+            if ((Infecciosas == null)) {
+                throw new global::System.ArgumentNullException("Infecciosas");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Infecciosas));
+            }
+            if ((Autoinmunes == null)) {
+                throw new global::System.ArgumentNullException("Autoinmunes");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Autoinmunes));
+            }
+            if ((Neurologicas == null)) {
+                throw new global::System.ArgumentNullException("Neurologicas");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Neurologicas));
+            }
+            if ((Renales == null)) {
+                throw new global::System.ArgumentNullException("Renales");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Renales));
+            }
+            if ((Hepaticas == null)) {
+                throw new global::System.ArgumentNullException("Hepaticas");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Hepaticas));
+            }
+            if ((Diabetes == null)) {
+                throw new global::System.ArgumentNullException("Diabetes");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Diabetes));
+            }
+            if ((Cancer == null)) {
+                throw new global::System.ArgumentNullException("Cancer");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Cancer));
+            }
+            if ((Respiratorias == null)) {
+                throw new global::System.ArgumentNullException("Respiratorias");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Respiratorias));
+            }
+            if ((Cardiacas == null)) {
+                throw new global::System.ArgumentNullException("Cardiacas");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Cardiacas));
+            }
+            if ((TieneTerminacionAnticipada == null)) {
+                throw new global::System.ArgumentNullException("TieneTerminacionAnticipada");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(TieneTerminacionAnticipada));
+            }
+            if ((TieneIncapacidadTemporal == null)) {
+                throw new global::System.ArgumentNullException("TieneIncapacidadTemporal");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(TieneIncapacidadTemporal));
+            }
+            if ((TieneAccidentes == null)) {
+                throw new global::System.ArgumentNullException("TieneAccidentes");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(TieneAccidentes));
+            }
+            if ((CapitalAsegurado == null)) {
+                throw new global::System.ArgumentNullException("CapitalAsegurado");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(CapitalAsegurado));
+            }
             if ((Dni == null)) {
                 throw new global::System.ArgumentNullException("Dni");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Dni));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Dni));
             }
-            this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_Edad));
+            this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(OcupacionId));
+            if ((Precio == null)) {
+                throw new global::System.ArgumentNullException("Precio");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Precio));
+            }
+            this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_Id));
+            if ((Original_Edad == null)) {
+                throw new global::System.ArgumentNullException("Original_Edad");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_Edad));
+            }
             if ((Original_Sexo == null)) {
                 throw new global::System.ArgumentNullException("Original_Sexo");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_Sexo));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_Sexo));
             }
-            if ((Original_Ocupacion == null)) {
-                throw new global::System.ArgumentNullException("Original_Ocupacion");
+            if ((Original_Peso == null)) {
+                throw new global::System.ArgumentNullException("Original_Peso");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_Ocupacion));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_Peso));
             }
-            this.Adapter.UpdateCommand.Parameters[31].Value = ((double)(Original_Peso));
-            this.Adapter.UpdateCommand.Parameters[32].Value = ((double)(Original_Altura));
+            if ((Original_Altura == null)) {
+                throw new global::System.ArgumentNullException("Original_Altura");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_Altura));
+            }
             this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(Original_DietaId));
             this.Adapter.UpdateCommand.Parameters[34].Value = ((int)(Original_ActividadId));
-            this.Adapter.UpdateCommand.Parameters[35].Value = ((bool)(Original_ConsumeAlcohol));
-            this.Adapter.UpdateCommand.Parameters[36].Value = ((bool)(Original_ConsumeTabaco));
-            this.Adapter.UpdateCommand.Parameters[37].Value = ((bool)(Original_ConsumeDrogas));
-            this.Adapter.UpdateCommand.Parameters[38].Value = ((bool)(Original_Hematologicas));
-            this.Adapter.UpdateCommand.Parameters[39].Value = ((bool)(Original_Gastrointestinales));
-            this.Adapter.UpdateCommand.Parameters[40].Value = ((bool)(Original_Endocrinas));
-            this.Adapter.UpdateCommand.Parameters[41].Value = ((bool)(Original_Infecciosas));
-            this.Adapter.UpdateCommand.Parameters[42].Value = ((bool)(Original_Autoinmunes));
-            this.Adapter.UpdateCommand.Parameters[43].Value = ((bool)(Original_Neurologicas));
-            this.Adapter.UpdateCommand.Parameters[44].Value = ((bool)(Original_Renales));
-            this.Adapter.UpdateCommand.Parameters[45].Value = ((bool)(Original_Hepaticas));
-            this.Adapter.UpdateCommand.Parameters[46].Value = ((bool)(Original_Diabetes));
-            this.Adapter.UpdateCommand.Parameters[47].Value = ((bool)(Original_Cancer));
-            this.Adapter.UpdateCommand.Parameters[48].Value = ((bool)(Original_Respiratorias));
-            this.Adapter.UpdateCommand.Parameters[49].Value = ((bool)(Original_Cardiacas));
-            this.Adapter.UpdateCommand.Parameters[50].Value = ((bool)(Original_TieneTerminacionAnticipada));
-            this.Adapter.UpdateCommand.Parameters[51].Value = ((bool)(Original_TieneIncapacidadTemporal));
-            this.Adapter.UpdateCommand.Parameters[52].Value = ((bool)(Original_TieneAccidentes));
-            this.Adapter.UpdateCommand.Parameters[53].Value = ((double)(Original_CapitalAsegurado));
+            if ((Original_ConsumeAlcohol == null)) {
+                throw new global::System.ArgumentNullException("Original_ConsumeAlcohol");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_ConsumeAlcohol));
+            }
+            if ((Original_ConsumeTabaco == null)) {
+                throw new global::System.ArgumentNullException("Original_ConsumeTabaco");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_ConsumeTabaco));
+            }
+            if ((Original_ConsumeDrogas == null)) {
+                throw new global::System.ArgumentNullException("Original_ConsumeDrogas");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_ConsumeDrogas));
+            }
+            if ((Original_Hematologicas == null)) {
+                throw new global::System.ArgumentNullException("Original_Hematologicas");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_Hematologicas));
+            }
+            if ((Original_Gastrointestinales == null)) {
+                throw new global::System.ArgumentNullException("Original_Gastrointestinales");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_Gastrointestinales));
+            }
+            if ((Original_Endocrinas == null)) {
+                throw new global::System.ArgumentNullException("Original_Endocrinas");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_Endocrinas));
+            }
+            if ((Original_Infecciosas == null)) {
+                throw new global::System.ArgumentNullException("Original_Infecciosas");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_Infecciosas));
+            }
+            if ((Original_Autoinmunes == null)) {
+                throw new global::System.ArgumentNullException("Original_Autoinmunes");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_Autoinmunes));
+            }
+            if ((Original_Neurologicas == null)) {
+                throw new global::System.ArgumentNullException("Original_Neurologicas");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_Neurologicas));
+            }
+            if ((Original_Renales == null)) {
+                throw new global::System.ArgumentNullException("Original_Renales");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_Renales));
+            }
+            if ((Original_Hepaticas == null)) {
+                throw new global::System.ArgumentNullException("Original_Hepaticas");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(Original_Hepaticas));
+            }
+            if ((Original_Diabetes == null)) {
+                throw new global::System.ArgumentNullException("Original_Diabetes");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_Diabetes));
+            }
+            if ((Original_Cancer == null)) {
+                throw new global::System.ArgumentNullException("Original_Cancer");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(Original_Cancer));
+            }
+            if ((Original_Respiratorias == null)) {
+                throw new global::System.ArgumentNullException("Original_Respiratorias");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(Original_Respiratorias));
+            }
+            if ((Original_Cardiacas == null)) {
+                throw new global::System.ArgumentNullException("Original_Cardiacas");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(Original_Cardiacas));
+            }
+            if ((Original_TieneTerminacionAnticipada == null)) {
+                throw new global::System.ArgumentNullException("Original_TieneTerminacionAnticipada");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_TieneTerminacionAnticipada));
+            }
+            if ((Original_TieneIncapacidadTemporal == null)) {
+                throw new global::System.ArgumentNullException("Original_TieneIncapacidadTemporal");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((string)(Original_TieneIncapacidadTemporal));
+            }
+            if ((Original_TieneAccidentes == null)) {
+                throw new global::System.ArgumentNullException("Original_TieneAccidentes");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_TieneAccidentes));
+            }
+            if ((Original_CapitalAsegurado == null)) {
+                throw new global::System.ArgumentNullException("Original_CapitalAsegurado");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((string)(Original_CapitalAsegurado));
+            }
             if ((Original_Dni == null)) {
                 throw new global::System.ArgumentNullException("Original_Dni");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[54].Value = ((string)(Original_Dni));
             }
-            this.Adapter.UpdateCommand.Parameters[55].Value = ((int)(Id));
+            this.Adapter.UpdateCommand.Parameters[55].Value = ((int)(Original_OcupacionId));
+            if ((Original_Precio == null)) {
+                throw new global::System.ArgumentNullException("Original_Precio");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((string)(Original_Precio));
+            }
+            this.Adapter.UpdateCommand.Parameters[57].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11678,62 +12191,64 @@ SELECT Id, Edad, Sexo, Ocupacion, Peso, Altura, DietaId, ActividadId, ConsumeAlc
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    int Edad, 
+                    string Edad, 
                     string Sexo, 
-                    string Ocupacion, 
-                    double Peso, 
-                    double Altura, 
+                    string Peso, 
+                    string Altura, 
                     int DietaId, 
                     int ActividadId, 
-                    bool ConsumeAlcohol, 
-                    bool ConsumeTabaco, 
-                    bool ConsumeDrogas, 
-                    bool Hematologicas, 
-                    bool Gastrointestinales, 
-                    bool Endocrinas, 
-                    bool Infecciosas, 
-                    bool Autoinmunes, 
-                    bool Neurologicas, 
-                    bool Renales, 
-                    bool Hepaticas, 
-                    bool Diabetes, 
-                    bool Cancer, 
-                    bool Respiratorias, 
-                    bool Cardiacas, 
-                    bool TieneTerminacionAnticipada, 
-                    bool TieneIncapacidadTemporal, 
-                    bool TieneAccidentes, 
-                    double CapitalAsegurado, 
+                    string ConsumeAlcohol, 
+                    string ConsumeTabaco, 
+                    string ConsumeDrogas, 
+                    string Hematologicas, 
+                    string Gastrointestinales, 
+                    string Endocrinas, 
+                    string Infecciosas, 
+                    string Autoinmunes, 
+                    string Neurologicas, 
+                    string Renales, 
+                    string Hepaticas, 
+                    string Diabetes, 
+                    string Cancer, 
+                    string Respiratorias, 
+                    string Cardiacas, 
+                    string TieneTerminacionAnticipada, 
+                    string TieneIncapacidadTemporal, 
+                    string TieneAccidentes, 
+                    string CapitalAsegurado, 
                     string Dni, 
+                    int OcupacionId, 
+                    string Precio, 
                     int Original_Id, 
-                    int Original_Edad, 
+                    string Original_Edad, 
                     string Original_Sexo, 
-                    string Original_Ocupacion, 
-                    double Original_Peso, 
-                    double Original_Altura, 
+                    string Original_Peso, 
+                    string Original_Altura, 
                     int Original_DietaId, 
                     int Original_ActividadId, 
-                    bool Original_ConsumeAlcohol, 
-                    bool Original_ConsumeTabaco, 
-                    bool Original_ConsumeDrogas, 
-                    bool Original_Hematologicas, 
-                    bool Original_Gastrointestinales, 
-                    bool Original_Endocrinas, 
-                    bool Original_Infecciosas, 
-                    bool Original_Autoinmunes, 
-                    bool Original_Neurologicas, 
-                    bool Original_Renales, 
-                    bool Original_Hepaticas, 
-                    bool Original_Diabetes, 
-                    bool Original_Cancer, 
-                    bool Original_Respiratorias, 
-                    bool Original_Cardiacas, 
-                    bool Original_TieneTerminacionAnticipada, 
-                    bool Original_TieneIncapacidadTemporal, 
-                    bool Original_TieneAccidentes, 
-                    double Original_CapitalAsegurado, 
-                    string Original_Dni) {
-            return this.Update(Edad, Sexo, Ocupacion, Peso, Altura, DietaId, ActividadId, ConsumeAlcohol, ConsumeTabaco, ConsumeDrogas, Hematologicas, Gastrointestinales, Endocrinas, Infecciosas, Autoinmunes, Neurologicas, Renales, Hepaticas, Diabetes, Cancer, Respiratorias, Cardiacas, TieneTerminacionAnticipada, TieneIncapacidadTemporal, TieneAccidentes, CapitalAsegurado, Dni, Original_Id, Original_Edad, Original_Sexo, Original_Ocupacion, Original_Peso, Original_Altura, Original_DietaId, Original_ActividadId, Original_ConsumeAlcohol, Original_ConsumeTabaco, Original_ConsumeDrogas, Original_Hematologicas, Original_Gastrointestinales, Original_Endocrinas, Original_Infecciosas, Original_Autoinmunes, Original_Neurologicas, Original_Renales, Original_Hepaticas, Original_Diabetes, Original_Cancer, Original_Respiratorias, Original_Cardiacas, Original_TieneTerminacionAnticipada, Original_TieneIncapacidadTemporal, Original_TieneAccidentes, Original_CapitalAsegurado, Original_Dni, Original_Id);
+                    string Original_ConsumeAlcohol, 
+                    string Original_ConsumeTabaco, 
+                    string Original_ConsumeDrogas, 
+                    string Original_Hematologicas, 
+                    string Original_Gastrointestinales, 
+                    string Original_Endocrinas, 
+                    string Original_Infecciosas, 
+                    string Original_Autoinmunes, 
+                    string Original_Neurologicas, 
+                    string Original_Renales, 
+                    string Original_Hepaticas, 
+                    string Original_Diabetes, 
+                    string Original_Cancer, 
+                    string Original_Respiratorias, 
+                    string Original_Cardiacas, 
+                    string Original_TieneTerminacionAnticipada, 
+                    string Original_TieneIncapacidadTemporal, 
+                    string Original_TieneAccidentes, 
+                    string Original_CapitalAsegurado, 
+                    string Original_Dni, 
+                    int Original_OcupacionId, 
+                    string Original_Precio) {
+            return this.Update(Edad, Sexo, Peso, Altura, DietaId, ActividadId, ConsumeAlcohol, ConsumeTabaco, ConsumeDrogas, Hematologicas, Gastrointestinales, Endocrinas, Infecciosas, Autoinmunes, Neurologicas, Renales, Hepaticas, Diabetes, Cancer, Respiratorias, Cardiacas, TieneTerminacionAnticipada, TieneIncapacidadTemporal, TieneAccidentes, CapitalAsegurado, Dni, OcupacionId, Precio, Original_Id, Original_Edad, Original_Sexo, Original_Peso, Original_Altura, Original_DietaId, Original_ActividadId, Original_ConsumeAlcohol, Original_ConsumeTabaco, Original_ConsumeDrogas, Original_Hematologicas, Original_Gastrointestinales, Original_Endocrinas, Original_Infecciosas, Original_Autoinmunes, Original_Neurologicas, Original_Renales, Original_Hepaticas, Original_Diabetes, Original_Cancer, Original_Respiratorias, Original_Cardiacas, Original_TieneTerminacionAnticipada, Original_TieneIncapacidadTemporal, Original_TieneAccidentes, Original_CapitalAsegurado, Original_Dni, Original_OcupacionId, Original_Precio, Original_Id);
         }
     }
     
@@ -11991,6 +12506,15 @@ SELECT Id, Edad, Sexo, Ocupacion, Peso, Altura, DietaId, ActividadId, ConsumeAlc
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateUpdatedRows(DatabaseTFGDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._trabajoTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Trabajo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._trabajoTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._usuarioTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Usuario.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -12045,15 +12569,6 @@ SELECT Id, Edad, Sexo, Ocupacion, Peso, Altura, DietaId, ActividadId, ConsumeAlc
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._trabajoTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Trabajo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._trabajoTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._polizaVidaTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.PolizaVida.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -12073,6 +12588,14 @@ SELECT Id, Edad, Sexo, Ocupacion, Peso, Altura, DietaId, ActividadId, ConsumeAlc
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateInsertedRows(DatabaseTFGDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._trabajoTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Trabajo.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._trabajoTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._usuarioTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Usuario.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -12121,14 +12644,6 @@ SELECT Id, Edad, Sexo, Ocupacion, Peso, Altura, DietaId, ActividadId, ConsumeAlc
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._trabajoTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Trabajo.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._trabajoTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._polizaVidaTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.PolizaVida.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -12152,14 +12667,6 @@ SELECT Id, Edad, Sexo, Ocupacion, Peso, Altura, DietaId, ActividadId, ConsumeAlc
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._polizaVidaTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._trabajoTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Trabajo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._trabajoTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -12208,6 +12715,14 @@ SELECT Id, Edad, Sexo, Ocupacion, Peso, Altura, DietaId, ActividadId, ConsumeAlc
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._usuarioTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._trabajoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Trabajo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._trabajoTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

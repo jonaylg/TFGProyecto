@@ -139,7 +139,12 @@
             this.nudAlt.Location = new System.Drawing.Point(362, 115);
             this.nudAlt.Margin = new System.Windows.Forms.Padding(2);
             this.nudAlt.Maximum = new decimal(new int[] {
-            50000,
+            220,
+            0,
+            0,
+            0});
+            this.nudAlt.Minimum = new decimal(new int[] {
+            130,
             0,
             0,
             0});
@@ -147,7 +152,7 @@
             this.nudAlt.Size = new System.Drawing.Size(90, 20);
             this.nudAlt.TabIndex = 25;
             this.nudAlt.Value = new decimal(new int[] {
-            2,
+            130,
             0,
             0,
             0});
@@ -157,7 +162,12 @@
             this.nudPeso.Location = new System.Drawing.Point(362, 68);
             this.nudPeso.Margin = new System.Windows.Forms.Padding(2);
             this.nudPeso.Maximum = new decimal(new int[] {
-            50000,
+            150,
+            0,
+            0,
+            0});
+            this.nudPeso.Minimum = new decimal(new int[] {
+            40,
             0,
             0,
             0});
@@ -165,7 +175,7 @@
             this.nudPeso.Size = new System.Drawing.Size(90, 20);
             this.nudPeso.TabIndex = 24;
             this.nudPeso.Value = new decimal(new int[] {
-            2,
+            40,
             0,
             0,
             0});
@@ -196,10 +206,10 @@
             this.cmbxOcu.DisplayMember = "Nombre";
             this.cmbxOcu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxOcu.FormattingEnabled = true;
-            this.cmbxOcu.Location = new System.Drawing.Point(147, 140);
+            this.cmbxOcu.Location = new System.Drawing.Point(147, 169);
             this.cmbxOcu.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxOcu.Name = "cmbxOcu";
-            this.cmbxOcu.Size = new System.Drawing.Size(92, 21);
+            this.cmbxOcu.Size = new System.Drawing.Size(334, 21);
             this.cmbxOcu.TabIndex = 21;
             this.cmbxOcu.ValueMember = "ID";
             // 
@@ -248,11 +258,12 @@
             this.cmbxSexo.Name = "cmbxSexo";
             this.cmbxSexo.Size = new System.Drawing.Size(92, 21);
             this.cmbxSexo.TabIndex = 12;
+            this.cmbxSexo.SelectedValueChanged += new System.EventHandler(this.cmbxSexo_SelectedValueChanged);
             // 
             // lblOcupacion
             // 
             this.lblOcupacion.AutoSize = true;
-            this.lblOcupacion.Location = new System.Drawing.Point(63, 148);
+            this.lblOcupacion.Location = new System.Drawing.Point(63, 177);
             this.lblOcupacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOcupacion.Name = "lblOcupacion";
             this.lblOcupacion.Size = new System.Drawing.Size(59, 13);
@@ -453,10 +464,10 @@
             this.rdbttnBaja.AutoSize = true;
             this.rdbttnBaja.Location = new System.Drawing.Point(21, 72);
             this.rdbttnBaja.Name = "rdbttnBaja";
-            this.rdbttnBaja.Size = new System.Drawing.Size(46, 17);
+            this.rdbttnBaja.Size = new System.Drawing.Size(76, 17);
             this.rdbttnBaja.TabIndex = 3;
             this.rdbttnBaja.TabStop = true;
-            this.rdbttnBaja.Text = "Baja";
+            this.rdbttnBaja.Text = "Sedentaria";
             this.rdbttnBaja.UseVisualStyleBackColor = true;
             // 
             // rdbttnMed
@@ -464,10 +475,10 @@
             this.rdbttnMed.AutoSize = true;
             this.rdbttnMed.Location = new System.Drawing.Point(21, 46);
             this.rdbttnMed.Name = "rdbttnMed";
-            this.rdbttnMed.Size = new System.Drawing.Size(54, 17);
+            this.rdbttnMed.Size = new System.Drawing.Size(73, 17);
             this.rdbttnMed.TabIndex = 2;
             this.rdbttnMed.TabStop = true;
-            this.rdbttnMed.Text = "Media";
+            this.rdbttnMed.Text = "Moderada";
             this.rdbttnMed.UseVisualStyleBackColor = true;
             // 
             // rdbttnAlta
@@ -475,10 +486,10 @@
             this.rdbttnAlta.AutoSize = true;
             this.rdbttnAlta.Location = new System.Drawing.Point(21, 23);
             this.rdbttnAlta.Name = "rdbttnAlta";
-            this.rdbttnAlta.Size = new System.Drawing.Size(43, 17);
+            this.rdbttnAlta.Size = new System.Drawing.Size(60, 17);
             this.rdbttnAlta.TabIndex = 1;
             this.rdbttnAlta.TabStop = true;
-            this.rdbttnAlta.Text = "Alta";
+            this.rdbttnAlta.Text = "Intensa";
             this.rdbttnAlta.UseVisualStyleBackColor = true;
             // 
             // grpbxDieta
@@ -589,17 +600,16 @@
             this.nudCap.Enabled = false;
             this.nudCap.Location = new System.Drawing.Point(338, 114);
             this.nudCap.Maximum = new decimal(new int[] {
-            300000,
+            3000000,
             0,
             0,
             0});
             this.nudCap.Minimum = new decimal(new int[] {
-            300000,
+            200000,
             0,
             0,
             0});
             this.nudCap.Name = "nudCap";
-            this.nudCap.ReadOnly = true;
             this.nudCap.Size = new System.Drawing.Size(120, 20);
             this.nudCap.TabIndex = 5;
             this.nudCap.Value = new decimal(new int[] {
@@ -724,10 +734,13 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.ActividadTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.ClienteTableAdapter = null;
+            this.tableAdapterManager.DietaTableAdapter = null;
             this.tableAdapterManager.EmpleadoTableAdapter = null;
             this.tableAdapterManager.PolizaHogarTableAdapter = null;
+            this.tableAdapterManager.PolizaVidaTableAdapter = null;
             this.tableAdapterManager.TrabajoTableAdapter = this.trabajoTableAdapter;
             this.tableAdapterManager.UpdateOrder = TFGProyecto.DatabaseTFGDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuarioTableAdapter = null;

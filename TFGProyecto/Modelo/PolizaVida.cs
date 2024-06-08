@@ -22,7 +22,7 @@ namespace TFGProyecto.Modelo
     {
         private int edad;
         private string sexo;
-        private string ocupacion;
+        private int ocupacion;
         private double peso;
         private double altura;
         private Dietas dieta;
@@ -46,9 +46,10 @@ namespace TFGProyecto.Modelo
         private bool tieneIncapacidadTemporal;
         private bool tieneAccidentes;
         private double capitalAsegurado;
+        private double precio;
         private string dni;
 
-        public PolizaVida(int edad, string sexo, string ocupacion, 
+        public PolizaVida(int edad, string sexo, int ocupacion, 
             double peso, double altura, Dietas dieta, Actividades actividad, 
             bool consumeAlcohol, bool consumeTabaco, bool consumeDrogas, 
             bool hematologicas, bool gastrointestinales, bool endocrinas, 
@@ -56,7 +57,7 @@ namespace TFGProyecto.Modelo
             bool renales, bool hépaticas, bool diabetes, bool cancer, 
             bool respiratorias, bool cardiacas, 
             bool tieneTerminacionAnticipada, bool tieneIncapacidadTemporal, 
-            bool tieneAccidentes, double capitalAsegurado, string dni)
+            bool tieneAccidentes, double capitalAsegurado, double precio, string dni)
         {
             Edad = edad;
             Sexo = sexo;
@@ -86,10 +87,11 @@ namespace TFGProyecto.Modelo
             CapitalAsegurado = capitalAsegurado;
             Dni = dni;
         }
+        public PolizaVida() { }
 
         public int Edad { get => edad; set => edad = value; }
         public string Sexo { get => sexo; set => sexo = value; }
-        public string Ocupacion { get => ocupacion; set => ocupacion = value; }
+        public int Ocupacion { get => ocupacion; set => ocupacion = value; }
         public double Peso { get => peso; set => peso = value; }
         public double Altura { get => altura; set => altura = value; }
         public Dietas Dieta { get => dieta; set => dieta = value; }
@@ -113,6 +115,7 @@ namespace TFGProyecto.Modelo
         public bool TieneIncapacidadTemporal { get => tieneIncapacidadTemporal; set => tieneIncapacidadTemporal = value; }
         public bool TieneAccidentes { get => tieneAccidentes; set => tieneAccidentes = value; }
         public double CapitalAsegurado { get => capitalAsegurado; set => capitalAsegurado = value; }
+        public double Precio { get => precio; set => precio = value; }
         public string Dni { get => dni; set => dni = value; }
     }
 }
