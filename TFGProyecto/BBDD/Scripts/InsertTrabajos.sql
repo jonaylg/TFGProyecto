@@ -1,33 +1,33 @@
-﻿INSERT INTO Trabajo (Nombre, Descripcion)
-VALUES 
-('Trabajos en Altura', 'Trabajadores de construcción, pintores de edificios, reparadores de líneas eléctricas, etc.'),
-('Trabajos en Espacios Confinados', 'Mineros, operadores de alcantarillas, técnicos de mantenimiento en espacios reducidos, etc.'),
-('Trabajos Marítimos', 'Pescadores, marineros, trabajadores en plataformas petroleras, etc.'),
-('Trabajos en Altamar', 'Navegantes, personal en barcos de crucero, tripulación de buques de carga, etc.'),
-('Trabajos con Exposición a Productos Químicos', 'Trabajadores de plantas químicas, empleados de limpieza industrial, técnicos de laboratorio, etc.'),
-('Trabajos de Bomberos y Rescatistas', 'Bomberos, personal de rescate en montaña, rescatistas de emergencia, etc.'),
-('Trabajos de Seguridad y Vigilancia', 'Guardias de seguridad, agentes de seguridad personal, escoltas, etc.'),
-('Trabajos de Pilotos y Controladores Aéreos', 'Pilotos comerciales, pilotos de helicópteros, controladores de tráfico aéreo, etc.'),
-('Trabajos en Demoliciones y Explosivos', 'Trabajadores de demolición, expertos en desactivación de explosivos, etc.'),
-('Trabajos de Transporte de Carga Pesada', 'Conductores de camiones de carga, operadores de maquinaria pesada, etc.'),
-('Trabajos en Zonas de Conflicto o Peligrosas', 'Personal militar, contratistas de defensa, periodistas en zonas de guerra, etc.'),
-('Trabajos en Instalaciones Nucleares', 'Ingenieros nucleares, técnicos de mantenimiento en plantas nucleares, etc.'),
-('Trabajos en Agricultura y Ganadería de Alta Intensidad', 'Trabajadores agrícolas expuestos a pesticidas, ganaderos en áreas de alto riesgo, etc.'),
-('Trabajos en Fábricas y Plantas Industriales', 'Operadores de maquinaria pesada, trabajadores en líneas de producción, etc.'),
-('Trabajos de Oficina', 'Empleados administrativos, analistas, etc.'),
-('Trabajos en Servicios de Alimentación', 'Camareros, cocineros, personal de servicio en restaurantes, etc.'),
-('Trabajos de Ventas y Atención al Cliente', 'Vendedores, representantes comerciales, atención al cliente, etc.'),
-('Trabajos de Educación', 'Maestros, profesores, personal educativo, etc.'),
-('Trabajos de Tecnología de la Información', 'Desarrolladores de software, ingenieros de sistemas, personal de soporte técnico, etc.'),
-('Trabajos Creativos', 'Diseñadores gráficos, artistas, escritores, etc.'),
-('Trabajos en Salud y Cuidado Personal', 'Médicos, enfermeras, fisioterapeutas, esteticistas, etc.'),
-('Trabajos del Sector Servicios', 'Meseros, camareras, recepcionistas de hoteles, etc.'),
-('Trabajos del Sector del Entretenimiento', 'Actores, músicos, técnicos de iluminación, etc.'),
-('Trabajos del Sector del Transporte', 'Conductores de taxis, conductores de autobuses, pilotos de tren, etc.'),
-('Trabajos del Sector Financiero', 'Banqueros, contadores, analistas financieros, etc.'),
-('Trabajos del Sector de la Construcción', 'Albañiles, carpinteros, electricistas, etc.'),
-('Trabajos del Sector Educativo', 'Profesores universitarios, tutores privados, educadores infantiles, etc.'),
-('Trabajos del Sector de la Salud Mental', 'Psicólogos, terapeutas, consejeros, etc.'),
-('Trabajos del Sector Agrícola', 'Agricultores, cosechadores, trabajadores en viveros, etc.'),
-('Trabajos del Sector del Transporte de Pasajeros', 'Conductores de transporte público, pilotos de avión, tripulación de vuelo, etc.'),
-('Trabajos del Sector del Turismo', 'Guías turísticos, personal de parques temáticos, etc.');
+SET IDENTITY_INSERT [dbo].[Trabajo] ON
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (1, N'Trabajos en Altura', N'Trabajadores de construcción, pintores de edificios, reparadores de líneas eléctricas, etc.', 1)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (2, N'Trabajos en Espacios Confinados', N'Mineros, operadores de alcantarillas, técnicos de mantenimiento en espacios reducidos, etc.', 1)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (3, N'Trabajos Marítimos', N'Pescadores, marineros, trabajadores en plataformas petroleras, etc.', 1)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (4, N'Trabajos en Altamar', N'Navegantes, personal en barcos de crucero, tripulación de buques de carga, etc.', 1)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (5, N'Trabajos con Exposición a Productos Químicos', N'Trabajadores de plantas químicas, empleados de limpieza industrial, técnicos de laboratorio, etc.', 1)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (6, N'Trabajos de Bomberos y Rescatistas', N'Bomberos, personal de rescate en montaña, rescatistas de emergencia, etc.', 1)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (7, N'Trabajos de Seguridad y Vigilancia', N'Guardias de seguridad, agentes de seguridad personal, escoltas, etc.', 0)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (8, N'Trabajos de Pilotos y Controladores Aéreos', N'Pilotos comerciales, pilotos de helicópteros, controladores de tráfico aéreo, etc.', 1)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (9, N'Trabajos en Demoliciones y Explosivos', N'Trabajadores de demolición, expertos en desactivación de explosivos, etc.', 1)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (10, N'Trabajos de Transporte de Carga Pesada', N'Conductores de camiones de carga, operadores de maquinaria pesada, etc.', 0)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (11, N'Trabajos en Zonas de Conflicto o Peligrosas', N'Personal militar, contratistas de defensa, periodistas en zonas de guerra, etc.', 1)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (12, N'Trabajos en Instalaciones Nucleares', N'Ingenieros nucleares, técnicos de mantenimiento en plantas nucleares, etc.', 1)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (13, N'Trabajos en Agricultura y Ganadería de Alta Intensidad', N'Trabajadores agrícolas expuestos a pesticidas, ganaderos en áreas de alto riesgo, etc.', 1)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (14, N'Trabajos en Fábricas y Plantas Industriales', N'Operadores de maquinaria pesada, trabajadores en líneas de producción, etc.', 0)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (15, N'Trabajos de Oficina', N'Empleados administrativos, analistas, etc.', 0)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (16, N'Trabajos en Servicios de Alimentación', N'Camareros, cocineros, personal de servicio en restaurantes, etc.', 0)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (17, N'Trabajos de Ventas y Atención al Cliente', N'Vendedores, representantes comerciales, atención al cliente, etc.', 0)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (18, N'Trabajos de Educación', N'Maestros, profesores, personal educativo, etc.', 0)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (19, N'Trabajos de Tecnología de la Información', N'Desarrolladores de software, ingenieros de sistemas, personal de soporte técnico, etc.', 0)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (20, N'Trabajos Creativos', N'Diseñadores gráficos, artistas, escritores, etc.', 0)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (21, N'Trabajos en Salud y Cuidado Personal', N'Médicos, enfermeras, fisioterapeutas, esteticistas, etc.', 0)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (22, N'Trabajos del Sector Servicios', N'Meseros, camareras, recepcionistas de hoteles, etc.', 0)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (23, N'Trabajos del Sector del Entretenimiento', N'Actores, músicos, técnicos de iluminación, etc.', 0)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (24, N'Trabajos del Sector del Transporte', N'Conductores de taxis, conductores de autobuses, pilotos de tren, etc.', 0)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (25, N'Trabajos del Sector Financiero', N'Banqueros, contadores, analistas financieros, etc.', 0)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (26, N'Trabajos del Sector de la Construcción', N'Albañiles, carpinteros, electricistas, etc.', 0)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (27, N'Trabajos del Sector Educativo', N'Profesores universitarios, tutores privados, educadores infantiles, etc.', 0)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (28, N'Trabajos del Sector de la Salud Mental', N'Psicólogos, terapeutas, consejeros, etc.', 0)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (29, N'Trabajos del Sector Agrícola', N'Agricultores, cosechadores, trabajadores en viveros, etc.', 0)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (30, N'Trabajos del Sector del Transporte de Pasajeros', N'Conductores de transporte público, pilotos de avión, tripulación de vuelo, etc.', 0)
+INSERT INTO [dbo].[Trabajo] ([ID], [Nombre], [Descripcion], [Peligroso]) VALUES (31, N'Trabajos del Sector del Turismo', N'Guías turísticos, personal de parques temáticos, etc.', 0)
+SET IDENTITY_INSERT [dbo].[Trabajo] OFF

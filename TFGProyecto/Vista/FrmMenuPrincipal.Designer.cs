@@ -70,11 +70,12 @@
             this.dataGridViewPolizas.AllowUserToDeleteRows = false;
             this.dataGridViewPolizas.BackgroundColor = System.Drawing.Color.LightSkyBlue;
             this.dataGridViewPolizas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPolizas.Location = new System.Drawing.Point(57, 179);
+            this.dataGridViewPolizas.Location = new System.Drawing.Point(43, 145);
+            this.dataGridViewPolizas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewPolizas.Name = "dataGridViewPolizas";
             this.dataGridViewPolizas.RowHeadersWidth = 51;
             this.dataGridViewPolizas.RowTemplate.Height = 24;
-            this.dataGridViewPolizas.Size = new System.Drawing.Size(687, 199);
+            this.dataGridViewPolizas.Size = new System.Drawing.Size(515, 162);
             this.dataGridViewPolizas.TabIndex = 0;
             this.dataGridViewPolizas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPolizas_CellClick);
             // 
@@ -86,9 +87,11 @@
             this.groupBoxRB.Controls.Add(this.radioButtonVV);
             this.groupBoxRB.Controls.Add(this.radioButtonZV);
             this.groupBoxRB.Controls.Add(this.radioButtonTV);
-            this.groupBoxRB.Location = new System.Drawing.Point(200, 66);
+            this.groupBoxRB.Location = new System.Drawing.Point(150, 54);
+            this.groupBoxRB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxRB.Name = "groupBoxRB";
-            this.groupBoxRB.Size = new System.Drawing.Size(375, 65);
+            this.groupBoxRB.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxRB.Size = new System.Drawing.Size(281, 53);
             this.groupBoxRB.TabIndex = 1;
             this.groupBoxRB.TabStop = false;
             this.groupBoxRB.Text = "Tipo de Filtrado";
@@ -97,9 +100,10 @@
             // radioButtonDni
             // 
             this.radioButtonDni.AutoSize = true;
-            this.radioButtonDni.Location = new System.Drawing.Point(252, 39);
+            this.radioButtonDni.Location = new System.Drawing.Point(189, 32);
+            this.radioButtonDni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButtonDni.Name = "radioButtonDni";
-            this.radioButtonDni.Size = new System.Drawing.Size(48, 20);
+            this.radioButtonDni.Size = new System.Drawing.Size(41, 17);
             this.radioButtonDni.TabIndex = 4;
             this.radioButtonDni.TabStop = true;
             this.radioButtonDni.Text = "Dni";
@@ -108,9 +112,10 @@
             // radioButtonAC
             // 
             this.radioButtonAC.AutoSize = true;
-            this.radioButtonAC.Location = new System.Drawing.Point(127, 39);
+            this.radioButtonAC.Location = new System.Drawing.Point(95, 32);
+            this.radioButtonAC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButtonAC.Name = "radioButtonAC";
-            this.radioButtonAC.Size = new System.Drawing.Size(119, 20);
+            this.radioButtonAC.Size = new System.Drawing.Size(97, 17);
             this.radioButtonAC.TabIndex = 3;
             this.radioButtonAC.TabStop = true;
             this.radioButtonAC.Text = "Año Construido";
@@ -119,9 +124,10 @@
             // radioButtonVV
             // 
             this.radioButtonVV.AutoSize = true;
-            this.radioButtonVV.Location = new System.Drawing.Point(5, 40);
+            this.radioButtonVV.Location = new System.Drawing.Point(4, 32);
+            this.radioButtonVV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButtonVV.Name = "radioButtonVV";
-            this.radioButtonVV.Size = new System.Drawing.Size(116, 20);
+            this.radioButtonVV.Size = new System.Drawing.Size(93, 17);
             this.radioButtonVV.TabIndex = 2;
             this.radioButtonVV.TabStop = true;
             this.radioButtonVV.Text = "Valor Vivienda";
@@ -130,9 +136,10 @@
             // radioButtonZV
             // 
             this.radioButtonZV.AutoSize = true;
-            this.radioButtonZV.Location = new System.Drawing.Point(209, 15);
+            this.radioButtonZV.Location = new System.Drawing.Point(157, 12);
+            this.radioButtonZV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButtonZV.Name = "radioButtonZV";
-            this.radioButtonZV.Size = new System.Drawing.Size(115, 20);
+            this.radioButtonZV.Size = new System.Drawing.Size(94, 17);
             this.radioButtonZV.TabIndex = 1;
             this.radioButtonZV.TabStop = true;
             this.radioButtonZV.Text = "Zona Vivienda";
@@ -141,9 +148,10 @@
             // radioButtonTV
             // 
             this.radioButtonTV.AutoSize = true;
-            this.radioButtonTV.Location = new System.Drawing.Point(76, 15);
+            this.radioButtonTV.Location = new System.Drawing.Point(57, 12);
+            this.radioButtonTV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButtonTV.Name = "radioButtonTV";
-            this.radioButtonTV.Size = new System.Drawing.Size(112, 20);
+            this.radioButtonTV.Size = new System.Drawing.Size(90, 17);
             this.radioButtonTV.TabIndex = 0;
             this.radioButtonTV.TabStop = true;
             this.radioButtonTV.Text = "Tipo Vivienda";
@@ -151,18 +159,20 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(327, 137);
+            this.textBox1.Location = new System.Drawing.Point(245, 111);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(106, 22);
+            this.textBox1.Size = new System.Drawing.Size(80, 20);
             this.textBox1.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.label1.Location = new System.Drawing.Point(250, 140);
+            this.label1.Location = new System.Drawing.Point(188, 114);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 16);
+            this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Buscar:";
             // 
@@ -173,26 +183,29 @@
             "Mayor",
             "Menor",
             "Igual"});
-            this.comboBoxMayMenIgu.Location = new System.Drawing.Point(611, 107);
+            this.comboBoxMayMenIgu.Location = new System.Drawing.Point(458, 87);
+            this.comboBoxMayMenIgu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxMayMenIgu.Name = "comboBoxMayMenIgu";
-            this.comboBoxMayMenIgu.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxMayMenIgu.Size = new System.Drawing.Size(92, 21);
             this.comboBoxMayMenIgu.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.label2.Location = new System.Drawing.Point(608, 65);
+            this.label2.Location = new System.Drawing.Point(456, 53);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 32);
+            this.label2.Size = new System.Drawing.Size(92, 26);
             this.label2.TabIndex = 5;
             this.label2.Text = "En caso numerico\r\nseleccionar:";
             // 
             // buttonFilt
             // 
-            this.buttonFilt.Location = new System.Drawing.Point(291, 399);
+            this.buttonFilt.Location = new System.Drawing.Point(218, 324);
+            this.buttonFilt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonFilt.Name = "buttonFilt";
-            this.buttonFilt.Size = new System.Drawing.Size(75, 23);
+            this.buttonFilt.Size = new System.Drawing.Size(56, 19);
             this.buttonFilt.TabIndex = 6;
             this.buttonFilt.Text = "Filtrar";
             this.buttonFilt.UseVisualStyleBackColor = true;
@@ -201,8 +214,9 @@
             // buttonMenu
             // 
             this.buttonMenu.Location = new System.Drawing.Point(2, 2);
+            this.buttonMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(73, 73);
+            this.buttonMenu.Size = new System.Drawing.Size(55, 59);
             this.buttonMenu.TabIndex = 8;
             this.buttonMenu.Text = "________________________";
             this.buttonMenu.UseVisualStyleBackColor = true;
@@ -217,7 +231,8 @@
             this.polizaVidaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(600, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.Visible = false;
@@ -228,19 +243,19 @@
             this.altaToolStripMenuItem,
             this.menuToolStripMenuItem});
             this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
-            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(97, 26);
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.empleadosToolStripMenuItem.Text = "Empleados";
             // 
             // altaToolStripMenuItem
             // 
             this.altaToolStripMenuItem.Name = "altaToolStripMenuItem";
-            this.altaToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
+            this.altaToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.altaToolStripMenuItem.Text = "Alta";
             // 
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
             // polizaHogarToolStripMenuItem
@@ -249,7 +264,7 @@
             this.vidaToolStripMenuItem,
             this.hogarToolStripMenuItem});
             this.polizaHogarToolStripMenuItem.Name = "polizaHogarToolStripMenuItem";
-            this.polizaHogarToolStripMenuItem.Size = new System.Drawing.Size(68, 26);
+            this.polizaHogarToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.polizaHogarToolStripMenuItem.Text = "Polizas";
             // 
             // vidaToolStripMenuItem
@@ -258,19 +273,19 @@
             this.altaToolStripMenuItem1,
             this.menuToolStripMenuItem1});
             this.vidaToolStripMenuItem.Name = "vidaToolStripMenuItem";
-            this.vidaToolStripMenuItem.Size = new System.Drawing.Size(134, 26);
+            this.vidaToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.vidaToolStripMenuItem.Text = "Vida";
             // 
             // altaToolStripMenuItem1
             // 
             this.altaToolStripMenuItem1.Name = "altaToolStripMenuItem1";
-            this.altaToolStripMenuItem1.Size = new System.Drawing.Size(129, 26);
+            this.altaToolStripMenuItem1.Size = new System.Drawing.Size(105, 22);
             this.altaToolStripMenuItem1.Text = "Alta";
             // 
             // menuToolStripMenuItem1
             // 
             this.menuToolStripMenuItem1.Name = "menuToolStripMenuItem1";
-            this.menuToolStripMenuItem1.Size = new System.Drawing.Size(129, 26);
+            this.menuToolStripMenuItem1.Size = new System.Drawing.Size(105, 22);
             this.menuToolStripMenuItem1.Text = "Menu";
             // 
             // hogarToolStripMenuItem
@@ -279,20 +294,20 @@
             this.altaToolStripMenuItem2,
             this.menuToolStripMenuItem2});
             this.hogarToolStripMenuItem.Name = "hogarToolStripMenuItem";
-            this.hogarToolStripMenuItem.Size = new System.Drawing.Size(134, 26);
+            this.hogarToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.hogarToolStripMenuItem.Text = "Hogar";
             // 
             // altaToolStripMenuItem2
             // 
             this.altaToolStripMenuItem2.Name = "altaToolStripMenuItem2";
-            this.altaToolStripMenuItem2.Size = new System.Drawing.Size(129, 26);
+            this.altaToolStripMenuItem2.Size = new System.Drawing.Size(105, 22);
             this.altaToolStripMenuItem2.Text = "Alta";
             this.altaToolStripMenuItem2.Click += new System.EventHandler(this.altaToolStripMenuItem2_Click);
             // 
             // menuToolStripMenuItem2
             // 
             this.menuToolStripMenuItem2.Name = "menuToolStripMenuItem2";
-            this.menuToolStripMenuItem2.Size = new System.Drawing.Size(129, 26);
+            this.menuToolStripMenuItem2.Size = new System.Drawing.Size(105, 22);
             this.menuToolStripMenuItem2.Text = "Menu";
             this.menuToolStripMenuItem2.Click += new System.EventHandler(this.menuToolStripMenuItem2_Click);
             // 
@@ -302,29 +317,30 @@
             this.altaToolStripMenuItem3,
             this.menuToolStripMenuItem3});
             this.polizaVidaToolStripMenuItem.Name = "polizaVidaToolStripMenuItem";
-            this.polizaVidaToolStripMenuItem.Size = new System.Drawing.Size(75, 26);
+            this.polizaVidaToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.polizaVidaToolStripMenuItem.Text = "Clientes";
             this.polizaVidaToolStripMenuItem.Click += new System.EventHandler(this.polizaVidaToolStripMenuItem_Click);
             // 
             // altaToolStripMenuItem3
             // 
             this.altaToolStripMenuItem3.Name = "altaToolStripMenuItem3";
-            this.altaToolStripMenuItem3.Size = new System.Drawing.Size(129, 26);
+            this.altaToolStripMenuItem3.Size = new System.Drawing.Size(105, 22);
             this.altaToolStripMenuItem3.Text = "Alta";
             this.altaToolStripMenuItem3.Click += new System.EventHandler(this.altaToolStripMenuItem3_Click);
             // 
             // menuToolStripMenuItem3
             // 
             this.menuToolStripMenuItem3.Name = "menuToolStripMenuItem3";
-            this.menuToolStripMenuItem3.Size = new System.Drawing.Size(129, 26);
+            this.menuToolStripMenuItem3.Size = new System.Drawing.Size(105, 22);
             this.menuToolStripMenuItem3.Text = "Menu";
             this.menuToolStripMenuItem3.Click += new System.EventHandler(this.menuToolStripMenuItem3_Click);
             // 
             // buttonAct
             // 
-            this.buttonAct.Location = new System.Drawing.Point(452, 399);
+            this.buttonAct.Location = new System.Drawing.Point(339, 324);
+            this.buttonAct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonAct.Name = "buttonAct";
-            this.buttonAct.Size = new System.Drawing.Size(75, 23);
+            this.buttonAct.Size = new System.Drawing.Size(56, 19);
             this.buttonAct.TabIndex = 10;
             this.buttonAct.Text = "Actualizar";
             this.buttonAct.UseVisualStyleBackColor = true;
@@ -334,28 +350,30 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Monotype Corsiva", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(312, 18);
+            this.label3.Location = new System.Drawing.Point(234, 15);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(212, 34);
+            this.label3.Size = new System.Drawing.Size(167, 26);
             this.label3.TabIndex = 19;
             this.label3.Text = "Menu Poliza Hogar";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::TFGProyecto.Properties.Resources.Diseño_sin_título__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(81, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(61, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 73);
+            this.pictureBox1.Size = new System.Drawing.Size(56, 59);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
             // FrmMenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonAct);
             this.Controls.Add(this.buttonMenu);
@@ -369,6 +387,7 @@
             this.Controls.Add(this.dataGridViewPolizas);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMenuPrincipal";

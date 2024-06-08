@@ -19,7 +19,7 @@ namespace TFGProyecto
 
         public static bool insertarUsuario(Usuario u)
         {
-            string query = "INSERT INTO Usuario VALUES(@nick,@clave,@preg,@respuesta,@rol_id)";
+            string query = "INSERT INTO Usuario VALUES(@nick,@clave,@preg,@respuesta)";
             string nick = u.Nick;
             string clave = u.Clave;
             string preg = u.PregPers;
@@ -30,10 +30,6 @@ namespace TFGProyecto
             datos.Add(preg);
             datos.Add(respuesta);
             bool ok = ControladorBBDD.ejecutarQueryParams(query, datos);
-            if (ok)
-            {
-                listaUsuarios.Add(u);
-            }
             return ok;
         }
         public static Usuario obtenerUsuario(string nick)

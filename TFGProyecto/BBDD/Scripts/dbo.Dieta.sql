@@ -1,0 +1,4 @@
+﻿CREATE TABLE Dieta (
+    Id INT PRIMARY KEY IDENTITY,
+    Nombre VARCHAR(50) NOT NULL
+);

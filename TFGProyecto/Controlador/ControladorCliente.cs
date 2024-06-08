@@ -10,6 +10,7 @@ namespace TFGProyecto.Controlador
 {
     public class ControladorCliente
     {
+        public static List<Cliente> listaClientes = new List<Cliente>();
         public static Cliente clienteActivo = new Cliente();
 
 
@@ -57,13 +58,12 @@ namespace TFGProyecto.Controlador
         public static Cliente obtenerCliente(string dni)
         {
             Cliente Cliente = null;
-            string query = $"SELECT * FROM Cliente WHERE Cliente = {dni}";
+            string query = $"SELECT * FROM Cliente WHERE DNI = '{dni}'";
             using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
             {
                 if (reader.Read())
                 {
                     Cliente = new Cliente(
-                        int.Parse(reader["Id"].ToString()),
                         reader["Nombre"].ToString(),
                         reader["Apellido"].ToString(),
                         reader["Direccion"].ToString(),
@@ -85,15 +85,12 @@ namespace TFGProyecto.Controlador
             }
             return Cliente;
         }
-        public static bool modificarCiente(List<string> atributos, List<string> datos, Cliente c)
+        public static bool modificarClave(string nick, string clave)
         {
-            string query = "UPDATE Cliente SET ";
-            foreach (string atributo in atributos)
-            {
-                query += $"{atributo} = @{atributo},";
-            }
-            query = query.Remove(query.Length - 1);
-            query += $" WHERE id = {c.Id}";
+            string query = "UPDATE Cliente SET clave = @clave WHERE nick = @nick";
+            List<string> datos = new List<string>();
+            datos.Add(clave);
+            datos.Add(nick);
             return ControladorBBDD.ejecutarQueryParams(query, datos);
         }
         public static bool eliminarCliente(string dni)
@@ -102,6 +99,47 @@ namespace TFGProyecto.Controlador
             List<string> datos = new List<string>();
             datos.Add(dni);
             return ControladorBBDD.ejecutarQueryParams(query, datos);
+        }
+
+        public static int existeCliente(String dni)
+        {
+            int numero = -1;
+            string query = $"SELECT count(DNI) as numero FROM Cliente where DNI='{dni}'";
+            using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
+            {
+                if (reader.Read())
+                {
+                    numero = Int32.Parse(reader["numero"].ToString());
+                }
+            }
+            return numero;
+        }
+        public static void CargarDatosEnListaCliente()
+        {
+            string query = "SELECT * FROM Cliente";
+            SqlDataReader reader = ControladorBBDD.getRegistros(query);
+            while (reader.Read())
+            {
+                Cliente c = new Cliente(
+                    reader["Nombre"].ToString(),
+                    reader["Apellido"].ToString(),
+                    reader["Direccion"].ToString(),
+                    DateTime.Parse(reader["FechaNacimiento"].ToString()),
+                    reader["Telefono"].ToString(),
+                    reader["CorreoElectronico"].ToString(),
+                    reader["Provincia"].ToString(),
+                    reader["Ciudad"].ToString(),
+                    reader["Tipo"].ToString(),
+                    reader["DireccionFacturacion"].ToString(),
+                    Int32.Parse(reader["CVV"].ToString()),
+                    reader["FechaVencimiento"].ToString(),
+                    reader["NombreTitular"].ToString(),
+                    reader["FrecuenciaPago"].ToString(),
+                    reader["MetodoPago"].ToString(),
+                    reader["DNI"].ToString()
+                    );
+                listaClientes.Add(c);
+            }
         }
     }
 }

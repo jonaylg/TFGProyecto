@@ -47,6 +47,28 @@ namespace TFGProyecto.Controlador
             SqlDataReader reader = command.ExecuteReader();
             return reader;
         }
+        public static bool ejecutarQuery(string query)
+        {
+            string conexion = getCadenaConexión();
+            using (SqlConnection connection = new SqlConnection(conexion))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        int registrosAfectados = command.ExecuteNonQuery();
+                        MessageBox.Show($"Se ejecutó correctamente el query. Registros afectados: {registrosAfectados}");
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al ejecutar el query: {ex.Message}");
+                        return false;
+                    }
+                }
+            }
+        }
         public static bool ejecutarQueryParams(string query, List<string> datos)
         {
             string conexion = getCadenaConexión();

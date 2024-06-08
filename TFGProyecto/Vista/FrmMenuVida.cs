@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TFGProyecto.Vista
 {
-    public partial class FrmPolizaVida : Form
+    public partial class FrmMenuVida : Form
     {
-        public FrmPolizaVida()
+        public FrmMenuVida()
         {
             InitializeComponent();
         }

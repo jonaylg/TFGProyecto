@@ -67,30 +67,29 @@
     <Compile Include="Controlador\ControladorBBDD.cs" />
     <Compile Include="Controlador\ControladorEmpleado.cs" />
     <Compile Include="Controlador\ControladorPolHog.cs" />
-    <Compile Include="Controlador\ControladorPrivilegios.cs" />
-    <Compile Include="Controlador\ControladorRol.cs" />
+    <Compile Include="Controlador\ControladorPolizaVida.cs" />
     <Compile Include="Controlador\ControladorUsuario.cs" />
+    <Compile Include="DatabaseTFGDataSet.cs">
+      <DependentUpon>DatabaseTFGDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseTFGDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseTFGDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseTFGDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseTFGDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Cliente.cs" />
-    <Compile Include="Modelo\ComisionVida.cs" />
     <Compile Include="Modelo\Empleado.cs" />
     <Compile Include="Modelo\PolizaHogar.cs" />
-    <Compile Include="Modelo\Privilegio.cs" />
-    <Compile Include="Modelo\Rol.cs" />
+    <Compile Include="Modelo\PolizaVida.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\FrmConfirmarPrecio.cs">
       <SubType>Form</SubType>
@@ -121,6 +120,12 @@
     </Compile>
     <Compile Include="Vista\FrmMenuPrincipal.Designer.cs">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmMenuVida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmMenuVida.Designer.cs">
+      <DependentUpon>FrmMenuVida.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\FrmNuevaClave.cs">
       <SubType>Form</SubType>
@@ -164,6 +169,9 @@
     <EmbeddedResource Include="Vista\FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmMenuVida.resx">
+      <DependentUpon>FrmMenuVida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmNuevaClave.resx">
       <DependentUpon>FrmNuevaClave.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +200,17 @@
     <None Include="DatabaseTFGDataSet.xss">
       <DependentUpon>DatabaseTFGDataSet.xsd</DependentUpon>
     </None>
+    <None Include="DatabaseTFGDataSet1.xsc">
+      <DependentUpon>DatabaseTFGDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseTFGDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseTFGDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseTFGDataSet1.xss">
+      <DependentUpon>DatabaseTFGDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -219,9 +238,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BBDD\Scripts\dbo.Empleado.sql" />
-    <Content Include="BBDD\Scripts\dbo.Privilegio.sql" />
-    <Content Include="BBDD\Scripts\dbo.Rol.sql" />
-    <Content Include="BBDD\Scripts\dbo.RolPrivilegio.sql" />
     <Content Include="BBDD\Scripts\dbo.Usuario.sql" />
     <None Include="Resources\Captura3.JPG" />
     <None Include="Resources\Captura2.JPG" />

@@ -22,5 +22,17 @@ namespace TFGProyecto.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=serverdatabasetfg.database.windows.net;Initial Catalog=DatabaseTFG;Pe" +
+            "rsist Security Info=True;User ID=adminTFG;Encrypt=True;TrustServerCertificate=Tr" +
+            "ue")]
+        public string DatabaseTFGConnectionString {
+            get {
+                return ((string)(this["DatabaseTFGConnectionString"]));
+            }
+        }
     }
 }

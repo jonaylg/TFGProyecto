@@ -25,6 +25,7 @@ namespace TFGProyecto.Vista
         private List<String> complementos2;
         private int codPoliza;
         private PolizaHogar ph;
+        private PolizaVida pv;
 
         public FrmConfirmarPrecio(double precio, List<String> complementos1, List<String> complementos2, int codPoliza, PolizaHogar ph)
         {
@@ -34,6 +35,15 @@ namespace TFGProyecto.Vista
             this.complementos2 = complementos2;
             this.codPoliza=codPoliza;
             this.ph= ph;
+        }
+        public FrmConfirmarPrecio(double precio, List<String> complementos1, List<String> complementos2, int codPoliza, PolizaVida pv)
+        {
+            InitializeComponent();
+            this.precio = precio;
+            this.complementos1 = complementos1;
+            this.complementos2 = complementos2;
+            this.codPoliza = codPoliza;
+            this.pv = pv;
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
