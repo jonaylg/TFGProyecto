@@ -25,6 +25,8 @@ namespace TFGProyecto.Vista
             InitializeComponent();
             rellenarCampos(c);
             this.dni = c.Dni;
+            buttonModi.Visible = true; 
+            buttonInserClien.Visible = false;
         }
 
         public FrmDetallesCliente(String dni)
@@ -32,6 +34,8 @@ namespace TFGProyecto.Vista
             InitializeComponent();
             this.dni = dni;
             maskedTextBoxDni.Text = dni;
+            buttonModi.Visible= false;
+            buttonInserClien.Visible= true;
         }
 
         private void rellenarCampos(Cliente c)
@@ -206,6 +210,27 @@ namespace TFGProyecto.Vista
                 }
             }
             return b;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (maskedTextBoxDni.Text!="")
+            {
+                ControladorCliente.eliminarCliente(maskedTextBoxDni.Text);
+                ControladorCliente.insertarCliente(crearCliente());
+                MessageBox.Show("Cliente actualizado correctamente");
+                FrmMenuCliente formu = new FrmMenuCliente();
+                formu.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("no se puede eliminar ya que no tiene dni");
+            }
+        }
+
+        private void FrmDetallesCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

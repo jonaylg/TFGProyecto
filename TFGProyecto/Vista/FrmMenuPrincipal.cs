@@ -91,6 +91,9 @@ namespace TFGProyecto.Vista
                             case "Dni":
                                 query = $"SELECT id, dni, tipoVivienda, zonaVivienda, valorVivienda, precio FROM PolizaHogar where dni='{filtro}'";
                                 break;
+                            case "Usuario":
+                                query = $"SELECT id, dni, tipoVivienda, zonaVivienda, valorVivienda, precio FROM PolizaHogar where usuario='{filtro}'";
+                                break;
                         }
                     }
                 }
@@ -208,8 +211,7 @@ namespace TFGProyecto.Vista
 
         private void altaToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            FrmDetallesCliente formu=new FrmDetallesCliente();
-            formu.ShowDialog();
+            MessageBox.Show("para crear un cliente tienes que crear una poliza");
         }
 
         private void menuToolStripMenuItem3_Click(object sender, EventArgs e)

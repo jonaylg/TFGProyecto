@@ -49,7 +49,7 @@ namespace TFGProyecto.Vista
         private double calcularPrecioDetalles()
         {
             double precio=0;
-            switch (comboBoxTipo.SelectedItem.ToString())//revisarSystem.NullReferenceException: 'Referencia a objeto no establecida como instancia de un objeto.'
+            switch (comboBoxTipo.SelectedItem.ToString())
             {
                 case "Piso":
                     precio += 25;
@@ -338,7 +338,10 @@ namespace TFGProyecto.Vista
             }
             else
             {
-                numericUpDownTot.BackColor = Color.Green;
+                if (numericUpDownTot.BackColor == Color.Red)
+                {
+                    numericUpDownTot.BackColor = Color.Green;
+                }
             }
 
             foreach (Control item in tabPageMD.Controls)
@@ -496,6 +499,7 @@ namespace TFGProyecto.Vista
             pol.FechaComienzo = dateTimePickerFC.Value;
             pol.FechaExpiracion = dateTimePickerFE.Value;
             pol.Aceptada = false;
+            pol.Usuario = ControladorUsuario.usuarioActivo.Nick;
 
             return pol;
         }

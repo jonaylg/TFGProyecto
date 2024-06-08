@@ -193,8 +193,7 @@ namespace TFGProyecto.Vista
 
         private void altaToolStripMenuItem5_Click(object sender, EventArgs e)
         {
-            FrmDetallesCliente formu=new FrmDetallesCliente();
-            formu.ShowDialog();
+            MessageBox.Show("para dar de alta un cliente tienes que crear una poliza");
         }
 
         private void menuToolStripMenuItem5_Click(object sender, EventArgs e)

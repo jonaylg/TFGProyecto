@@ -48,6 +48,7 @@ namespace TFGProyecto.Modelo
         private DateTime fechaComienzo;
         private DateTime fechaExpiracion;
         private bool aceptada;
+        private String usuario;
 
 
         // Propiedades
@@ -91,6 +92,7 @@ namespace TFGProyecto.Modelo
         public DateTime FechaComienzo { get => fechaComienzo; set => fechaComienzo = value; }
         public DateTime FechaExpiracion { get => fechaExpiracion; set => fechaExpiracion = value; }
         public bool Aceptada { get => aceptada; set => aceptada = value; }
+        public string Usuario { get => usuario; set => usuario = value; }
 
         // Constructores
         public PolizaHogar()
@@ -144,7 +146,7 @@ namespace TFGProyecto.Modelo
             this.precio = precio;
         }
 
-        public PolizaHogar(string tipoVivienda, string zonaVivienda, int anhoConstruccion, int metrosConstruidos, int metrosTotales, double valorVivienda, double valorContenido, int habitaciones, bool mascota, bool piscina, bool garaje, bool personalSeguridad, bool camaras, bool cajaFuerte, bool verja, bool alarma, string tipoMaterial, string usoVivienda, bool roboEnCasa, bool incendio, bool fenomenosAtmosfericos, bool responsabilidadDaniosEstructurales, bool roturaCristales, bool aguaElectricidad, bool inhabitabilidad, bool defensaJuridica, bool roturaTuberias, bool derrumbe, bool asistenciaInformacion, bool asistenciaViaje, bool actosVandalicos, bool promociones, bool reparacion24Horas, bool vehiculoEnGaraje, bool juridicaAvanzada, string dni, double precio, DateTime fechaComienzo, DateTime fechaExpiracion, bool aceptada)
+        public PolizaHogar(string tipoVivienda, string zonaVivienda, int anhoConstruccion, int metrosConstruidos, int metrosTotales, double valorVivienda, double valorContenido, int habitaciones, bool mascota, bool piscina, bool garaje, bool personalSeguridad, bool camaras, bool cajaFuerte, bool verja, bool alarma, string tipoMaterial, string usoVivienda, bool roboEnCasa, bool incendio, bool fenomenosAtmosfericos, bool responsabilidadDaniosEstructurales, bool roturaCristales, bool aguaElectricidad, bool inhabitabilidad, bool defensaJuridica, bool roturaTuberias, bool derrumbe, bool asistenciaInformacion, bool asistenciaViaje, bool actosVandalicos, bool promociones, bool reparacion24Horas, bool vehiculoEnGaraje, bool juridicaAvanzada, string dni, double precio, DateTime fechaComienzo, DateTime fechaExpiracion, bool aceptada, string usuario)
         {
             this.tipoVivienda = tipoVivienda;
             this.zonaVivienda = zonaVivienda;
@@ -186,6 +188,7 @@ namespace TFGProyecto.Modelo
             this.fechaComienzo = fechaComienzo;
             this.fechaExpiracion = fechaExpiracion;
             this.aceptada = aceptada;
+            this.usuario = usuario;
         }
 
         public string MostrarDatos()
@@ -229,7 +232,8 @@ namespace TFGProyecto.Modelo
            $"Precio: {precio}\n"+
            $"Fecha Comienzo: {fechaComienzo}\n" +
            $"Fecha Expiracion: {fechaExpiracion}\n" +
-           $"¿Aceptada?: {(aceptada ? "Sí" : "No")}";
+           $"¿Aceptada?: {(aceptada ? "Sí" : "No")}\n" +
+           $"Usuario: {usuario}";
 }
 
     }
