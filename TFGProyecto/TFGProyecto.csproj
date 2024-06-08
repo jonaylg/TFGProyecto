@@ -67,8 +67,6 @@
     <Compile Include="Controlador\ControladorBBDD.cs" />
     <Compile Include="Controlador\ControladorEmpleado.cs" />
     <Compile Include="Controlador\ControladorPolHog.cs" />
-    <Compile Include="Controlador\ControladorPrivilegios.cs" />
-    <Compile Include="Controlador\ControladorRol.cs" />
     <Compile Include="Controlador\ControladorUsuario.cs" />
     <Compile Include="DatabaseTFGDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -79,18 +77,10 @@
     <Compile Include="Modelo\ComisionVida.cs" />
     <Compile Include="Modelo\Empleado.cs" />
     <Compile Include="Modelo\PolizaHogar.cs" />
-    <Compile Include="Modelo\Privilegio.cs" />
-    <Compile Include="Modelo\Rol.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\FrmConfirmarPrecio.cs">
       <SubType>Form</SubType>
@@ -115,6 +105,12 @@
     </Compile>
     <Compile Include="Vista\FrmMenuCliente.Designer.cs">
       <DependentUpon>FrmMenuCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmMenuInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmMenuInicio.Designer.cs">
+      <DependentUpon>FrmMenuInicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\FrmMenuPrincipal.cs">
       <SubType>Form</SubType>
@@ -160,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmMenuCliente.resx">
       <DependentUpon>FrmMenuCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmMenuInicio.resx">
+      <DependentUpon>FrmMenuInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>

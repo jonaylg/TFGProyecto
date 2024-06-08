@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -205,6 +206,36 @@ namespace TFGProyecto.Controlador
             }
 
             return b;
+        }
+
+        private void borrarPolizasExpiradas()
+        {
+            int numero=0;
+            string query = $"SELECT count(id) as numero, id FROM PolizaHogar where CAST(fechaComienzo AS DATE) < CAST(GETDATE() AS DATE) AND aceptada = 0";
+            using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
+            {
+                if (reader.Read())
+                {
+                    numero = Int32.Parse(reader["numero"].ToString());
+                    for (int i = 0; i < numero; i++)
+                    {
+                        ControladorPolHog.eliminarPolizaHogar(Int32.Parse(reader["id"].ToString()));
+                    }
+                }
+            }
+
+            query = $"SELECT count(id) as numero, id FROM PolizaHogar where CAST(fechaExpiracion AS DATE) < CAST(GETDATE() AS DATE)";
+            using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
+            {
+                if (reader.Read())
+                {
+                    numero = Int32.Parse(reader["numero"].ToString());
+                    for (int i = 0; i < numero; i++)
+                    {
+                        ControladorPolHog.eliminarPolizaHogar(Int32.Parse(reader["id"].ToString()));
+                    }
+                }
+            }
         }
 
     }
