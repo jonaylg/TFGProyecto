@@ -248,6 +248,7 @@
   <ItemGroup>
     <Content Include="BBDD\Scripts\dbo.Empleado.sql" />
     <Content Include="BBDD\Scripts\dbo.Usuario.sql" />
+    <None Include="Resources\CapturaPB.JPG" />
     <None Include="Resources\Captura3.JPG" />
     <None Include="Resources\Captura2.JPG" />
     <None Include="Resources\fotor-ai-202406062056422.jpg" />
