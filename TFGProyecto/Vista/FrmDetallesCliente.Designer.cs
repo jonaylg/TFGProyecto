@@ -67,6 +67,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonModi = new System.Windows.Forms.Button();
             this.tabControlGen.SuspendLayout();
             this.tabPagePers.SuspendLayout();
             this.tabPageBan.SuspendLayout();
@@ -421,7 +422,7 @@
             // buttonInserClien
             // 
             this.buttonInserClien.BackColor = System.Drawing.Color.LawnGreen;
-            this.buttonInserClien.Location = new System.Drawing.Point(435, 410);
+            this.buttonInserClien.Location = new System.Drawing.Point(391, 410);
             this.buttonInserClien.Name = "buttonInserClien";
             this.buttonInserClien.Size = new System.Drawing.Size(83, 28);
             this.buttonInserClien.TabIndex = 1;
@@ -433,7 +434,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(312, 410);
+            this.button1.Location = new System.Drawing.Point(268, 410);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 28);
             this.button1.TabIndex = 2;
@@ -460,12 +461,24 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // buttonModi
+            // 
+            this.buttonModi.BackColor = System.Drawing.Color.Aqua;
+            this.buttonModi.Location = new System.Drawing.Point(505, 410);
+            this.buttonModi.Name = "buttonModi";
+            this.buttonModi.Size = new System.Drawing.Size(87, 28);
+            this.buttonModi.TabIndex = 5;
+            this.buttonModi.Text = "Modificar";
+            this.buttonModi.UseVisualStyleBackColor = false;
+            this.buttonModi.Click += new System.EventHandler(this.button2_Click);
+            // 
             // FrmDetallesCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonModi);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
@@ -474,6 +487,7 @@
             this.Name = "FrmDetallesCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDetallesCliente";
+            this.Load += new System.EventHandler(this.FrmDetallesCliente_Load);
             this.tabControlGen.ResumeLayout(false);
             this.tabPagePers.ResumeLayout(false);
             this.tabPagePers.PerformLayout();
@@ -526,5 +540,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonModi;
     }
 }

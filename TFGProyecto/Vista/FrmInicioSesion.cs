@@ -37,6 +37,7 @@ namespace ProyectoTFG
                 {
                     if (u.Clave==textBoxClave.Text&&u.Nick==textBoxUsuario.Text)
                     {
+                        ControladorUsuario.usuarioActivo.Nick= u.Nick;
                         MessageBox.Show("bienvenido "+u.Nick);
                         encontrado = true;//prueba
                         FrmMenuInicio formu=new FrmMenuInicio(u.Nick);

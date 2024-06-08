@@ -31,12 +31,13 @@ namespace TFGProyecto.Vista
 
         private void buttonMPV_Click(object sender, EventArgs e)
         {
-            
+            FrmMenuVida formu=new FrmMenuVida();
+            formu.ShowDialog();
         }
 
         private void buttonMPH_Click(object sender, EventArgs e)
         {
-            FrmPolizaHogar formu=new FrmPolizaHogar();
+            FrmMenuPrincipal formu=new FrmMenuPrincipal();
             formu.ShowDialog();
         }
 
@@ -67,6 +68,12 @@ namespace TFGProyecto.Vista
         private void FrmMenuInicio_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void buttonAPolV_Click(object sender, EventArgs e)
+        {
+            FrmPolizaVida formu=new FrmPolizaVida();
+            formu.ShowDialog();
         }
     }
 }

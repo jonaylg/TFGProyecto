@@ -139,6 +139,7 @@
             this.buttonAPolV.Text = "Alta Poliza Vida";
             this.buttonAPolV.UseVisualStyleBackColor = false;
             this.buttonAPolV.Visible = false;
+            this.buttonAPolV.Click += new System.EventHandler(this.buttonAPolV_Click);
             // 
             // buttonMPH
             // 
@@ -173,7 +174,7 @@
             this.labelNom.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.labelNom.Location = new System.Drawing.Point(226, 132);
             this.labelNom.Name = "labelNom";
-            this.labelNom.Size = new System.Drawing.Size(162, 40);
+            this.labelNom.Size = new System.Drawing.Size(159, 39);
             this.labelNom.TabIndex = 10;
             this.labelNom.Text = "Bienvenido";
             // 

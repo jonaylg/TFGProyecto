@@ -26,7 +26,7 @@ namespace TFGProyecto.Controlador
                 "@roturaCristales, @aguaElectricidad, @inhabitabilidad, @defensaJuridica, " +
                 "@roturaTuberias, @derrumbe, @asistenciaInformacion, @asistenciaViaje, " +
                 "@actosVandalicos, @promociones, @reparacion24Horas, @vehiculoEnGaraje, " +
-                "@juridicaAvanzada, @dni, @precio, @fechaComienzo, @fechaExpiracion, @aceptada)";
+                "@juridicaAvanzada, @dni, @precio, @fechaComienzo, @fechaExpiracion, @aceptada, @usuario)";
             string tipoVivienda = ph.TipoVivienda;
             string zonaVivienda = ph.ZonaVivienda;
             string anhoConstruccion = ph.AnhoConstruccion.ToString();
@@ -67,6 +67,7 @@ namespace TFGProyecto.Controlador
             string fechaComienzo=ph.FechaComienzo.ToString();
             string fechaExpiracion = ph.FechaExpiracion.ToString();
             string aceptada = ph.Aceptada ? "1" : "0";
+            string usuario = ph.Usuario;
 
             // Agregar los valores a la lista de datos
             List<string> datos = new List<string>
@@ -78,7 +79,7 @@ namespace TFGProyecto.Controlador
                 responsabilidadDaniosEstructurales, roturaCristales, aguaElectricidad,
                 inhabitabilidad, defensaJuridica, roturaTuberias, derrumbe,
                 asistenciaInformacion, asistenciaViaje, actosVandalicos, promociones,
-                reparacion24Horas, vehiculoEnGaraje, juridicaAvanzada, dni, precio, fechaComienzo, fechaExpiracion, aceptada
+                reparacion24Horas, vehiculoEnGaraje, juridicaAvanzada, dni, precio, fechaComienzo, fechaExpiracion, aceptada, usuario
             };
             bool ok = ControladorBBDD.ejecutarQueryParams(query, datos);
             
@@ -134,7 +135,8 @@ namespace TFGProyecto.Controlador
                         Double.Parse(reader["precio"].ToString()),
                         DateTime.Parse(reader["fechaComienzo"].ToString()),
                         DateTime.Parse(reader["fechaExpiracion"].ToString()),
-                        (reader["aceptada"].ToString() == "1")
+                        (reader["aceptada"].ToString() == "1"),
+                        reader["usuario"].ToString()
                     ); ;
                 }
             }
@@ -147,9 +149,16 @@ namespace TFGProyecto.Controlador
             string query = $"SELECT max(id) as ulti FROM PolizaHogar";
             using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
             {
-                if (reader.Read())
+                try
                 {
-                    ulti=Int32.Parse(reader["ulti"].ToString());
+                    if (reader.Read())
+                    {
+                        ulti = Int32.Parse(reader["ulti"].ToString());
+                    }
+                }
+                catch (System.FormatException)
+                {
+                    ulti = 1;
                 }
             }
             return ulti;
@@ -206,36 +215,6 @@ namespace TFGProyecto.Controlador
             }
 
             return b;
-        }
-
-        private void borrarPolizasExpiradas()
-        {
-            int numero=0;
-            string query = $"SELECT count(id) as numero, id FROM PolizaHogar where CAST(fechaComienzo AS DATE) < CAST(GETDATE() AS DATE) AND aceptada = 0";
-            using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
-            {
-                if (reader.Read())
-                {
-                    numero = Int32.Parse(reader["numero"].ToString());
-                    for (int i = 0; i < numero; i++)
-                    {
-                        ControladorPolHog.eliminarPolizaHogar(Int32.Parse(reader["id"].ToString()));
-                    }
-                }
-            }
-
-            query = $"SELECT count(id) as numero, id FROM PolizaHogar where CAST(fechaExpiracion AS DATE) < CAST(GETDATE() AS DATE)";
-            using (SqlDataReader reader = ControladorBBDD.getRegistros(query))
-            {
-                if (reader.Read())
-                {
-                    numero = Int32.Parse(reader["numero"].ToString());
-                    for (int i = 0; i < numero; i++)
-                    {
-                        ControladorPolHog.eliminarPolizaHogar(Int32.Parse(reader["id"].ToString()));
-                    }
-                }
-            }
         }
 
     }
